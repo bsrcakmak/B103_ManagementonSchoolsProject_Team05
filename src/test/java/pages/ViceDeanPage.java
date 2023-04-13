@@ -35,7 +35,7 @@ public class ViceDeanPage {
     @FindBy(id = "phoneNumber")
     public WebElement phoneNumberBox;
 
-    @FindBy(xpath = "//label[text()='Female']")
+    @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement genderFemale;
 
     @FindBy(id = "birthDay")
@@ -52,5 +52,11 @@ public class ViceDeanPage {
 
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement alertChooseLesson;
+
+    @FindBy(xpath = "//div[text()='Teacher saved successfully']")
+    public WebElement SuccessfullSaving;
 
 }
