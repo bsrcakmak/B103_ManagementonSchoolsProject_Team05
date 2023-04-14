@@ -56,7 +56,7 @@ public class ViceDeanPage {
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
     public WebElement alertChooseLesson;
 
     @FindBy(xpath = "//div[text()='Teacher saved successfully']")
@@ -64,5 +64,11 @@ public class ViceDeanPage {
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement RequiredTextforName;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    public WebElement RequiredTextforSurname;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
+    public WebElement RequiredTextforBirthPlace;
 
 }
