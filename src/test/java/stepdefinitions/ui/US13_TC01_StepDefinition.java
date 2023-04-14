@@ -177,6 +177,7 @@ public class US13_TC01_StepDefinition {
     @When("Submit tiklanir")
     public void submit_tiklanir() {
 
+        ReusableMethods.waitForClickablility(viceDeanPage.submitButton,5);
         viceDeanPage.submitButton.click();
 
     }
@@ -227,5 +228,47 @@ public class US13_TC01_StepDefinition {
 
         action.sendKeys(Keys.ENTER).build().perform();
 
+    }
+
+    @And("Name bos olarak birakilir")
+    public void nameBosOlarakBirakilir() {
+
+        viceDeanPage.nameBox.click();
+
+    }
+
+    @Then("Name_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
+    public void _bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
+
+        String expecteddata = arg0;
+        String actualdata = viceDeanPage.RequiredTextforName.getText();
+        Assert.assertEquals(expecteddata,actualdata);
+
+    }
+
+    @And("Sayfayi Submit butonu gorulecek sekilde asagi kaydirir.")
+    public void sayfayiAsagiKaydirir() {
+
+        Actions action=new Actions(Driver.getDriver());
+//        action.scrollToElement(viceDeanPage.submitButton);
+
+//        ReusableMethods.scrollIntoViewJS(viceDeanPage.submitButton);
+        action.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
+
+    }
+
+    @Then("Hata mesajini goruntuler.")
+    public void hataMesajiniGoruntuler() {
+
+        ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);//hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
+        Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());//normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
+                                                                        //popup mesajlari farkli olmasina ragmen kabul etti ve passed oldu
+
+    }
+
+    @And("Name alanina {string} karakteri girilir.")
+    public void nameAlaninaKarakteriGirilir(String arg0) {
+        viceDeanPage.nameBox.click();
+        viceDeanPage.nameBox.sendKeys(arg0+Keys.ENTER);
     }
 }

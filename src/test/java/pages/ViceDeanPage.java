@@ -62,4 +62,7 @@ public class ViceDeanPage {
     @FindBy(xpath = "//div[text()='Teacher saved successfully']")
     public WebElement SuccessfullSaving;
 
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement RequiredTextforName;
+
 }
