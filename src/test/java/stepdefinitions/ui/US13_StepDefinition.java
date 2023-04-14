@@ -251,9 +251,9 @@ public class US13_StepDefinition {
     public void hataMesajiniGoruntuler() {
 
         // space karakter testi icin ortak kullanildi
-        ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);//hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
-        Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());//normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
-                                                                        //popup mesajlari farkli olmasina ragmen kabul etti ve passed oldu
+        ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);   //hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
+        Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());               //normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
+        // assertFalse ile test yapildiginda gecmesi gerekirken assert.True da geciyor //popup mesajlari farkli olmasina ragmen kabul etti ve passed oldu
 
     }
 
@@ -306,5 +306,57 @@ public class US13_StepDefinition {
     public void birthPlaceAlaninaKarakteriGirilir(String arg0) {
         viceDeanPage.birthPlaceBox.click();
         viceDeanPage.birthPlaceBox.sendKeys(arg0+Keys.ENTER);
+    }
+
+    @And("Email bos olarak birakilir")
+    public void emailBosOlarakBirakilir() {
+
+        viceDeanPage.emailbox.click();
+    }
+
+    @Then("Email_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
+    public void email_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
+
+        String expecteddata = arg0;
+        String actualdata = viceDeanPage.RequiredTextforEmail.getText();
+        Assert.assertEquals(expecteddata,actualdata);
+
+
+    }
+
+
+    @And("Email alanina _abc_ formatinda email karakteri girilir")
+    public void emailAlanina_Abc_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String name = faker.name().firstName();
+
+
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+
+    }
+
+
+    @And("Email alanina _abc@_ formatinda email karakteri girilir")
+    public void emailAlanina_abc_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String str = faker.name().firstName();
+        String name = str+"@";
+
+        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+
     }
 }

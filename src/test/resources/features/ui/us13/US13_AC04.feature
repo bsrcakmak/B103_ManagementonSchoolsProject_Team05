@@ -13,7 +13,7 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     And 1 saniye bekler
 
   @US13_TC09
-  Scenario: TC09_Ogretmen_olusturulurken_Birth_Place_alaninin_bos_birakilmamasi
+  Scenario: TC09_Ogretmen_olusturulurken_Email_alaninin_bos_birakilmamasi
 
     And Sayfayi Submit butonu gorulecek sekilde asagi kaydirir.
     And 1 saniye bekler
@@ -25,7 +25,7 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     Then Sayfa kapatilir
 
   @US13_TC10
-  Scenario: TC10_Ogretmen_olusturulurken_Birth_Place_alaninin_bos_birakilmamasi
+  Scenario: TC10_Ogretmen_olusturulurken_Email_alaninin_bos_birakilmamasi
 
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
