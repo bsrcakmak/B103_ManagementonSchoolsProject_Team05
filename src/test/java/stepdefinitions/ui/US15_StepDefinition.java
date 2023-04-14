@@ -62,9 +62,9 @@ public class US15_StepDefinition {
         studentManagementPage.maleButton.click();
     }
 
-    @And("Date Of Birth kutusuna gecerli bir deger girilir")
-    public void date_of_birth_kutusuna_gecerli_bir_deger_girilir() {
-    }
+//    @And("Date Of Birth kutusuna gecerli bir deger girilir")
+//    public void date_of_birth_kutusuna_gecerli_bir_deger_girilir() {
+//    }
 
     @And("Ssn kutusuna gecerli bir deger girilir")
     public void ssn_kutusuna_gecerli_bir_deger_girilir() {
@@ -114,8 +114,52 @@ public class US15_StepDefinition {
     }
 
     @Then("Girilen degerlerle ogrencinin olusturuldugu dogrulanir")
-    public void girilenDegerlerleOgrencininOlusturulduguDogrulanir() {
+    public void girilen_Degerlerle_Ogrencinin_Olusturuldugu_Dogrulanir() {
         Assert.assertEquals(expectedUsername, actualUsername);
     }
+
+    @And("Choose Teacher listesinden herhangi bir secim yapilmaz")
+    public void choose_Teacher_Listesinden_Herhangi_Bir_Secim_Yapilmaz() {
+    }
+
+//    @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
+//    public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
+//    }
+
+//    @Then("Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
+
+//    @Then("Surname kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void surname_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
+
+//    @Then("Birth Place kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void birth_Place_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
+
+//    @Then("E-mail kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void email_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
+
+//    @Then("Phone kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void phone_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
+
+//    @Then("Date Of Birth kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void dateOfBirthKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+//    }
+
+//    @Then("User Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void userNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+//    }
+
+//    @Then("Father Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void fatherNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+//    }
+
+//    @Then("Mother Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void motherNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+//    }
 
 }
