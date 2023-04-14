@@ -1,7 +1,7 @@
 @us15_ac01
 Feature: Ogrencinin danisman ogretmeninin secilmesi
 
-  @us15_ac01
+  @us15_ac01_tc
   Scenario: Ogrencinin danisman ogretmeninin secilmesi
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir
