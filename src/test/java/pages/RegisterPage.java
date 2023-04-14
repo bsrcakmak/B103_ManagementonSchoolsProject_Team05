@@ -71,7 +71,6 @@ public class RegisterPage {
     @FindBy(xpath = "//button[text()='Register']")
     public WebElement registerButton;
 
-
     @FindBy(xpath = "//div[@class='Toastify']")
     public WebElement guestUserRegisteredUyari;
 
