@@ -3,15 +3,22 @@ package stepdefinitions.ui;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.HomePage;
+import pages.MainMenuPanel;
 
 public class US15_StepDefinition {
 
+    HomePage homePage = new HomePage();
+    MainMenuPanel mainMenuPanel = new MainMenuPanel();
+
     @When("Baslikta bulunan Menu butonuna tiklanir")
     public void baslikta_bulunan_menu_butonuna_tiklanir() {
+        homePage.menuButton.click();
     }
 
     @When("Panelde bulunan Student Management butonuna tiklanir")
     public void panelde_bulunan_student_management_butonuna_tiklanir() {
+        mainMenuPanel.studentManagementButton.click();
     }
 
     @And("Choose Teacher listesinden gecerli bir secim yapilir")
