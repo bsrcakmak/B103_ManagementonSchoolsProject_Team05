@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -93,8 +94,9 @@ public class ViceDeanPage {
     @FindBy (id ="stopTime")
     public WebElement stopTime;
 
-    @FindBy (xpath = "//div[@role='alert'")
+    @FindBy (xpath = "//div[contains(text(),'Created Lesson Program')]")
     public WebElement createdLessonProgram;
+
 
     @FindBy (xpath = "//*[.='Please select education term']")
     public WebElement peSeEduTerm;
@@ -105,5 +107,8 @@ public class ViceDeanPage {
     @FindBy (xpath = "//div[contains(text(),'JSON parse error:')]")
     public  WebElement jSONError;
 
+
+    @FindBy (xpath = "//div[@class='col-lg-6']//div[@class='mx-auto p-3 col']//div//button[@type='button'][normalize-space()='Submit']")
+    public WebElement submitButtonForLesson;
 
 }

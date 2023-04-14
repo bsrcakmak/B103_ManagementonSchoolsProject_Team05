@@ -1,4 +1,4 @@
-
+@US10_Steps
 Feature: uS_10 test Case Vice Dean ders programi olusturabilmelidir.
 
 Scenario: Vice Dean ders programi olusturmasi.
@@ -40,7 +40,7 @@ Scenario: Vice Dean ders programi olusturmasi.
       And Kullanici dersin baslangic saatini girer.
       And Kullanci dersin bitis saatini baslangic saatinden buyuk girer.
       Then Kullanici Submit butonuna tiklar.
-      And "Please select education term" hata mesaji çıkar.
+      And Please select education term mesaji cikartigini dogrular.
     And Sayfa kapatilir
 
 
@@ -68,7 +68,7 @@ Scenario: Vice Dean ders programi olusturmasi.
     And Kullanici dersin baslangic saatini girer.
     And Kullanci dersin bitis saatini baslangic saatinden esit ve kucuk olacak sekilde girer.
     Then Kullanici Submit butonuna tiklar.
-    And "Error: start time must not be greater than or equal to stop time" mesaji cikar.
+    And Error: start time must not be greater than or equal to stop time mesaji cikartigini dogrular.
     And Sayfa kapatilir
 
 
