@@ -200,4 +200,32 @@ public class US13_TC01_StepDefinition {
     public void saniyeBekler(int wait) {
         ReusableMethods.waitFor(wait);
     }
+
+    @And("Choose Lessons kismindan secili dersi siler.")
+    public void chooseLessonsKismindanSeciliDersiSiler() {
+
+
+        viceDeanPage.chooseLessons.click();
+
+        Actions action=new Actions(Driver.getDriver());
+
+        ReusableMethods.waitFor(2);
+        action.sendKeys(Keys.DELETE).build().perform();
+
+    }
+
+    @And("Ogretmenin girecegi ders  tekrar {string} olarak secilir")
+    public void ogretmeninGirecegiDersTekrarOlarakSecilir(String ders) {
+
+//        viceDeanPage.getChooseLessons02.click();
+//        burayi aktif edince java yazisini chooselessons kismina gondermiyor.!!!
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(ders).build().perform();
+        ReusableMethods.waitFor(2);
+
+
+        action.sendKeys(Keys.ENTER).build().perform();
+
+    }
 }
