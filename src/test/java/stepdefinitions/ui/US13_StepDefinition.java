@@ -1,29 +1,19 @@
 package stepdefinitions.ui;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.ProgrammingLanguage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ViceDeanPage;
-import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.time.Duration;
-
-public class US13_TC01_StepDefinition {
+public class US13_StepDefinition {
 
     LoginPage loginPage=new LoginPage();
     HomePage homePage=new HomePage();

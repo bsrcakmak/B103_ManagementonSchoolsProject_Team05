@@ -11,12 +11,10 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    // Home Page -> Login Button
-    @FindBy(xpath = "//a[@href='/login']")
-    public WebElement loginButton;
-
-    // HomePage -> Register Button
     @FindBy(xpath = "//a[@href='/register']")
     public WebElement registerButton;
+
+    @FindBy(xpath = "//a[@href='/login']")
+    public WebElement loginButton;
 
 }
