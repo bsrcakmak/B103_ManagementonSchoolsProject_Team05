@@ -71,4 +71,7 @@ public class ViceDeanPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
     public WebElement RequiredTextforBirthPlace;
 
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
+    public WebElement RequiredTextforEmail;
+
 }

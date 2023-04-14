@@ -317,4 +317,56 @@ public class US13_TC01_StepDefinition {
         viceDeanPage.birthPlaceBox.click();
         viceDeanPage.birthPlaceBox.sendKeys(arg0+Keys.ENTER);
     }
+
+    @And("Email bos olarak birakilir")
+    public void emailBosOlarakBirakilir() {
+
+        viceDeanPage.emailbox.click();
+    }
+
+    @Then("Email_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
+    public void email_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
+
+        String expecteddata = arg0;
+        String actualdata = viceDeanPage.RequiredTextforEmail.getText();
+        Assert.assertEquals(expecteddata,actualdata);
+
+
+    }
+
+
+    @And("Email alanina _abc_ formatinda email karakteri girilir")
+    public void emailAlanina_Abc_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String name = faker.name().firstName();
+
+
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+
+    }
+
+
+    @And("Email alanina _abc@_ formatinda email karakteri girilir")
+    public void emailAlanina_abc_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String str = faker.name().firstName();
+        String name = str+"@";
+
+        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+
+    }
 }
