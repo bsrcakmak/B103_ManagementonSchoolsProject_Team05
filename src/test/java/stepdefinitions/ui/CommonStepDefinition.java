@@ -7,7 +7,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class LoginAndClose {
+public class CommonStepDefinition {
 
     @Given("Site adresine gidilir")
     public void siteAdresineGidilir() {
