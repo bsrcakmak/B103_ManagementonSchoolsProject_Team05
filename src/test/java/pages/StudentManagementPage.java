@@ -27,7 +27,7 @@ public class StudentManagementPage {
     public WebElement emailBox;
 
     @FindBy(id = "phoneNumber")
-    public WebElement phoneNumber;
+    public WebElement phoneBox;
 
     @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement femaleButton;
@@ -55,5 +55,11 @@ public class StudentManagementPage {
 
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
+
+    @FindBy(xpath = "(//a[@class='page-link'])[4]")
+    public WebElement lastPageButton;
+
+    @FindBy(xpath = "(//table[1]/tbody/tr)[last()]//td[5]//span")
+    public WebElement studentsUsernameLastCreated;
 
 }
