@@ -53,11 +53,13 @@ public class US13_TC01_StepDefinition {
 //        js.executeScript("arguments[0].value='Java';",chooseLessonJS);
 
 
+        Driver.waitForPageToLoad(5);
+
         viceDeanPage.chooseLessons.click();
 
         Actions action=new Actions(Driver.getDriver());
         action.sendKeys(ders).build().perform();
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 
 
         action.sendKeys(Keys.ENTER).build().perform();
