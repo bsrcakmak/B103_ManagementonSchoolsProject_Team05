@@ -74,4 +74,12 @@ public class ViceDeanPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
     public WebElement RequiredTextforEmail;
 
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement RequiredTextforPhoneNumber;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement MinimumCharacterTextforPhoneNumber;
+
+    @FindBy(id = "isAdvisorTeacher")
+    public WebElement isAdvisorTeacherCheckBox;
 }

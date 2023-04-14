@@ -85,3 +85,159 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     Then Hata mesajini goruntuler.
     And 1 saniye bekler
     Then Sayfa kapatilir
+
+  @US13_TC14
+  Scenario: TC14_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
+
+    And Ogretmenin girecegi ders "Java" olarak secilir
+    And 1 saniye bekler
+    And Name "name(faker)" olarak girilir
+    And 1 saniye bekler
+    And Surname "surname(faker)" olarak girilir
+    And 1 saniye bekler
+    And birt place "birthplace(faker)" olarak girilir
+    And 1 saniye bekler
+    And Email alanina _abc@gmail_ formatinda email karakteri girilir
+    And 1 saniye bekler
+    And Phone number "phone(faker)" olarak girilir
+    And 1 saniye bekler
+    And Gender female secilir
+    And 1 saniye bekler
+    And Date of Birth "dateofbirth(faker)" olarak girilir
+    And 1 saniye bekler
+    And Ssn "ssn(faker)" olarak girilir
+    And 1 saniye bekler
+    And User Name "username(faker)" olarak  girer
+    And 1 saniye bekler
+    And Password "password(faker)" olarak girer
+    And 1 saniye bekler
+    And Submit tiklanir
+    And 1 saniye bekler
+    Then Hata mesajini goruntuler.
+    And 1 saniye bekler
+    Then Sayfa kapatilir
+
+  @US13_TC15
+  Scenario: TC15_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
+
+    And Ogretmenin girecegi ders "Java" olarak secilir
+    And 1 saniye bekler
+    And Name "name(faker)" olarak girilir
+    And 1 saniye bekler
+    And Surname "surname(faker)" olarak girilir
+    And 1 saniye bekler
+    And birt place "birthplace(faker)" olarak girilir
+    And 1 saniye bekler
+    And Email alanina _abc.com_ formatinda email karakteri girilir
+    And 1 saniye bekler
+    And Phone number "phone(faker)" olarak girilir
+    And 1 saniye bekler
+    And Gender female secilir
+    And 1 saniye bekler
+    And Date of Birth "dateofbirth(faker)" olarak girilir
+    And 1 saniye bekler
+    And Ssn "ssn(faker)" olarak girilir
+    And 1 saniye bekler
+    And User Name "username(faker)" olarak  girer
+    And 1 saniye bekler
+    And Password "password(faker)" olarak girer
+    And 1 saniye bekler
+    And Submit tiklanir
+    And 1 saniye bekler
+    Then Hata mesajini goruntuler.
+    And 1 saniye bekler
+    Then Sayfa kapatilir
+
+  @US13_TC16
+  Scenario: TC16_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
+
+    And Ogretmenin girecegi ders "Java" olarak secilir
+    And 1 saniye bekler
+    And Name "name(faker)" olarak girilir
+    And 1 saniye bekler
+    And Surname "surname(faker)" olarak girilir
+    And 1 saniye bekler
+    And birt place "birthplace(faker)" olarak girilir
+    And 1 saniye bekler
+    And Email alanina _abc@abc_ formatinda email karakteri girilir
+    And 1 saniye bekler
+    And Phone number "phone(faker)" olarak girilir
+    And 1 saniye bekler
+    And Gender female secilir
+    And 1 saniye bekler
+    And Date of Birth "dateofbirth(faker)" olarak girilir
+    And 1 saniye bekler
+    And Ssn "ssn(faker)" olarak girilir
+    And 1 saniye bekler
+    And User Name "username(faker)" olarak  girer
+    And 1 saniye bekler
+    And Password "password(faker)" olarak girer
+    And 1 saniye bekler
+    And Submit tiklanir
+    And 1 saniye bekler
+    Then Hata mesajini goruntuler.
+    And 1 saniye bekler
+    Then Sayfa kapatilir
+
+
+  @US13_TC17
+  Scenario: TC17_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
+
+    And Ogretmenin girecegi ders "Java" olarak secilir
+    And 1 saniye bekler
+    And Name "name(faker)" olarak girilir
+    And 1 saniye bekler
+    And Surname "surname(faker)" olarak girilir
+    And 1 saniye bekler
+    And birt place "birthplace(faker)" olarak girilir
+    And 1 saniye bekler
+    And Email alanina _abc@com_ formatinda email karakteri girilir
+    And 1 saniye bekler
+    And Phone number "phone(faker)" olarak girilir
+    And 1 saniye bekler
+    And Gender female secilir
+    And 1 saniye bekler
+    And Date of Birth "dateofbirth(faker)" olarak girilir
+    And 1 saniye bekler
+    And Ssn "ssn(faker)" olarak girilir
+    And 1 saniye bekler
+    And User Name "username(faker)" olarak  girer
+    And 1 saniye bekler
+    And Password "password(faker)" olarak girer
+    And 1 saniye bekler
+    And Submit tiklanir
+    And 1 saniye bekler
+    Then Hata mesajini goruntuler.
+    And 1 saniye bekler
+    Then Sayfa kapatilir
+
+  @US13_TC18
+  Scenario: TC18_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
+
+    And Ogretmenin girecegi ders "Java" olarak secilir
+    And 1 saniye bekler
+    And Name "name(faker)" olarak girilir
+    And 1 saniye bekler
+    And Surname "surname(faker)" olarak girilir
+    And 1 saniye bekler
+    And birt place "birthplace(faker)" olarak girilir
+    And 1 saniye bekler
+    And Email alanina _sembollervesayilar_ formatinda email karakteri girilir
+    And 1 saniye bekler
+    And Phone number "phone(faker)" olarak girilir
+    And 1 saniye bekler
+    And Gender female secilir
+    And 1 saniye bekler
+    And Date of Birth "dateofbirth(faker)" olarak girilir
+    And 1 saniye bekler
+    And Ssn "ssn(faker)" olarak girilir
+    And 1 saniye bekler
+    And User Name "username(faker)" olarak  girer
+    And 1 saniye bekler
+    And Password "password(faker)" olarak girer
+    And 1 saniye bekler
+    And Submit tiklanir
+    And 1 saniye bekler
+    Then Hata mesajini goruntuler.
+    And 1 saniye bekler
+    Then Sayfa kapatilir
