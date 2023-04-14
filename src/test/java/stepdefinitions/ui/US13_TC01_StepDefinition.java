@@ -260,6 +260,7 @@ public class US13_TC01_StepDefinition {
     @Then("Hata mesajini goruntuler.")
     public void hataMesajiniGoruntuler() {
 
+        // space karakter testi icin ortak kullanildi
         ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);//hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
         Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());//normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
                                                                         //popup mesajlari farkli olmasina ragmen kabul etti ve passed oldu
@@ -270,5 +271,50 @@ public class US13_TC01_StepDefinition {
     public void nameAlaninaKarakteriGirilir(String arg0) {
         viceDeanPage.nameBox.click();
         viceDeanPage.nameBox.sendKeys(arg0+Keys.ENTER);
+    }
+
+    @And("Surname bos olarak birakilir")
+    public void surnameBosOlarakBirakilir() {
+
+        viceDeanPage.surnameBox.click();
+    }
+
+    @Then("Surname_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
+    public void surname_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
+
+        String expecteddata = arg0;
+        String actualdata = viceDeanPage.RequiredTextforSurname.getText();
+        Assert.assertEquals(expecteddata,actualdata);
+
+    }
+
+    @And("Surname alanina {string} karakteri girilir.")
+    public void surnameAlaninaKarakteriGirilir(String arg0) {
+
+        viceDeanPage.surnameBox.click();
+        viceDeanPage.surnameBox.sendKeys(arg0+Keys.ENTER);
+
+    }
+
+    @And("Birth_Place bos olarak birakilir")
+    public void birth_placeBosOlarakBirakilir() {
+
+        viceDeanPage.birthPlaceBox.click();
+
+    }
+
+    @Then("Birth_Place_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
+    public void birth_place_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
+
+        String expecteddata = arg0;
+        String actualdata = viceDeanPage.RequiredTextforBirthPlace.getText();
+        Assert.assertEquals(expecteddata,actualdata);
+
+    }
+
+    @And("BirthPlace alanina {string} karakteri girilir")
+    public void birthPlaceAlaninaKarakteriGirilir(String arg0) {
+        viceDeanPage.birthPlaceBox.click();
+        viceDeanPage.birthPlaceBox.sendKeys(arg0+Keys.ENTER);
     }
 }
