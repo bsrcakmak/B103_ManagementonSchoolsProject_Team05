@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class ViceDeanPage {
+public class ViceDeanManagementPage {
 
-    public ViceDeanPage() {
+    public ViceDeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
