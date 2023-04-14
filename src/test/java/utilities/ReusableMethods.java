@@ -1,5 +1,6 @@
 package utilities;
 
+import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -11,10 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
 public class ReusableMethods {
     /*HOW DO YOU GET SCREENSHOT?
@@ -209,6 +207,103 @@ public class ReusableMethods {
         loginPage.username.sendKeys(ConfigReader.getProperty(username));
         loginPage.password.sendKeys(ConfigReader.getProperty(password));
         loginPage.loginButton.click();
+    }
+
+    public static void selectFromDropdownByIndex(WebElement element, int index) {
+        Select select = new Select(element);
+        select.selectByIndex(index);
+    }
+
+    public static String createName() {
+        Faker faker = new Faker();
+        return faker.name().firstName();
+    }
+
+    public static String createSurname() {
+        Faker faker = new Faker();
+        return faker.name().lastName();
+    }
+
+    public static String createBirthPlace() {
+        Faker faker = new Faker();
+        return faker.address().cityName();
+    }
+
+    public static String createEmail() {
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
+    }
+
+    public static String createPhone() {
+        Random random = new Random();
+        int firstNumberOfThePhone = random.nextInt(10);
+        int secondNumberOfThePhone = random.nextInt(10);
+        int thirdNumberOfThePhone = random.nextInt(10);
+        int fourthNumberOfThePhone = random.nextInt(10);
+        int fifthNumberOfThePhone = random.nextInt(10);
+        int sixthNumberOfThePhone = random.nextInt(10);
+        int seventhNumberOfThePhone = random.nextInt(10);
+        int eighthNumberOfThePhone = random.nextInt(10);
+        int ninthNumberOfThePhone = random.nextInt(10);
+        int tenthNumberOfThePhone = random.nextInt(10);
+        String phone = firstNumberOfThePhone +
+                        secondNumberOfThePhone +
+                        thirdNumberOfThePhone +
+                        "-" +
+                        fourthNumberOfThePhone +
+                        fifthNumberOfThePhone +
+                        sixthNumberOfThePhone +
+                        "-" +
+                        seventhNumberOfThePhone +
+                        eighthNumberOfThePhone +
+                        ninthNumberOfThePhone +
+                        tenthNumberOfThePhone;
+        return phone;
+    }
+
+    public static String createSSN() {
+        Random random = new Random();
+        int firstNumberOfThePhone = random.nextInt(10);
+        int secondNumberOfThePhone = random.nextInt(10);
+        int thirdNumberOfThePhone = random.nextInt(10);
+        int fourthNumberOfThePhone = random.nextInt(10);
+        int fifthNumberOfThePhone = random.nextInt(10);
+        int sixthNumberOfThePhone = random.nextInt(10);
+        int seventhNumberOfThePhone = random.nextInt(10);
+        int eighthNumberOfThePhone = random.nextInt(10);
+        int ninthNumberOfThePhone = random.nextInt(10);
+        String phone = firstNumberOfThePhone +
+                secondNumberOfThePhone +
+                thirdNumberOfThePhone +
+                "-" +
+                fourthNumberOfThePhone +
+                fifthNumberOfThePhone +
+                "-" +
+                sixthNumberOfThePhone +
+                seventhNumberOfThePhone +
+                eighthNumberOfThePhone +
+                ninthNumberOfThePhone;
+        return phone;
+    }
+
+    public static String createUserName() {
+        Faker faker = new Faker();
+        return faker.name().username();
+    }
+
+    public static String createFatherName() {
+        Faker faker = new Faker();
+        return faker.name().firstName();
+    }
+
+    public static String createMotherName() {
+        Faker faker = new Faker();
+        return faker.name().firstName();
+    }
+
+    public static String createPassword() {
+        Faker faker = new Faker();
+        return faker.internet().password();
     }
 
 }

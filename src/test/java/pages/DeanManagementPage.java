@@ -5,17 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AdminPage {
+import java.util.List;
 
-    public AdminPage() {
+public class DeanManagementPage {
+
+    public DeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
-    @FindBy(xpath = "//button[text()='Menu']")
-    public WebElement menuButton;
-
-    @FindBy(xpath = "//a[text()='Admin Management']")
-    public WebElement adminManagement;
 
     @FindBy(id = "name")
     public WebElement nameBox;
@@ -49,5 +45,8 @@ public class AdminPage {
 
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")
+    public WebElement nameRequired;
 
 }
