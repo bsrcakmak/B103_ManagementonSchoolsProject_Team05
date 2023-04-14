@@ -1,6 +1,7 @@
-@us15_tc01
+@us15
 Feature: Vice Dean rolu ile ogrenci olusturabilme
 
+  @us15_tc
   Scenario: Vice Dean rolu ile ogrenci olusturabilme
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir
