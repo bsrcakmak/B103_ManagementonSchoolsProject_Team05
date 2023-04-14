@@ -20,6 +20,9 @@ public class ViceDeanPage {
     @FindBy(xpath = "//div[@class=' css-1xc3v61-indicatorContainer']")
     public WebElement chooseLessons;
 
+    @FindBy(xpath = "//div[@id='react-select-2-placeholder']")
+    public WebElement getChooseLessons02;
+
     @FindBy(id = "name")
     public WebElement nameBox;
 
@@ -53,11 +56,24 @@ public class ViceDeanPage {
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
     public WebElement alertChooseLesson;
 
     @FindBy(xpath = "//div[text()='Teacher saved successfully']")
     public WebElement SuccessfullSaving;
+
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement RequiredTextforName;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    public WebElement RequiredTextforSurname;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
+    public WebElement RequiredTextforBirthPlace;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
+    public WebElement RequiredTextforEmail;
 
     @FindBy (xpath="//button[.='Lesson Program']")
     public WebElement lessonProgramButton;
@@ -88,9 +104,6 @@ public class ViceDeanPage {
 
     @FindBy (xpath = "//div[contains(text(),'JSON parse error:')]")
     public  WebElement jSONError;
-
-
-
 
 
 }

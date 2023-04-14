@@ -1,19 +1,16 @@
 package stepdefinitions.ui;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.HomePage;
 import pages.RegisterPage;
-import utilities.ConfigReader;
-import utilities.Driver;
 import utilities.ReusableMethods;
 
 
-public class US01_RegisterStep {
+public class US01_StepDefinition {
 
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
