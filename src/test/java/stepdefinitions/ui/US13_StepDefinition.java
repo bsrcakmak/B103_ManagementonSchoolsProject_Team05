@@ -359,4 +359,140 @@ public class US13_StepDefinition {
         viceDeanPage.emailbox.sendKeys(name);
 
     }
+
+    @And("Email alanina _abc@gmail_ formatinda email karakteri girilir")
+    public void emailAlanina_abcGmail_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String str = faker.name().firstName();
+        String name = str+"@"+"gmail";
+
+        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+
+    }
+
+    @And("Email alanina _abc.com_ formatinda email karakteri girilir")
+    public void emailAlanina_abcCom_FormatindaEmailKarakteriGirilir() {
+
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String str = faker.name().firstName();
+        String name = str+"."+"com";
+
+        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+
+    }
+
+    @And("Email alanina _abc@abc_ formatinda email karakteri girilir")
+    public void emailAlanina_abcAbc_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String str = faker.name().firstName();
+        String str02 = faker.name().lastName();
+        String name = str+"@"+str02;
+
+        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+        
+    }
+
+    @And("Email alanina _abc@com_ formatinda email karakteri girilir")
+    public void EmailAlanina_abcCom_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+
+        ReusableMethods.waitFor(2);
+
+        Faker faker = new Faker();
+        String str = faker.name().firstName();
+        String str02 = faker.name().lastName();
+        String name = str+"@"+"com";
+
+        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(name);
+
+    }
+
+    @And("Email alanina _sembollervesayilar_ formatinda email karakteri girilir")
+    public void emailAlanina_sembollervesayilar_FormatindaEmailKarakteriGirilir() {
+
+        Actions action=new Actions(Driver.getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+//
+//        ReusableMethods.waitFor(2);
+//
+//        Faker faker = new Faker();
+        String str = "7-=*+785///}{458/*";
+//        String str02 = faker.name().lastName();
+//        String name = str+"@"+"com";
+
+        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
+        viceDeanPage.emailbox.click();
+        viceDeanPage.emailbox.sendKeys(str);
+
+    }
+
+    @And("Phone_Number bos olarak birakilir")
+    public void phone_numberBosOlarakBirakilir() {
+
+        viceDeanPage.phoneNumberBox.click();
+
+    }
+
+    @Then("Phone_Number_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
+    public void phone_number_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
+
+        String expecteddata = arg0;
+        String actualdata = viceDeanPage.RequiredTextforPhoneNumber.getText();
+        Assert.assertEquals(expecteddata,actualdata);
+
+    }
+
+
+    @And("Phone number alanina formata uygun {string} girer")
+    public void phoneNumberAlaninaFormataUygunGirer(String arg0) {
+
+        viceDeanPage.phoneNumberBox.click();
+        viceDeanPage.phoneNumberBox.sendKeys(arg0);
+
+    }
+
+    @Then("Phone number bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
+    public void phoneNumberBolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
+
+        String expectedData = arg0;
+        String actualData = viceDeanPage.MinimumCharacterTextforPhoneNumber.getText();
+        Assert.assertTrue(actualData.contains(expectedData));
+    }
+
+    @And("{string} secenegini isaretler")
+    public void isAdvisorTeacherSeceneginiIsaretler(String arg0) {
+
+    viceDeanPage.isAdvisorTeacherCheckBox.click();
+
+    }
 }
+
+
