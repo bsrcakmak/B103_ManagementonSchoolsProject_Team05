@@ -7,69 +7,71 @@ import utilities.Driver;
 
 public class RegisterPage {
 
-    public RegisterPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public RegisterPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@class='mb-4 fw-semibold shadow-sm bg-body-tertiary card-title h5']")
+    @FindBy(xpath = "//div[@class='mb-4 fw-semibold shadow-sm bg-body-tertiary card-title h5']")
     public WebElement registerBolumu;
 
-    @FindBy(id ="name" )
+    @FindBy(id = "name")
     public WebElement name;
 
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[1]" )
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement nameUyari;
 
-    @FindBy(id ="surname" )
+    @FindBy(id = "surname")
     public WebElement surname;
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[2]" )
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
     public WebElement surnameUyari;
 
-    @FindBy(id ="birthPlace" )
+    @FindBy(id = "birthPlace")
     public WebElement birthPlace;
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[3]" )
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
     public WebElement birthPlaceUyari;
 
-    @FindBy(id ="phoneNumber" )
+    @FindBy(id = "phoneNumber")
     public WebElement phoneNumber;
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[4]" )
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
     public WebElement phoneNumberUyari;
 
-    @FindBy(xpath ="//*[@value='FEMALE']" )
+    @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement female;
 
-    @FindBy(xpath ="//*[@value='MALE']" )
+    @FindBy(xpath = "//input[@value='MALE']")
     public WebElement male;
 
-    @FindBy(id ="birthDay" )
+    @FindBy(id = "birthDay")
     public WebElement birthDay;
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[5]" )
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
     public WebElement birthDayUyari;
 
-    @FindBy(id ="ssn" )
+    @FindBy(id = "ssn")
     public WebElement ssn;
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[6]" )
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[6]")
     public WebElement ssnUyari;
 
-    @FindBy(id ="username" )
+    @FindBy(id = "username")
     public WebElement username;
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[7]" )
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[7]")
     public WebElement usernameUyari;
 
-    @FindBy(id ="password" )
+    @FindBy(id = "password")
     public WebElement password;
-    @FindBy(xpath ="(//*[@class='invalid-feedback'])[8]" )
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[8]")
     public WebElement passwordUyari;
 
-    @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary']")
-    public WebElement  registerButton;
+    @FindBy(xpath = "//button[text()='Register']")
+    public WebElement registerButton;
 
-
-    @FindBy(xpath = "//*[@class='Toastify']")
-    public WebElement  guestUserRegisteredUyari;
-
-
-
-
+    @FindBy(xpath = "//div[@class='Toastify']")
+    public WebElement guestUserRegisteredUyari;
 
 }
