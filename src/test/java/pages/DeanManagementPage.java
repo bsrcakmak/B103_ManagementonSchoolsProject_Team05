@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.List;
-
 public class DeanManagementPage {
 
     public DeanManagementPage() {
@@ -66,6 +64,7 @@ public class DeanManagementPage {
 
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")
     public WebElement passwordRequired;
+
     @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public WebElement popUpMessage;
 
