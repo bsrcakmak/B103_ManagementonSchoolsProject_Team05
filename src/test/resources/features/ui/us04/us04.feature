@@ -7,10 +7,12 @@ Feature: Admin Dean ekleyebilmeli
     And Menu butonuna tiklar
     And Acilan bolumden Dean Management'a tiklar
 
+
   @us04_tc01
   Scenario: Name girilmelidir.Boş bırakılamaz.
     And Name alanina tiklar
-    Then Required uyarisinin goruntulendigini dogrular
+    And Surname alanina tiklar
+    Then Name altinda Required uyarisinin goruntulendigini dogrular
 
   @us04_tc02
   Scenario: Name alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
@@ -19,17 +21,20 @@ Feature: Admin Dean ekleyebilmeli
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
+    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
+    And 1 sn bekler
     Then Hata mesaji goruntulendigini dogrular
 
   @us04_tc03
   Scenario: Surname girilmelidir.Boş bırakılamaz.
     And Surname alanina tiklar
-    Then Required uyarisinin goruntulendigini dogrular
+    And Name alanina tiklar
+    Then Surname altinda Required uyarisinin goruntulendigini dogrular
 
   @us04_tc04
   Scenario: Surname alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
@@ -48,7 +53,8 @@ Feature: Admin Dean ekleyebilmeli
   @us04_tc05
   Scenario: Birth Place girilmelidir.Boş bırakılamaz.
     And Birth Place alanina tiklar
-    Then Required uyarisinin goruntulendigini dogrular
+    When Name alanina tiklar
+    Then Birth Place altinda Required uyarisinin goruntulendigini dogrular
 
   @us04_tc06
   Scenario:Birth Place alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
@@ -124,7 +130,7 @@ Feature: Admin Dean ekleyebilmeli
     And Cinsiyet secer
     And Birthday alanina veri girer
     And Phone alanina veri girer
-    And Ssn alanina veri girer
+    And Ssn alaninda 4. karakteri hatali girer
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
@@ -138,7 +144,7 @@ Feature: Admin Dean ekleyebilmeli
     And Cinsiyet secer
     And Birthday alanina veri girer
     And Phone alanina veri girer
-    And Ssn alanina veri girer
+    And Ssn alaninda 6. karakteri hatali  girer
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
@@ -152,7 +158,7 @@ Feature: Admin Dean ekleyebilmeli
     And Cinsiyet secer
     And Birthday alanina veri girer
     And Phone alanina veri girer
-    And Ssn alanina veri girer
+    And Ssn alanina eksik veri girer
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
