@@ -2,10 +2,8 @@
 Feature: Admin Dean ekleyebilmeli
 
   Background:
-    Given Kullanici verilen baglantiya gider
-    Then Login butonuna tiklar
-    And Admin bilgilerini girer
-    And Login butonuna tiklar
+    Given Site adresine gidilir
+    When Admin rolu ile login islemi gerceklestirilir
     And Menu butonuna tiklar
     And Acilan bolumden Dean Management'a tiklar
 
