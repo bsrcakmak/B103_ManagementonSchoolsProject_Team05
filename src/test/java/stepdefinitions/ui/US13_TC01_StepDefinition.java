@@ -261,9 +261,9 @@ public class US13_TC01_StepDefinition {
     public void hataMesajiniGoruntuler() {
 
         // space karakter testi icin ortak kullanildi
-        ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);//hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
-        Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());//normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
-                                                                        //popup mesajlari farkli olmasina ragmen kabul etti ve passed oldu
+        ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);   //hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
+        Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());               //normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
+        // assertFalse ile test yapildiginda gecmesi gerekirken assert.True da geciyor //popup mesajlari farkli olmasina ragmen kabul etti ve passed oldu
 
     }
 
