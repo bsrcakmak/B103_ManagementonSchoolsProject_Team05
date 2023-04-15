@@ -119,10 +119,6 @@ public class US15_StepDefinition {
         Assert.assertEquals(expectedUsername, actualUsername);
     }
 
-    @And("Choose Teacher listesinden herhangi bir secim yapilmaz")
-    public void choose_Teacher_Listesinden_Herhangi_Bir_Secim_Yapilmaz() {
-    }
-
     @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
     public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
         ReusableMethods.waitFor(1);
@@ -155,10 +151,6 @@ public class US15_StepDefinition {
         Assert.assertTrue(studentManagementPage.phoneRequiredWarning.isDisplayed());
     }
 
-    @And("Gender bolumunde herhangi bir secim yapilmaz")
-    public void gender_Bolumunde_Herhangi_Bir_Secim_Yapilmaz() {
-    }
-
     @Then("Cinsiyet secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
     public void gender_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
         ReusableMethods.waitFor(1);
@@ -185,5 +177,21 @@ public class US15_StepDefinition {
     public void mother_Name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.motherNameRequiredWarning.isDisplayed());
     }
+
+//    @Then("Ogrenciye student number atandigi dogrulanir")
+//    public void ogrenciye_Student_Number_Atandigi_Dogrulanir() {
+//    }
+
+//    @Then("Password kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void password_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
+
+//    @And("Password kutusuna yedi karakter girilir")
+//    public void password_Kutusuna_Yedi_Karakter_Girilir() {
+//    }
+
+//    @Then("Password'un yedi karakterden az olamayacagina dair uyari mesajinin goruntulendigi dogrulanir")
+//    public void passwordun_Yedi_Karakterden_Az_Olamayacagina_Dair_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
 
 }
