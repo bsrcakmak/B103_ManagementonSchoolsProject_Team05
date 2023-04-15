@@ -214,6 +214,11 @@ public class ReusableMethods {
         select.selectByIndex(index);
     }
 
+    public static void selectFromDropdownByVisibleText(WebElement element, String text) {
+        Select select = new Select(element);
+        select.selectByVisibleText(text);
+    }
+
     public static String createName() {
         Faker faker = new Faker();
         return faker.name().firstName();
