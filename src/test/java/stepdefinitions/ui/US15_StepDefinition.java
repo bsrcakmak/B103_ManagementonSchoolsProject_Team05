@@ -39,7 +39,7 @@ public class US15_StepDefinition {
 
     @And("Surname kutusuna gecerli bir deger girilir")
     public void surname_kutusuna_gecerli_bir_deger_girilir() {
-        studentManagementPage.nameBox.sendKeys(ReusableMethods.createSurname());
+        studentManagementPage.surnameBox.sendKeys(ReusableMethods.createSurname());
     }
 
     @And("Birth Place kutusuna gecerli bir deger girilir")
@@ -155,23 +155,34 @@ public class US15_StepDefinition {
         Assert.assertTrue(studentManagementPage.phoneRequiredWarning.isDisplayed());
     }
 
+    @And("Gender bolumunde herhangi bir secim yapilmaz")
+    public void gender_Bolumunde_Herhangi_Bir_Secim_Yapilmaz() {
+    }
+
+    @Then("Cinsiyet secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
+    public void gender_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(studentManagementPage.genderAlert.isDisplayed());
+        ReusableMethods.waitFor(1);
+    }
+
     @Then("Date Of Birth kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void dateOfBirthKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void date_Of_Birth_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.dateOfBirthRequiredWarning.isDisplayed());
     }
 
     @Then("User Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void userNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void user_Name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.usernameRequiredWarning.isDisplayed());
     }
 
     @Then("Father Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void fatherNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void father_Name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.fatherNameRequiredWarning.isDisplayed());
     }
 
     @Then("Mother Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void motherNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void mother_Name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.motherNameRequiredWarning.isDisplayed());
     }
 
