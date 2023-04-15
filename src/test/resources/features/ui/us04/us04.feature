@@ -7,7 +7,6 @@ Feature: Admin Dean ekleyebilmeli
     And Menu butonuna tiklar
     And Acilan bolumden Dean Management'a tiklar
 
-
   @us04_tc01
   Scenario: Name girilmelidir.Boş bırakılamaz.
     And Name alanina tiklar
@@ -94,7 +93,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then Dogum tarihi icin hata mesaji goruntulendigini dogrular
 
   @us04_tc09
   Scenario:Telefon numarası girilmelidir.Boş bırakılamaz.
@@ -107,7 +106,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then Telefon icin hata mesaji goruntulendigini dogrular
 
   @us04_tc10
   Scenario:SSN girilmelidir. Boş bırakılamaz.
@@ -120,7 +119,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then Ssn icin Hata mesaji goruntulendigini dogrular
 
   @us04_tc11
   Scenario:SSN 3. rakamdan sonra - içermeli
@@ -134,7 +133,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then Ssn icin Hata mesaji goruntulendigini dogrular
 
   @us04_tc12
   Scenario:SSN 5. rakamdan sonra - içermeli
@@ -148,7 +147,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then Ssn icin Hata mesaji goruntulendigini dogrular
 
   @us04_tc13
   Scenario:SSN 9 rakamdan az olamaz.
@@ -162,7 +161,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then Ssn altinda uyari mesaji goruntulendigini dogrular
 
   @us04_tc14
   Scenario:SSN 9 rakamdan oluşmalıdır
@@ -181,7 +180,8 @@ Feature: Admin Dean ekleyebilmeli
   @us04_tc15
   Scenario:User Name girilmelidir. Boş bırakılamaz.
     And User Name alanina tiklar
-    Then Required uyarisinin goruntulendigini dogrular
+    When Name alanina tiklar
+    Then User Name altinda Required uyarisinin goruntulendigini dogrular
 
   @us04_tc16
   Scenario:User Name alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
@@ -209,7 +209,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina 7 karakter girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then Password icin hata mesaji goruntulendigini dogrular
 
 
 
