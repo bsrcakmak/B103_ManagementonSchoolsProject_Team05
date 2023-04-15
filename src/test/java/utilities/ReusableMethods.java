@@ -235,17 +235,17 @@ public class ReusableMethods {
     }
 
     public static String createPhone() {
-        Random random = new Random();
-        int firstNumberOfThePhone = random.nextInt(10);
-        int secondNumberOfThePhone = random.nextInt(10);
-        int thirdNumberOfThePhone = random.nextInt(10);
-        int fourthNumberOfThePhone = random.nextInt(10);
-        int fifthNumberOfThePhone = random.nextInt(10);
-        int sixthNumberOfThePhone = random.nextInt(10);
-        int seventhNumberOfThePhone = random.nextInt(10);
-        int eighthNumberOfThePhone = random.nextInt(10);
-        int ninthNumberOfThePhone = random.nextInt(10);
-        int tenthNumberOfThePhone = random.nextInt(10);
+        Faker faker = new Faker();
+        int firstNumberOfThePhone = faker.number().randomDigit();
+        int secondNumberOfThePhone = faker.number().randomDigit();
+        int thirdNumberOfThePhone = faker.number().randomDigit();
+        int fourthNumberOfThePhone = faker.number().randomDigit();
+        int fifthNumberOfThePhone = faker.number().randomDigit();
+        int sixthNumberOfThePhone = faker.number().randomDigit();
+        int seventhNumberOfThePhone = faker.number().randomDigit();
+        int eighthNumberOfThePhone = faker.number().randomDigit();
+        int ninthNumberOfThePhone = faker.number().randomDigit();
+        int tenthNumberOfThePhone = faker.number().randomDigit();
         String phone = firstNumberOfThePhone +
                         secondNumberOfThePhone +
                         thirdNumberOfThePhone +
@@ -261,17 +261,26 @@ public class ReusableMethods {
         return phone;
     }
 
+    public static String createDateOfBirth() {
+        Faker faker = new Faker();
+        int year = faker.number().numberBetween(1958, 2023);
+        int month = faker.number().numberBetween(1, 12);
+        int day = faker.number().numberBetween(1, 28);
+        String dateOfBirth = day + "." + month + "." + year;
+        return dateOfBirth;
+    }
+
     public static String createSSN() {
-        Random random = new Random();
-        int firstNumberOfThePhone = random.nextInt(10);
-        int secondNumberOfThePhone = random.nextInt(10);
-        int thirdNumberOfThePhone = random.nextInt(10);
-        int fourthNumberOfThePhone = random.nextInt(10);
-        int fifthNumberOfThePhone = random.nextInt(10);
-        int sixthNumberOfThePhone = random.nextInt(10);
-        int seventhNumberOfThePhone = random.nextInt(10);
-        int eighthNumberOfThePhone = random.nextInt(10);
-        int ninthNumberOfThePhone = random.nextInt(10);
+        Faker faker = new Faker();
+        int firstNumberOfThePhone = faker.number().randomDigit();
+        int secondNumberOfThePhone = faker.number().randomDigit();
+        int thirdNumberOfThePhone = faker.number().randomDigit();
+        int fourthNumberOfThePhone = faker.number().randomDigit();
+        int fifthNumberOfThePhone = faker.number().randomDigit();
+        int sixthNumberOfThePhone = faker.number().randomDigit();
+        int seventhNumberOfThePhone = faker.number().randomDigit();
+        int eighthNumberOfThePhone = faker.number().randomDigit();
+        int ninthNumberOfThePhone = faker.number().randomDigit();
         String phone = firstNumberOfThePhone +
                 secondNumberOfThePhone +
                 thirdNumberOfThePhone +
