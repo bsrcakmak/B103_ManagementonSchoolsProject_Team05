@@ -12,51 +12,60 @@ Feature: Veri girilmesi zorunlu olan alanlarin doldurulmasi
 #  And Name kutusu bos birakilir
   When Submit butonuna tiklanir
   Then Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+  Then Sayfa kapatilir
 
   @us15_ac03
   Scenario: Surname girilmesinin zorunlu olmasi
 #    And Surname kutusu bos birakilir
     When Submit butonuna tiklanir
     Then Surname kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir
 
   @us15_ac04
   Scenario: Birth Place girilmesinin zorunlu olmasi
 #    And Birth Place kutusu bos birakilir
     When Submit butonuna tiklanir
     Then Birth Place kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir
 
   @us15_ac05
   Scenario: E-mail girilmesinin zorunlu olmasi
 #    And E-mail kutusu bos birakilir
     When Submit butonuna tiklanir
     Then E-mail kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir
 
   @us15_ac06
   Scenario: Telefon numarasi girilmesinin zorunlu olmasi
 #    And Phone kutusu bos birakilir
     When Submit butonuna tiklanir
     Then Phone kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir
 
   @us15_ac08
   Scenario: Dogum tarihi girilmesinin zorunlu olmasi
 #    And Date Of Birth kutusu bos birakilir
     When Submit butonuna tiklanir
     Then Date Of Birth kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir
 
   @us15_ac10
   Scenario: User Name girilmesinin zorunlu olmasi
 #    And User Name kutusu bos birakilir
     When Submit butonuna tiklanir
     Then User Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir
 
   @us15_ac11
   Scenario: Father Name girilmesinin zorunlu olmasi
 #    And Father Name kutusu bos birakilir
     When Submit butonuna tiklanir
     Then Father Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir
 
   @us15_ac12
   Scenario: Mother Name girilmesinin zorunlu olmasi
 #    And Mother Name kutusu bos birakilir
     When Submit butonuna tiklanir
     Then Mother Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
+    Then Sayfa kapatilir

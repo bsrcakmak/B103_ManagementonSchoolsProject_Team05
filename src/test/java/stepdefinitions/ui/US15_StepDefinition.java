@@ -62,9 +62,10 @@ public class US15_StepDefinition {
         studentManagementPage.maleButton.click();
     }
 
-//    @And("Date Of Birth kutusuna gecerli bir deger girilir")
-//    public void date_of_birth_kutusuna_gecerli_bir_deger_girilir() {
-//    }
+    @And("Date Of Birth kutusuna gecerli bir deger girilir")
+    public void date_of_birth_kutusuna_gecerli_bir_deger_girilir() {
+        studentManagementPage.dateOfBirthBox.sendKeys(ReusableMethods.createDateOfBirth());
+    }
 
     @And("Ssn kutusuna gecerli bir deger girilir")
     public void ssn_kutusuna_gecerli_bir_deger_girilir() {
@@ -122,9 +123,12 @@ public class US15_StepDefinition {
     public void choose_Teacher_Listesinden_Herhangi_Bir_Secim_Yapilmaz() {
     }
 
-//    @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
-//    public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
-//    }
+    @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
+    public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(studentManagementPage.chooseTeacherAlert.isDisplayed());
+        ReusableMethods.waitFor(1);
+    }
 
     @Then("Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
     public void name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
