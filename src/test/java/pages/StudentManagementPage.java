@@ -98,4 +98,7 @@ public class StudentManagementPage {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement chooseTeacherAlert;
 
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement genderAlert;
+
 }
