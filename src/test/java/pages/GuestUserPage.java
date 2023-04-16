@@ -23,5 +23,4 @@ public class GuestUserPage {
     @FindBy(xpath = "//tbody/tr[1]/td[1]")
     public WebElement firstTableData;
 
-
 }
