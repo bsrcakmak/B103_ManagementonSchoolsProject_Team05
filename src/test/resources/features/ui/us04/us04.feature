@@ -7,7 +7,7 @@ Feature: Admin Dean ekleyebilmeli
     And Menu butonuna tiklar
     And Acilan bolumden Dean Management'a tiklar
 
-  @us04_tc01
+  @us04_tc01 @smoketest
   Scenario: Name girilmelidir.Boş bırakılamaz.
     And Name alanina tiklar
     And Surname alanina tiklar
@@ -22,7 +22,6 @@ Feature: Admin Dean ekleyebilmeli
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina veri girer
@@ -33,12 +32,11 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc03
+  @us04_tc03 @smoketest
   Scenario: Surname girilmelidir.Boş bırakılamaz.
     And Surname alanina tiklar
     And Name alanina tiklar
     Then Surname altinda Required uyarisinin goruntulendigini dogrular
-    When 1 sn bekler
     Then Sayfa kapatilir
 
 
@@ -49,7 +47,6 @@ Feature: Admin Dean ekleyebilmeli
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina veri girer
@@ -60,7 +57,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc05
+  @us04_tc05 @smoketest
   Scenario: Birth Place girilmelidir.Boş bırakılamaz.
     And Birth Place alanina tiklar
     When Name alanina tiklar
@@ -68,16 +65,13 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc06  #tekrar bak
+  @us04_tc06
   Scenario:Birth Place alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina space karakteri girer
-    And 2 sn bekler
     And Cinsiyet secer
-    And 1 sn bekler
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina veri girer
@@ -87,13 +81,12 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc07
+  @us04_tc07 @smoketest
   Scenario:Cinsiyet seçilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina veri girer
@@ -103,7 +96,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc08
+  @us04_tc08 @smoketest
   Scenario:Doğum tarihi girilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -118,7 +111,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc09
+  @us04_tc09 @smoketest
   Scenario:Telefon numarası girilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -133,7 +126,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc10
+  @us04_tc10 @smoketest
   Scenario:SSN girilmelidir. Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -147,14 +140,13 @@ Feature: Admin Dean ekleyebilmeli
     Then Ssn altinda Required mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-  @us04_tc11
+  @us04_tc11 @smoketest
   Scenario:SSN 3. rakamdan sonra - içermeli
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alaninda 4. karakteri hatali girer
     And User Name alanina veri girer
@@ -164,14 +156,13 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc12
+  @us04_tc12 @smoketest
   Scenario:SSN 5. rakamdan sonra - içermeli
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alaninda 6. karakteri hatali  girer
     And User Name alanina veri girer
@@ -181,14 +172,13 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc13
+  @us04_tc13 @smoketest
   Scenario:SSN 9 rakamdan az olamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina eksik veri girer
     And User Name alanina veri girer
@@ -198,14 +188,13 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc14
+  @us04_tc14 @smoketest
   Scenario:SSN 9 rakamdan oluşmalıdır
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina veri girer
@@ -215,7 +204,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc15
+  @us04_tc15 @smoketest
   Scenario:User Name girilmelidir. Boş bırakılamaz.
     And User Name alanina tiklar
     When Name alanina tiklar
@@ -230,7 +219,6 @@ Feature: Admin Dean ekleyebilmeli
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina space karakteri girer
@@ -240,20 +228,33 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc17
+  @us04_tc17 @smoketest
   Scenario:Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
     And Cinsiyet secer
     And Birthday alanina veri girer
-    And 1 sn bekler
     And Phone alanina veri girer
     And Ssn alanina veri girer
     And User Name alanina veri girer
     And Password alanina 7 karakter girer
     And Submit butonuna tiklar
     Then Password icin hata mesaji goruntulendigini dogrular
+    Then Sayfa kapatilir
+
+  @us04_tc18 @smoketest
+  Scenario:Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
+    And Name alanina veri girer
+    And Surname alanina veri girer
+    And Birth Place alanina veri girer
+    And Cinsiyet secer
+    And Birthday alanina veri girer
+    And Phone alanina veri girer
+    And Ssn alanina veri girer
+    And User Name alanina veri girer
+    And Submit butonuna tiklar
+    Then Password altinda hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
 
