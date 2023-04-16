@@ -20,7 +20,7 @@ public class US03_StepDefinition {
 
 
 
-    public String expectedEmail = ReusableMethods.createEmail();
+    //public String expectedEmail = ReusableMethods.createEmail();
     public String karakter1 = "@";
     public String karakter2= ".";
     public String invalidEmail1 ="mary@clanen";
@@ -62,11 +62,12 @@ public class US03_StepDefinition {
         Assert.assertTrue(contactPage.successfully.isDisplayed());
     }
 
-    @Then("kullanici girilen degerde {string} ve {string} karakterlerinin oldugunu dogrular")
-    public void kullaniciGirilenDegerdeVeKarakterlerininOldugunuDogrular(String arg0, String arg1) {
-        Assert.assertTrue(expectedEmail.contains(karakter1));
-        Assert.assertTrue(expectedEmail.contains(karakter2));
+    @Then("kullanici girilen degerde {string} karakterinin oldugunu dogrular")
+    public void kullaniciGirilenDegerdeKarakterininOldugunuDogrular(String arg0) {
+        Assert.assertTrue(contactPage.email.getText().contains(karakter1));
+        Assert.assertTrue(contactPage.email.getText().contains(karakter2));
     }
+
 
     @And("kullanici Subject alanina valid bir deger girer")
     public void kullaniciSubjectAlaninaValidBirDegerGirer() {
@@ -160,8 +161,6 @@ public class US03_StepDefinition {
         contactPage.email.click();
         contactPage.email.sendKeys(invalidEmail3);
     }
-
-
 
 
 }
