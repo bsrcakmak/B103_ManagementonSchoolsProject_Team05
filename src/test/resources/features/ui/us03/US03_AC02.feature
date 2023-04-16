@@ -4,18 +4,21 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Given Site adresine gidilir
     When kullanici Contact butonuna tiklar
 
+  @smoketest
   @us03_tc02
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Email alanina valid bir deger girer
     Then kullanici Your Email alanina bir deger girilebildigini dogrular
     Then Sayfa kapatilir
 
+  @smoketest
   @us03_tc03
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Email alanina valid bir deger girer
     Then kullanici girilen degerde "@" ve "." karakterlerinin oldugunu dogrular
     Then Sayfa kapatilir
 
+  @smoketest
   @us03_tc09
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Name alanina valid bir deger girer
@@ -57,6 +60,7 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Then kullanici Mesajin gonderilemedigini dogrular
     Then Sayfa kapatilir
 
+  @smoketest
   @us03_tc13
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Name alanina valid bir deger girer

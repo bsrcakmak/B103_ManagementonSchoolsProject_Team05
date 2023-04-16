@@ -4,6 +4,7 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Given Site adresine gidilir
     When kullanici Contact butonuna tiklar
 
+  @smoketest
   @us03_tc05
   Scenario: Kullanici mail gonderme bolumune Mesaj girebilmeli
     And kullanici Message alanina valid bir deger girer
