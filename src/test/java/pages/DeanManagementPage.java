@@ -68,7 +68,10 @@ public class DeanManagementPage {
     @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public WebElement popUpMessage;
 
-    @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    @FindBy(xpath = "//*[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
     public WebElement ssnAlert;
 
     @FindBy(xpath = "//*[text()='Minimum 8 character']")

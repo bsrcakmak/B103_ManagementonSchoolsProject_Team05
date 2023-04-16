@@ -191,13 +191,10 @@ public class ReusableMethods {
         js.executeScript("arguments[0].setAttribute('value','"+metin+"')",element);
     }
 
-    public static void getValueByJS(String idOfElement) {
+    public static String getValueByJS(String idOfElement) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         String text = js.executeScript("return document.getElementById('" + idOfElement + "').value").toString();
-        System.out.println("Kutudaki value: " + text);
-//        NOT: document.querySelector("p").value;  -> TAG KULLANILABILIR
-//             document.querySelector(".example").value; -> CSS DEGERI KULLANILABILIR
-//             document.querySelector("#example").value; -> CSS DEGERI KULLANILABILIR
+        return text;
     }
 
     public static void login(String username, String password) {

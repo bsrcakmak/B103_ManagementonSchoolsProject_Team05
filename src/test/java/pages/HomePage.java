@@ -20,4 +20,7 @@ public class HomePage {
     @FindBy(xpath = "//button[text()='Menu']")
     public WebElement menuButton;
 
+    @FindBy(xpath = "//a[text()='Contact']")
+    public WebElement contactButton;
+
 }

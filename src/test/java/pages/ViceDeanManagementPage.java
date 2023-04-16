@@ -74,6 +74,7 @@ public class ViceDeanManagementPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
     public WebElement RequiredTextforEmail;
 
+
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
     public WebElement RequiredTextforPhoneNumber;
 
@@ -82,6 +83,7 @@ public class ViceDeanManagementPage {
 
     @FindBy(id = "isAdvisorTeacher")
     public WebElement isAdvisorTeacherCheckBox;
+
 
     @FindBy(xpath = "//button[.='Lesson Program']")
     public WebElement lessonProgramButton;
@@ -112,8 +114,5 @@ public class ViceDeanManagementPage {
 
     @FindBy(xpath = "//div[contains(text(),'JSON parse error:')]")
     public WebElement jSONError;
-
-    @FindBy(xpath = "//div[@class='col-lg-6']//div[@class='mx-auto p-3 col']//div//button[@type='button'][normalize-space()='Submit']")
-    public WebElement submitButtonForLesson;
 
 }
