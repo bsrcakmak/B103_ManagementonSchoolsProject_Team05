@@ -31,7 +31,6 @@ public class US03_StepDefinition {
     static String str;
 
 
-
     // Backgraund
     @When("kullanici Contact butonuna tiklar")
     public void kullaniciContactButonunaTiklar() {
@@ -92,7 +91,7 @@ public class US03_StepDefinition {
 
     @Then("kullanici Message alanina bir deger girilebildigini dogrular")
     public void kullaniciMessageAlaninaBirDegerGirilebildiginiDogrular() {
-        Assert.assertFalse(ReusableMethods.getValueByJS("message").isEmpty());
+        Assert.assertFalse(ReusableMethods.getValueByJS("message").isEmpty());    
     }
 
     @And("kullanici Send Message butonuna tiklar")

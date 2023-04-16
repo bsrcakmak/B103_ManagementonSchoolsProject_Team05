@@ -15,10 +15,11 @@ import org.junit.runner.RunWith;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
-        features = "./src/test/resources/features/",
+        features = "./src/test/resources/features/ui/us03/US03_AC02.feature",
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
-        tags = "@"
+        tags = "@us04"
+
 )
 
 public class Runner {
