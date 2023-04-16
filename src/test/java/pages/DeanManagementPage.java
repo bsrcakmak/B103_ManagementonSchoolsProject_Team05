@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.List;
-
 public class DeanManagementPage {
 
     public DeanManagementPage() {
@@ -22,11 +20,8 @@ public class DeanManagementPage {
     @FindBy(id = "birthPlace")
     public WebElement birthPlaceBox;
 
-    @FindBy(xpath = "//label[text()='Female']")
+    @FindBy(xpath = "(//*[@name='gender'])[1]")
     public WebElement genderFemale;
-
-    @FindBy(xpath = "//label[text()='Male']")
-    public WebElement genderMale;
 
     @FindBy(id = "birthDay")
     public WebElement birthdayBox;
@@ -49,4 +44,37 @@ public class DeanManagementPage {
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")
     public WebElement nameRequired;
 
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")
+    public WebElement surnameRequired;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[3]")
+    public WebElement birthPlaceRequired;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")
+    public WebElement birthDateRequired;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")
+    public WebElement phoneRequired;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
+    public WebElement ssnRequired;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[7]")
+    public WebElement userNameRequired;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")
+    public WebElement passwordRequired;
+
+    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
+    public WebElement popUpMessage;
+
+    @FindBy(xpath = "//*[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
+    // @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement ssnAlert;
+
+    @FindBy(xpath = "//*[text()='Minimum 8 character']")
+    public WebElement passwordAlert;
 }

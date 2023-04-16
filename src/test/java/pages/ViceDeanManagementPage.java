@@ -2,13 +2,12 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class ViceDeanPage {
+public class ViceDeanManagementPage {
 
-    public ViceDeanPage() {
+    public ViceDeanManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -63,7 +62,6 @@ public class ViceDeanPage {
     @FindBy(xpath = "//div[text()='Teacher saved successfully']")
     public WebElement SuccessfullSaving;
 
-
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement RequiredTextforName;
 
@@ -85,6 +83,7 @@ public class ViceDeanPage {
 
     @FindBy(id = "isAdvisorTeacher")
     public WebElement isAdvisorTeacherCheckBox;
+
 
     @FindBy (xpath="//button[.='Lesson Program']")
     public WebElement lessonProgramButton;
@@ -118,8 +117,8 @@ public class ViceDeanPage {
     public  WebElement jSONError;
 
 
-    @FindBy (xpath = "//div[@class='col-lg-6']//div[@class='mx-auto p-3 col']//div//button[@type='button'][normalize-space()='Submit']")
-    public WebElement submitButtonForLesson;
+    // Vice dean olusturma
+
 
 
 }

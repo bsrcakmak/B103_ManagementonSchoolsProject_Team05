@@ -1,8 +1,8 @@
-@us15
-Feature: Vice Dean rolu ile ogrenci olusturabilme
+@us15_ac13
+Feature: Student number'in otomatik olarak verilmesi
 
-  @us15_tc1
-  Scenario: Vice Dean rolu ile ogrenci olusturabilme
+  @us15_tc18
+  Scenario: Student number'in otomatik olarak verilmesi
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir
     When Baslikta bulunan Menu butonuna tiklanir
@@ -23,5 +23,5 @@ Feature: Vice Dean rolu ile ogrenci olusturabilme
     When Submit butonuna tiklanir
     When Sayfanin alt kisminda yer alan Student List adli listenin son sayfasina gidilir
     When Girilen User Name ile olusturulan ogrenci listede bulunur
-    Then Girilen degerlerle ogrencinin olusturuldugu dogrulanir
+    Then Ogrenciye student number atandigi dogrulanir
     Then Sayfa kapatilir
