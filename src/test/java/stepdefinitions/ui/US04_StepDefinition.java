@@ -48,6 +48,8 @@ public class US04_StepDefinition {
         deanManagementPage.surnameBox.click();
     }
 
+
+
     //  ------------    TC02   ---------------
     // HATA MESAJI VERMEDI ->BUG
     @When("Name alanina space karakteri girer")
@@ -68,15 +70,17 @@ public class US04_StepDefinition {
     @When("Cinsiyet secer")
     public void cinsiyet_secer() {
         deanManagementPage.genderFemale.click();
+        ReusableMethods.waitFor(1);
     }
     @When("Birthday alanina veri girer")
     public void birthday_alanina_veri_girer() {
         int birthDate = faker.number().numberBetween(1,31)+
                         faker.number().numberBetween(1,12)+
-                        faker.number().numberBetween(1930,2005);
+                        faker.number().numberBetween(1950,2005);
         String birthDateString = Integer.toString(birthDate);
 
         deanManagementPage.birthdayBox.sendKeys(birthDateString);
+        ReusableMethods.waitFor(2);
     }
     @When("Phone alanina veri girer")
     public void phone_alanina_veri_girer() {
@@ -104,15 +108,18 @@ public class US04_StepDefinition {
     }
     @Then("Hata mesaji goruntulendigini dogrular")
     public void hata_mesaji_goruntulendigini_dogrular() {
-        String actual = deanManagementPage.popUpMessage.getText();
-        Assert.assertEquals("Error",actual);
+        Assert.assertTrue(deanManagementPage.errorMessage.isDisplayed());
     }
+
+
 
     //  ------------    TC03   ---------------
     @Then("Surname altinda Required uyarisinin goruntulendigini dogrular")
     public void surnameAltindaRequiredUyarisininGoruntulendiginiDogrular() {
         Assert.assertTrue(deanManagementPage.surnameRequired.isDisplayed());
     }
+
+
 
     //  ------------    TC04   ---------------
     // HATA MESAJI VERMEDI ->BUG
@@ -129,6 +136,7 @@ public class US04_StepDefinition {
 
     }
 
+
     //  ------------    TC05   ---------------
     @And("Birth Place alanina tiklar")
     public void birthPlaceAlaninaTiklar() {
@@ -140,13 +148,109 @@ public class US04_StepDefinition {
         Assert.assertTrue(deanManagementPage.birthPlaceRequired.isDisplayed());
     }
 
+
     //  ------------    TC06   ---------------
     // HATA MESAJI VERMEDI ->BUG
     @And("Birth Place alanina space karakteri girer")
     public void birthPlaceAlaninaSpaceKarakteriGirer() {
+        deanManagementPage.birthPlaceBox.click();
         deanManagementPage.birthPlaceRequired.sendKeys(" ");
     }
 
+
+    //  ------------    TC08   ---------------
+    @Then("Dogum tarihi icin hata mesaji goruntulendigini dogrular")
+    public void dogumTarihiIcinHataMesajiGoruntulendiginiDogrular() {
+        Assert.assertTrue(deanManagementPage.birthDateRequired.isDisplayed());
+    }
+
+
+    //  ------------    TC09   ---------------
+    @Then("Telefon icin hata mesaji goruntulendigini dogrular")
+    public void telefonIcinHataMesajiGoruntulendiginiDogrular() {
+        Assert.assertTrue(deanManagementPage.phoneRequired.isDisplayed());
+    }
+
+
+    //  ------------    TC10  ---------------
+    @Then("Ssn altinda Required mesaji goruntulendigini dogrular")
+    public void ssnAltindaRequiredMesajiGoruntulendiginiDogrular() {
+        Assert.assertTrue(deanManagementPage.ssnRequired.isDisplayed());
+    }
+
+
+
+    //  ------------    TC11   ---------------
+    @And("Ssn alaninda {int}. karakteri hatali girer") //123432-2343
+    public void ssnAlanindaKarakteriHataliGirer1(int num) { //SSN 3. rakamdan sonra - içermeli
+        deanManagementPage.ssnBox.click();
+        deanManagementPage.ssnBox.sendKeys(faker.number().digits(num)+
+                                            faker.number().digits(3)+"-"+
+                                            faker.number().digits(4));
+    }
+    @Then("Ssn icin Hata mesaji goruntulendigini dogrular")
+    public void ssnIcinHataMesajiGoruntulendiginiDogrular() {
+
+    }
+
+
+
+    //  ------------    TC12  ---------------
+    @And("Ssn alaninda {int}. karakteri hatali  girer") //123-432343
+    public void ssnAlanindaKarakteriHataliGirer2(int num) { //SSN 5. rakamdan sonra - içermeli
+        deanManagementPage.ssnBox.click();
+        deanManagementPage.ssnBox.sendKeys(faker.number().digits(3)+"-"+
+                                            faker.number().digits(num+1));
+    }
+    //  ------------    TC13 ---------------
+    @And("Ssn alanina eksik veri girer")
+    public void ssnAlaninaEksikVeriGirer() {
+        deanManagementPage.ssnBox.sendKeys(faker.number().digits(3)+"-"+
+                                            faker.number().digits(2)+"-"+
+                                            faker.number().digits(3));
+    }
+    @Then("Ssn altinda uyari mesaji goruntulendigini dogrular")
+    public void ssnAltindaUyariMesajiGoruntulendiginiDogrular() {
+        String  expected = "Minimum 11 character (XXX-XX-XXXX)";
+        Assert.assertEquals(expected,deanManagementPage.ssnAlert.getText());
+    }
+    //  ------------    TC14 ---------------
+    @Then("Onay mesajinin goruntulendigini dogrular")
+    public void onayMesajininGoruntulendiginiDogrular() {
+
+    }
+
+
+    //  ------------    TC15 ---------------
+    @And("User Name alanina tiklar")
+    public void userNameAlaninaTiklar() {
+        deanManagementPage.usernameBox.click();
+    }
+    @Then("User Name altinda Required uyarisinin goruntulendigini dogrular")
+    public void userNameAltindaRequiredUyarisininGoruntulendiginiDogrular() {
+        Assert.assertTrue(deanManagementPage.userNameRequired.isDisplayed());
+    }
+
+
+    //  ------------    TC16 ---------------
+    @And("User Name alanina space karakteri girer")
+    public void userNameAlaninaSpaceKarakteriGirer() {
+        deanManagementPage.usernameBox.click();
+        deanManagementPage.usernameBox.sendKeys(" ");
+    }
+
+
+    //  ------------    TC17---------------
+    @And("Password alanina {int} karakter girer")
+    public void passwordAlaninaKarakterGirer(int num) {
+        deanManagementPage.passwordBox.click();
+        deanManagementPage.passwordBox.sendKeys(faker.number().digits(num));
+    }
+    @Then("Password icin hata mesaji goruntulendigini dogrular")
+    public void passwordIcinHataMesajiGoruntulendiginiDogrular() {
+        String expected = "Minimum 8 character";
+        Assert.assertEquals(expected,deanManagementPage.passwordAlert.getText());
+    }
 
 
 }

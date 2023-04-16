@@ -1,7 +1,8 @@
 @US10_Steps
 Feature: uS_10 test Case Vice Dean ders programi olusturabilmelidir.
 
-Scenario: Vice Dean ders programi olusturmasi.
+  @Smoke_test
+Scenario: US10_TC01 Vice Dean ders programi olusturmasi.
   Given Site adresine gidilir
   When Vice Dean rolu ile login islemi gerceklestirilir
   When Kullanici Lesson Program tiklar.
@@ -15,7 +16,7 @@ Scenario: Vice Dean ders programi olusturmasi.
   And Sayfa kapatilir
 
 
-  Scenario: Vice Dean ders programı olusturmasi esnasinda ders secimini boş birakilmasi
+  Scenario: US10_TC02 Vice Dean ders programı olusturmasi esnasinda ders secimini boş birakilmasi
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir
     When Kullanici Lesson Program tiklar.
@@ -30,7 +31,7 @@ Scenario: Vice Dean ders programi olusturmasi.
 
 
 
-  Scenario: Vice Dean ders programi olusturmasi esnasinda egitim donemini bos birakmasi
+  Scenario: US10_TC03 Vice Dean ders programi olusturmasi esnasinda egitim donemini bos birakmasi
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir
       When Kullanici Lesson Program tiklar.
@@ -44,7 +45,7 @@ Scenario: Vice Dean ders programi olusturmasi.
     And Sayfa kapatilir
 
 
-  Scenario: Vice Dean ders programi olusturmasi esnasinda ders günü secilmemesi
+  Scenario: US10_TC04 Vice Dean ders programi olusturmasi esnasinda ders günü secilmemesi
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir
     When Kullanici Lesson Program tiklar.
@@ -58,7 +59,7 @@ Scenario: Vice Dean ders programi olusturmasi.
     And Sayfa kapatilir
 
 
-  Scenario: Vice Dean ders program olusturmasi esnasinda ders bitis saatinin baslangıc saatinden kucuk olmasi
+  Scenario: US10_TC05 Vice Dean ders program olusturmasi esnasinda ders bitis saatinin baslangıc saatinden kucuk olmasi
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir
     When Kullanici Lesson Program tiklar.
