@@ -4,26 +4,30 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Given Site adresine gidilir
     When kullanici Contact butonuna tiklar
 
-  @us03_tc07
-  Scenario: Kullanici mail gonderme bolumune Name girebilmeli
-    And kullanici Your Name alanini bos birakir
+  @us03_tc02
+  Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Email alanina valid bir deger girer
+    Then kullanici Your Email alanina bir deger girilebildigini dogrular
+    Then Sayfa kapatilir
+
+  @us03_tc03
+  Scenario: Kullanici mail gonderme bolumune Email girebilmeli
+    And kullanici Your Email alanina valid bir deger girer
+    Then kullanici girilen degerde "@" karakterinin oldugunu dogrular
+    Then kullanici girilen degerde "." karakterinin oldugunu dogrular
+    Then Sayfa kapatilir
+
+  @us03_tc09
+  Scenario: Kullanici mail gonderme bolumune Email girebilmeli
+    And kullanici Your Name alanina valid bir deger girer
+    And kullanici Your Email alanini bos birakir
     And kullanici Subject alanina valid bir deger girer
     And kullanici Message alanina valid bir deger girer
     And kullanici Send Message butonuna tiklar
     Then kullanici Mesajin gonderilemedigini dogrular
     Then Sayfa kapatilir
 
-  @us03_tc08
-  Scenario: Kullanici mail gonderme bolumune Name girebilmeli
-    And kullanici Your Name alanina space karakteri girer
-    And kullanici Your Email alanina valid bir deger girer
-    And kullanici Subject alanina valid bir deger girer
-    And kullanici Message alanina valid bir deger girer
-    And kullanici Send Message butonuna tiklar
-    Then kullanici Mesajin gonderilemedigini dogrular
-    Then Sayfa kapatilir
-
+    # BUG -> email "." icermeli ama mesaj gonderildi
   @us03_tc10
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Name alanina valid bir deger girer
@@ -54,22 +58,13 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Then kullanici Mesajin gonderilemedigini dogrular
     Then Sayfa kapatilir
 
-  @us03_tc14
-  Scenario: Kullanici mail gonderme bolumune Subject girebilmeli
+  @us03_tc13
+  Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Name alanina valid bir deger girer
-    And kullanici Your Email alanina valid bir deger girer
-    And kullanici Subject alanini bos birakir
+    And kullanici Your Email alanina space ile baslayan bir deger girer
+    And kullanici Subject alanina valid bir deger girer
     And kullanici Message alanina valid bir deger girer
     And kullanici Send Message butonuna tiklar
     Then kullanici Mesajin gonderilemedigini dogrular
     Then Sayfa kapatilir
 
-  @us03_tc15
-  Scenario: Kullanici mail gonderme bolumune Message girebilmeli
-    And kullanici Your Name alanina valid bir deger girer
-    And kullanici Your Email alanina valid bir deger girer
-    And kullanici Subject alanina valid bir deger girer
-    And kullanici Message alanini bos birakir
-    And kullanici Send Message butonuna tiklar
-    Then kullanici Mesajin gonderilemedigini dogrular
-    Then Sayfa kapatilir
