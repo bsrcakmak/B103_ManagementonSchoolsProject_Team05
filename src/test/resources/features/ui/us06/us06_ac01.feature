@@ -1,17 +1,18 @@
+@us06
 Feature: Dean_Vice_Dean_hesabi_olusturabilmelidir
 
   Background:
     Given Site adresine gidilir
     When Admin rolu ile login islemi gerceklestirilir
-    Then Menu butonuna tiklar
+    Then Baslikta bulunan Menu butonuna tiklanir
     Then Acilan bolumden Dean Management'a tiklar
   @US06_TC01
   Scenario:Dean_Olusturma
     Then Name alanina veri girer
     Then Surname alanina veri girer
     Then Birth Place alanina veri girer
-    Then Gender bolumunde gecerli bir secim yapilir
-    Then Kullanici Date Of Birth alanina gun-ay-yil formatinda gecerli deger girer
+    Then Dean Gender bolumunde gecerli bir secim yapilir
+    Then Birthday alanina veri girer
     Then Phone alanina veri girer
     Then Ssn alanina veri girer
     And User Name alanina veri girer
@@ -37,10 +38,10 @@ Feature: Dean_Vice_Dean_hesabi_olusturabilmelidir
     Given Kullanici SSN alanini bos birakir
   @US_TC08
   Scenario: Dean_olusturmada_Ssn_kisminda_ucuncu_rakamdan_sonra_-_koymama
-    Given Ssn alanına üçüncü rakamdan sonra - işareti koymadan Ssn numarası girer.
+    Given Ssn alanina ucuncü rakamdan sonra - isareti koymadan Ssn numarasi girer.
   @US_TC09
   Scenario: Dean_olusturmada_Ssn_kisminda_besinci_rakamdan_sonra_-_koymama
-    Given  Ssn alanına besinci rakamdan sonra - isareti koymadan Ssn numarasi girer.
+    Given  Ssn alanina besinci rakamdan sonra - isareti koymadan Ssn numarasi girer.
   @US_TC10
   Scenario: Dean_olusturmada_Ssn_kisminda_ucuncu_ve_besinci_rakamdan_sonra_-_koymama
     Given Ssn alanina ucuncu ve besinci rakamdan sonra - isareti koymadan Ssn numarası girer
@@ -56,19 +57,20 @@ Feature: Dean_Vice_Dean_hesabi_olusturabilmelidir
   @US_TC14
   Scenario: Dean_olusturmada_Password_kismina_yedi_karakter_girme
     Given Kullanici Password alanina yedi karakterli bir deger girer
+
   @US_TC15
   Scenario: Dean_olusturmada_Gender_kismini_bos_birakma
- Given Name alanina veri girer
- Then Surname kutusuna gecerli bir deger girilir
-  Then Birth Place alanina veri girer
-  Then Kullanıcı Gender alanından cinsiyeti boş bırakır.
-  Then Kullanici Date Of Birth alanina gun-ay-yil formatinda gecerli deger girer
-  And Phone alanina veri girer
- And Ssn alanina veri girer
- And User Name alanina veri girer
- And Password alanina veri girer
-  And Submit butonuna tiklar
- And Logout işlemi gerçeklestirir.
+    Given Name alanina veri girer
+    Then Surname kutusuna gecerli bir deger girilir
+    Then Birth Place alanina veri girer
+    Then Kullanici Gender alanından cinsiyeti bos birakir.
+    Then Kullanici Date Of Birth alanina gun-ay-yil formatinda gecerli deger girer
+    And Phone alanina veri girer
+    And Ssn alanina veri girer
+    And User Name alanina veri girer
+    And Password alanina veri girer
+    And Submit butonuna tiklar
+    And Logout islemi gerceklestirir.
 
 
 
