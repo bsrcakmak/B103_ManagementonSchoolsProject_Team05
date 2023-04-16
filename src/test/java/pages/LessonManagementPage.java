@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class LessonManagementPage {
+
     public LessonManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -42,4 +43,5 @@ public class LessonManagementPage {
 
     @FindBy(xpath = "//div[@class='col-lg-6']//div[@class='mx-auto p-3 col']//div//button[@type='button'][normalize-space()='Submit']")
     public WebElement submitButtonForLesson;
+
 }
