@@ -7,8 +7,8 @@ import utilities.Driver;
 
 public class GradesAndAnnouncementsPage {
 
-    public GradesAndAnnouncementsPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public GradesAndAnnouncementsPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "(//table//thead)[1]")
@@ -16,4 +16,5 @@ public class GradesAndAnnouncementsPage {
 
     @FindBy(xpath = "(//table//thead)[2]")
     public WebElement meetListTablo;
+
 }

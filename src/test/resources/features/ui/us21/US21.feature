@@ -32,6 +32,7 @@ Feature: Students_chooselesson_grades_and_announcement
     Then Kullanici Pazartesi gunu saat oniki de olan dersi secer
     Then Kullanici Submit butonuna tiklar
     Then Kullanici Lesson added to Student uyarisini gorur
+    #Then Kullanici Pazartesi gunu saat oniki de olan dersi secer
     And Kullanici Pazartesi gunu saat oniki de olan baska bir ders secer
     And Kullanici Submit butonuna tiklar
     And Kullanici Error: Course schedule cannot be selected for the same hour and day uyarisini gorur

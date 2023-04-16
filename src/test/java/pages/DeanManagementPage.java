@@ -72,9 +72,9 @@ public class DeanManagementPage {
     public WebElement errorMessage;
 
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
-    // @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
     public WebElement ssnAlert;
 
     @FindBy(xpath = "//*[text()='Minimum 8 character']")
     public WebElement passwordAlert;
+
 }
