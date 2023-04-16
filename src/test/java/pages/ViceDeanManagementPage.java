@@ -83,6 +83,7 @@ public class ViceDeanManagementPage {
     @FindBy(id = "isAdvisorTeacher")
     public WebElement isAdvisorTeacherCheckBox;
 
+    // Vice dean olusturma
 
 
 }
