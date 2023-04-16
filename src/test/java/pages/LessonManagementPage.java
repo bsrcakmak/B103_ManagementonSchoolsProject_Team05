@@ -7,6 +7,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class LessonManagementPage {
+
     public LessonManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }

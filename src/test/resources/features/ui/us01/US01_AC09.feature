@@ -1,7 +1,7 @@
 @US01_AC09 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC35
+  @US01_TC35 @smokeTest
   Scenario: US01_AC09_Password_girilmelidir_Password_en_az_8_karakterden_olusmalidir
 
     Given Site adresine gidilir
@@ -18,7 +18,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Password alanini bos birakir
     And Sayfa kapatilir
 
-  @US01_TC36
+  @US01_TC36 @smokeTest
   Scenario: US01_AC09_Password_girilmelidir_Password_en_az_8_karakterden_olusmalidir
 
     Given Site adresine gidilir
@@ -53,7 +53,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Sayfa kapatilir
 
 
-  @US01_TC38
+  @US01_TC38 @smokeTest
   Scenario: US01_AC09_Password_girilmelidir_Password_en_az_8_karakterden_olusmalidir
 
     Given Site adresine gidilir
@@ -71,7 +71,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Sayfa kapatilir
 
 
-  @US01_TC39
+  @US01_TC39 @smokeTest
   Scenario: US01_AC09_Password_girilmelidir_Password_en_az_8_karakterden_olusmalidir
 
     Given Site adresine gidilir
@@ -88,7 +88,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Password alanina sekiz karakterli bir deger girer
     And Sayfa kapatilir
 
-  @US01_TC40
+  @US01_TC40 @smokeTest
   Scenario: US01_AC09_Password_girilmelidir_Password_en_az_8_karakterden_olusmalidir
 
     Given Site adresine gidilir
