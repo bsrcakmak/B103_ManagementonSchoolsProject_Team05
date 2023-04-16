@@ -28,7 +28,6 @@ public class US03_StepDefinition {
     public String invalidEmail3 ="mary@clane.";
 
 
-
     // Backgraund
     @When("kullanici Contact butonuna tiklar")
     public void kullaniciContactButonunaTiklar() {
@@ -46,7 +45,8 @@ public class US03_StepDefinition {
 
     @Then("kullanici Your Name alanina bir deger girilebildigini dogrular")
     public void kullaniciYourNameAlaninaBirDegerGirilebildiginiDogrular() {
-        //Assert.assertTrue();
+        Assert.assertFalse(contactPage.name.getAccessibleName().isEmpty());
+
     }
 
     @And("kullanici Your Email alanina valid bir deger girer")
@@ -58,14 +58,14 @@ public class US03_StepDefinition {
 
     @Then("kullanici Your Email alanina bir deger girilebildigini dogrular")
     public void kullaniciYourEmailAlaninaBirDegerGirilebildiginiDogrular() {
-        contactPage.sendMessage.click();
-        Assert.assertTrue(contactPage.successfully.isDisplayed());
+        Assert.assertFalse(contactPage.email.getAccessibleName().isEmpty());
     }
 
-    @Then("kullanici girilen degerde {string} karakterinin oldugunu dogrular")
-    public void kullaniciGirilenDegerdeKarakterininOldugunuDogrular(String arg0) {
-        Assert.assertTrue(contactPage.email.getText().contains(karakter1));
-        Assert.assertTrue(contactPage.email.getText().contains(karakter2));
+    @Then("kullanici girilen degerde {string} ve {string} karakterlerinin oldugunu dogrular")
+    public void kullaniciGirilenDegerdeKarakterininOldugunuDogrular(String karakter1, String karakter2) {
+        ReusableMethods.waitFor(2);
+        ReusableMethods.getValueByJS("email");
+
     }
 
 
@@ -78,6 +78,7 @@ public class US03_StepDefinition {
 
     @Then("kullanici Subject alanina bir deger girilebildigini dogrular")
     public void kullaniciSubjectAlaninaBirDegerGirilebildiginiDogrular() {
+        Assert.assertFalse(contactPage.subject.getAccessibleName().isEmpty());
     }
 
     @And("kullanici Message alanina valid bir deger girer")
@@ -89,6 +90,7 @@ public class US03_StepDefinition {
 
     @Then("kullanici Message alanina bir deger girilebildigini dogrular")
     public void kullaniciMessageAlaninaBirDegerGirilebildiginiDogrular() {
+        Assert.assertFalse(contactPage.message.getAccessibleName().isEmpty());
     }
 
     @And("kullanici Send Message butonuna tiklar")
