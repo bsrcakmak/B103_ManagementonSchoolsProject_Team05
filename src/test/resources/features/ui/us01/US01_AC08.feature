@@ -1,7 +1,7 @@
 @US01_AC08 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC32
+  @US01_TC32 @smokeTest
   Scenario: US01_AC08_Kullanıcı_User_Name_girmelidir.
 
     Given Site adresine gidilir
@@ -34,7 +34,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Sayfa kapatilir
 
 
-  @US01_TC34
+  @US01_TC34 @smokeTest
   Scenario: US01_AC08_Kullanıcı_User_Name_girmelidir.
 
     Given Site adresine gidilir
