@@ -203,11 +203,11 @@ public class US21_StepDefinitions {
     }
 
 
-    @Then("Kullanici menu butonuna tiklar")
+   /* @Then("Kullanici menu butonuna tiklar")
     public void kullanici_menu_butonuna_tiklar() {
         chooseLessonManagementPage.menuButton.click();
         ReusableMethods.waitFor(2);
-    }
+    }*/
 
     @Then("Kullanici sayfada acilan main menu kisminda Grades ve Announcements alanina tiklar")
     public void kullanici_sayfada_acilan_main_menu_kisminda_grades_ve_announcements_alanina_tiklar() {
