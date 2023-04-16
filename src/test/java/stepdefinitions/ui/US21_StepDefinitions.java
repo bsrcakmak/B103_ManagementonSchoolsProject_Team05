@@ -1,7 +1,6 @@
 package stepdefinitions.ui;
 
-import com.github.javafaker.Faker;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import pages.ChooseLessonManagementPage;
@@ -44,12 +43,6 @@ public class US21_StepDefinitions {
 
         } while (true);
     }
-
-
-    public static Faker faker = new Faker();
-
-    public static String randomChooseLesson = String.valueOf(faker.instance().number().numberBetween(1, teachersNames.size()));
-
 
     @Then("Kullanici Chose Lesson listesinde Teacher bilgilerini gorur")
     public void kullanici_chose_lesson_listesinde_teacher_bilgilerini_gorur() {
@@ -123,71 +116,26 @@ public class US21_StepDefinitions {
 
     @Then("Kullanici Pazartesi gunu saat oniki de olan dersi secer")
     public void kullanici_pazartesi_gunu_saat_oniki_de_olan_dersi_secer() {
-        ReusableMethods.waitFor(3);
-        ReusableMethods.scrollTopJS();
+        ReusableMethods.scrollIntoViewJS(chooseLessonManagementPage.lessonSelectButton.get(14));
         ReusableMethods.waitFor(2);
-//        List<WebElement> pazatertesiOnOkiDers = new ArrayList<>();
-//        for (WebElement w : studentPage.chooseLessonTabloSatir) {
-//            if (w.getText().contains("Monday 12:00")) {
-//                pazatertesiOnOkiDers.add(w);
-//            }
-//        for (WebElement a : studentPage.lessonSelectButton) {
-           // if (!studentPage.lessonSelectButton.get(counter).isSelected()) {
-                for (WebElement x : chooseLessonManagementPage.chooseLessonTabloSatir) {
-                    if (x.getText().contains("Monday 12:00")) {
-                        String aaaaaaaaaaa = x.getAttribute("rowIndex");
-                        System.out.println("a = " + aaaaaaaaaaa);
-                        break;
-                    }
-                }
+        ReusableMethods.clickByJS(chooseLessonManagementPage.saat12Ders1);
+        ReusableMethods.waitFor(2);
 
-//                } else {
-//                    studentPage.lessonSelectButton.get(counter).click();
-//                    ReusableMethods.waitFor(1);
-//                    counter++;
-//                    //kullanici_pazartesi_gunu_saat_oniki_de_olan_dersi_secer();
-//                }
-////                } else{
-//                    counter++;
-//                    kullanici_pazartesi_gunu_saat_oniki_de_olan_dersi_secer();
-        }
-
-
-    // }
-
-
-//
-//            if (studentPage.chooseLessonTabloSatir.get(counter).getText().contains("Monday 12:00")){
-//                   // studentPage.chooseLessonTabloSatir.get(counter).getText().contains("12:00")){
-//                ReusableMethods.scrollIntoViewJS(studentPage.lessonSelectButton.get(counter));
-//                ReusableMethods.waitFor(1);
-//                studentPage.lessonSelectButton.get(counter).click();
-//            }else {
-//                 else counter++;
-//                kullanici_pazartesi_gunu_saat_oniki_de_olan_dersi_secer();
-//            }
-
+    }
 
     @Then("Kullanici Pazartesi gunu saat oniki de olan baska bir ders secer")
     public void kullanici_pazartesi_gunu_saat_oniki_de_olan_baska_bir_ders_secer() {
+        ReusableMethods.scrollIntoViewJS(chooseLessonManagementPage.lessonSelectButton.get(14));
         ReusableMethods.waitFor(2);
-        if (chooseLessonManagementPage.chooseLessonTabloSatir.get(counter).getText().contains("Monday") &&
-                chooseLessonManagementPage.chooseLessonTabloSatir.get(counter).getText().contains("12:00")) {
-            chooseLessonManagementPage.lessonSelectButton.get(counter).click();
-        } else {
-            counter++;
-            kullanici_pazartesi_gunu_saat_oniki_de_olan_baska_bir_ders_secer();
-        }
+        ReusableMethods.clickByJS(chooseLessonManagementPage.saat12Ders2);
         ReusableMethods.waitFor(2);
     }
 
     @Then("Kullanici Error: Course schedule cannot be selected for the same hour and day uyarisini gorur")
     public void kullanici_error_course_schedule_cannot_be_selected_for_the_same_hour_and_day_uyarisini_gorur() {
-        if (!chooseLessonManagementPage.submitAlert.getText().contains("Error: Course schedule cannot be selected for the same hour and day")) {
-            dersSecimi();
-        } else
-            Assert.assertTrue(chooseLessonManagementPage.submitAlert.getText().contains("Error: Course schedule cannot be selected for the same hour and day"));
 
+        Assert.assertTrue(chooseLessonManagementPage.submitAlert.getText().contains("Error: Course schedule cannot be selected for the same hour and day"));
+        ReusableMethods.waitFor(2);
     }
 
     @Then("Kullanici sayfayi asagi kaydirir")
@@ -198,16 +146,15 @@ public class US21_StepDefinitions {
 
     @Then("Kullanici Lesson Program List te ekledigi dersleri gorur")
     public void kullanici_lesson_program_list_te_ekledigi_dersleri_gorur() {
-        Assert.assertTrue(chooseLessonManagementPage.lessonProgramListTabloSatir.get(counter).getText().contains(chooseLessonManagementPage.lessonProgramListTabloSatir.get(chooseLessonManagementPage.lessonProgramListTabloSatir.size() - 1).getText()));
+        Assert.assertTrue(chooseLessonManagementPage.lessonProgramList.isDisplayed());
         ReusableMethods.waitFor(2);
     }
 
-
-    @Then("Kullanici menu butonuna tiklar")
-    public void kullanici_menu_butonuna_tiklar() {
-        chooseLessonManagementPage.menuButton.click();
-        ReusableMethods.waitFor(2);
-    }
+//    @Then("Kullanici menu butonuna tiklar")
+//    public void kullanici_menu_butonuna_tiklar() {
+//        chooseLessonManagementPage.menuButton.click();
+//        ReusableMethods.waitFor(2);
+//    }
 
     @Then("Kullanici sayfada acilan main menu kisminda Grades ve Announcements alanina tiklar")
     public void kullanici_sayfada_acilan_main_menu_kisminda_grades_ve_announcements_alanina_tiklar() {

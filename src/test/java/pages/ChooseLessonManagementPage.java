@@ -7,7 +7,6 @@ import utilities.Driver;
 
 import java.util.List;
 
-
 public class ChooseLessonManagementPage {
 
     public ChooseLessonManagementPage(){
@@ -35,21 +34,15 @@ public class ChooseLessonManagementPage {
     @FindBy(xpath = "//table//tbody//tr//td[5]")
     public List<WebElement> stopTimeSutun;
 
-    @FindBy(xpath = "//table//tbody//tr")
-    public List<WebElement> chooseLessonTabloSatir;
-
-    @FindBy(xpath = "(//*[@class='col'])[1]//tr//td[5]")
-    public List<WebElement> chooseLessonTabloDaySutun;
-    @FindBy(xpath = "(//*[@class='col'])[1]//tr//td[6]")
-    public List<WebElement> chooseLessonTabloStartTimeSutun;
+    @FindBy(xpath = "(//*[@id='lessonProgramId'])[17]")
+    public WebElement saat12Ders1;
+    @FindBy(xpath = "(//*[@id='lessonProgramId'])[18]")
+    public WebElement saat12Ders2;
+    @FindBy(xpath = "(//div//table/thead//tr)[2]")
+    public WebElement lessonProgramList;
 
     @FindBy(xpath = "(//*[@class='col'])[2]//tr")
     public List<WebElement> lessonProgramListTabloSatir;
-    @FindBy(xpath = "(//*[@class='col'])[2]//tr//td[2]")
-    public List<WebElement> lessonProgramListDaySutun;
-    @FindBy(xpath = "(//*[@class='col'])[2]//tr//td[3]")
-    public List<WebElement> lessonProgramListStartTimeSutun;
-
 
     @FindBy(xpath = "//input[@id='lessonProgramId']")
     public List<WebElement> lessonSelectButton;
