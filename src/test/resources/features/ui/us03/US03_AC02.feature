@@ -13,8 +13,7 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
   @us03_tc03
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Email alanina valid bir deger girer
-    Then kullanici girilen degerde "@" karakterinin oldugunu dogrular
-    Then kullanici girilen degerde "." karakterinin oldugunu dogrular
+    Then kullanici girilen degerde "@" ve "." karakterlerinin oldugunu dogrular
     Then Sayfa kapatilir
 
   @us03_tc09
