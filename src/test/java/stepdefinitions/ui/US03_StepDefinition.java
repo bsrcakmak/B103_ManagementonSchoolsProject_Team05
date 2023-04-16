@@ -1,10 +1,12 @@
 package stepdefinitions.ui;
 
 import com.github.javafaker.Faker;
+import com.sun.source.tree.AssertTree;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.internal.common.assertion.Assertion;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.ContactPage;
@@ -26,7 +28,7 @@ public class US03_StepDefinition {
     public String invalidEmail1 ="mary@clanen";
     public String invalidEmail2 ="mary.clane";
     public String invalidEmail3 ="mary@clane.";
-
+    static String str;
 
 
     // Backgraund
@@ -46,7 +48,7 @@ public class US03_StepDefinition {
 
     @Then("kullanici Your Name alanina bir deger girilebildigini dogrular")
     public void kullaniciYourNameAlaninaBirDegerGirilebildiginiDogrular() {
-        //Assert.assertTrue();
+        Assert.assertFalse(ReusableMethods.getValueByJS("name").isEmpty());
     }
 
     @And("kullanici Your Email alanina valid bir deger girer")
@@ -58,16 +60,15 @@ public class US03_StepDefinition {
 
     @Then("kullanici Your Email alanina bir deger girilebildigini dogrular")
     public void kullaniciYourEmailAlaninaBirDegerGirilebildiginiDogrular() {
-        contactPage.sendMessage.click();
-        Assert.assertTrue(contactPage.successfully.isDisplayed());
+        Assert.assertFalse(ReusableMethods.getValueByJS("email").isEmpty());
     }
 
-    @Then("kullanici girilen degerde {string} karakterinin oldugunu dogrular")
-    public void kullaniciGirilenDegerdeKarakterininOldugunuDogrular(String arg0) {
-        Assert.assertTrue(contactPage.email.getText().contains(karakter1));
-        Assert.assertTrue(contactPage.email.getText().contains(karakter2));
+    @Then("kullanici girilen degerde {string} ve {string} karakterlerinin oldugunu dogrular")
+    public void kullaniciGirilenDegerdeKarakterininOldugunuDogrular(String karakter1, String karakter2) {
+        ReusableMethods.waitFor(2);
+        String value = ReusableMethods.getValueByJS("email");
+        Assert.assertTrue(value.contains(karakter1) && value.contains(karakter2));
     }
-
 
     @And("kullanici Subject alanina valid bir deger girer")
     public void kullaniciSubjectAlaninaValidBirDegerGirer() {
@@ -78,6 +79,7 @@ public class US03_StepDefinition {
 
     @Then("kullanici Subject alanina bir deger girilebildigini dogrular")
     public void kullaniciSubjectAlaninaBirDegerGirilebildiginiDogrular() {
+        Assert.assertFalse(ReusableMethods.getValueByJS("subject").isEmpty());
     }
 
     @And("kullanici Message alanina valid bir deger girer")
@@ -89,6 +91,7 @@ public class US03_StepDefinition {
 
     @Then("kullanici Message alanina bir deger girilebildigini dogrular")
     public void kullaniciMessageAlaninaBirDegerGirilebildiginiDogrular() {
+        Assert.assertFalse(ReusableMethods.getValueByJS("message").isEmpty());    
     }
 
     @And("kullanici Send Message butonuna tiklar")
