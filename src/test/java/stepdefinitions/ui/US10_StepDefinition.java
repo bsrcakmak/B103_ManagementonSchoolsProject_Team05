@@ -57,9 +57,7 @@ public class US10_StepDefinition {
     }
     @Then("Kullanici Submit butonuna tiklar.")
     public void kullanici_submit_butonuna_tiklar() {
-//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20) );
-//        wait.until(ExpectedConditions.visibilityOf(lessonManagementPage.submitButtonForLesson));
-//        wait.until(ExpectedConditions.elementToBeClickable(lessonManagementPage.submitButtonForLesson));
+
         ReusableMethods.waitFor(1);
         lessonManagementPage.submitButtonForLesson.click();
     }
