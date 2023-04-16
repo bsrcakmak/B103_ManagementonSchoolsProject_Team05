@@ -39,7 +39,7 @@ public class US15_StepDefinition {
 
     @And("Surname kutusuna gecerli bir deger girilir")
     public void surname_kutusuna_gecerli_bir_deger_girilir() {
-        studentManagementPage.nameBox.sendKeys(ReusableMethods.createSurname());
+        studentManagementPage.surnameBox.sendKeys(ReusableMethods.createSurname());
     }
 
     @And("Birth Place kutusuna gecerli bir deger girilir")
@@ -62,9 +62,10 @@ public class US15_StepDefinition {
         studentManagementPage.maleButton.click();
     }
 
-//    @And("Date Of Birth kutusuna gecerli bir deger girilir")
-//    public void date_of_birth_kutusuna_gecerli_bir_deger_girilir() {
-//    }
+    @And("Date Of Birth kutusuna gecerli bir deger girilir")
+    public void date_of_birth_kutusuna_gecerli_bir_deger_girilir() {
+        studentManagementPage.dateOfBirthBox.sendKeys(ReusableMethods.createDateOfBirth());
+    }
 
     @And("Ssn kutusuna gecerli bir deger girilir")
     public void ssn_kutusuna_gecerli_bir_deger_girilir() {
@@ -118,13 +119,12 @@ public class US15_StepDefinition {
         Assert.assertEquals(expectedUsername, actualUsername);
     }
 
-    @And("Choose Teacher listesinden herhangi bir secim yapilmaz")
-    public void choose_Teacher_Listesinden_Herhangi_Bir_Secim_Yapilmaz() {
+    @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
+    public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(studentManagementPage.chooseTeacherAlert.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
-
-//    @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
-//    public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
-//    }
 
     @Then("Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
     public void name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
@@ -151,24 +151,47 @@ public class US15_StepDefinition {
         Assert.assertTrue(studentManagementPage.phoneRequiredWarning.isDisplayed());
     }
 
+    @Then("Cinsiyet secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
+    public void gender_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(studentManagementPage.genderAlert.isDisplayed());
+        ReusableMethods.waitFor(1);
+    }
+
     @Then("Date Of Birth kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void dateOfBirthKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void date_Of_Birth_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.dateOfBirthRequiredWarning.isDisplayed());
     }
 
     @Then("User Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void userNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void user_Name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.usernameRequiredWarning.isDisplayed());
     }
 
     @Then("Father Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void fatherNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void father_Name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.fatherNameRequiredWarning.isDisplayed());
     }
 
     @Then("Mother Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-    public void motherNameKutusununAltindaUyariMesajininGoruntulendigiDogrulanir() {
+    public void mother_Name_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.motherNameRequiredWarning.isDisplayed());
     }
+
+//    @Then("Ogrenciye student number atandigi dogrulanir")
+//    public void ogrenciye_Student_Number_Atandigi_Dogrulanir() {
+//    }
+
+//    @Then("Password kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+//    public void password_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
+
+//    @And("Password kutusuna yedi karakter girilir")
+//    public void password_Kutusuna_Yedi_Karakter_Girilir() {
+//    }
+
+//    @Then("Password'un yedi karakterden az olamayacagina dair uyari mesajinin goruntulendigi dogrulanir")
+//    public void passwordun_Yedi_Karakterden_Az_Olamayacagina_Dair_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+//    }
 
 }

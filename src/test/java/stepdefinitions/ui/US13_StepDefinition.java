@@ -9,7 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.ViceDeanPage;
+import pages.ViceDeanManagementPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -17,17 +17,17 @@ public class US13_StepDefinition {
 
     LoginPage loginPage=new LoginPage();
     HomePage homePage=new HomePage();
-    ViceDeanPage viceDeanPage=new ViceDeanPage();
+    ViceDeanManagementPage viceDeanManagementPage =new ViceDeanManagementPage();
 
     Faker faker;
     @When("Menu butonuna tiklar")
     public void menu_butonuna_tiklar() {
-        viceDeanPage.menuButton.click();
+        viceDeanManagementPage.menuButton.click();
 
     }
     @When("Teacher Management'a tiklar")
     public void teacher_management_a_tiklar() {
-        viceDeanPage.teacherManagement.click();
+        viceDeanManagementPage.teacherManagement.click();
 
     }
 
@@ -45,7 +45,7 @@ public class US13_StepDefinition {
 
         Driver.waitForPageToLoad(5);
 
-        viceDeanPage.chooseLessons.click();
+        viceDeanManagementPage.chooseLessons.click();
 
         Actions action=new Actions(Driver.getDriver());
         action.sendKeys(ders).build().perform();
@@ -60,7 +60,7 @@ public class US13_StepDefinition {
     public void name_olarak_girilir(String name) {
         faker = new Faker();
         String firstName = faker.name().firstName();
-        viceDeanPage.nameBox.sendKeys(firstName+Keys.ENTER);
+        viceDeanManagementPage.nameBox.sendKeys(firstName+Keys.ENTER);
 
     }
 
@@ -69,7 +69,7 @@ public class US13_StepDefinition {
     public void surname_olarak_girilir(String arg0) {
         faker = new Faker();
         String surname = faker.name().lastName();
-        viceDeanPage.surnameBox.sendKeys(surname+Keys.ENTER);
+        viceDeanManagementPage.surnameBox.sendKeys(surname+Keys.ENTER);
     }
 
 
@@ -78,7 +78,7 @@ public class US13_StepDefinition {
     public void birt_place_olarak_girilir(String arg0) {
         faker = new Faker();
         String birthPlace = faker.address().city();
-        viceDeanPage.birthPlaceBox.sendKeys(birthPlace+Keys.ENTER);
+        viceDeanManagementPage.birthPlaceBox.sendKeys(birthPlace+Keys.ENTER);
 
     }
 
@@ -87,7 +87,7 @@ public class US13_StepDefinition {
     public void email_olarak_girilir(String arg0) {
         faker = new Faker();
         String email =faker.internet().emailAddress();
-        viceDeanPage.emailbox.sendKeys(email);
+        viceDeanManagementPage.emailbox.sendKeys(email);
 
     }
 
@@ -104,14 +104,14 @@ public class US13_StepDefinition {
 
 
 
-        viceDeanPage.phoneNumberBox.sendKeys(phoneNumber);
+        viceDeanManagementPage.phoneNumberBox.sendKeys(phoneNumber);
 
     }
 
     @When("Gender female secilir")
     public void gender_female_secilir() {
 
-        viceDeanPage.genderFemale.click();
+        viceDeanManagementPage.genderFemale.click();
 
     }
 
@@ -126,7 +126,7 @@ public class US13_StepDefinition {
         String str = " "+number+"."+number02+"."+number03;
         String dateofbirth = str.trim();
 
-        viceDeanPage.birthdayBox.sendKeys(dateofbirth+Keys.ENTER);
+        viceDeanManagementPage.birthdayBox.sendKeys(dateofbirth+Keys.ENTER);
 
 
     }
@@ -141,7 +141,7 @@ public class US13_StepDefinition {
         String ssn03 = ssn.substring(5);
 
         String ssnA = ssn01+"-"+ssn02+"-"+ssn03;
-        viceDeanPage.ssnBox.sendKeys(ssnA);
+        viceDeanManagementPage.ssnBox.sendKeys(ssnA);
 
     }
 
@@ -150,7 +150,7 @@ public class US13_StepDefinition {
 
         faker = new Faker();
         String username = faker.name().username();
-        viceDeanPage.usernameBox.sendKeys(username+Keys.ENTER);
+        viceDeanManagementPage.usernameBox.sendKeys(username+Keys.ENTER);
 
     }
 
@@ -160,29 +160,29 @@ public class US13_StepDefinition {
 
         faker = new Faker();
         String password = faker.internet().password();
-        viceDeanPage.passwordBox.sendKeys(password);
+        viceDeanManagementPage.passwordBox.sendKeys(password);
 
     }
 
     @When("Submit tiklanir")
     public void submit_tiklanir() {
 
-        ReusableMethods.waitForClickablility(viceDeanPage.submitButton,5);
-        viceDeanPage.submitButton.click();
+        ReusableMethods.waitForClickablility(viceDeanManagementPage.submitButton,5);
+        viceDeanManagementPage.submitButton.click();
 
     }
     @Then("Islemin gerceklestigine dair popUp mesajini goruntuler")
     public void ıslemin_gerceklestigine_dair_pop_up_mesajini_goruntuler() {
 
-        ReusableMethods.waitForVisibility(viceDeanPage.SuccessfullSaving,15);
-        Assert.assertTrue(viceDeanPage.SuccessfullSaving.isDisplayed());
+        ReusableMethods.waitForVisibility(viceDeanManagementPage.SuccessfullSaving,15);
+        Assert.assertTrue(viceDeanManagementPage.SuccessfullSaving.isDisplayed());
     }
 
     @Then("Ders secim alani bos birakildigi icin hata mesaji alir")
     public void dersSecimAlaniBosBirakildigiIcinHataMesajiAlir() {
 
-        ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);
-        Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());
+        ReusableMethods.waitForVisibility(viceDeanManagementPage.alertChooseLesson,15);
+        Assert.assertTrue(viceDeanManagementPage.alertChooseLesson.isDisplayed());
 
     }
 
@@ -196,7 +196,7 @@ public class US13_StepDefinition {
     public void chooseLessonsKismindanSeciliDersiSiler() {
 
 
-        viceDeanPage.chooseLessons.click();
+        viceDeanManagementPage.chooseLessons.click();
 
         Actions action=new Actions(Driver.getDriver());
 
@@ -208,7 +208,7 @@ public class US13_StepDefinition {
     @And("Ogretmenin girecegi ders  tekrar {string} olarak secilir")
     public void ogretmeninGirecegiDersTekrarOlarakSecilir(String ders) {
 
-//        viceDeanPage.getChooseLessons02.click();
+//        viceDeanManagementPage.getChooseLessons02.click();
 //        burayi aktif edince java yazisini chooselessons kismina gondermiyor.!!!
 
         Actions action=new Actions(Driver.getDriver());
@@ -223,7 +223,7 @@ public class US13_StepDefinition {
     @And("Name bos olarak birakilir")
     public void nameBosOlarakBirakilir() {
 
-        viceDeanPage.nameBox.click();
+        viceDeanManagementPage.nameBox.click();
 
     }
 
@@ -231,7 +231,7 @@ public class US13_StepDefinition {
     public void _bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
 
         String expecteddata = arg0;
-        String actualdata = viceDeanPage.RequiredTextforName.getText();
+        String actualdata = viceDeanManagementPage.RequiredTextforName.getText();
         Assert.assertEquals(expecteddata,actualdata);
 
     }
@@ -240,9 +240,9 @@ public class US13_StepDefinition {
     public void sayfayiAsagiKaydirir() {
 
         Actions action=new Actions(Driver.getDriver());
-//        action.scrollToElement(viceDeanPage.submitButton);
+//        action.scrollToElement(viceDeanManagementPage.submitButton);
 
-//        ReusableMethods.scrollIntoViewJS(viceDeanPage.submitButton);
+//        ReusableMethods.scrollIntoViewJS(viceDeanManagementPage.submitButton);
         action.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
 
     }
@@ -251,29 +251,29 @@ public class US13_StepDefinition {
     public void hataMesajiniGoruntuler() {
 
         // space karakter testi icin ortak kullanildi
-        ReusableMethods.waitForVisibility(viceDeanPage.alertChooseLesson,15);   //hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
-        Assert.assertTrue(viceDeanPage.alertChooseLesson.isDisplayed());               //normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
+        ReusableMethods.waitForVisibility(viceDeanManagementPage.alertChooseLesson,15);   //hata mesaji olmadigi icin oun yerine chooselessons da verilen hata mesajini kullandim
+        Assert.assertTrue(viceDeanManagementPage.alertChooseLesson.isDisplayed());               //normal sartlar altinda fail olmasi gerekirken pass oluyor. bug acilabilir
         // assertFalse ile test yapildiginda gecmesi gerekirken assert.True da geciyor //popup mesajlari farkli olmasina ragmen kabul etti ve passed oldu
 
     }
 
     @And("Name alanina {string} karakteri girilir.")
     public void nameAlaninaKarakteriGirilir(String arg0) {
-        viceDeanPage.nameBox.click();
-        viceDeanPage.nameBox.sendKeys(arg0+Keys.ENTER);
+        viceDeanManagementPage.nameBox.click();
+        viceDeanManagementPage.nameBox.sendKeys(arg0+Keys.ENTER);
     }
 
     @And("Surname bos olarak birakilir")
     public void surnameBosOlarakBirakilir() {
 
-        viceDeanPage.surnameBox.click();
+        viceDeanManagementPage.surnameBox.click();
     }
 
     @Then("Surname_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
     public void surname_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
 
         String expecteddata = arg0;
-        String actualdata = viceDeanPage.RequiredTextforSurname.getText();
+        String actualdata = viceDeanManagementPage.RequiredTextforSurname.getText();
         Assert.assertEquals(expecteddata,actualdata);
 
     }
@@ -281,15 +281,15 @@ public class US13_StepDefinition {
     @And("Surname alanina {string} karakteri girilir.")
     public void surnameAlaninaKarakteriGirilir(String arg0) {
 
-        viceDeanPage.surnameBox.click();
-        viceDeanPage.surnameBox.sendKeys(arg0+Keys.ENTER);
+        viceDeanManagementPage.surnameBox.click();
+        viceDeanManagementPage.surnameBox.sendKeys(arg0+Keys.ENTER);
 
     }
 
     @And("Birth_Place bos olarak birakilir")
     public void birth_placeBosOlarakBirakilir() {
 
-        viceDeanPage.birthPlaceBox.click();
+        viceDeanManagementPage.birthPlaceBox.click();
 
     }
 
@@ -297,28 +297,28 @@ public class US13_StepDefinition {
     public void birth_place_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
 
         String expecteddata = arg0;
-        String actualdata = viceDeanPage.RequiredTextforBirthPlace.getText();
+        String actualdata = viceDeanManagementPage.RequiredTextforBirthPlace.getText();
         Assert.assertEquals(expecteddata,actualdata);
 
     }
 
     @And("BirthPlace alanina {string} karakteri girilir")
     public void birthPlaceAlaninaKarakteriGirilir(String arg0) {
-        viceDeanPage.birthPlaceBox.click();
-        viceDeanPage.birthPlaceBox.sendKeys(arg0+Keys.ENTER);
+        viceDeanManagementPage.birthPlaceBox.click();
+        viceDeanManagementPage.birthPlaceBox.sendKeys(arg0+Keys.ENTER);
     }
 
     @And("Email bos olarak birakilir")
     public void emailBosOlarakBirakilir() {
 
-        viceDeanPage.emailbox.click();
+        viceDeanManagementPage.emailbox.click();
     }
 
     @Then("Email_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
     public void email_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
 
         String expecteddata = arg0;
-        String actualdata = viceDeanPage.RequiredTextforEmail.getText();
+        String actualdata = viceDeanManagementPage.RequiredTextforEmail.getText();
         Assert.assertEquals(expecteddata,actualdata);
 
 
@@ -336,8 +336,8 @@ public class US13_StepDefinition {
         String name = faker.name().firstName();
 
 
-        viceDeanPage.emailbox.click();
-        viceDeanPage.emailbox.sendKeys(name);
+        viceDeanManagementPage.emailbox.click();
+        viceDeanManagementPage.emailbox.sendKeys(name);
 
     }
 
@@ -354,9 +354,9 @@ public class US13_StepDefinition {
         String str = faker.name().firstName();
         String name = str+"@";
 
-        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
-        viceDeanPage.emailbox.click();
-        viceDeanPage.emailbox.sendKeys(name);
+        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        viceDeanManagementPage.emailbox.click();
+        viceDeanManagementPage.emailbox.sendKeys(name);
 
     }
 
@@ -372,9 +372,9 @@ public class US13_StepDefinition {
         String str = faker.name().firstName();
         String name = str+"@"+"gmail";
 
-        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
-        viceDeanPage.emailbox.click();
-        viceDeanPage.emailbox.sendKeys(name);
+        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        viceDeanManagementPage.emailbox.click();
+        viceDeanManagementPage.emailbox.sendKeys(name);
 
     }
 
@@ -391,9 +391,9 @@ public class US13_StepDefinition {
         String str = faker.name().firstName();
         String name = str+"."+"com";
 
-        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
-        viceDeanPage.emailbox.click();
-        viceDeanPage.emailbox.sendKeys(name);
+        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        viceDeanManagementPage.emailbox.click();
+        viceDeanManagementPage.emailbox.sendKeys(name);
 
     }
 
@@ -410,9 +410,9 @@ public class US13_StepDefinition {
         String str02 = faker.name().lastName();
         String name = str+"@"+str02;
 
-        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
-        viceDeanPage.emailbox.click();
-        viceDeanPage.emailbox.sendKeys(name);
+        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        viceDeanManagementPage.emailbox.click();
+        viceDeanManagementPage.emailbox.sendKeys(name);
         
     }
 
@@ -429,9 +429,9 @@ public class US13_StepDefinition {
         String str02 = faker.name().lastName();
         String name = str+"@"+"com";
 
-        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
-        viceDeanPage.emailbox.click();
-        viceDeanPage.emailbox.sendKeys(name);
+        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        viceDeanManagementPage.emailbox.click();
+        viceDeanManagementPage.emailbox.sendKeys(name);
 
     }
 
@@ -448,16 +448,16 @@ public class US13_StepDefinition {
 //        String str02 = faker.name().lastName();
 //        String name = str+"@"+"com";
 
-        ReusableMethods.waitForClickablility(viceDeanPage.emailbox,5);
-        viceDeanPage.emailbox.click();
-        viceDeanPage.emailbox.sendKeys(str);
+        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        viceDeanManagementPage.emailbox.click();
+        viceDeanManagementPage.emailbox.sendKeys(str);
 
     }
 
     @And("Phone_Number bos olarak birakilir")
     public void phone_numberBosOlarakBirakilir() {
 
-        viceDeanPage.phoneNumberBox.click();
+        viceDeanManagementPage.phoneNumberBox.click();
 
     }
 
@@ -465,7 +465,7 @@ public class US13_StepDefinition {
     public void phone_number_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
 
         String expecteddata = arg0;
-        String actualdata = viceDeanPage.RequiredTextforPhoneNumber.getText();
+        String actualdata = viceDeanManagementPage.RequiredTextforPhoneNumber.getText();
         Assert.assertEquals(expecteddata,actualdata);
 
     }
@@ -474,8 +474,8 @@ public class US13_StepDefinition {
     @And("Phone number alanina formata uygun {string} girer")
     public void phoneNumberAlaninaFormataUygunGirer(String arg0) {
 
-        viceDeanPage.phoneNumberBox.click();
-        viceDeanPage.phoneNumberBox.sendKeys(arg0);
+        viceDeanManagementPage.phoneNumberBox.click();
+        viceDeanManagementPage.phoneNumberBox.sendKeys(arg0);
 
     }
 
@@ -483,14 +483,14 @@ public class US13_StepDefinition {
     public void phoneNumberBolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
 
         String expectedData = arg0;
-        String actualData = viceDeanPage.MinimumCharacterTextforPhoneNumber.getText();
+        String actualData = viceDeanManagementPage.MinimumCharacterTextforPhoneNumber.getText();
         Assert.assertTrue(actualData.contains(expectedData));
     }
 
     @And("{string} secenegini isaretler")
     public void isAdvisorTeacherSeceneginiIsaretler(String arg0) {
 
-    viceDeanPage.isAdvisorTeacherCheckBox.click();
+    viceDeanManagementPage.isAdvisorTeacherCheckBox.click();
 
     }
 }

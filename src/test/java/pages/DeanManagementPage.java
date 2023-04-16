@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.List;
-
 public class DeanManagementPage {
 
     public DeanManagementPage() {
@@ -66,10 +64,15 @@ public class DeanManagementPage {
 
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")
     public WebElement passwordRequired;
+
     @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public WebElement popUpMessage;
 
-    @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    @FindBy(xpath = "//*[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
+    // @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
     public WebElement ssnAlert;
 
     @FindBy(xpath = "//*[text()='Minimum 8 character']")
