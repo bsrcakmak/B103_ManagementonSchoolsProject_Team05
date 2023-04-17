@@ -1,5 +1,6 @@
 package stepdefinitions.ui;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -185,20 +186,26 @@ public class US15_StepDefinition {
         Assert.assertTrue(studentManagementPage.motherNameRequiredWarning.isDisplayed());
     }
 
-//    @Then("Ogrenciye student number atandigi dogrulanir")
-//    public void ogrenciye_Student_Number_Atandigi_Dogrulanir() {
-//    }
+    @Then("Ogrenciye student number atandigi dogrulanir")
+    public void ogrenciye_Student_Number_Atandigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.studentsNumberLastCreated.isDisplayed());
+    }
 
-//    @Then("Password kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-//    public void password_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
-//    }
+    @Then("Password kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+    public void password_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.passwordRequiredWarning.isDisplayed());
+    }
 
-//    @And("Password kutusuna yedi karakter girilir")
-//    public void password_Kutusuna_Yedi_Karakter_Girilir() {
-//    }
+    @And("Password kutusuna yedi karakter girilir")
+    public void password_Kutusuna_Yedi_Karakter_Girilir() {
+        Faker faker = new Faker();
+        String password = faker.internet().password(7,8);
+        studentManagementPage.passwordBox.sendKeys(password);
+    }
 
-//    @Then("Password'un yedi karakterden az olamayacagina dair uyari mesajinin goruntulendigi dogrulanir")
-//    public void passwordun_Yedi_Karakterden_Az_Olamayacagina_Dair_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
-//    }
+    @Then("Password'un yedi karakterden az olamayacagina dair uyari mesajinin goruntulendigi dogrulanir")
+    public void passwordun_Yedi_Karakterden_Az_Olamayacagina_Dair_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.passwordRequiredWarning.isDisplayed());
+    }
 
 }
