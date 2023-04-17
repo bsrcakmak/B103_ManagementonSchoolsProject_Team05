@@ -1,4 +1,4 @@
-
+  @US23_TC
   Feature: Admin Vice Dean oluşturabilmeli.
 
     Background:
