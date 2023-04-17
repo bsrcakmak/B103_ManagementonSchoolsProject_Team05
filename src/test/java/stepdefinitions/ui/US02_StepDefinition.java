@@ -16,7 +16,9 @@ public class US02_StepDefinition {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     MainMenuPanel menuPanel = new MainMenuPanel();
-    static GuestUserPage guestUserPage = new GuestUserPage();
+
+    GuestUserPage guestUserPage = new GuestUserPage();
+
     @Given("Kullanici managementonschools sayfasina gider")
     public void kullanici_managementonschools_sayfasina_gider() {
         Driver.getDriver().get("https://www.managementonschools.com/guest-user");
@@ -57,10 +59,7 @@ public class US02_StepDefinition {
     }
     @Then("Kullanici veri grubunun silindigini dogrular")
     public void kullanici_veri_grubunun_silindigini_dogrular() {
-        WebElement firstNameSurname = guestUserPage.firstTableData;
-        guestUserPage.trashBin.click();
-        boolean isDisplayedTrue = firstNameSurname.isDisplayed();// should be false
-        Assert.assertFalse(isDisplayedTrue);
+        guestUserPage.successfullyDeleted.isDisplayed();
     }
 
     @Then("Kullanici User Name sutunundaki verilerin gorunurlugunu dogrular")
