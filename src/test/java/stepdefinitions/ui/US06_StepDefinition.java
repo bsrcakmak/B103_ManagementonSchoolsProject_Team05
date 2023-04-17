@@ -114,7 +114,6 @@ public class US06_StepDefinition {
         Assert.assertTrue(deanManagementPage.passwordAlert.isDisplayed());
     }
 
-
     @And("Logout islemi gerceklestirilir")
     public void logoutIslemiGerceklestirilir() {
      homePage.menuButton.click();
