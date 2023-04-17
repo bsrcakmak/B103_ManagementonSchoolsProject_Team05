@@ -110,5 +110,4 @@ public class DeanManagementPage {
     @FindBy(xpath = "(//*[@class='btn-close'])[3]")
     public WebElement closeButton;
 
-
 }

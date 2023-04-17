@@ -84,35 +84,22 @@ public class ViceDeanManagementPage {
     @FindBy(id = "isAdvisorTeacher")
     public WebElement isAdvisorTeacherCheckBox;
 
+    @FindBy(xpath = "//a[text()='Vice Dean Management']")
+    public WebElement viceDeanManagementButton;
 
-    @FindBy(xpath = "//button[.='Lesson Program']")
-    public WebElement lessonProgramButton;
+    @FindBy(xpath = "//input[@value='MALE']")
+    public WebElement genderMale;
 
-    @FindBy(xpath = "//div[.='Select lesson']")
-    public WebElement selectLesson;
+    @FindBy(xpath = "//div[text()='Vice dean Saved']")
+    public WebElement viceDeanSaved;
 
-    @FindBy(xpath = "//*[@class='mb-3 form-select']")
-    public WebElement selectDay;
+    @FindBy(xpath = "//div[text()='Required']")
+    public WebElement textofRequired;
 
-    @FindBy(xpath = "//*[@class='mt-5 form-select']")
-    public WebElement selectEducationTerm;
+    @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement textofMinChar;
 
-    @FindBy(id = "startTime")
-    public WebElement startTime;
-
-    @FindBy(id = "stopTime")
-    public WebElement stopTime;
-
-    @FindBy(xpath = "//div[contains(text(),'Created Lesson Program')]")
-    public WebElement createdLessonProgram;
-
-    @FindBy(xpath = "//*[.='Please select education term']")
-    public WebElement peSeEduTerm;
-
-    @FindBy(xpath = "//div[contains(text(),'Error: start time')]")
-    public WebElement timeError;
-
-    @FindBy(xpath = "//div[contains(text(),'JSON parse error:')]")
-    public WebElement jSONError;
+    @FindBy(xpath = "//div[text()='Minimum 8 character']")
+    public WebElement textofMinpassword;
 
 }
