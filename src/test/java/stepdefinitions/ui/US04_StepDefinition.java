@@ -268,4 +268,5 @@ public class US04_StepDefinition {
         Assert.assertTrue(deanManagementPage.passwordRequired.isDisplayed());
         ReusableMethods.waitFor(2);
     }
+
 }
