@@ -4,7 +4,7 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
   Background:
     Given Kullanici managementonschools sayfasina gider
     When Kullanici login butonuna tiklar
-    And Kullanici username ve password'e gecerli degerleri girerek sisteme giris yapar
+    And Admin rolu ile login islemi gerceklestirilir
     And Kullanici menu butonuna tiklar
     And Kullanici Guest User butonuna tiklar
 
