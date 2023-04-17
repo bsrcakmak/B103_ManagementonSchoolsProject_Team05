@@ -29,7 +29,9 @@ public class US15_StepDefinition {
 
     @And("Choose Teacher listesinden gecerli bir secim yapilir")
     public void choose_teacher_listesinden_gecerli_bir_secim_yapilir() {
-        ReusableMethods.selectFromDropdownByIndex(studentManagementPage.chooseTeacherDropdown, 0);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.selectFromDropdownByVisibleText(studentManagementPage.chooseTeacherDropdown, "Senemm Ozcetin");
+        ReusableMethods.waitFor(1);
     }
 
     @And("Name kutusuna gecerli bir deger girilir")
@@ -69,7 +71,9 @@ public class US15_StepDefinition {
 
     @And("Ssn kutusuna gecerli bir deger girilir")
     public void ssn_kutusuna_gecerli_bir_deger_girilir() {
-        studentManagementPage.phoneBox.sendKeys(ReusableMethods.createSSN());
+        ReusableMethods.waitFor(1);
+        studentManagementPage.ssnBox.sendKeys(ReusableMethods.createSSN());
+        ReusableMethods.waitFor(1);
     }
 
     @And("User Name kutusuna gecerli bir deger girilir")
@@ -100,6 +104,7 @@ public class US15_StepDefinition {
 
     @When("Sayfanin alt kisminda yer alan Student List adli listenin son sayfasina gidilir")
     public void sayfanin_alt_kisminda_yer_alan_student_list_adli_listenin_son_sayfasina_gidilir() {
+        ReusableMethods.waitFor(1);
         ReusableMethods.scrollIntoViewJS(studentManagementPage.lastPageButton);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(studentManagementPage.lastPageButton);
@@ -110,6 +115,8 @@ public class US15_StepDefinition {
     public void girilen_user_name_ile_olusturulan_ogrenci_listede_bulunur() {
         ReusableMethods.waitFor(1);
         ReusableMethods.scrollTopJS();
+        ReusableMethods.waitFor(1);
+        ReusableMethods.scrollIntoViewJS(studentManagementPage.studentsUsernameLastCreated);
         ReusableMethods.waitFor(1);
         actualUsername = studentManagementPage.studentsUsernameLastCreated.getText();
     }
