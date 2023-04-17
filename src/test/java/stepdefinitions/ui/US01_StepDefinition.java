@@ -9,20 +9,19 @@ import pages.HomePage;
 import pages.RegisterPage;
 import utilities.ReusableMethods;
 
+import java.security.Key;
+
 
 public class US01_StepDefinition {
 
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
+
     public static Faker faker = new Faker();
     public static int dateGun = Faker.instance().number().numberBetween(1, 31);
     public static int dateAy = Faker.instance().number().numberBetween(1, 12);
-    public static int dateYil = Faker.instance().number().numberBetween(1900, 2023);
     public static String hiclik = "";
     public static String bosluk = " ";
-    public static String fakerName = faker.name().firstName();
-    public static String fakerSurname = faker.name().lastName();
-    public static String fakerUsername = faker.name().username();
     public static String fakerCity = faker.address().city();
     public static String rakam = faker.phoneNumber().subscriberNumber(1);
     public static String numberIkiHane = faker.phoneNumber().subscriberNumber(2);
@@ -30,13 +29,10 @@ public class US01_StepDefinition {
     public static String numberDortHane = faker.phoneNumber().subscriberNumber(4);
     public static String numberBesHane = faker.phoneNumber().subscriberNumber(5);
     public static String numberYediHane = faker.phoneNumber().subscriberNumber(7);
-    public static String numberSekizHane = faker.phoneNumber().subscriberNumber(8);
-    public static String numberDokuzHane = faker.phoneNumber().subscriberNumber(9);
     public static String numberOnHane = faker.phoneNumber().subscriberNumber(10);
     public static String numberOnBirHane = faker.phoneNumber().subscriberNumber(11);
     public static String numberOnIkiHane = faker.phoneNumber().subscriberNumber(12);
     public static String phoneFormat = numberUcHane + "-" + numberUcHane + "-" + numberDortHane;
-    public static String tarihFormat = dateGun + "." + dateAy + "." + dateYil;
     public static String ssnFormat = numberUcHane + "-" + numberIkiHane + "-" + numberDortHane;
 
 
@@ -69,7 +65,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici name alanina valid bir deger girer")
     public void kullanici_name_alanina_valid_bir_deger_girer() {
-        registerPage.name.sendKeys(fakerName, Keys.TAB);
+        registerPage.name.sendKeys(ReusableMethods.createName(), Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.nameUyari.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -93,7 +89,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Surname alanina valid bir deger girer")
     public void kullanici_surname_alanina_valid_bir_deger_girer() {
-        registerPage.surname.sendKeys(fakerSurname, Keys.TAB);
+        registerPage.surname.sendKeys(ReusableMethods.createSurname(), Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.surnameUyari.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -226,7 +222,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Date Of Birth alanina gun-ay-yil formatinda gecerli deger girer")
     public void kullanici_date_of_birth_alanina_gun_ay_yil_formatinda_gecerli_deger_girer() {
-        registerPage.birthDay.sendKeys(tarihFormat);
+        registerPage.birthDay.sendKeys(ReusableMethods.createDateOfBirth(), Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.birthDayUyari.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -341,7 +337,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici User name alanina valid bir deger girer")
     public void kullanici_user_name_alanina_valid_bir_deger_girer() {
-        registerPage.username.sendKeys(fakerUsername, Keys.TAB);
+        registerPage.username.sendKeys(ReusableMethods.createUserName(), Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.usernameUyari.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -381,7 +377,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Password alanina sekiz karakterli bir deger girer")
     public void kullanici_password_alanina_sekiz_karakterli_bir_deger_girer() {
-        registerPage.password.sendKeys(numberSekizHane, Keys.TAB);
+        registerPage.password.sendKeys(ReusableMethods.createPassword(), Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.passwordUyari.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -389,7 +385,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Password alanina dokuz karakterli bir deger girer")
     public void kullanici_password_alanina_dokuz_karakterli_bir_deger_girer() {
-        registerPage.password.sendKeys(numberDokuzHane, Keys.TAB);
+        registerPage.password.sendKeys(ReusableMethods.createPassword()+"1", Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.passwordUyari.isDisplayed());
         ReusableMethods.waitFor(2);

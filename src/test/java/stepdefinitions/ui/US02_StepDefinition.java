@@ -16,7 +16,9 @@ public class US02_StepDefinition {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     MainMenuPanel menuPanel = new MainMenuPanel();
+
     GuestUserPage guestUserPage = new GuestUserPage();
+
     @Given("Kullanici managementonschools sayfasina gider")
     public void kullanici_managementonschools_sayfasina_gider() {
         Driver.getDriver().get("https://www.managementonschools.com/guest-user");

@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -10,6 +11,11 @@ public class GuestUserPage {
     public GuestUserPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+
+
+public class GuestUserPage {
+
 
     @FindBy(xpath = "//tbody/tr[1]/td[1]")
     public WebElement nameSurnameColumn;
@@ -29,8 +35,10 @@ public class GuestUserPage {
     @FindBy(xpath = "//tbody/tr[1]/td[1]")
     public WebElement firstTableData;
 
+
     @FindBy(xpath = "//*[text()=' Guest User deleted Successful']")
     public WebElement successfullyDeleted;
+
 
 
 }
