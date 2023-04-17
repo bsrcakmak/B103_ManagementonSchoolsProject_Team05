@@ -95,5 +95,20 @@ public class DeanManagementPage {
     @FindBy(xpath = "(//*[@class='card-body'])[2]")
     public WebElement table;
 
+    @FindBy(xpath = "(//deletebutton")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "(//*[@class='fa-solid fa-pencil'])[1]")
+    public WebElement editButton;
+
+    @FindBy(xpath = "//div[@role='dialog']//div[1]//div[1]//input[1]")
+    public WebElement editNameBox;
+
+    @FindBy(xpath = "(//button[@class='fw-semibold btn btn-primary btn-lg'])[2]")
+    public WebElement editSubmitButton;
+
+    @FindBy(xpath = "(//*[@class='btn-close'])[3]")
+    public WebElement closeButton;
+
 
 }
