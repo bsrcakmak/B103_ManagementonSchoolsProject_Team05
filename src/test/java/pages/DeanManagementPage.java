@@ -65,7 +65,7 @@ public class DeanManagementPage {
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")
     public WebElement passwordRequired;
 
-    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
+    @FindBy(xpath = "//div[text()='Dean Saved']")
     public WebElement popUpMessage;
 
     @FindBy(xpath = "//*[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
@@ -79,5 +79,24 @@ public class DeanManagementPage {
 
     @FindBy(xpath = "//*[@value='MALE']")
     public WebElement genderMale;
+
+    @FindBy(xpath = "//table//tr[1]//td[1]")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//table//tr[1]//td[2]")
+    public WebElement firstGender;
+
+    @FindBy(xpath = "//table//tr[1]//td[3]")
+    public WebElement firstPhone;
+
+    @FindBy(xpath = "//table//tr[1]//td[4]")
+    public WebElement firstSsn;
+
+    @FindBy(xpath = "//table//tr[1]//td[5]")
+    public WebElement firstUserName;
+
+    @FindBy(xpath = "(//*[@class='card-body'])[2]")
+    public WebElement table;
+
 
 }
