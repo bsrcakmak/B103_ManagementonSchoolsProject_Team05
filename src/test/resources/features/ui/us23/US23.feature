@@ -7,7 +7,7 @@
       Then Kullanacı Menu butonuna tıklar.
       And   Kullancı açılan menüden Vice Dean Management e tıklar.
 
-
+    @smoketest
     Scenario: US23_TC01 Admin Vice dean oluşturma.
 
       When  Kullancı Name alanına isim girer.

@@ -201,7 +201,7 @@ public class US23_StepDefinitions {
 
     @And("Kullanıcı Password kısmına yedi karakterden az karakter girer.")
     public void kullanıcıPasswordKısmınaYediKarakterdenAzKarakterGirer() {
-        viceDeanManagementPage.passwordBox.sendKeys(faker.internet().password(1,6));
+        viceDeanManagementPage.passwordBox.sendKeys(faker.internet().password(1,7));
     }
 
     @Then("Password kısmının altında Minimum {int} character yazısı çıkar.")
@@ -211,7 +211,7 @@ public class US23_StepDefinitions {
 
     @And("Kullanıcı Password kısmına yedi karakter girer.")
     public void kullanıcıPasswordKısmınaYediKarakterGirer() {
-        viceDeanManagementPage.passwordBox.sendKeys(faker.internet().password(7,7));
+        viceDeanManagementPage.passwordBox.sendKeys(faker.internet().password(7,8));
     }
 
     @And("Kullanıcı Gender alanından cinsiyeti boş bırakır.")
@@ -220,6 +220,6 @@ public class US23_StepDefinitions {
 
     @Then("Vice Dean hesabı oluşturulmaz.")
     public void viceDeanHesabıOluşturulmaz() {
-        Assert.assertEquals(0, Driver.getDriver().findElements(By.xpath("//div[text()='Vice dean Saved']")));
+        Assert.assertEquals(0, Driver.getDriver().findElements(By.xpath("//div[text()='Vice dean Saved']")).size());
     }
 }
