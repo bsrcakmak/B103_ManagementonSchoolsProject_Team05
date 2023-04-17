@@ -169,4 +169,20 @@ public class US23_StepDefinitions {
     public void kullanıcıUserNameAlanınıBoşBırakır() {
         viceDeanManagementPage.usernameBox.sendKeys("",Keys.TAB);
     }
+
+    @Then("User Name kısmının altında Required yazısı çıkar.")
+    public void userNameKısmınınAltındaRequiredYazısıÇıkar() {
+        Assert.assertTrue(viceDeanManagementPage.textofRequired.isDisplayed());
+    }
+
+
+    @And("Kullanıcı Password alanını boş bırakır.")
+    public void kullanıcıPasswordAlanınıBoşBırakır() {
+        viceDeanManagementPage.passwordBox.sendKeys("",Keys.TAB);
+    }
+
+    @Then("Password kısmının altında Required yazısı çıkar.")
+    public void passwordKısmınınAltındaRequiredYazısıÇıkar() {
+        Assert.assertTrue(viceDeanManagementPage.textofRequired.isDisplayed());
+    }
 }
