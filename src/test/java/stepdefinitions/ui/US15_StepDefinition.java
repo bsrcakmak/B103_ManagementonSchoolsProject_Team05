@@ -130,7 +130,7 @@ public class US15_StepDefinition {
     @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
     public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(studentManagementPage.chooseTeacherAlert.isDisplayed());
+        Assert.assertTrue(studentManagementPage.alert.isDisplayed());
         ReusableMethods.waitFor(1);
     }
 
@@ -162,13 +162,25 @@ public class US15_StepDefinition {
     @Then("Cinsiyet secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
     public void gender_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(studentManagementPage.genderAlert.isDisplayed());
+        Assert.assertTrue(studentManagementPage.alert.isDisplayed());
         ReusableMethods.waitFor(1);
     }
 
     @Then("Date Of Birth kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
     public void date_Of_Birth_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.dateOfBirthRequiredWarning.isDisplayed());
+    }
+
+    @Then("Ssn kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+    public void ssn_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.ssnRequiredWarning.isDisplayed());
+    }
+
+    @Then("SSN'nin dogru formatta girilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
+    public void ssnNinDogruFormattaGirilmesiGerektigineDairHataMesajininAlindigiDogrulanir() {
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(studentManagementPage.alert.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
 
     @Then("User Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
