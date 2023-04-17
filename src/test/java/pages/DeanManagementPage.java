@@ -79,4 +79,5 @@ public class DeanManagementPage {
 
     @FindBy(xpath = "//*[@value='MALE']")
     public WebElement genderMale;
+
 }
