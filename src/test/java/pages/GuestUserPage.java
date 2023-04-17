@@ -12,11 +12,6 @@ public class GuestUserPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
-
-public class GuestUserPage {
-
-
     @FindBy(xpath = "//tbody/tr[1]/td[1]")
     public WebElement nameSurnameColumn;
 
