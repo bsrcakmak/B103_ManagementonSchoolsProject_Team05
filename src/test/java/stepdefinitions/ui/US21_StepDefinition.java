@@ -10,7 +10,7 @@ import utilities.ReusableMethods;
 import java.util.ArrayList;
 import java.util.List;
 
-public class US21_StepDefinitions {
+public class US21_StepDefinition {
     public static int counter = 0;
     ChooseLessonManagementPage chooseLessonManagementPage = new ChooseLessonManagementPage();
     GradesAndAnnouncementsPage gradesAndAnnouncementsPage = new GradesAndAnnouncementsPage();

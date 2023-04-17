@@ -1,5 +1,6 @@
 package stepdefinitions.ui;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -29,7 +30,9 @@ public class US15_StepDefinition {
 
     @And("Choose Teacher listesinden gecerli bir secim yapilir")
     public void choose_teacher_listesinden_gecerli_bir_secim_yapilir() {
-        ReusableMethods.selectFromDropdownByIndex(studentManagementPage.chooseTeacherDropdown, 0);
+        ReusableMethods.waitFor(1);
+        ReusableMethods.selectFromDropdownByVisibleText(studentManagementPage.chooseTeacherDropdown, "Senemm Ozcetin");
+        ReusableMethods.waitFor(1);
     }
 
     @And("Name kutusuna gecerli bir deger girilir")
@@ -69,7 +72,9 @@ public class US15_StepDefinition {
 
     @And("Ssn kutusuna gecerli bir deger girilir")
     public void ssn_kutusuna_gecerli_bir_deger_girilir() {
-        studentManagementPage.phoneBox.sendKeys(ReusableMethods.createSSN());
+        ReusableMethods.waitFor(1);
+        studentManagementPage.ssnBox.sendKeys(ReusableMethods.createSSN());
+        ReusableMethods.waitFor(1);
     }
 
     @And("User Name kutusuna gecerli bir deger girilir")
@@ -100,6 +105,7 @@ public class US15_StepDefinition {
 
     @When("Sayfanin alt kisminda yer alan Student List adli listenin son sayfasina gidilir")
     public void sayfanin_alt_kisminda_yer_alan_student_list_adli_listenin_son_sayfasina_gidilir() {
+        ReusableMethods.waitFor(1);
         ReusableMethods.scrollIntoViewJS(studentManagementPage.lastPageButton);
         ReusableMethods.waitFor(1);
         ReusableMethods.clickByJS(studentManagementPage.lastPageButton);
@@ -110,6 +116,8 @@ public class US15_StepDefinition {
     public void girilen_user_name_ile_olusturulan_ogrenci_listede_bulunur() {
         ReusableMethods.waitFor(1);
         ReusableMethods.scrollTopJS();
+        ReusableMethods.waitFor(1);
+        ReusableMethods.scrollIntoViewJS(studentManagementPage.studentsUsernameLastCreated);
         ReusableMethods.waitFor(1);
         actualUsername = studentManagementPage.studentsUsernameLastCreated.getText();
     }
@@ -122,7 +130,7 @@ public class US15_StepDefinition {
     @Then("Danisman ogretmen secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
     public void danisman_Ogretmen_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(studentManagementPage.chooseTeacherAlert.isDisplayed());
+        Assert.assertTrue(studentManagementPage.alert.isDisplayed());
         ReusableMethods.waitFor(1);
     }
 
@@ -154,13 +162,25 @@ public class US15_StepDefinition {
     @Then("Cinsiyet secilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
     public void gender_Secilmesi_Gerektigine_Dair_Hata_Mesajinin_Alindigi_Dogrulanir() {
         ReusableMethods.waitFor(1);
-        Assert.assertTrue(studentManagementPage.genderAlert.isDisplayed());
+        Assert.assertTrue(studentManagementPage.alert.isDisplayed());
         ReusableMethods.waitFor(1);
     }
 
     @Then("Date Of Birth kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
     public void date_Of_Birth_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.dateOfBirthRequiredWarning.isDisplayed());
+    }
+
+    @Then("Ssn kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+    public void ssn_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.ssnRequiredWarning.isDisplayed());
+    }
+
+    @Then("SSN'nin dogru formatta girilmesi gerektigine dair hata mesajinin alindigi dogrulanir")
+    public void ssnNinDogruFormattaGirilmesiGerektigineDairHataMesajininAlindigiDogrulanir() {
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(studentManagementPage.alert.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
 
     @Then("User Name kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
@@ -178,20 +198,26 @@ public class US15_StepDefinition {
         Assert.assertTrue(studentManagementPage.motherNameRequiredWarning.isDisplayed());
     }
 
-//    @Then("Ogrenciye student number atandigi dogrulanir")
-//    public void ogrenciye_Student_Number_Atandigi_Dogrulanir() {
-//    }
+    @Then("Ogrenciye student number atandigi dogrulanir")
+    public void ogrenciye_Student_Number_Atandigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.studentsNumberLastCreated.isDisplayed());
+    }
 
-//    @Then("Password kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
-//    public void password_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
-//    }
+    @Then("Password kutusunun altinda uyari mesajinin goruntulendigi dogrulanir")
+    public void password_Kutusunun_Altinda_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.passwordRequiredWarning.isDisplayed());
+    }
 
-//    @And("Password kutusuna yedi karakter girilir")
-//    public void password_Kutusuna_Yedi_Karakter_Girilir() {
-//    }
+    @And("Password kutusuna yedi karakter girilir")
+    public void password_Kutusuna_Yedi_Karakter_Girilir() {
+        Faker faker = new Faker();
+        String password = faker.internet().password(7,8);
+        studentManagementPage.passwordBox.sendKeys(password);
+    }
 
-//    @Then("Password'un yedi karakterden az olamayacagina dair uyari mesajinin goruntulendigi dogrulanir")
-//    public void passwordun_Yedi_Karakterden_Az_Olamayacagina_Dair_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
-//    }
+    @Then("Password'un yedi karakterden az olamayacagina dair uyari mesajinin goruntulendigi dogrulanir")
+    public void passwordun_Yedi_Karakterden_Az_Olamayacagina_Dair_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
+        Assert.assertTrue(studentManagementPage.passwordRequiredWarning.isDisplayed());
+    }
 
 }
