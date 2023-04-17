@@ -44,8 +44,8 @@ Feature: Admin, Deanleri görebilmeli ve silebilmeli
     @us05_tc07
     Scenario: Admin Dean'leri günceleyebilmeli
       And Guncellemek istenen Dean'nin Edit butonuna tiklar
-      And Name alanina veri girer
-      And Submit butonuna tiklar
+      And Edit penceresindeki Name alanina veri girer
+      And Edit penceresindeki Submit butonuna tiklar
       And Edit penceresini kapatir
       Then Dean'in Name bilgisinin guncellendigini dogrular
       Then Sayfa kapatilir
