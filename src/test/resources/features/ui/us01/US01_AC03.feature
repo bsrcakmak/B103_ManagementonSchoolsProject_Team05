@@ -1,7 +1,7 @@
 @US01_AC03 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC07
+  @US01_TC07 @smokeTest
   Scenario: US01_AC03_Herhangi_bir_karakter_iceren_ve_bos_birakilamayan_"Birth Place"_olmalidir
 
     Given Site adresine gidilir
@@ -21,7 +21,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Surname alanina valid bir deger girer
     And Kullanici Birth Place alanina space(bosluk) degeri girer
     And Sayfa kapatilir
-  @US01_TC09
+  @US01_TC09 @smokeTest
   Scenario: US01_AC03_Herhangi_bir_karakter_iceren_ve_bos_birakilamayan_"Birth Place"_olmalidir
 
     Given Site adresine gidilir
