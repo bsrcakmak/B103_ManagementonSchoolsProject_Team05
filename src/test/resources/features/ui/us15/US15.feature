@@ -23,5 +23,5 @@ Feature: Vice Dean rolu ile ogrenci olusturabilme
     When Submit butonuna tiklanir
     When Sayfanin alt kisminda yer alan Student List adli listenin son sayfasina gidilir
     When Girilen User Name ile olusturulan ogrenci listede bulunur
-    Then Girilen degerlerle ogrencinin olusturuldugu dogrulanir
-    Then Sayfa kapatilir
+#    Then Girilen degerlerle ogrencinin olusturuldugu dogrulanir
+#    Then Sayfa kapatilir

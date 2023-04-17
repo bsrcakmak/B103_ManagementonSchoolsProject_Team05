@@ -101,4 +101,7 @@ public class StudentManagementPage {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement genderAlert;
 
+    @FindBy(xpath = "(//table[1]/tbody/tr)[last()]//td[1]//span")
+    public WebElement studentsNumberLastCreated;
+
 }
