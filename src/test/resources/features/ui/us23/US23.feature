@@ -21,6 +21,7 @@
       And   Kullancı Password alanına uygun formatta şifre girer.
       And   Kullanıcı Submit butonuna tıklar.
       Then  Vice Dean saved mesajı çıkar ve vice dean oluşturulur.
+      And  Sayfa kapatilir
 
 
 

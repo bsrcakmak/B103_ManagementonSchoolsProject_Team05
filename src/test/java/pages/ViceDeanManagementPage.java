@@ -84,6 +84,22 @@ public class ViceDeanManagementPage {
     @FindBy(id = "isAdvisorTeacher")
     public WebElement isAdvisorTeacherCheckBox;
 
+    @FindBy(xpath = "//a[text()='Vice Dean Management']")
+    public WebElement viceDeanManagementButton;
+
+    @FindBy(xpath = "//input[@value='MALE']")
+    public WebElement genderMale;
+
+    @FindBy(xpath = "//div[text()='Vice dean Saved']")
+    public WebElement viceDeanSaved;
+
+    @FindBy(xpath = "//div[text()='Required']")
+    public WebElement textofRequired;
+
+    @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement textofMinChar;
+
+
 
 
 
