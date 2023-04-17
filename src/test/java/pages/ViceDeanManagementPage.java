@@ -99,8 +99,7 @@ public class ViceDeanManagementPage {
     @FindBy(xpath = "//div[text()='Minimum 11 character (XXX-XX-XXXX)']")
     public WebElement textofMinChar;
 
-
-
-
+    @FindBy(xpath = "//div[text()='Minimum 8 character']")
+    public WebElement textofMinpassword;
 
 }

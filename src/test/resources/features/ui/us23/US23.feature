@@ -37,6 +37,7 @@
       And   Kullancı Password alanına uygun formatta şifre girer.
       And   Kullanıcı Submit butonuna tıklar.
       Then Name kısmının altında Required yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -52,6 +53,7 @@
         And   Kullanıcı Surname alanını boş bırakır.
         And   Kullanıcı Submit butonuna tıklar.
         Then Surname kısmının altında Required yazısı çıkar.
+        And  Sayfa kapatilir
 
 
 
@@ -67,6 +69,7 @@
       And   Kullanıcı Birth Place alanını boş bırakır.
       And   Kullanıcı Submit butonuna tıklar.
       Then Birth Place kısmının altında Required yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -82,6 +85,7 @@
       And   Kullanıcı Birth of Date alanını boş bırakır.
       And   Kullanıcı Submit butonuna tıklar.
       Then Birth of Date kısmının altında Required yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -97,6 +101,7 @@
       And   Kullanıcı Phone alanını boş bırakır.
       And   Kullanıcı Submit butonuna tıklar.
       Then Phone kısmının altında Required yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -112,6 +117,7 @@
       And   Kullanıcı Ssn alanını boş bırakır.
       And   Kullanıcı Submit butonuna tıklar.
       Then Ssn kısmının altında Required yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -126,6 +132,7 @@
       And   Kullancı Password alanına uygun formatta şifre girer.
       And   Kullanıcı Ssn alanına üçüncü rakamdan sonra - işareti koymadan Ssn numarası girer.
       Then Ssn kısmının altında Minimum 11 character (XXX-XX-XXXX) yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -140,6 +147,7 @@
       And   Kullancı Password alanına uygun formatta şifre girer.
       And   Kullanıcı Ssn alanına beşinci rakamdan sonra - işareti koymadan Ssn numarası girer.
       Then Ssn kısmının altında Minimum 11 character (XXX-XX-XXXX) yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -154,6 +162,7 @@
       And   Kullancı Password alanına uygun formatta şifre girer.
       And   Kullanıcı Ssn alanına üçüncü ve beşinci rakamdan sonra - işareti koymadan Ssn numarası girer.
       Then Ssn kısmının altında Minimum 11 character (XXX-XX-XXXX) yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -169,6 +178,7 @@
       And   Kullanıcı User Name alanını boş bırakır.
       And   Kullanıcı Submit butonuna tıklar.
       Then User Name kısmının altında Required yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -184,6 +194,7 @@
       And   Kullanıcı Password alanını boş bırakır.
       And   Kullanıcı Submit butonuna tıklar.
       Then Password kısmının altında Required yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -199,6 +210,7 @@
       And   Kullanıcı Password kısmına yedi karakterden az karakter girer.
       And   Kullanıcı Submit butonuna tıklar.
       Then Password kısmının altında Minimum 8 character yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -214,6 +226,7 @@
       And   Kullanıcı Password kısmına yedi karakter girer.
       And   Kullanıcı Submit butonuna tıklar.
       Then Password kısmının altında Minimum 8 character yazısı çıkar.
+      And  Sayfa kapatilir
 
 
 
@@ -230,3 +243,4 @@
       And   Kullancı Password alanına uygun formatta şifre girer.
       And   Kullanıcı Submit butonuna tıklar.
       Then  Vice Dean hesabı oluşturulmaz.
+      And  Sayfa kapatilir
