@@ -23,9 +23,9 @@ public class US06_StepDefinition {
     @Given("Name alani bos birakilir")
     public void nameAlaniBosBirakilir() {
         deanManagementPage.nameBox.sendKeys(bos, Keys.TAB);
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         assert deanManagementPage.nameRequired.getText().contains("Required");
-        ReusableMethods.waitFor(2);
+//        ReusableMethods.waitFor(2);
     }
     @Given("Surname alanini bos birakir")
     public void surnameAlaniniBosBirakir() {
@@ -44,9 +44,9 @@ public class US06_StepDefinition {
     @Given("Date Of Birth alani bos birakilir")
     public void dateOfBirthAlaniBosBirakilir() {
         deanManagementPage.birthdayBox.sendKeys(bos,Keys.TAB);
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         assert deanManagementPage.birthPlaceRequired.getText().contains("Required");
-        ReusableMethods.waitFor(2);
+//        ReusableMethods.waitFor(2);
     }
     @Given("Phone_Number alani bos olarak birakilir")
     public void phone_numberAlaniBosOlarakBirakilir() {

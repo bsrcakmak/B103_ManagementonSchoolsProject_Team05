@@ -1,6 +1,7 @@
 package stepdefinitions.ui;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -61,4 +62,5 @@ public class US18_StepDefinition {
     public void teacherAverageBilgilerininYerAldigiBolumuGorur() {
         Assert.assertTrue(studentInfoManagementPage.averageGorunur.isDisplayed());
     }
+
 }
