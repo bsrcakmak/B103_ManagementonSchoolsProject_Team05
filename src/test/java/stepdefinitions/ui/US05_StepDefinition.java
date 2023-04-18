@@ -23,6 +23,7 @@ public class US05_StepDefinition {
     //  ------------    TC01   ---------------
     @Then("Dean'lerin Name bilgilerinin gorunur oldugunu dogrular")
     public void dean_lerin_name_bilgilerinin_gorunur_oldugunu_dogrular() {
+        ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstName.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -33,6 +34,7 @@ public class US05_StepDefinition {
     @Then("Dean'lerin Gender bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinGenderBilgilerininGorunurOldugunuDogrular() {
         ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstGender.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -44,6 +46,7 @@ public class US05_StepDefinition {
     @Then("Dean'lerin Phone Number bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinPhoneNumberBilgilerininGorunurOldugunuDogrular() {
         ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstPhone.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -54,6 +57,7 @@ public class US05_StepDefinition {
     @Then("Dean'lerin SSN bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinSSNBilgilerininGorunurOldugunuDogrular() {
         ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstSsn.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -65,6 +69,7 @@ public class US05_StepDefinition {
     @Then("Dean'lerin User Name bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinUserNameBilgilerininGorunurOldugunuDogrular() {
         ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstUserName.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -92,7 +97,8 @@ public class US05_StepDefinition {
     @And("Guncellemek istenen Dean'nin Edit butonuna tiklar")
     public void guncellemekIstenenDeanNinEditButonunaTiklar() {
         ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
-        actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
+        ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
+        actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         ReusableMethods.waitForClickablility(deanManagementPage.editButton,10);
         deanManagementPage.editButton.click();
         ReusableMethods.waitFor(2);
