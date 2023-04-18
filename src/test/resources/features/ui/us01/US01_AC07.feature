@@ -1,7 +1,7 @@
 @US01_AC07 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC22 @smokeTest
+  @US01_TC22 @smoketest
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
 
     Given Site adresine gidilir
@@ -16,7 +16,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici SSN alanini bos birakir
     And Sayfa kapatilir
 
-  @US01_TC23 @smokeTest
+  @US01_TC23 @smoketest
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
 
     Given Site adresine gidilir
@@ -31,7 +31,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici SSN alanina bir haneli sayi girer
     And Sayfa kapatilir
 
-  @US01_TC24 @smokeTest
+  @US01_TC24 @smoketest
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
 
     Given Site adresine gidilir
@@ -136,7 +136,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici SSN alanina ucuncu ve besinci rakamdan sonra - karakteri ile on rakamli deger girer
     And Sayfa kapatilir
 
-  @US01_TC31 @smokeTest
+  @US01_TC31 @smoketest
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
 
     Given Site adresine gidilir

@@ -23,24 +23,25 @@ public class AddStudentPage {
     public WebElement namee;
     @FindBy(xpath = "//input[@class='Please enter valid name.']")
     public WebElement validName;
-    @FindBy(xpath = "(//div[text()='Required'])[1]")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[1]")
     public WebElement requiredName;
 
     @FindBy(xpath = "//input[@id='surname']")
     public WebElement surName;
     @FindBy(xpath = "//input[@id='Please enter valid surname']")
     public WebElement surNameSembol;
-    @FindBy(xpath = "(//div[text()='Required'])[2]")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")
     public WebElement requiredSurName;
-
+    @FindBy(xpath = "//*[@class='Toastify__toast Toastify__toast-theme--colored Toastify__toast--error Toastify__toast--close-on-click']")
+    public WebElement errorMessage;
     @FindBy(xpath = "//input[@id='birthPlace']")
     public WebElement birthPlace;
-    @FindBy(xpath = "(//div[text()='Required'])[3]")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[3]")
     public WebElement birthPlaceRequired;
 
     @FindBy(xpath = "//input[@id='email']")
     public WebElement eMail;
-    @FindBy(xpath = "(//div[text()='Required'])[4]")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")
     public WebElement eMailRequired;
 
     @FindBy(xpath = "//input[@id='phoneNumber']")
@@ -54,7 +55,7 @@ public class AddStudentPage {
     @FindBy(xpath = "//div[.='Phone number should be exact 12 characters']")
     public WebElement popUpPhoneNumber;
 
-    @FindBy(xpath = "(//div[text()='Required'])[5]")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")
     public WebElement phoneRequired;
     @FindBy(xpath = "//input[@value='FEMALE']")
     public WebElement genderFemale;
@@ -69,11 +70,13 @@ public class AddStudentPage {
     public WebElement snn;
     @FindBy(xpath = "//div[(text()='Please enter valid SSN number')]")
     public WebElement invalidsnn;
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[6]")
+    public WebElement ssnAlert;
     @FindBy(xpath = "//input[@id='username']")
     public WebElement userName;
     @FindBy(xpath = "(//div[text()='Required'])[1]")
     public WebElement snnReqired;
-    @FindBy(xpath = "(//div[text()='Required'])[8]")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")
     public WebElement userNameReqired;
     @FindBy(xpath = "//input[@id='fatherName']")
     public WebElement fatherName;
@@ -81,13 +84,13 @@ public class AddStudentPage {
     public WebElement fatherNamePopUp;
     @FindBy(xpath = "//input[@id='motherName']")
     public WebElement motherName;
-    @FindBy(xpath = "(//div[text()='Required'])[10])")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[10]")
     public WebElement motherNameRequired;
     @FindBy(xpath = "//input[@id='password']")
     public WebElement passwordArea;
     @FindBy(xpath = "//div[text()='Minimum 8 character']")
     public WebElement passwordMinKarakter;
-    @FindBy(xpath = "(//div[text()='Required'])[11]")
+    @FindBy(xpath = "(//*[@class='invalid-feedback'])[11]")
     public WebElement userPasswordReqired;
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
@@ -97,6 +100,5 @@ public class AddStudentPage {
 
     @FindBy(xpath = "//div[.='Student saved Successfully']")
     public WebElement studentSave;
-
 
 }

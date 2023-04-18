@@ -24,12 +24,12 @@ public class StudentInfoManagementPage {
     public WebElement menu;
 
     @FindBy(xpath = "//a[text()='Student Info Management']")
-    public WebElement studentIndoManagement;
+    public WebElement studentInfoManagement;
 
     @FindBy(xpath = "//*[@class='fw-bold p-3 card-header']")
     public WebElement addInfoMangementyazisi;
 
-    @FindBy(xpath = "//*[@class='form-select'][1]")
+    @FindBy(xpath = "(//*[@class='form-select'])[1]")
     public WebElement chooseLesson;
 
     @FindBy(id = "studentId")
@@ -52,6 +52,15 @@ public class StudentInfoManagementPage {
 
     @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary btn-lg']")
     public WebElement submitButonu;
+
+    @FindBy(xpath = "(//*[@class='form-select'])[4]")
+    public WebElement selectLesson;
+
+    @FindBy(xpath = "(//*[@class='form-select'])[5]")
+    public WebElement egitimDonemi;
+
+    @FindBy(xpath = "(//*[@class='form-control'])[8]")
+    public WebElement infoNoteEdit;
 
     @FindBy(xpath = "(//*[@class='fw-bold p-3 card-header'])[3]")
     public WebElement studentInfoList;
@@ -80,9 +89,11 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[text()='Average']")
     public WebElement averageGorunur;
 
-    @FindBy(xpath = "//*[@class='text-dark btn btn-outline-info']")
-    public WebElement editButonu;
+    @FindBy(xpath = "//*[text()='Student Info saved Successfully']")
+    public WebElement submitBasariMesaji;
 
+    @FindBy(xpath = "//*[@class='fa-solid fa-pencil']")
+    public WebElement editButonu;
     @FindBy(xpath = "//*[@class='fa-solid fa-trash'][1]")
     public WebElement deleteButonu;
 
@@ -92,7 +103,13 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[text()='Student Info updated Successfully']")
     public WebElement successfullymessage;
 
-    @FindBy(xpath = "//*[text()='Student Info deleted Successfully']")
+    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public WebElement deleteSuccessfuly;
+
+    @FindBy(xpath = "//*[text()='Student Info deleted Successfully']")
+    public WebElement basariliDelete;
+
+    @FindBy(xpath = "//*[@class='btn-close']")
+    public WebElement close;
 
 }
