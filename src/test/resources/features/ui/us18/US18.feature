@@ -8,42 +8,42 @@ Feature: Teacher, öğrenciye verdiği notları, görebilmeli ve güncelleyebilm
     And teacher Student Info Management butonuna tiklar.
     And teacher Student Info List Bolumunu gorur
 
-  @us18_tc01
+  @us18_tc01 @smoketest
   Scenario: TC_01 Student Info List'te; Name bilgilerini gorebilmeli
     And teacher Name Surname Bolumunu gorur
     Then Sayfa kapatilir
 
-  @us18_tc02
+  @us18_tc02 @smoketest
   Scenario: TC_02 Student Info List'te; Lesson bilgilerini gorebilmeli
     And teacher Lesson Name Bolumunu gorur
     Then Sayfa kapatilir
 
-  @us18_tc03
+  @us18_tc03 @smoketest
   Scenario: TC_03 Student Info List'te; Ansentee bilgilerini gorebilmeli
     And teacher Anssente Bolumunu gorur
     Then Sayfa kapatilir
 
-  @us18_tc04
+  @us18_tc04 @smoketest
   Scenario: TC_04 Student Info List'te; Midterm bilgilerini gorebilmeli
     And teacher Midterm Bolumunu gorur
     Then Sayfa kapatilir
 
-  @us18_tc05
+  @us18_tc05 @smoketest
   Scenario: TC_05 Student Info List'te; Final Exam bilgilerini gorebilmeli
     And teacher Final Exam Bolumunu gorur
     Then Sayfa kapatilir
 
-  @us18_tc06
+  @us18_tc06 @smoketest
   Scenario: TC_06 Student Info List'te; Info Note bilgilerini gorebilmeli
     And teacher Info Note Bolumunu gorur.
     Then Sayfa kapatilir
 
-  @us18_tc07
+  @us18_tc07 @smoketest
   Scenario: TC_07 Student Info List'te; Average bilgilerini gorebilmeli
     And teacher Average bilgilerinin yer aldigi Bolumu gorur
     Then Sayfa kapatilir
 
-  @us18_tc08
+  @us18_tc08 @smoketest
   Scenario: TC_08 Öğrenci Not bilgisini güncelleyebilmeli
     And teacher Add Student Info Bolumu goruntuler.
     And teacher Choose Lesson bolumunden ders  secer.
@@ -62,8 +62,8 @@ Feature: Teacher, öğrenciye verdiği notları, görebilmeli ve güncelleyebilm
     Then Teacher updated Successful" popUp mesajini goruntuler.
     Then Sayfa kapatilir
 
-  @us18_tc09
+  @us18_tc09 @smoketest
   Scenario: TC_09 Öğrenci Not bilgisini silebilmeli
     And teacher Delete Butonuna tiklar.
     Then teacher ogrenci bilgilerinin silindigini dogrular.
-    Then Sayfa kapatilir
+   # Then Sayfa kapatilir
