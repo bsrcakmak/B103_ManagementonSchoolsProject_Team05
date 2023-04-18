@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class LessonManagementPage {
 
@@ -62,5 +63,11 @@ public class LessonManagementPage {
 
     @FindBy(xpath = "(//*[text()='Submit'])[2]")
     public WebElement submitlessons;
+
+    public LessonProgramManagementPage clickLessonProgram(){
+        ReusableMethods.waitForClickablility(lessonProgramButton,5);
+        lessonProgramButton.click();
+        return new LessonProgramManagementPage();
+    }
 
 }
