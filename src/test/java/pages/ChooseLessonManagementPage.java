@@ -46,9 +46,6 @@ public class ChooseLessonManagementPage {
     @FindBy(xpath = "(//div//table/thead//tr)[2]")
     public WebElement lessonProgramList;
 
-    @FindBy(xpath = "(//*[@class='col'])[2]//tr")
-    public List<WebElement> lessonProgramListTabloSatir;
-
     @FindBy(xpath = "//input[@id='lessonProgramId']")
     public List<WebElement> lessonSelectButton;
 

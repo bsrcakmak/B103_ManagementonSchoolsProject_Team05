@@ -32,39 +32,20 @@ public class MeetManagementPage {
     @FindBy(xpath = "//*[@class=' css-19bb58m']")
     public WebElement chooseStudent;
 
-
-    @FindBy(xpath = "(//*[@class=' css-19bb58m'])[2]")
-    public WebElement chooseStudentEditBolumu;
-
-    @FindBy(xpath= "//*[contains(@class,'css-19bb58m')]")
-    public WebElement selectStudent;
-
-    @FindBy(xpath = "(//table[1]/tbody/tr)[last()]//td[4])")
-    public WebElement descriptionYazisi;
-
     @FindBy(xpath = "(//*[@id=\"description\"])[2]")
     public WebElement editDescription;
 
-    @FindBy(id="date")
+    @FindBy(id = "date")
     public WebElement dateOfMeet;
 
     @FindBy(xpath = "(//*[@class='form-control'])[5]")
     public WebElement dateOfMeetEditBolumu;
 
-    @FindBy(id="startTime")
+    @FindBy(id = "startTime")
     public WebElement startTime;
 
     @FindBy(xpath = "(//*[@class='form-control'])[6]")
     public WebElement startTimeEditBolumu;
-
-
-    @FindBy(id="stopTime")
-
-    @FindBy(id = "date")
-    public WebElement dateOfMeet;
-
-    @FindBy(id = "startTime")
-    public WebElement startTime;
 
     @FindBy(id = "stopTime")
 
@@ -73,11 +54,9 @@ public class MeetManagementPage {
     @FindBy(id = "description")
     public WebElement description;
 
-    @FindBy(xpath = "//*[@class='invalid-feedback'][4]")
-    public WebElement requiredDescription;
-
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[8]")
     public WebElement requaredDescriptionEditBolumu;
+
     @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary btn-lg']")
     public WebElement submitButonu;
 
@@ -96,15 +75,6 @@ public class MeetManagementPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/thead/tr/th[1]")
     public WebElement date;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/thead/tr/th[2] ")
-    public WebElement StartTime;
-
-    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/thead/tr/th[3]")
-    public WebElement StopTime;
-
-    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/thead/tr/th[4]")
-    public WebElement Description;
-
     @FindBy(xpath = "(//*[@class='text-dark btn btn-outline-info'])[1]")
     public WebElement editButonu;
 
@@ -114,10 +84,7 @@ public class MeetManagementPage {
     @FindBy(xpath = "//*[@class='btn btn-danger']")
     public WebElement deleteButonu;
 
-
-    @FindBy (xpath = "//*[text()='Meet deleted successfully ']")
+    @FindBy(xpath = "//*[text()='Meet deleted successfully ']")
     public WebElement basariliDeleteYazisi;
-
-
 
 }

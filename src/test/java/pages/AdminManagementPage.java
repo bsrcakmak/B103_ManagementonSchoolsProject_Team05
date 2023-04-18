@@ -44,7 +44,4 @@ public class AdminManagementPage {
     @FindBy(xpath = "(//*[text()='Required'])[1]")
     public WebElement requiredFeedback;
 
-    @FindBy(xpath = "//*[@class='Toastify__toast-container Toastify__toast-container--top-center']")
-    public WebElement fail;
-
 }

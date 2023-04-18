@@ -1,17 +1,13 @@
 package stepdefinitions.ui;
 
 import com.github.javafaker.Faker;
-import com.sun.source.tree.AssertTree;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.internal.common.assertion.Assertion;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.ContactPage;
 import pages.HomePage;
-import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
 public class US03_StepDefinition {
@@ -20,24 +16,15 @@ public class US03_StepDefinition {
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
 
+    public String invalidEmail1 = "mary@clanen";
+    public String invalidEmail2 = "mary.clane";
+    public String invalidEmail3 = "mary@clane.";
 
-
-    //public String expectedEmail = ReusableMethods.createEmail();
-    public String karakter1 = "@";
-    public String karakter2= ".";
-    public String invalidEmail1 ="mary@clanen";
-    public String invalidEmail2 ="mary.clane";
-    public String invalidEmail3 ="mary@clane.";
-    static String str;
-
-
-    // Backgraund
     @When("kullanici Contact butonuna tiklar")
     public void kullaniciContactButonunaTiklar() {
         homePage.contactButton.click();
         ReusableMethods.waitFor(2);
     }
-
 
     @And("kullanici Your Name alanina valid bir deger girer")
     public void kullaniciYourNameAlaninaValidBirDegerGirer() {
@@ -91,7 +78,7 @@ public class US03_StepDefinition {
 
     @Then("kullanici Message alanina bir deger girilebildigini dogrular")
     public void kullaniciMessageAlaninaBirDegerGirilebildiginiDogrular() {
-        Assert.assertFalse(ReusableMethods.getValueByJS("message").isEmpty());    
+        Assert.assertFalse(ReusableMethods.getValueByJS("message").isEmpty());
     }
 
     @And("kullanici Send Message butonuna tiklar")
@@ -143,9 +130,8 @@ public class US03_StepDefinition {
     @And("kullanici Your Email alanina space ile baslayan bir deger girer")
     public void kullaniciYourEmailAlaninaSpaceIleBaslayanBirDegerGirer() {
         contactPage.email.click();
-        contactPage.email.sendKeys(" "+ ReusableMethods.createEmail());
+        contactPage.email.sendKeys(" " + ReusableMethods.createEmail());
     }
-
 
     @And("kullanici Your Email alanina . icermeyen bir deger girer")
     public void kullaniciYourEmailAlaninaNoktaIcermeyenBirDegerGirer() {
@@ -164,6 +150,5 @@ public class US03_StepDefinition {
         contactPage.email.click();
         contactPage.email.sendKeys(invalidEmail3);
     }
-
 
 }
