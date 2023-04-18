@@ -85,6 +85,7 @@ public class StudentInfoManagementPage {
 
     @FindBy(xpath = "//*[@class='fa-solid fa-pencil']")
     public WebElement editButonu;
+
     @FindBy(xpath = "//*[@class='fa-solid fa-trash'][1]")
     public WebElement deleteButonu;
 
