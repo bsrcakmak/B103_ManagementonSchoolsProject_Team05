@@ -7,8 +7,8 @@ import utilities.Driver;
 
 public class ContactMessagePage {
 
-    public ContactMessagePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public ContactMessagePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//table/thead/tr/th[1]")
@@ -26,16 +26,10 @@ public class ContactMessagePage {
     @FindBy(xpath = "//table/thead/tr/th[5]")
     public WebElement message;
 
-    @FindBy(id="Delete")
+    @FindBy(id = "Delete")
     public WebElement deleteButton;
 
     @FindBy(xpath = "//table/tbody/tr/td")
     public WebElement nameFirstCreated;
-
-
-
-
-
-
 
 }

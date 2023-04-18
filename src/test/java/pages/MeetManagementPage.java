@@ -7,17 +7,18 @@ import utilities.Driver;
 
 public class MeetManagementPage {
 
-    public MeetManagementPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public MeetManagementPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(id="username")
+
+    @FindBy(id = "username")
     public WebElement username;
 
-    @FindBy (id="password")
+    @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy (xpath = "//button[@class='fw-semibold btn btn-primary']")
-    public  WebElement login;
+    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']")
+    public WebElement login;
 
     @FindBy(xpath = "//*[text()='Menu']")
     public WebElement menu;
@@ -31,22 +32,22 @@ public class MeetManagementPage {
     @FindBy(xpath = "//*[@class=' css-19bb58m']")
     public WebElement chooseStudent;
 
-    @FindBy(xpath= "//*[contains(@class,'css-19bb58m')]")
+    @FindBy(xpath = "//*[contains(@class,'css-19bb58m')]")
     public WebElement selectStudent;
 
     @FindBy(xpath = "(//table[1]/tbody/tr)[last()]//td[4])")
     public WebElement descriptionYazisi;
 
-    @FindBy(id="date")
+    @FindBy(id = "date")
     public WebElement dateOfMeet;
 
-    @FindBy(id="startTime")
+    @FindBy(id = "startTime")
     public WebElement startTime;
 
-    @FindBy(id="stopTime")
+    @FindBy(id = "stopTime")
     public WebElement stopTime;
 
-    @FindBy(id="description")
+    @FindBy(id = "description")
     public WebElement description;
 
     @FindBy(xpath = "//*[@class='invalid-feedback'][4]")
@@ -58,8 +59,6 @@ public class MeetManagementPage {
     @FindBy(xpath = " //div[@role='alert']")
     public WebElement hataMesaji;
 
-
-    ///Gorunur dogrulama
     @FindBy(xpath = "(//*[@class='fw-bold p-3 card-header'])[3]")
     public WebElement meetList;
 
@@ -84,8 +83,4 @@ public class MeetManagementPage {
     @FindBy(xpath = "//*[@class='btn btn-danger']")
     public WebElement deleteButonu;
 
-
-
 }
-
-
