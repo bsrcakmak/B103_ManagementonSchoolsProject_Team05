@@ -44,9 +44,6 @@ public class StudentManagementPage {
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
     public WebElement phoneRequiredWarning;
 
-    @FindBy(xpath = "//input[@value='FEMALE']")
-    public WebElement femaleButton;
-
     @FindBy(xpath = "//input[@value='MALE']")
     public WebElement maleButton;
 

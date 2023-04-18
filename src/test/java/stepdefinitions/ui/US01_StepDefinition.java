@@ -9,9 +9,6 @@ import pages.HomePage;
 import pages.RegisterPage;
 import utilities.ReusableMethods;
 
-import java.security.Key;
-
-
 public class US01_StepDefinition {
 
     HomePage homePage = new HomePage();
@@ -34,8 +31,6 @@ public class US01_StepDefinition {
     public static String numberOnIkiHane = faker.phoneNumber().subscriberNumber(12);
     public static String phoneFormat = numberUcHane + "-" + numberUcHane + "-" + numberDortHane;
     public static String ssnFormat = numberUcHane + "-" + numberIkiHane + "-" + numberDortHane;
-
-
 
     @When("Kullanici register butonuna tiklar")
     public void kullanici_register_butonuna_tiklar() {
@@ -129,7 +124,6 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Phone alanina bir karakter deger girer")
     public void kullanici_phone_alanina_bir_karakter_deger_girer() {
-
         registerPage.phoneNumber.sendKeys(rakam, Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.phoneNumberUyari.getText(), "Minimum 12 character (XXX-XXX-XXXX)");
@@ -138,7 +132,6 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Phone alanina onbir karakter deger girer")
     public void kullanici_phone_alanina_onbir_karakter_deger_girer() {
-
         registerPage.phoneNumber.sendKeys(numberOnHane, Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.phoneNumberUyari.getText(), "Minimum 12 character (XXX-XXX-XXXX)");
@@ -147,7 +140,6 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Phone alanina oniki karakter gecersiz formatta deger girer")
     public void kullanici_phone_alanina_oniki_karakter_gecersiz_formatta_deger_girer() {
-
         registerPage.phoneNumber.sendKeys(numberOnIkiHane, Keys.TAB);
         ReusableMethods.waitFor(2);
         ReusableMethods.scrollIntoViewJS(registerPage.phoneNumberUyari);
@@ -209,16 +201,13 @@ public class US01_StepDefinition {
         ReusableMethods.waitFor(2);
     }
 
-
     @Then("Kullanici Date Of Birth alanina yil bolumune bes haneli deger girer")
     public void kullanici_date_of_birth_alanina_yil_bolumune_bes_haneli_deger_girer() {
-
         registerPage.birthDay.sendKeys(dateGun + "." + dateAy + "." + numberBesHane);
         ReusableMethods.waitFor(2);
         Assert.assertTrue(registerPage.birthDayUyari.isDisplayed());
         ReusableMethods.waitFor(2);
     }
-
 
     @Then("Kullanici Date Of Birth alanina gun-ay-yil formatinda gecerli deger girer")
     public void kullanici_date_of_birth_alanina_gun_ay_yil_formatinda_gecerli_deger_girer() {
@@ -247,7 +236,6 @@ public class US01_StepDefinition {
 
     @Then("Kullanici SSN alanina on haneli sayi girer")
     public void kullanici_ssn_alanina_on_haneli_sayi_girer() {
-
         registerPage.ssn.sendKeys(numberOnHane, Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.ssnUyari.getText(), "Minimum 11 character (XXX-XX-XXXX)");
@@ -309,7 +297,6 @@ public class US01_StepDefinition {
 
     @Then("Kullanici SSN alanina ucuncu ve besinci rakamdan sonra - karakteri ile dokuz rakamli deger girer")
     public void kullanici_ssn_alanina_ucuncu_ve_besinci_rakamdan_sonra_karakteri_ile_dokuz_rakamli_deger_girer() {
-
         registerPage.ssn.sendKeys(ssnFormat, Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.ssnUyari.isDisplayed());
@@ -318,7 +305,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici User name alanini bos birakir")
     public void kullanici_user_name_alanini_bos_birakir() {
-        registerPage.username.sendKeys(hiclik,Keys.TAB);
+        registerPage.username.sendKeys(hiclik, Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.usernameUyari.getText(), "Required");
         ReusableMethods.waitFor(2);
@@ -327,12 +314,10 @@ public class US01_StepDefinition {
 
     @Then("Kullanici User name alanina space\\(bosluk) degeri girer")
     public void kullanici_user_name_alanina_space_bosluk_degeri_girer() {
-
         registerPage.username.sendKeys(bosluk, Keys.TAB);
         ReusableMethods.waitFor(2);
         assert registerPage.usernameUyari.isDisplayed();
         ReusableMethods.waitFor(2);
-
     }
 
     @Then("Kullanici User name alanina valid bir deger girer")
@@ -342,9 +327,10 @@ public class US01_StepDefinition {
         Assert.assertFalse(registerPage.usernameUyari.isDisplayed());
         ReusableMethods.waitFor(2);
     }
+
     @Then("Kullanici Password alanini bos birakir")
     public void kullanici_password_alanini_bos_birakir() {
-        registerPage.password.sendKeys(hiclik,Keys.TAB);
+        registerPage.password.sendKeys(hiclik, Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.passwordUyari.getText(), "Required");
         ReusableMethods.waitFor(2);
@@ -385,7 +371,7 @@ public class US01_StepDefinition {
 
     @Then("Kullanici Password alanina dokuz karakterli bir deger girer")
     public void kullanici_password_alanina_dokuz_karakterli_bir_deger_girer() {
-        registerPage.password.sendKeys(ReusableMethods.createPassword()+"1", Keys.TAB);
+        registerPage.password.sendKeys(ReusableMethods.createPassword() + "1", Keys.TAB);
         ReusableMethods.waitFor(2);
         Assert.assertFalse(registerPage.passwordUyari.isDisplayed());
         ReusableMethods.waitFor(2);
@@ -398,8 +384,5 @@ public class US01_StepDefinition {
         Assert.assertTrue(registerPage.guestUserRegisteredUyari.getText().contains("Guest User registered"));
         ReusableMethods.waitFor(2);
     }
-
-
-
 
 }
