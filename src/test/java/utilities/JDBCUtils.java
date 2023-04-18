@@ -60,9 +60,7 @@ public class JDBCUtils {
     public static void createTable(String tableName, String... columnName_dataType) {
         StringBuilder columnName_dataValue = new StringBuilder("");
         for (String w : columnName_dataType) {
-
             columnName_dataValue.append(w).append(",");
-
         }
         columnName_dataValue.deleteCharAt(columnName_dataValue.length() - 1);
         try {
@@ -94,13 +92,11 @@ public class JDBCUtils {
 
     public static int executeUpdate(String query) {
         int guncellenenSatirSayisi;
-
         try {
             guncellenenSatirSayisi = statement.executeUpdate(query);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         return guncellenenSatirSayisi;
     }
 
