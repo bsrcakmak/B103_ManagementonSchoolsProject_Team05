@@ -70,7 +70,7 @@ public class US04_StepDefinition {
     @When("Cinsiyet secer")
     public void cinsiyet_secer() {
         deanManagementPage.genderFemale.click();
-        ReusableMethods.waitFor(1);
+        //ReusableMethods.waitFor(1);
     }
     @When("Birthday alanina veri girer")
     public void birthday_alanina_veri_girer() {
@@ -79,7 +79,7 @@ public class US04_StepDefinition {
         int year = faker.number().numberBetween(1950,2005);
         String birthDate = day + "." + month + "." + year;
         deanManagementPage.birthdayBox.sendKeys(birthDate);
-        ReusableMethods.waitFor(2);
+        //ReusableMethods.waitFor(1);
     }
     @When("Phone alanina veri girer")
     public void phone_alanina_veri_girer() {
