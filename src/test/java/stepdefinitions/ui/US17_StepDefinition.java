@@ -34,7 +34,7 @@ public class US17_StepDefinition {
 
     @And("teacher Student Info Management butonuna tiklar.")
     public void teacherStudentInfoManagementButonunaTiklar() {
-        studentInfoManagementPage.studentIndoManagement.click();
+        studentInfoManagementPage.studentInfoManagement.click();
     }
 
     @And("teacher Add Student Info Bolumunu goruntuler.")
@@ -52,7 +52,7 @@ public class US17_StepDefinition {
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER).build().perform();
         select=new Select(studentInfoManagementPage.chooseLesson);
         ReusableMethods.waitFor(1);
-        ReusableMethods.selectRandomTextFromDropdown(select);
+        select.selectByVisibleText("Cucumber");
 
 
     }
@@ -67,8 +67,9 @@ public class US17_StepDefinition {
         WebElement chooseLesson = studentInfoManagementPage.chooseLesson;
         Select dersSecimi = new Select(chooseLesson);
         String varsayilanDErs = dersSecimi.getFirstSelectedOption().getText();
+        String expectedDers = "Cucumber";
         ReusableMethods.waitFor(1);
-        Assert.assertEquals("Cucumber",varsayilanDErs);
+        Assert.assertEquals(expectedDers,varsayilanDErs);
 
     }
 
@@ -81,7 +82,7 @@ public class US17_StepDefinition {
         ReusableMethods.waitFor(1);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER).build().perform();
         select=new Select(studentInfoManagementPage.chooseStudent);
-        select.selectByIndex(1);
+        select.selectByVisibleText("Sera Jones");
         ReusableMethods.waitFor(1);
 
     }
@@ -93,8 +94,8 @@ public class US17_StepDefinition {
         WebElement chooseStudent = studentInfoManagementPage.chooseStudent;
         Select ogrenciSecimi = new Select(chooseStudent);
         String varsayilanOgrenci = ogrenciSecimi.getFirstSelectedOption().getText();
-
-        assertTrue(varsayilanOgrenci.equals("Sera Jones"));
+        String expectedOgrenci = "Sera Jones";
+        Assert.assertEquals(expectedOgrenci,varsayilanOgrenci);
 
     }
 
@@ -107,7 +108,6 @@ public class US17_StepDefinition {
         select=new Select(studentInfoManagementPage.chooseEducationTerm);
         select.selectByVisibleText("SPRING_SEMESTER");
         ReusableMethods.waitFor(1);
-
 
     }
 
@@ -169,7 +169,6 @@ public class US17_StepDefinition {
         ReusableMethods.waitFor(1);
         Assert.assertTrue(studentInfoManagementPage.infoNote.isDisplayed());
     }
-
     //TC_08
     //BUG-Info notu girildigi dogrulanmamalidir.
     @And("kullanici info notuna space girer.")
