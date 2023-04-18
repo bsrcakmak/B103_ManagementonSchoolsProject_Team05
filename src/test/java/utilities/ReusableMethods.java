@@ -248,18 +248,19 @@ public class ReusableMethods {
         int eighthNumberOfThePhone = faker.number().randomDigit();
         int ninthNumberOfThePhone = faker.number().randomDigit();
         int tenthNumberOfThePhone = faker.number().randomDigit();
-        String phone = firstNumberOfThePhone +
-                        secondNumberOfThePhone +
-                        thirdNumberOfThePhone +
-                        "-" +
-                        fourthNumberOfThePhone +
-                        fifthNumberOfThePhone +
-                        sixthNumberOfThePhone +
-                        "-" +
-                        seventhNumberOfThePhone +
-                        eighthNumberOfThePhone +
-                        ninthNumberOfThePhone +
-                        tenthNumberOfThePhone;
+        String phone = "" +
+                firstNumberOfThePhone +
+                secondNumberOfThePhone +
+                thirdNumberOfThePhone +
+                "-" +
+                fourthNumberOfThePhone +
+                fifthNumberOfThePhone +
+                sixthNumberOfThePhone +
+                "-" +
+                seventhNumberOfThePhone +
+                eighthNumberOfThePhone +
+                ninthNumberOfThePhone +
+                tenthNumberOfThePhone;
         return phone;
     }
 
@@ -274,27 +275,28 @@ public class ReusableMethods {
 
     public static String createSSN() {
         Faker faker = new Faker();
-        int firstNumberOfThePhone = faker.number().randomDigit();
-        int secondNumberOfThePhone = faker.number().randomDigit();
-        int thirdNumberOfThePhone = faker.number().randomDigit();
-        int fourthNumberOfThePhone = faker.number().randomDigit();
-        int fifthNumberOfThePhone = faker.number().randomDigit();
-        int sixthNumberOfThePhone = faker.number().randomDigit();
-        int seventhNumberOfThePhone = faker.number().randomDigit();
-        int eighthNumberOfThePhone = faker.number().randomDigit();
-        int ninthNumberOfThePhone = faker.number().randomDigit();
-        String phone = firstNumberOfThePhone +
-                secondNumberOfThePhone +
-                thirdNumberOfThePhone +
+        int firstNumberOfTheSSN = faker.number().randomDigit();
+        int secondNumberOfTheSSN = faker.number().randomDigit();
+        int thirdNumberOfTheSSN = faker.number().randomDigit();
+        int fourthNumberOfTheSSN = faker.number().randomDigit();
+        int fifthNumberOfTheSSN = faker.number().randomDigit();
+        int sixthNumberOfTheSSN = faker.number().randomDigit();
+        int seventhNumberOfTheSSN = faker.number().randomDigit();
+        int eighthNumberOfTheSSN = faker.number().randomDigit();
+        int ninthNumberOfTheSSN = faker.number().randomDigit();
+        String ssn = "" +
+                firstNumberOfTheSSN +
+                secondNumberOfTheSSN +
+                thirdNumberOfTheSSN +
                 "-" +
-                fourthNumberOfThePhone +
-                fifthNumberOfThePhone +
+                fourthNumberOfTheSSN +
+                fifthNumberOfTheSSN +
                 "-" +
-                sixthNumberOfThePhone +
-                seventhNumberOfThePhone +
-                eighthNumberOfThePhone +
-                ninthNumberOfThePhone;
-        return phone;
+                sixthNumberOfTheSSN +
+                seventhNumberOfTheSSN +
+                eighthNumberOfTheSSN +
+                ninthNumberOfTheSSN;
+        return ssn;
     }
 
     public static String createUserName() {

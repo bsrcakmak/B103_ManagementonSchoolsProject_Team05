@@ -1,7 +1,7 @@
 @us15_ac13
 Feature: Student number'in otomatik olarak verilmesi
 
-  @us15_tc18
+  @us15_ac13_tc18
   Scenario: Student number'in otomatik olarak verilmesi
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir

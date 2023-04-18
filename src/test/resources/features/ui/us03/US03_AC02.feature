@@ -4,13 +4,13 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Given Site adresine gidilir
     When kullanici Contact butonuna tiklar
 
-  @us03_tc02
+  @us03_tc02 @Smoke_test
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Email alanina valid bir deger girer
     Then kullanici Your Email alanina bir deger girilebildigini dogrular
     Then Sayfa kapatilir
 
-  @us03_tc03
+  @us03_tc03 @Smoke_test
   Scenario: Kullanici mail gonderme bolumune Email girebilmeli
     And kullanici Your Email alanina valid bir deger girer
     Then kullanici girilen degerde "@" ve "." karakterlerinin oldugunu dogrular
