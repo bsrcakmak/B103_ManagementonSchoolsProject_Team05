@@ -37,7 +37,7 @@ public class MeetManagementPage {
     @FindBy(xpath = "(//table[1]/tbody/tr)[last()]//td[4])")
     public WebElement descriptionYazisi;
 
-    @FindBy(id="date")
+
     public WebElement dateOfMeet;
 
     @FindBy(id="startTime")

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class StudentInfoManagementPage {
+
     public StudentInfoManagementPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -30,8 +31,6 @@ public class StudentInfoManagementPage {
 
     @FindBy(xpath = "(//*[@class='form-select'])[1]")
     public WebElement chooseLesson;
-
-
 
 
     @FindBy(id="studentId")
@@ -65,7 +64,9 @@ public class StudentInfoManagementPage {
     @FindBy (xpath = "(//*[@class='form-control'])[8]")
     public WebElement infoNoteEdit;
 
+
 /////***************Gorunur olma testi locateleri*******
+
 
     @FindBy(xpath = "(//*[@class='fw-bold p-3 card-header'])[3]")
     public WebElement studentInfoList;
@@ -121,7 +122,3 @@ public class StudentInfoManagementPage {
 
 
 }
-
-
-
-
