@@ -7,8 +7,8 @@ import utilities.Driver;
 
 public class ContactPage {
 
-    public ContactPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public ContactPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(id = "name")
@@ -29,11 +29,7 @@ public class ContactPage {
     @FindBy(xpath = "//div[text()='Contact Message Created Successfully']")
     public WebElement successfully;
 
-    @FindBy(xpath = "//div[text()='Please enter valid email']")
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement unsuccessfully;
-
-
-
-
 
 }

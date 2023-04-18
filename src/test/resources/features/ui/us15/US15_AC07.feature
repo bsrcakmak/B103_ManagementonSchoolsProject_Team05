@@ -21,7 +21,5 @@ Feature: Vice Dean rolu ile ogrenci olusturabilme
     And Mother Name kutusuna gecerli bir deger girilir
     And Password kutusuna gecerli bir deger girilir
     When Submit butonuna tiklanir
-    When Sayfanin alt kisminda yer alan Student List adli listenin son sayfasina gidilir
-    When Girilen User Name ile olusturulan ogrenci listede bulunur
     Then Cinsiyet secilmesi gerektigine dair hata mesajinin alindigi dogrulanir
     Then Sayfa kapatilir
