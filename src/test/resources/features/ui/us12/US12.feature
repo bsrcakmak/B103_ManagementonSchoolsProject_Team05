@@ -26,7 +26,7 @@ Feature: "Vice Dean öğretmene ders atayabilmelidir.(Lesson Program - Lesson Pr
     Then close browser
 
   @US12_AC03
-  Scenario: Ders seçim kısmı boş bırakılmmalıdır
+  Scenario: Ders seçim kısmı boş bırakılmmalıdır..
     Given Site adresine gidilir
     Then Vice Dean rolu ile login islemi gerceklestirilir
     Then  kullanıcı homepagede menü ye tıklar
@@ -37,5 +37,16 @@ Feature: "Vice Dean öğretmene ders atayabilmelidir.(Lesson Program - Lesson Pr
     And Kullanici dersin baslangic saatini girer.
     And Kullanci dersin bitis saatini baslangic saatinden buyuk girer.
     Then Kullanici Submit butonuna tiklar.
+    Then close browser
+
+  @US12_AC05
+  Scenario: Ders seçim kısmı boş bırakılmmalıdır
+    Given Site adresine gidilir
+    Then Vice Dean rolu ile login islemi gerceklestirilir
+    Then  kullanıcı homepagede menü ye tıklar
+    Then ana menüden Lesson Management ders seçimine tıklar
+    Then açılan sayfadan" lesson program " tıklar
+    And Kullanici egitim donemi secimi yapar.
+    Then egitim donemi secimini dogrular.
     Then close browser
 
