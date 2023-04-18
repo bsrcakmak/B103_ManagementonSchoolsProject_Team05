@@ -109,6 +109,7 @@ public class US05_StepDefinition {
         ReusableMethods.waitForClickablility(deanManagementPage.editSubmitButton,10);
         deanManagementPage.editSubmitButton.click();
         ReusableMethods.waitFor(2);
+        Assert.assertTrue(deanManagementPage.popUpMessage.isDisplayed());
     }
     @And("Edit penceresini kapatir")
     public void editPenceresiniKapatir() {
