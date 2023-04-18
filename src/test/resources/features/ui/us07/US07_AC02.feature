@@ -11,3 +11,4 @@ Feature: Dean, kullanıcıların gönderdiği mesajları görebilmeli
     And Dean Contact Get All yazisina tiklar
     And Dean Delete butonuna tiklar
     Then Dean sayfada istedigi mesajin silindigini dogrular
+    Then Sayfa kapatilir
