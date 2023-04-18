@@ -107,6 +107,7 @@ public class US04_StepDefinition {
     }
     @Then("Hata mesaji goruntulendigini dogrular")
     public void hata_mesaji_goruntulendigini_dogrular() {
+        ReusableMethods.waitForVisibility(deanManagementPage.errorMessage,5);
         Assert.assertTrue(deanManagementPage.errorMessage.isDisplayed());
     }
 
@@ -190,6 +191,7 @@ public class US04_StepDefinition {
     }
     @Then("Ssn icin Hata mesaji goruntulendigini dogrular")
     public void ssnIcinHataMesajiGoruntulendiginiDogrular() {
+        ReusableMethods.waitForVisibility(deanManagementPage.errorMessage,5);
         Assert.assertTrue(deanManagementPage.errorMessage.isDisplayed());
     }
 
@@ -221,7 +223,7 @@ public class US04_StepDefinition {
     //  ------------    TC14    ---------------
     @Then("Onay mesajinin goruntulendigini dogrular")
     public void onayMesajininGoruntulendiginiDogrular() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitForVisibility(deanManagementPage.popUpMessage,5);
         Assert.assertEquals("Dean Saved",deanManagementPage.popUpMessage.getText());
     }
 
@@ -245,6 +247,13 @@ public class US04_StepDefinition {
         deanManagementPage.usernameBox.click();
         deanManagementPage.usernameBox.sendKeys(" ");
         ReusableMethods.waitFor(3);
+    }
+    @Then("User Name icin Hata mesaji goruntulendigini dogrular")
+    public void userNameIcinHataMesajiGoruntulendiginiDogrular() {
+        Assert.assertTrue(deanManagementPage.popUpMessage.isDisplayed());
+        //daha once space ile username olusturuldugu icin hata mesaji veriyor
+        //testin fail vermesi icin farkli locate kullandim
+
     }
 
 
