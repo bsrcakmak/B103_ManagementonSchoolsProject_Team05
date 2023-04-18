@@ -8,43 +8,43 @@ Feature: Teacher, öğrencilere not verebilmelidir.
     And teacher Add Student Info Bolumunu goruntuler.
 
 
-  @us17_tc01
+  @us17_tc01 @smoketest
   Scenario: TC_01 Ders_seçme_testi
     And teacher Choose Lesson sekmesinden ders secer.
     Then teacher ders secebildigini dogrular.
     Then Sayfa kapatilir
 
-  @us17_tc02
+  @us17_tc02 @smoketest
   Scenario: TC_02 Ogrenci_secme_Testi
     And teacher Choose Student sekmesinden ogrenci secer.
     Then teacher ogrenci secebildigini dogrular.
     Then Sayfa kapatilir
 
-  @us17_tc03
+  @us17_tc03 @smoketest
   Scenario: TC_03 Donem_Secme_Testi
     And teacher Choose Education Term sekmesinden egitim donemi secer.
     Then teacher donem secebildigini dogrular.
     Then Sayfa kapatilir
 
-  @us17_tc04
+  @us17_tc04 @smoketest
   Scenario: TC_04 Devamsızlık_girebilme_testi
     And teacher Devamsizlik  girer.
     Then teacher devamsizlik  girebildigini dogrular.
     Then Sayfa kapatilir
 
-  @us17_tc05
+  @us17_tc05 @smoketest
   Scenario: TC_05 Midterm_notu_girebilme_testi
     And teacher Midterm notu girer.
     Then teacher Midterm notu girebildigini dogrular.
     Then Sayfa kapatilir
 
-  @us17_tc06
+  @us17_tc06 @smoketest
   Scenario: TC_06 Final_notu_girebilme_testi
     And teacher Final notu girer.
     Then teacher Final notu girebildigini dogrular.
     Then Sayfa kapatilir
 
-  @us17_tc07
+  @us17_tc07 @smoketest
   Scenario: TC_07 Öğrenci_hakkında_Info_notu_girebilme_testi
     And teacher info notuna metin girer.
     Then teacher info notu girebildigini dogrular.
@@ -56,7 +56,7 @@ Feature: Teacher, öğrencilere not verebilmelidir.
     Then kullanici info notu girebildigini dogrular.
     Then Sayfa kapatilir
 
-  @us17_tc09
+  @us17_tc09 @smoketest
   Scenario: TC_09 Gerekli_alanlarin_doldurulma_Testi
     And teacher Choose Lesson sekmesinden ders secmez
     And teacher Choose Student sekmesinden ogrenci secer.

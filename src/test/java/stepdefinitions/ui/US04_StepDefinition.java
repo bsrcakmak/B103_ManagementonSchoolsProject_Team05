@@ -70,7 +70,7 @@ public class US04_StepDefinition {
     @When("Cinsiyet secer")
     public void cinsiyet_secer() {
         deanManagementPage.genderFemale.click();
-        ReusableMethods.waitFor(1);
+        //ReusableMethods.waitFor(1);
     }
     @When("Birthday alanina veri girer")
     public void birthday_alanina_veri_girer() {
@@ -79,7 +79,7 @@ public class US04_StepDefinition {
         int year = faker.number().numberBetween(1950,2005);
         String birthDate = day + "." + month + "." + year;
         deanManagementPage.birthdayBox.sendKeys(birthDate);
-        ReusableMethods.waitFor(2);
+        //ReusableMethods.waitFor(1);
     }
     @When("Phone alanina veri girer")
     public void phone_alanina_veri_girer() {
@@ -107,6 +107,7 @@ public class US04_StepDefinition {
     }
     @Then("Hata mesaji goruntulendigini dogrular")
     public void hata_mesaji_goruntulendigini_dogrular() {
+        ReusableMethods.waitForVisibility(deanManagementPage.errorMessage,5);
         Assert.assertTrue(deanManagementPage.errorMessage.isDisplayed());
     }
 
@@ -190,6 +191,7 @@ public class US04_StepDefinition {
     }
     @Then("Ssn icin Hata mesaji goruntulendigini dogrular")
     public void ssnIcinHataMesajiGoruntulendiginiDogrular() {
+        ReusableMethods.waitForVisibility(deanManagementPage.errorMessage,5);
         Assert.assertTrue(deanManagementPage.errorMessage.isDisplayed());
     }
 
@@ -221,7 +223,7 @@ public class US04_StepDefinition {
     //  ------------    TC14    ---------------
     @Then("Onay mesajinin goruntulendigini dogrular")
     public void onayMesajininGoruntulendiginiDogrular() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitForVisibility(deanManagementPage.popUpMessage,5);
         Assert.assertEquals("Dean Saved",deanManagementPage.popUpMessage.getText());
     }
 
@@ -246,6 +248,13 @@ public class US04_StepDefinition {
         deanManagementPage.usernameBox.sendKeys(" ");
         ReusableMethods.waitFor(3);
     }
+    @Then("User Name icin Hata mesaji goruntulendigini dogrular")
+    public void userNameIcinHataMesajiGoruntulendiginiDogrular() {
+        Assert.assertTrue(deanManagementPage.popUpMessage.isDisplayed());
+        //daha once space ile username olusturuldugu icin hata mesaji veriyor
+        //testin fail vermesi icin farkli locate kullandim
+
+    }
 
 
     //  ------------    TC17   ---------------
@@ -268,4 +277,5 @@ public class US04_StepDefinition {
         Assert.assertTrue(deanManagementPage.passwordRequired.isDisplayed());
         ReusableMethods.waitFor(2);
     }
+
 }

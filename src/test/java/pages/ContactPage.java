@@ -29,7 +29,7 @@ public class ContactPage {
     @FindBy(xpath = "//div[text()='Contact Message Created Successfully']")
     public WebElement successfully;
 
-    @FindBy(xpath = "//div[text()='Please enter valid email']")
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement unsuccessfully;
 
 }

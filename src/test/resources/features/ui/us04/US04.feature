@@ -184,6 +184,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
+    When 2 sn bekler
     Then Ssn altinda uyari mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
@@ -224,7 +225,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina space karakteri girer
     And Password alanina veri girer
     And Submit butonuna tiklar
-    Then Hata mesaji goruntulendigini dogrular
+    Then User Name icin Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
 
@@ -240,6 +241,7 @@ Feature: Admin Dean ekleyebilmeli
     And User Name alanina veri girer
     And Password alanina 7 karakter girer
     And Submit butonuna tiklar
+    When 2 sn bekler
     Then Password icin hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
@@ -254,6 +256,7 @@ Feature: Admin Dean ekleyebilmeli
     And Ssn alanina veri girer
     And User Name alanina veri girer
     And Submit butonuna tiklar
+    When 2 sn bekler
     Then Password altinda hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 

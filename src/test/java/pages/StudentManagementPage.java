@@ -96,9 +96,9 @@ public class StudentManagementPage {
     public WebElement studentsUsernameLastCreated;
 
     @FindBy(xpath = "//div[@role='alert']")
-    public WebElement chooseTeacherAlert;
+    public WebElement alert;
 
-    @FindBy(xpath = "//div[@role='alert']")
-    public WebElement genderAlert;
+    @FindBy(xpath = "(//table[1]/tbody/tr)[last()]//td[1]//span")
+    public WebElement studentsNumberLastCreated;
 
 }
