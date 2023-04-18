@@ -15,7 +15,6 @@ public class LessonManagementPage {
     @FindBy(xpath = "//button[.='Lesson Program']")
     public WebElement lessonProgramButton;
 
-
     @FindBy(xpath = "//div[.='Select lesson']")
     public WebElement selectLesson;
 
@@ -64,8 +63,8 @@ public class LessonManagementPage {
     @FindBy(xpath = "(//*[text()='Submit'])[2]")
     public WebElement submitlessons;
 
-    public LessonProgramManagementPage clickLessonProgram(){
-        ReusableMethods.waitForClickablility(lessonProgramButton,5);
+    public LessonProgramManagementPage clickLessonProgram() {
+        ReusableMethods.waitForClickablility(lessonProgramButton, 5);
         lessonProgramButton.click();
         return new LessonProgramManagementPage();
     }

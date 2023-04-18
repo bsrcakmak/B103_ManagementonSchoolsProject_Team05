@@ -10,14 +10,13 @@ import utilities.ReusableMethods;
 
 public class LessonProgramManagementPage {
     Actions actions = new Actions(Driver.getDriver());
+
     public LessonProgramManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
     @FindBy(xpath = "//label[text()='Choose Lessons']/../div")
     public WebElement selectLessonDropdownElement;
-
-    @FindBy(xpath = "//*[contains(text(),'Math')]")
-    public WebElement selectLessonDropdownOptionElement;
 
     @FindBy(xpath = "//div[contains(@class,'multiValue')]/div[contains(@aria-label,'Remove')]")
     public WebElement selectedLesson;
@@ -25,37 +24,26 @@ public class LessonProgramManagementPage {
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
 
-    @FindBy(css = "div.Toastify")
-    public WebElement alertError;
-
-
-    public LessonProgramManagementPage selectLessonFromDropdown(){
+    public LessonProgramManagementPage selectLessonFromDropdown() {
         selectLessonDropdownElement.click();
         ReusableMethods.waitFor(1);
-        actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER).build().perform();
+        actions.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).build().perform();
         return this;
     }
 
-    public String getSelectedLessonName(){
-       return  selectedLesson.getText().trim();
-    }
-
-    public LessonProgramManagementPage removeSelectedLesson(){
+    public LessonProgramManagementPage removeSelectedLesson() {
         selectedLesson.click();
-        return  this;
+        return this;
     }
 
-    public void clickSubmit(){
-        submitButton.click();
-    }
-
-    public boolean isLessonExist(){
+    public boolean isLessonExist() {
         boolean isDisplayed;
         try {
-             isDisplayed = selectedLesson.isDisplayed();
+            isDisplayed = selectedLesson.isDisplayed();
         } catch (Exception e) {
-           return false;
+            return false;
         }
-        return  isDisplayed;
+        return isDisplayed;
     }
+
 }

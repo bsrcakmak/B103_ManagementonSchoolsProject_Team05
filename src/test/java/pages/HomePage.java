@@ -27,16 +27,16 @@ public class HomePage {
     @FindBy(xpath = "//a[text()='Contact']")
     public WebElement contactButton;
 
-    public HomePage clickMenu(){
-        ReusableMethods.waitForClickablility(menuButton,5);
-        menuButton.click();
-        return this;
-    }
-
-    public LessonManagementPage clickLessonManagement(){
-        ReusableMethods.waitForClickablility(lessonManagementLink,5);
+    public LessonManagementPage clickLessonManagement() {
+        ReusableMethods.waitForClickablility(lessonManagementLink, 5);
         lessonManagementLink.click();
         return new LessonManagementPage();
+    }
+
+    public HomePage clickMenu() {
+        ReusableMethods.waitForClickablility(menuButton, 5);
+        menuButton.click();
+        return this;
     }
 
 }
