@@ -167,7 +167,7 @@ public class US13_StepDefinition {
     @When("Submit tiklanir")
     public void submit_tiklanir() {
 
-        ReusableMethods.waitForClickablility(viceDeanManagementPage.submitButton,5);
+        ReusableMethods.waitForClickability(viceDeanManagementPage.submitButton,5);
         viceDeanManagementPage.submitButton.click();
 
     }
@@ -354,7 +354,7 @@ public class US13_StepDefinition {
         String str = faker.name().firstName();
         String name = str+"@";
 
-        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        ReusableMethods.waitForClickability(viceDeanManagementPage.emailbox,5);
         viceDeanManagementPage.emailbox.click();
         viceDeanManagementPage.emailbox.sendKeys(name);
 
@@ -372,7 +372,7 @@ public class US13_StepDefinition {
         String str = faker.name().firstName();
         String name = str+"@"+"gmail";
 
-        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        ReusableMethods.waitForClickability(viceDeanManagementPage.emailbox,5);
         viceDeanManagementPage.emailbox.click();
         viceDeanManagementPage.emailbox.sendKeys(name);
 
@@ -391,7 +391,7 @@ public class US13_StepDefinition {
         String str = faker.name().firstName();
         String name = str+"."+"com";
 
-        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        ReusableMethods.waitForClickability(viceDeanManagementPage.emailbox,5);
         viceDeanManagementPage.emailbox.click();
         viceDeanManagementPage.emailbox.sendKeys(name);
 
@@ -410,7 +410,7 @@ public class US13_StepDefinition {
         String str02 = faker.name().lastName();
         String name = str+"@"+str02;
 
-        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        ReusableMethods.waitForClickability(viceDeanManagementPage.emailbox,5);
         viceDeanManagementPage.emailbox.click();
         viceDeanManagementPage.emailbox.sendKeys(name);
         
@@ -429,7 +429,7 @@ public class US13_StepDefinition {
         String str02 = faker.name().lastName();
         String name = str+"@"+"com";
 
-        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        ReusableMethods.waitForClickability(viceDeanManagementPage.emailbox,5);
         viceDeanManagementPage.emailbox.click();
         viceDeanManagementPage.emailbox.sendKeys(name);
 
@@ -448,7 +448,7 @@ public class US13_StepDefinition {
 //        String str02 = faker.name().lastName();
 //        String name = str+"@"+"com";
 
-        ReusableMethods.waitForClickablility(viceDeanManagementPage.emailbox,5);
+        ReusableMethods.waitForClickability(viceDeanManagementPage.emailbox,5);
         viceDeanManagementPage.emailbox.click();
         viceDeanManagementPage.emailbox.sendKeys(str);
 

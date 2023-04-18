@@ -137,7 +137,7 @@ public class US18_StepDefinition {
     @And("teacher Edit Butonuna tiklar.")
     public void teacherEditButonunaTiklar() {
         ReusableMethods.scrollIntoViewJS(studentInfoManagementPage.editButonu);
-        ReusableMethods.waitForClickablility(studentInfoManagementPage.editButonu,5);
+        ReusableMethods.waitForClickability(studentInfoManagementPage.editButonu,5);
         ReusableMethods.clickByJS(studentInfoManagementPage.editButonu);
     }
 

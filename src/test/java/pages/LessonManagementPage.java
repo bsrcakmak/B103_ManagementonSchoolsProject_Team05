@@ -64,7 +64,7 @@ public class LessonManagementPage {
     public WebElement submitlessons;
 
     public LessonProgramManagementPage clickLessonProgram() {
-        ReusableMethods.waitForClickablility(lessonProgramButton, 5);
+        ReusableMethods.waitForClickability(lessonProgramButton, 5);
         lessonProgramButton.click();
         return new LessonProgramManagementPage();
     }

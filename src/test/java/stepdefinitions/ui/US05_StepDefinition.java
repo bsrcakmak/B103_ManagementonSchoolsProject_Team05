@@ -33,7 +33,7 @@ public class US05_StepDefinition {
     //  ------------    TC02   ---------------
     @Then("Dean'lerin Gender bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinGenderBilgilerininGorunurOldugunuDogrular() {
-        ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.waitForClickability(deanManagementPage.firstName,5);
         ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstGender.isDisplayed());
@@ -45,7 +45,7 @@ public class US05_StepDefinition {
     //  ------------    TC03   ---------------
     @Then("Dean'lerin Phone Number bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinPhoneNumberBilgilerininGorunurOldugunuDogrular() {
-        ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.waitForClickability(deanManagementPage.firstName,5);
         ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstPhone.isDisplayed());
@@ -56,7 +56,7 @@ public class US05_StepDefinition {
     //  ------------    TC04   ---------------
     @Then("Dean'lerin SSN bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinSSNBilgilerininGorunurOldugunuDogrular() {
-        ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.waitForClickability(deanManagementPage.firstName,5);
         ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstSsn.isDisplayed());
@@ -68,7 +68,7 @@ public class US05_StepDefinition {
     //  ------------    TC05   ---------------
     @Then("Dean'lerin User Name bilgilerinin gorunur oldugunu dogrular")
     public void deanLerinUserNameBilgilerininGorunurOldugunuDogrular() {
-        ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.waitForClickability(deanManagementPage.firstName,5);
         ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.firstUserName.isDisplayed());
@@ -81,7 +81,7 @@ public class US05_StepDefinition {
 
     @And("Silme butonuna tiklar")
     public void silmeButonunaTiklar() {
-        ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.waitForClickability(deanManagementPage.firstName,5);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         Assert.assertTrue(deanManagementPage.deleteButton.isDisplayed());
         deanManagementPage.deleteButton.click();
@@ -96,23 +96,23 @@ public class US05_StepDefinition {
     //  ------------    TC07   --------------- //hatali
     @And("Guncellemek istenen Dean'nin Edit butonuna tiklar")
     public void guncellemekIstenenDeanNinEditButonunaTiklar() {
-        ReusableMethods.waitForClickablility(deanManagementPage.firstName,5);
+        ReusableMethods.waitForClickability(deanManagementPage.firstName,5);
         ReusableMethods.scrollIntoViewJS(deanManagementPage.editButton);
         actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
-        ReusableMethods.waitForClickablility(deanManagementPage.editButton,10);
+        ReusableMethods.waitForClickability(deanManagementPage.editButton,10);
         deanManagementPage.editButton.click();
         ReusableMethods.waitFor(2);
     }
     @And("Edit penceresindeki Name alanina veri girer")
     public void editPenceresindekiNameAlaninaVeriGirer() {
-        ReusableMethods.waitForClickablility(deanManagementPage.editNameBox,5);
+        ReusableMethods.waitForClickability(deanManagementPage.editNameBox,5);
         deanManagementPage.editNameBox.click();
         deanManagementPage.editNameBox.sendKeys(faker.name().firstName());
     }
 
     @And("Edit penceresindeki Submit butonuna tiklar")
     public void editPenceresindekiSubmitButonunaTiklar() {
-        ReusableMethods.waitForClickablility(deanManagementPage.editSubmitButton,10);
+        ReusableMethods.waitForClickability(deanManagementPage.editSubmitButton,10);
         deanManagementPage.editSubmitButton.click();
         ReusableMethods.waitFor(2);
         Assert.assertTrue(deanManagementPage.popUpMessage.isDisplayed());
