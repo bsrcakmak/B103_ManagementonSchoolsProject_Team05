@@ -21,7 +21,6 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[text()='Menu']")
     public WebElement menu;
 
-
     @FindBy(xpath = "//a[text()='Student Info Management']")
     public WebElement studentInfoManagement;
 

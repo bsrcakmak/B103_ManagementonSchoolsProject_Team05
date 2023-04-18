@@ -72,7 +72,6 @@ public class MeetManagementPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/thead/tr/th[3]")
     public WebElement StopTime;
 
-
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/thead/tr/th[4]")
     public WebElement Description;
 
