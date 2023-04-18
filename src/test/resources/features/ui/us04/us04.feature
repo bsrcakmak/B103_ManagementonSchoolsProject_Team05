@@ -7,7 +7,7 @@ Feature: Admin Dean ekleyebilmeli
     And Menu butonuna tiklar
     And Acilan bolumden Dean Management'a tiklar
 
-  @us04_tc01 @smoketest
+  @us04_tc01
   Scenario: Name girilmelidir.Boş bırakılamaz.
     And Name alanina tiklar
     And Surname alanina tiklar
@@ -32,7 +32,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc03 @smoketest
+  @us04_tc03
   Scenario: Surname girilmelidir.Boş bırakılamaz.
     And Surname alanina tiklar
     And Name alanina tiklar
@@ -57,7 +57,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc05 @smoketest
+  @us04_tc05
   Scenario: Birth Place girilmelidir.Boş bırakılamaz.
     And Birth Place alanina tiklar
     When Name alanina tiklar
@@ -81,7 +81,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc07 @smoketest
+  @us04_tc07
   Scenario:Cinsiyet seçilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -96,7 +96,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc08 @smoketest
+  @us04_tc08
   Scenario:Doğum tarihi girilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -111,7 +111,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc09 @smoketest
+  @us04_tc09
   Scenario:Telefon numarası girilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -126,7 +126,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc10 @smoketest
+  @us04_tc10
   Scenario:SSN girilmelidir. Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -140,7 +140,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Ssn altinda Required mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-  @us04_tc11 @smoketest
+  @us04_tc11
   Scenario:SSN 3. rakamdan sonra - içermeli
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -156,7 +156,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc12 @smoketest
+  @us04_tc12
   Scenario:SSN 5. rakamdan sonra - içermeli
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -172,7 +172,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc13 @smoketest
+  @us04_tc13
   Scenario:SSN 9 rakamdan az olamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -189,7 +189,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc14 @smoketest
+  @us04_tc14
   Scenario:SSN 9 rakamdan oluşmalıdır
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -205,7 +205,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc15 @smoketest
+  @us04_tc15
   Scenario:User Name girilmelidir. Boş bırakılamaz.
     And User Name alanina tiklar
     When Name alanina tiklar
@@ -229,7 +229,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
 
-  @us04_tc17 @smoketest
+  @us04_tc17
   Scenario:Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
     And Name alanina veri girer
     And Surname alanina veri girer
@@ -245,7 +245,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Password icin hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-  @us04_tc18 @smoketest
+  @us04_tc18
   Scenario:Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
     And Name alanina veri girer
     And Surname alanina veri girer

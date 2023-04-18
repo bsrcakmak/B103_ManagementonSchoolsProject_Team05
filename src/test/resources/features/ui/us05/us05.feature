@@ -7,30 +7,30 @@ Feature: Admin, Deanleri görebilmeli ve silebilmeli
     And Menu butonuna tiklar
     And Acilan bolumden Dean Management'a tiklar
 
-    @us05_tc01 @smoketest
+    @us05_tc01
     Scenario:Admin Dean'lerin Name bilgisini görebilmeli
       Then Dean'lerin Name bilgilerinin gorunur oldugunu dogrular
       Then Sayfa kapatilir
 
 
-  @us05_tc02 @smoketest
+  @us05_tc02
     Scenario:Admin Dean'lerin Gender bilgisini görebilmeli
       Then Dean'lerin Gender bilgilerinin gorunur oldugunu dogrular
       Then Sayfa kapatilir
 
 
-  @us05_tc03 @smoketest
+  @us05_tc03
     Scenario:Admin Dean'lerin Phone Number bilgisini görebilmeli
       Then Dean'lerin Phone Number bilgilerinin gorunur oldugunu dogrular
       Then Sayfa kapatilir
 
 
-  @us05_tc04 @smoketest
+  @us05_tc04
     Scenario:Admin Dean'lerin SSN bilgisini görebilmeli
       Then Dean'lerin SSN bilgilerinin gorunur oldugunu dogrular
       Then Sayfa kapatilir
 
-    @us05_tc05 @smoketest
+    @us05_tc05
       Scenario:Admin Dean'lerin User Name bilgisini görebilmeli
       Then Dean'lerin User Name bilgilerinin gorunur oldugunu dogrular
       Then Sayfa kapatilir
