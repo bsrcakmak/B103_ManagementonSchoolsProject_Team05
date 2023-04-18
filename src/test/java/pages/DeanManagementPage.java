@@ -95,9 +95,6 @@ public class DeanManagementPage {
     @FindBy(xpath = "//table//tr[1]//td[5]")
     public WebElement firstUserName;
 
-    @FindBy(xpath = "(//*[@class='card-body'])[2]")
-    public WebElement table;
-
     @FindBy(xpath = "(//deletebutton")
     public WebElement deleteButton;
 

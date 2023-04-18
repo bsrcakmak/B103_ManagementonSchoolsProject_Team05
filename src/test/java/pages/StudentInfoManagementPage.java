@@ -59,9 +59,6 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "(//*[@class='form-select'])[5]")
     public WebElement egitimDonemi;
 
-    @FindBy(xpath = "(//*[@class='form-control'])[8]")
-    public WebElement infoNoteEdit;
-
     @FindBy(xpath = "(//*[@class='fw-bold p-3 card-header'])[3]")
     public WebElement studentInfoList;
 
@@ -80,17 +77,11 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[text()='Final Exam']")
     public WebElement finalExamGorunur;
 
-    @FindBy(xpath = "//*[text()='Note']")
-    public WebElement noteGorunur;
-
     @FindBy(xpath = "//*[text()='Info Note']")
     public WebElement infonoteGorunur;
 
     @FindBy(xpath = "//*[text()='Average']")
     public WebElement averageGorunur;
-
-    @FindBy(xpath = "//*[text()='Student Info saved Successfully']")
-    public WebElement submitBasariMesaji;
 
     @FindBy(xpath = "//*[@class='fa-solid fa-pencil']")
     public WebElement editButonu;
@@ -103,13 +94,7 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[text()='Student Info updated Successfully']")
     public WebElement successfullymessage;
 
-    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
-    public WebElement deleteSuccessfuly;
-
     @FindBy(xpath = "//*[text()='Student Info deleted Successfully']")
     public WebElement basariliDelete;
-
-    @FindBy(xpath = "//*[@class='btn-close']")
-    public WebElement close;
 
 }
