@@ -1,8 +1,9 @@
+@us08
 Feature:Vice_Dean_ders_olusturabilmelidir
   Background:
     Given  Site adresine gidilir
 
-  @US08_TC01
+  @US08_TC01 @smokeTest
   Scenario: Vice_dean_ders_olusturma
 
     When Admin rolu ile login islemi gerceklestirilir
@@ -10,10 +11,10 @@ Feature:Vice_Dean_ders_olusturabilmelidir
     Then Kullanici acilan menuden Lesson Management e tiklar.
     And Acilan sayfada Lessons menüsünü secer.
     Then Lesson Management sayfasini acildigini dogrular.
-    Given Lesson Name alanina "Busda"  girer.
+    Given Lesson Name alanina "Hamza"  girer.
     Then Compulsory Checkbox ini isaretler.
-    Then Credit Score alanina "birSayi" girer.
-    And Submit butonuna tiklar
+    Then Credit Score alanina "2020" girer.
+    And Submit butonuna tiklar.
     And Sayfa kapatilir
 
   @US08_TC02
@@ -36,7 +37,7 @@ Feature:Vice_Dean_ders_olusturabilmelidir
     And Acilan sayfada Lessons menüsünü secer.
     Then Lesson Management sayfasini acildigini dogrular.
     Then Credit Score alanina "54" girer.
-    And Submit butonuna tiklar
+    And Submit butonuna tiklar.
     And Sayfa kapatilir
 
   @US08_TC04

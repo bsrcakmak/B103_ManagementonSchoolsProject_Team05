@@ -4,7 +4,7 @@ Feature: Dean_Vice_Dean_hesabi_olusturabilmelidir
   Background:
     Given Site adresine gidilir
 
-  @US06_TC01
+  @US06_TC01 @smokeTest
   Scenario:Dean_Olusturma
     When Admin rolu ile login islemi gerceklestirilir
     Then Baslikta bulunan Menu butonuna tiklanir

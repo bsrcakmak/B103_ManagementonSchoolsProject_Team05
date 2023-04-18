@@ -1,7 +1,9 @@
 package stepdefinitions.ui;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import pages.LessonManagementPage;
 import pages.MainMenuPanel;
 
@@ -23,6 +25,7 @@ public class US08_StepDefinition {
     }
     @Then("Lesson Management sayfasini acildigini dogrular.")
     public void lesson_management_sayfasini_acildigini_dogrular() {
+        Assert.assertTrue(lessonManagementPage.lessonManagementAssert.isDisplayed());
 
 
     }
@@ -33,10 +36,18 @@ public class US08_StepDefinition {
     }
     @Then("Compulsory Checkbox ini isaretler.")
     public void compulsory_checkbox_ini_isaretler() {
+    lessonManagementPage.lessonCheckbox.click();
 
     }
     @Then("Credit Score alanina {string} girer.")
     public void credit_score_alanina_girer(String string) {
+        lessonManagementPage.creditScore.sendKeys(string);
+
+    }
+
+    @And("Submit butonuna tiklar.")
+    public void submitButonunaTiklar() {
+        lessonManagementPage.submitlessons.click();
 
     }
 }

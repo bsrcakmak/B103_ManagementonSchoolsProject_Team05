@@ -51,4 +51,16 @@ public class LessonManagementPage {
     @FindBy(xpath = "//*[@id='controlled-tab-example-tab-lessonsList']")
     public WebElement lessonsButton;
 
+    @FindBy(xpath = "(//*[text()='Lesson Management'])[2]")
+    public WebElement lessonManagementAssert;
+
+    @FindBy(xpath = "//*[@id='compulsory']")
+    public WebElement lessonCheckbox;
+
+    @FindBy(id = "creditScore")
+    public WebElement creditScore;
+
+    @FindBy(xpath = "(//*[text()='Submit'])[2]")
+    public WebElement submitlessons;
+
 }
