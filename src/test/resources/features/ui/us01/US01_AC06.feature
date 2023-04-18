@@ -1,7 +1,7 @@
 @US01_AC06 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC18 @smokeTest
+  @US01_TC18 @smoketest
   Scenario: US01_AC06_Kullanici_dogum_tarihini_girebilmelidir
 
     Given Site adresine gidilir
@@ -15,7 +15,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Date Of Birth alanini bos birakir
     And Sayfa kapatilir
 
-  @US01_TC19 @smokeTest
+  @US01_TC19 @smoketest
   Scenario: US01_AC06_Kullanici_dogum_tarihini_girebilmelidir
 
     Given Site adresine gidilir
@@ -43,7 +43,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Date Of Birth alanina yil bolumune bes haneli deger girer
     And Sayfa kapatilir
 
-  @US01_TC21 @smokeTest
+  @US01_TC21 @smoketest
   Scenario: US01_AC06_Kullanici_dogum_tarihini_girebilmelidir
 
     Given Site adresine gidilir

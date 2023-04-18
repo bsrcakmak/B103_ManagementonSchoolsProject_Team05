@@ -1,7 +1,7 @@
 @US01_AC04 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC10 @smokeTest
+  @US01_TC10 @smoketest
   Scenario: US01_AC04_Kullanici_telefon_numarasini_girebilmelidir
 
     Given Site adresine gidilir
@@ -13,7 +13,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Phone alanini bos birakir
     And Sayfa kapatilir
 
-  @US01_TC11 @smokeTest
+  @US01_TC11 @smoketest
   Scenario: US01_AC04_Kullanici_telefon_numarasini_girebilmelidir
 
     Given Site adresine gidilir
@@ -25,7 +25,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Phone alanina bir karakter deger girer
     And Sayfa kapatilir
 
-  @US01_TC12 @smokeTest
+  @US01_TC12 @smoketest
   Scenario: US01_AC04_Kullanici_telefon_numarasini_girebilmelidir
 
     Given Site adresine gidilir
@@ -61,7 +61,7 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Phone alanina onuc karakter gecerli formatta deger girer
     And Sayfa kapatilir
 
-  @US01_TC15 @smokeTest
+  @US01_TC15 @smoketest
   Scenario: US01_AC04_Kullanici_telefon_numarasini_girebilmelidir
 
     Given Site adresine gidilir
