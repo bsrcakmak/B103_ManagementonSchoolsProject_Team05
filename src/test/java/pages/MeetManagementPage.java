@@ -58,13 +58,10 @@ public class MeetManagementPage {
     public WebElement startTimeEditBolumu;
 
 
-    @FindBy(id="stopTime")
+    //@FindBy(id="stopTime")
 
-    @FindBy(id = "date")
-    public WebElement dateOfMeet;
-
-    @FindBy(id = "startTime")
-    public WebElement startTime;
+  /*  @FindBy(id = "startTime")
+    public WebElement startTime;*/
 
     @FindBy(id = "stopTime")
 
