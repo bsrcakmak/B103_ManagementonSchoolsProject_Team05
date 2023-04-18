@@ -250,7 +250,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
     And Submit butonuna tiklar
-    Then Student kaydinin yapilmadigini dogrular
+    Then student kaydinin yapilamadigini dogrular
     And Sayfayi kapatir
 
   @us25_tc18
@@ -321,7 +321,8 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
     And Submit butonuna tiklar
-    Then Hata mesajinin gorundugunu dogrular
+    Then snn Hata mesajinin gorundugunu dogrular
+    And Sayfayi kapatir
 
 
   @us25_tc22
