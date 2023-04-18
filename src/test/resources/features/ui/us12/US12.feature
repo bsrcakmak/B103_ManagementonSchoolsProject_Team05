@@ -1,7 +1,7 @@
 
 Feature: "Vice Dean öğretmene ders atayabilmelidir.(Lesson Program - Lesson Program Assignment)"
 
-  @US12_AC01
+  @US12_AC01 @smoketest
   Scenario: Ders seçebilmelidir
     Given Site adresine gidilir
     Then Vice Dean rolu ile login islemi gerceklestirilir
@@ -12,7 +12,7 @@ Feature: "Vice Dean öğretmene ders atayabilmelidir.(Lesson Program - Lesson Pr
     And  dersin seçili olduğunu doğrular
     Then close browser
 
-  @US12_AC02
+  @US12_AC02 @smoketest
   Scenario: Seçilen dersi silebilmelidir Ders seçebilmelidir.
     Given Site adresine gidilir
     Then Vice Dean rolu ile login islemi gerceklestirilir
@@ -25,7 +25,7 @@ Feature: "Vice Dean öğretmene ders atayabilmelidir.(Lesson Program - Lesson Pr
     And  dersin silindiğini doğrular
     Then close browser
 
-  @US12_AC03
+  @US12_AC03 @smoketest
   Scenario: Ders seçim kısmı boş bırakılmmalıdır..
     Given Site adresine gidilir
     Then Vice Dean rolu ile login islemi gerceklestirilir
