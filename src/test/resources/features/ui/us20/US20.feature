@@ -8,27 +8,27 @@ Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmeli
     And teacher Meet Management butonuna tiklar
     And teacher Meet List alanini gorur.
 
-  @us20_tc01 @smoke_test
+  @us20_tc01 @smoketest
   Scenario: TC_01 Teacher, toplantıların Date kismini görebilmeli
     And teacher Date bolumunu gorur.
     Then Sayfa kapatilir
 
-  @us20_tc02 @smoke_test
+  @us20_tc02 @smoketest
   Scenario: TC_02 Teacher, toplantıların Start time kismini görebilmeli
     And teacher Start Time bolumunu gorur
     Then Sayfa kapatilir
 
-  @us20_tc03 @smoke_test
+  @us20_tc03 @smoketest
   Scenario: TC_03 Teacher, toplantıların Stop Time kismini görebilmeli
     And teacher Stop Time bolumunu gorur.
     Then Sayfa kapatilir
 
-  @us20_tc04 @smoke_test
+  @us20_tc04 @smoketest
   Scenario: TC_04 Teacher, toplantıların Description kismini görebilmeli
     And teacher Description bolumunu gorur.
     Then Sayfa kapatilir
 
-  @us20_tc05 @smoke_test
+  @us20_tc05 @smoketest
   Scenario: TC_05 Teacher, toplantıları güncelleyebilmeli
     And teacher choose studentdan  ogrenci secer
     And teacher Date Of Meet bolumune gelecek bir tarih girer
@@ -45,7 +45,7 @@ Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmeli
     Then teacher "Updated Successful" popUp mesaji goruntuler.
     Then Sayfa kapatilir
 
-  @us20_tc06 @smoke_test
+  @us20_tc06 @smoketest
   Scenario: TC_06 Teacher, toplantıları güncelleyebilmeli
     And teacher choose student  bolumunden ogrenci secer
     And teacher Date_Of_Meet bolumune gelecek bir tarih girer
@@ -77,7 +77,7 @@ Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmeli
     Then teacher requared  yazisinin gorundugunu dogrular.
     Then Sayfa kapatilir
 
-  @us20_tc08 @smoke_test
+  @us20_tc08 @smoketest
   Scenario: TC_08 Teacher, toplantıları silebilmelidir.
     And teacher choose  student bolumunden ogrenci secer
     And teacher Date Of Meet alanina ileri bir tarih girer
