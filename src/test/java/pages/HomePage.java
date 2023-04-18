@@ -28,13 +28,13 @@ public class HomePage {
     public WebElement contactButton;
 
     public LessonManagementPage clickLessonManagement() {
-        ReusableMethods.waitForClickablility(lessonManagementLink, 5);
+        ReusableMethods.waitForClickability(lessonManagementLink, 5);
         lessonManagementLink.click();
         return new LessonManagementPage();
     }
 
     public HomePage clickMenu() {
-        ReusableMethods.waitForClickablility(menuButton, 5);
+        ReusableMethods.waitForClickability(menuButton, 5);
         menuButton.click();
         return this;
     }

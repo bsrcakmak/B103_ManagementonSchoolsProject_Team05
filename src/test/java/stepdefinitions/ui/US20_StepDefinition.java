@@ -106,7 +106,7 @@ public class US20_StepDefinition {
     @When("teacher Edit alanina tiklar.")
     public void teacher_edit_alanina_tiklar() {
         ReusableMethods.scrollIntoViewJS(meetManagementPage.editButonu);
-        ReusableMethods.waitForClickablility(meetManagementPage.editButonu,5);
+        ReusableMethods.waitForClickability(meetManagementPage.editButonu,5);
         ReusableMethods.clickByJS(meetManagementPage.editButonu);
 
 
@@ -135,7 +135,7 @@ public class US20_StepDefinition {
     @When("teacher Edit Butonuna  tiklar.")
     public void teacher_edit_butonuna_tiklar() {
         ReusableMethods.scrollIntoViewJS(meetManagementPage.editButonu);
-        ReusableMethods.waitForClickablility(meetManagementPage.editButonu,5);
+        ReusableMethods.waitForClickability(meetManagementPage.editButonu,5);
         ReusableMethods.clickByJS(meetManagementPage.editButonu);
         ReusableMethods.waitFor(5);
 
@@ -171,7 +171,7 @@ public class US20_StepDefinition {
     @And("teacher Edit  Butonuna tiklar.")
     public void teacherEditButonunaTiklar() {
         ReusableMethods.scrollIntoViewJS(meetManagementPage.editButonu);
-        ReusableMethods.waitForClickablility(meetManagementPage.editButonu,5);
+        ReusableMethods.waitForClickability(meetManagementPage.editButonu,5);
         ReusableMethods.clickByJS(meetManagementPage.editButonu);
         ReusableMethods.waitFor(5);
     }
