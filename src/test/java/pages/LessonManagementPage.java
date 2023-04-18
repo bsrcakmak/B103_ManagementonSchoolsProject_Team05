@@ -14,6 +14,7 @@ public class LessonManagementPage {
     @FindBy(xpath = "//button[.='Lesson Program']")
     public WebElement lessonProgramButton;
 
+
     @FindBy(xpath = "//div[.='Select lesson']")
     public WebElement selectLesson;
 
@@ -43,5 +44,23 @@ public class LessonManagementPage {
 
     @FindBy(xpath = "//div[@class='col-lg-6']//div[@class='mx-auto p-3 col']//div//button[@type='button'][normalize-space()='Submit']")
     public WebElement submitButtonForLesson;
+
+    @FindBy(xpath = "//*[@id='lessonName']")
+    public WebElement lessonName;
+
+    @FindBy(xpath = "//*[@id='controlled-tab-example-tab-lessonsList']")
+    public WebElement lessonsButton;
+
+    @FindBy(xpath = "(//*[text()='Lesson Management'])[2]")
+    public WebElement lessonManagementAssert;
+
+    @FindBy(xpath = "//*[@id='compulsory']")
+    public WebElement lessonCheckbox;
+
+    @FindBy(id = "creditScore")
+    public WebElement creditScore;
+
+    @FindBy(xpath = "(//*[text()='Submit'])[2]")
+    public WebElement submitlessons;
 
 }

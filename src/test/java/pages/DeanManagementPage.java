@@ -77,6 +77,9 @@ public class DeanManagementPage {
     @FindBy(xpath = "//*[text()='Minimum 8 character']")
     public WebElement passwordAlert;
 
+    @FindBy(xpath = "//*[@value='MALE']")
+    public WebElement genderMale;
+
     @FindBy(xpath = "//table//tr[1]//td[1]")
     public WebElement firstName;
 

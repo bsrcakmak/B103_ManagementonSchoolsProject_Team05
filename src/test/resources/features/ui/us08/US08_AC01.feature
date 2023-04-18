@@ -1,31 +1,56 @@
+@us08
 Feature:Vice_Dean_ders_olusturabilmelidir
   Background:
     Given  Site adresine gidilir
+
+  @US08_TC01 @smokeTest
+  Scenario: Vice_dean_ders_olusturma
+
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
-    Then Kullancı açılan menüden Lesson Management e tıklar.
-    And Acılan sayfada Lessons ı secer.
-
-  @US08_TC01
-  Scenario: Vice_dean_ders_olusturma
-    Given Lesson Name alanına ders adı girer.
-    Then Compulsory Checkbox ını işaretler.
-    Then Credit Score alanına bir sayı girer.
-    And Submit butonuna tiklar
+    Then Kullanici acilan menuden Lesson Management e tiklar.
+    And Acilan sayfada Lessons menüsünü secer.
+    Then Lesson Management sayfasini acildigini dogrular.
+    Given Lesson Name alanina "Hamza"  girer.
+    Then Compulsory Checkbox ini isaretler.
+    Then Credit Score alanina "2020" girer.
+    And Submit butonuna tiklar.
+    And Sayfa kapatilir
 
   @US08_TC02
   Scenario: Vice_dean_ders_olusturmada_Lesson_Name_kismini_bos_birakma
-    Given Kullanıcı Lesson Name alanını boş bırakır.
+
+    When Admin rolu ile login islemi gerceklestirilir
+    Then Menu butonuna tiklar
+    Then Kullanici acilan menuden Lesson Management e tiklar.
+    And Acilan sayfada Lessons menüsünü secer.
+    Then Lesson Management sayfasini acildigini dogrular.
+    Given Lesson Name alanina ""  girer.
+    And Sayfa kapatilir
 
   @US08_TC03
   Scenario: Vice_dean_ders_olusturmada_Compulsory_checkbox_kismini_bos_birakma
-    Given Compulsory checkbox alanını boş bırakır.
-    Then Credit Score alanına bir sayı girer.
-    And Submit butonuna tıklar.
+
+    When Admin rolu ile login islemi gerceklestirilir
+    Then Menu butonuna tiklar
+    Then Kullanici acilan menuden Lesson Management e tiklar.
+    And Acilan sayfada Lessons menüsünü secer.
+    Then Lesson Management sayfasini acildigini dogrular.
+    Then Credit Score alanina "54" girer.
+    And Submit butonuna tiklar.
+    And Sayfa kapatilir
 
   @US08_TC04
   Scenario: Vice_dean_ders_olusturmada_Credit_Score_kismini_bos_birakma
-    Given Kullanıcı Credit Score alanını boş bırakır.
+
+    When Admin rolu ile login islemi gerceklestirilir
+    Then Menu butonuna tiklar
+    Then Kullanici acilan menuden Lesson Management e tiklar.
+    And Acilan sayfada Lessons menüsünü secer.
+    Then Lesson Management sayfasini acildigini dogrular.
+    Then Credit Score alanina "" girer.
+    And Sayfa kapatilir
+
 
 
 
