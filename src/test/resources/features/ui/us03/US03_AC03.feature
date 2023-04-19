@@ -4,13 +4,12 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Given Site adresine gidilir
     When kullanici Contact butonuna tiklar
 
-  @us03_tc04 @Smoke_test
+  @us03_tc04
   Scenario: Kullanici mail gonderme bolumune Subject girebilmeli
     And kullanici Subject alanina valid bir deger girer
     Then kullanici Subject alanina bir deger girilebildigini dogrular
     Then Sayfa kapatilir
 
-   # BUG -> subject alani bos birakilmamali ama mesaj gonderildi
   @us03_tc14
   Scenario: Kullanici mail gonderme bolumune Subject girebilmeli
     And kullanici Your Name alanina valid bir deger girer

@@ -26,9 +26,6 @@ public class GuestUserPage {
     @FindBy(xpath = "(//*[@class='btn btn-danger'])[1]")
     public WebElement trashBin;
 
-    @FindBy(xpath = "//tbody/tr[1]/td[1]")
-    public WebElement firstTableData;
-
     @FindBy(xpath = "//*[text()=' Guest User deleted Successful']")
     public WebElement successfullyDeleted;
 

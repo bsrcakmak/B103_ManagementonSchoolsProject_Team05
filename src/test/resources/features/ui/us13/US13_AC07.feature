@@ -2,7 +2,6 @@
 Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   Background:
-
     Given Site adresine gidilir
     And 1 saniye bekler
     When Vice Dean rolu ile login islemi gerceklestirilir
@@ -14,7 +13,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC22
   Scenario: TC22_Öğretmenin danışmanlığı varsa "Is Advisor Teacher" seçeneğini seçilebilme
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 2 saniye bekler
     And Name "name(faker)" olarak girilir

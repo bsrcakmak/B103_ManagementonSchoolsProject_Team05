@@ -14,7 +14,4 @@ public class GradesAndAnnouncementsPage {
     @FindBy(xpath = "(//table//thead)[1]")
     public WebElement studentInfoListTablo;
 
-    @FindBy(xpath = "(//table//thead)[2]")
-    public WebElement meetListTablo;
-
 }
