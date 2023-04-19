@@ -38,7 +38,7 @@ Feature: Admin, Deanleri görebilmeli ve silebilmeli
     Then Dean'in silindigini dogrular
     Then Sayfa kapatilir
 
-  @us05_tc07 @smokeTest
+  @us05_tc07
   Scenario: Admin Dean'leri günceleyebilmeli
     And Guncellemek istenen Dean'nin Edit butonuna tiklar
     And Edit penceresindeki Name alanina veri girer

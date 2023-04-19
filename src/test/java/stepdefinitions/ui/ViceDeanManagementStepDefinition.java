@@ -187,7 +187,7 @@ public class ViceDeanManagementStepDefinition {
 
     @When("Kullanıcı Ssn alanına uygun formatta Ssn numarası girer.")
     public void kullanıcı_ssn_alanına_uygun_formatta_ssn_numarası_girer() {
-        viceDeanManagementPage.ssnBox.sendKeys(numberUcHane + "-" + numberIkiHane + "-" + numberDortHane);
+        viceDeanManagementPage.ssnBox.sendKeys(ReusableMethods.createSSN());
     }
 
     @When("Kullancı User Name alanına user name girer.")
@@ -209,6 +209,7 @@ public class ViceDeanManagementStepDefinition {
     @Then("Vice Dean saved mesajı çıkar ve vice dean oluşturulur.")
     public void vice_dean_saved_mesajı_çıkar_ve_vice_dean_oluşturulur() {
         ReusableMethods.waitFor(1);
+        ReusableMethods.waitForVisibility(viceDeanManagementPage.viceDeanSaved, 5);
         Assert.assertTrue(viceDeanManagementPage.viceDeanSaved.isDisplayed());
     }
 

@@ -26,13 +26,13 @@ public class TeacherManagementStepDefinition {
         viceDeanManagementPage.teacherManagement.click();
     }
 
-    @When("Ogretmenin girecegi ders {string} olarak secilir")
-    public void ogretmenin_girecegi_ders_olarak_secilir(String ders) {
+    @When("Ogretmenin girecegi ders secilir")
+    public void ogretmenin_girecegi_secilir() {
         Driver.waitForPageToLoad(5);
+        ReusableMethods.waitFor(5);
         viceDeanManagementPage.chooseLessons.click();
+        ReusableMethods.waitFor(10);
         Actions action = new Actions(Driver.getDriver());
-        action.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
-        ReusableMethods.waitFor(2);
         action.sendKeys(Keys.ENTER).build().perform();
     }
 

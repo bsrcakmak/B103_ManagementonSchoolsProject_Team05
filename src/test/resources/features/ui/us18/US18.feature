@@ -38,12 +38,12 @@ Feature: Teacher, öğrenciye verdiği notları, görebilmeli ve güncelleyebilm
     And teacher Info Note Bolumunu gorur.
     Then Sayfa kapatilir
 
-  @us18_tc07
+  @us18_tc07 @smokeTest
   Scenario: TC_07 Student Info List'te; Average bilgilerini gorebilmeli
     And teacher Average bilgilerinin yer aldigi Bolumu gorur
     Then Sayfa kapatilir
 
-  @us18_tc08 @smokeTest
+  @us18_tc08
   Scenario: TC_08 Öğrenci Not bilgisini güncelleyebilmeli
     And teacher Add Student Info Bolumu goruntuler.
     And teacher Choose Lesson bolumunden ders  secer.

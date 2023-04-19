@@ -84,7 +84,6 @@ public class GradesAndAnnouncementStepDefinition {
         if (!chooseLessonPage.lessonSelectButton.get(counter).isSelected()) {
             chooseLessonPage.lessonSelectButton.get(counter).click();
         } else {
-            chooseLessonPage.lessonSelectButton.get(counter).click();
             ReusableMethods.waitFor(1);
             counter++;
             chooseLessonPage.lessonSelectButton.get(counter).click();
