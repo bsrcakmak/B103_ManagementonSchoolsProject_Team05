@@ -7,7 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
-import static baseurl.BaseURL.setUpBeforeAPI;
+import static utilities.BaseURL.setUpBeforeAPI;
 
 public class Hooks {
 
@@ -22,6 +22,7 @@ public class Hooks {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(failedScreenshot, "image/png", "failed_scenario_" + scenario.getName());
         }
+        Driver.closeDriver();
     }
 
 }

@@ -1,9 +1,8 @@
 @US01_AC08 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC32 @smokeTest
+  @US01_TC32
   Scenario: US01_AC08_Kullanıcı_User_Name_girmelidir.
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -19,7 +18,6 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
   @US01_TC33
   Scenario: US01_AC08_Kullanıcı_User_Name_girmelidir.
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -33,10 +31,8 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici User name alanina space(bosluk) degeri girer
     And Sayfa kapatilir
 
-
-  @US01_TC34 @smokeTest
+  @US01_TC34
   Scenario: US01_AC08_Kullanıcı_User_Name_girmelidir.
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -49,6 +45,3 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici SSN alanina ucuncu ve besinci rakamdan sonra - karakteri ile dokuz rakamli deger girer
     And Kullanici User name alanina valid bir deger girer
     And Sayfa kapatilir
-
-
-

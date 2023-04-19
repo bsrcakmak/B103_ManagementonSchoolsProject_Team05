@@ -27,7 +27,7 @@ public class AdminManagementPage {
     public WebElement genderMale;
 
     @FindBy(id = "birthDay")
-    public WebElement birthDayBox;
+    public WebElement dateOfBirthBox;
 
     @FindBy(id = "phoneNumber")
     public WebElement phoneNumber;
@@ -40,5 +40,8 @@ public class AdminManagementPage {
 
     @FindBy(id = "password")
     public WebElement passwordBox;
+
+    @FindBy(xpath = "(//*[text()='Required'])[1]")
+    public WebElement requiredFeedback;
 
 }

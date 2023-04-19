@@ -7,17 +7,18 @@ import utilities.Driver;
 
 public class StudentInfoManagementPage {
 
-    public StudentInfoManagementPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public StudentInfoManagementPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(id="username")
+
+    @FindBy(id = "username")
     public WebElement username;
 
-    @FindBy (id="password")
+    @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy (xpath = "//button[@class='fw-semibold btn btn-primary']")
-    public  WebElement login;
+    @FindBy(xpath = "//button[@class='fw-semibold btn btn-primary']")
+    public WebElement login;
 
     @FindBy(xpath = "//*[text()='Menu']")
     public WebElement menu;
@@ -25,48 +26,38 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//a[text()='Student Info Management']")
     public WebElement studentInfoManagement;
 
-
     @FindBy(xpath = "//*[@class='fw-bold p-3 card-header']")
     public WebElement addInfoMangementyazisi;
 
     @FindBy(xpath = "(//*[@class='form-select'])[1]")
     public WebElement chooseLesson;
 
-
-    @FindBy(id="studentId")
+    @FindBy(id = "studentId")
     public WebElement chooseStudent;
 
-    @FindBy(id="educationTermId")
+    @FindBy(id = "educationTermId")
     public WebElement chooseEducationTerm;
 
-    @FindBy(id="absentee")
+    @FindBy(id = "absentee")
     public WebElement absentee;
 
-    @FindBy(id="midtermExam")
+    @FindBy(id = "midtermExam")
     public WebElement midtermExam;
 
-    @FindBy(id="finalExam")
+    @FindBy(id = "finalExam")
     public WebElement finalExam;
 
-    @FindBy(id="infoNote")
+    @FindBy(id = "infoNote")
     public WebElement infoNote;
 
     @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary btn-lg']")
     public WebElement submitButonu;
 
-    ///EDIT BOLUMU LOCATELERI////
     @FindBy(xpath = "(//*[@class='form-select'])[4]")
     public WebElement selectLesson;
 
     @FindBy(xpath = "(//*[@class='form-select'])[5]")
     public WebElement egitimDonemi;
-
-    @FindBy (xpath = "(//*[@class='form-control'])[8]")
-    public WebElement infoNoteEdit;
-
-
-/////***************Gorunur olma testi locateleri*******
-
 
     @FindBy(xpath = "(//*[@class='fw-bold p-3 card-header'])[3]")
     public WebElement studentInfoList;
@@ -86,20 +77,15 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[text()='Final Exam']")
     public WebElement finalExamGorunur;
 
-    @FindBy(xpath = "//*[text()='Note']")
-    public WebElement noteGorunur;
-
     @FindBy(xpath = "//*[text()='Info Note']")
     public WebElement infonoteGorunur;
 
     @FindBy(xpath = "//*[text()='Average']")
     public WebElement averageGorunur;
 
-    @FindBy(xpath = "//*[text()='Student Info saved Successfully']")
-    public WebElement submitBasariMesaji;
-
     @FindBy(xpath = "//*[@class='fa-solid fa-pencil']")
     public WebElement editButonu;
+
     @FindBy(xpath = "//*[@class='fa-solid fa-trash'][1]")
     public WebElement deleteButonu;
 
@@ -109,16 +95,7 @@ public class StudentInfoManagementPage {
     @FindBy(xpath = "//*[text()='Student Info updated Successfully']")
     public WebElement successfullymessage;
 
-    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
-    public WebElement deleteSuccessfuly;
-
     @FindBy(xpath = "//*[text()='Student Info deleted Successfully']")
     public WebElement basariliDelete;
-
-    @FindBy(xpath = "//*[@class='btn-close']")
-    public WebElement close;
-
-
-
 
 }
