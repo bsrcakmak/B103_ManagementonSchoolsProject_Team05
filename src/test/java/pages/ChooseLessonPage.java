@@ -7,9 +7,9 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class ChooseLessonManagementPage {
+public class ChooseLessonPage {
 
-    public ChooseLessonManagementPage() {
+    public ChooseLessonPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

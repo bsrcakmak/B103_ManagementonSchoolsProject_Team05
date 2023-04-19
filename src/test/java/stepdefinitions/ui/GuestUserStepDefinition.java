@@ -10,7 +10,7 @@ import pages.MainMenuPanel;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US02_StepDefinition {
+public class GuestUserStepDefinition {
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
