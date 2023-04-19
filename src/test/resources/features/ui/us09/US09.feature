@@ -3,7 +3,7 @@ Feature: Vice_Dean_ders_listesini_gorebilmeli_ve_guncellemeler_yapabilmelidir
   Background:
     Given  Site adresine gidilir
 
-  @US09_TC01
+  @US09_TC01 @smokeTest
   Scenario: Lesson_Name_bilgilerini_gorüntuleyebilme
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
@@ -13,7 +13,7 @@ Feature: Vice_Dean_ders_listesini_gorebilmeli_ve_guncellemeler_yapabilmelidir
     Then Lesson List bolumunde "Lesson Name" bilgisini gorur.
     And Sayfa kapatilir
 
-  @US09_TC02
+  @US09_TC02 @smokeTest
   Scenario: Compulsory_bilgilerini_gorüntuleyebilme
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
@@ -23,7 +23,7 @@ Feature: Vice_Dean_ders_listesini_gorebilmeli_ve_guncellemeler_yapabilmelidir
     Then Lesson List bolumunde Compulsory bilgisini gorur.
     And Sayfa kapatilir
 
-  @US09_TC03
+  @US09_TC03 @smokeTest
   Scenario: Credit_Score_bilgilerini goruntuleyebilme
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
@@ -33,7 +33,7 @@ Feature: Vice_Dean_ders_listesini_gorebilmeli_ve_guncellemeler_yapabilmelidir
     Then Lesson List bolumunde Credit Score bilgisini gorur.
     And Sayfa kapatilir
 
-  @US09_TC04 @smokeTest
+  @US09_TC04
   Scenario: Lesson_Name_Compulsory_ve_Credit_Score_bilgilerini_silebilme
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
@@ -47,7 +47,7 @@ Feature: Vice_Dean_ders_listesini_gorebilmeli_ve_guncellemeler_yapabilmelidir
     And create edilen lesson i silme butonuna tiklar
     And Sayfa kapatilir
 
-  @US09_TC05 @smokeTest
+  @US09_TC05
   Scenario: Edit_butonunun_goruntulenmemesi
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar

@@ -28,7 +28,6 @@ public class ContactStepDefinition {
     public String expectedDate = "Date";
     public String expectedSubject = "Subject";
     public String expectedMessage = "Message";
-    public String nameFirst = contactMessagePage.nameFirstCreated.getText();
 
     @When("kullanici Contact butonuna tiklar")
     public void kullaniciContactButonunaTiklar() {
@@ -81,7 +80,10 @@ public class ContactStepDefinition {
 
     @And("kullanici Message alanina valid bir deger girer")
     public void kullaniciMessageAlaninaValidBirDegerGirer() {
-        contactPage.message.click();
+        ReusableMethods.scrollIntoViewJS(contactPage.message);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickByJS(contactPage.message);
+        ReusableMethods.waitFor(2);
         contactPage.message.sendKeys(faker.shakespeare().hamletQuote());
         ReusableMethods.waitFor(2);
     }
@@ -203,6 +205,7 @@ public class ContactStepDefinition {
 
     @Then("Dean sayfada istedigi mesajin silindigini dogrular")
     public void deanSayfadaIstedigiMesajinSilindiginiDogrular() {
+        String nameFirst = contactMessagePage.nameFirstCreated.getText();
         Assert.assertEquals(nameFirst, contactMessagePage.nameFirstCreated.getText());
     }
 
@@ -248,6 +251,7 @@ public class ContactStepDefinition {
 
     @Then("Vice Dean sayfada istedigi mesajin silindigini dogrular")
     public void viceDeanSayfadaIstedigiMesajinSilindiginiDogrular() {
+        String nameFirst = contactMessagePage.nameFirstCreated.getText();
         Assert.assertEquals(nameFirst, contactMessagePage.nameFirstCreated.getText());
     }
 
