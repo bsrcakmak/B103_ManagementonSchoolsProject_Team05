@@ -31,7 +31,7 @@ public class TeacherManagementStepDefinition {
         Driver.waitForPageToLoad(5);
         viceDeanManagementPage.chooseLessons.click();
         Actions action = new Actions(Driver.getDriver());
-        action.sendKeys(ders).build().perform();
+        action.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN).build().perform();
         ReusableMethods.waitFor(2);
         action.sendKeys(Keys.ENTER).build().perform();
     }

@@ -2,9 +2,12 @@ package stepdefinitions.ui;
 
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.ChooseLessonPage;
 import pages.GradesAndAnnouncementsPage;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
@@ -75,7 +78,7 @@ public class GradesAndAnnouncementStepDefinition {
 
     @Then("Kullanici secmek istedigi dersin Choose Lesson butonuna tiklar")
     public void kullanici_secmek_istedigi_dersin_choose_lesson_butonuna_tiklar() {
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(1);
         ReusableMethods.scrollTopJS();
         ReusableMethods.waitFor(2);
         if (!chooseLessonPage.lessonSelectButton.get(counter).isSelected()) {

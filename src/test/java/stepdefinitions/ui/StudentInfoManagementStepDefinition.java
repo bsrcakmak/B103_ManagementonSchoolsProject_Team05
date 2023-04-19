@@ -182,6 +182,7 @@ public class StudentInfoManagementStepDefinition {
 
     @And("teacher Student Info List Bolumunu gorur")
     public void teacherStudentInfoListBolumunuGorur() {
+        ReusableMethods.waitFor(1);
         Assert.assertTrue(studentInfoManagementPage.studentInfoList.isDisplayed());
     }
 

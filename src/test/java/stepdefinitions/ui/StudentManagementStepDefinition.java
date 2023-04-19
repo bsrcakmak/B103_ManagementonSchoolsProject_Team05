@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
 import pages.MainMenuPanel;
@@ -333,11 +334,14 @@ public class StudentManagementStepDefinition {
 
     @Given("Submit butonunu tiklar")
     public void submit_butonuna_tiklar() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
         studentManagementPage.submitButton.click();
     }
 
     @Then("Student Kaydinin yapildigini dogrular")
     public void student_kaydinin_yapildigini_dogrular() {
+        ReusableMethods.waitFor(1);
         Assert.assertTrue(studentManagementPage.studentSave.isDisplayed());
     }
 
