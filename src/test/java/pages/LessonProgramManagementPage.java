@@ -9,7 +9,6 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class LessonProgramManagementPage {
-    Actions actions = new Actions(Driver.getDriver());
 
     public LessonProgramManagementPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -27,6 +26,7 @@ public class LessonProgramManagementPage {
     public LessonProgramManagementPage selectLessonFromDropdown() {
         selectLessonDropdownElement.click();
         ReusableMethods.waitFor(1);
+        Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).build().perform();
         return this;
     }

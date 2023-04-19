@@ -146,17 +146,8 @@ public class StudentManagementPage {
     @FindBy(xpath = "//div[text()='Minimum 12 character (XXX-XXX-XXXX)']")
     public WebElement phoneNumberMinKarakter;
 
-    @FindBy(xpath = "//div[contains(text(),'Please enter valid phone number')]")
-    public WebElement phoneNumberMaxKarakter;
-
-    @FindBy(xpath = "//div[.='Phone number should be exact 12 characters']")
-    public WebElement popUpPhoneNumber;
-
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")
     public WebElement phoneRequired;
-
-    @FindBy(xpath = "//input[@value='FEMALE']")
-    public WebElement genderFemale;
 
     @FindBy(xpath = "//input[@value='MALE']")
     public WebElement genderMale;
@@ -202,9 +193,6 @@ public class StudentManagementPage {
 
     @FindBy(xpath = "//div[text()='Minimum 8 character']")
     public WebElement passwordMinKarakter;
-
-    @FindBy(xpath = "(//*[@class='invalid-feedback'])[11]")
-    public WebElement userPasswordReqired;
 
     @FindBy(xpath = "//div[.='Please select advisor teacher']")
     public WebElement selectEdvisor;
