@@ -73,6 +73,7 @@ public class LessonManagementStepDefinition {
 
     @Then("Lesson Name alanina ders adi girer.")
     public void lessonNameAlaninaDersAdiGirer() {
+        lessonManagementPage.lessonName.sendKeys("Java");
     }
 
     @And("create edilen lesson i silme butonuna tiklar")
@@ -125,7 +126,7 @@ public class LessonManagementStepDefinition {
     @Then("Kullanici Submit butonuna tiklar.")
     public void kullanici_submit_butonuna_tiklar() {
         ReusableMethods.waitFor(1);
-        lessonManagementPage.submitButtonForLesson.click();
+        ReusableMethods.clickByJS(lessonManagementPage.submitButtonForLesson);
     }
 
     @Then("{string} mesaji cikartigini dogrular.")

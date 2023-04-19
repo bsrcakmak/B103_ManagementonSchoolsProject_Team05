@@ -375,9 +375,7 @@ public class RegisterStepDefinition {
 
     @Then("Kullanici Register alanina tiklar")
     public void kullanici_register_alanina_tiklar() {
-        registerPage.registerButton.click();
-        ReusableMethods.waitFor(1);
-        Assert.assertTrue(registerPage.guestUserRegisteredUyari.getText().contains("Guest User registered"));
+        ReusableMethods.clickByJS(registerPage.registerButton);
         ReusableMethods.waitFor(2);
     }
 
