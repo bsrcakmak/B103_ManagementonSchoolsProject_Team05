@@ -66,4 +66,4 @@ Feature: Teacher, öğrenciye verdiği notları, görebilmeli ve güncelleyebilm
   Scenario: TC_09 Öğrenci Not bilgisini silebilmeli
     And teacher Delete Butonuna tiklar.
     Then teacher ogrenci bilgilerinin silindigini dogrular.
-   # Then Sayfa kapatilir
+    Then Sayfa kapatilir

@@ -221,7 +221,16 @@ public class MeetManagementStepDefinition {
         ReusableMethods.waitFor(5);
         meetManagementPage.dateOfMeetEditBolumu.sendKeys("30.04.2023");
         ReusableMethods.waitFor(5);
+    }
+    @And("teacher  Start Time bolumde degisiklik yapar.")
+    public void teacherStartTimeBolumdeDegisiklikYapar() {
+        ReusableMethods.waitFor(5);
         meetManagementPage.startTimeEditBolumu.click();
+
+    }
+    @And("teacher Submit butonu tiklar.")
+    public void teacherSubmitButonuTiklar() {
+
         meetManagementPage.submitEditBolumu.click();
         ReusableMethods.waitFor(5);
     }

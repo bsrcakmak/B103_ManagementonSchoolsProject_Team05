@@ -32,6 +32,16 @@ public class MeetManagementPage {
     @FindBy(xpath = "//*[@class=' css-19bb58m']")
     public WebElement chooseStudent;
 
+
+    @FindBy(xpath = "(//*[@class=' css-19bb58m'])[2]")
+    public WebElement chooseStudentEditBolumu;
+
+    @FindBy(xpath= "//*[contains(@class,'css-19bb58m')]")
+    public WebElement selectStudent;
+
+    @FindBy(xpath = "(//table[1]/tbody/tr)[last()]//td[4])")
+    public WebElement descriptionYazisi;
+
     @FindBy(xpath = "(//*[@id=\"description\"])[2]")
     public WebElement editDescription;
 
@@ -48,7 +58,6 @@ public class MeetManagementPage {
     public WebElement startTimeEditBolumu;
 
     @FindBy(id = "stopTime")
-
     public WebElement stopTime;
 
     @FindBy(id = "description")

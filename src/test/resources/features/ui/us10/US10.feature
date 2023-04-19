@@ -1,6 +1,7 @@
 @US10_Steps
 Feature: uS_10 test Case Vice Dean ders programi olusturabilmelidir.
 
+
   @smokeTest
   Scenario: US10_TC01 Vice Dean ders programi olusturmasi.
     Given Site adresine gidilir

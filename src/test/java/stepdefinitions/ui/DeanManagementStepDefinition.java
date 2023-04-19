@@ -107,6 +107,13 @@ public class DeanManagementStepDefinition {
 
     @Then("Hata mesaji goruntulendigini dogrular")
     public void hata_mesaji_goruntulendigini_dogrular() {
+
+
+        ReusableMethods.waitForVisibility(deanManagementPage.errorMessage, 5);
+
+        ReusableMethods.waitForVisibility(deanManagementPage.errorMessage,5);
+
+
         ReusableMethods.waitForVisibility(deanManagementPage.errorMessage, 5);
         Assert.assertTrue(deanManagementPage.errorMessage.isDisplayed());
     }
@@ -170,7 +177,6 @@ public class DeanManagementStepDefinition {
 
     @Then("Ssn icin Hata mesaji goruntulendigini dogrular")
     public void ssnIcinHataMesajiGoruntulendiginiDogrular() {
-        ReusableMethods.waitForVisibility(deanManagementPage.errorMessage, 5);
         Assert.assertTrue(deanManagementPage.errorMessage.isDisplayed());
     }
 
@@ -196,8 +202,13 @@ public class DeanManagementStepDefinition {
 
     @Then("Onay mesajinin goruntulendigini dogrular")
     public void onayMesajininGoruntulendiginiDogrular() {
+
         ReusableMethods.waitForVisibility(deanManagementPage.popUpMessage, 5);
         Assert.assertEquals("Dean Saved", deanManagementPage.popUpMessage.getText());
+
+        ReusableMethods.waitForVisibility(deanManagementPage.popUpMessage,5);
+        Assert.assertEquals("Dean Saved",deanManagementPage.popUpMessage.getText());
+
     }
 
     @And("User Name alanina tiklar")
