@@ -226,9 +226,11 @@ public class MeetManagementStepDefinition {
     public void teacherStartTimeBolumdeDegisiklikYapar() {
         ReusableMethods.waitFor(5);
         meetManagementPage.startTimeEditBolumu.click();
+
     }
     @And("teacher Submit butonu tiklar.")
     public void teacherSubmitButonuTiklar() {
+
         meetManagementPage.submitEditBolumu.click();
         ReusableMethods.waitFor(5);
     }
@@ -310,7 +312,5 @@ public class MeetManagementStepDefinition {
         ReusableMethods.waitForVisibility(meetManagementPage.basariliDeleteYazisi, 5);
         Assert.assertTrue(meetManagementPage.basariliDeleteYazisi.isDisplayed());
     }
-
-
 
 }
