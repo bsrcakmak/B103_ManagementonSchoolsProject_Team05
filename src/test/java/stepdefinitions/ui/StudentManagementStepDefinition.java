@@ -249,7 +249,7 @@ public class StudentManagementStepDefinition {
         ReusableMethods.login("adminUsername", "adminPassword");
     }
 
-    @Given("Menu butonuna tiklar")
+    @Given("Menu butonunu tiklar")
     public void menu_butonuna_tiklar() {
         studentManagementPage.menuu.click();
     }
@@ -331,7 +331,7 @@ public class StudentManagementStepDefinition {
         studentManagementPage.passwordArea.sendKeys(ConfigReader.getProperty("adminPassword"));
     }
 
-    @Given("Submit butonuna tiklar")
+    @Given("Submit butonunu tiklar")
     public void submit_butonuna_tiklar() {
         studentManagementPage.submitButton.click();
     }
@@ -392,7 +392,7 @@ public class StudentManagementStepDefinition {
         studentManagementPage.namee.sendKeys(faker.number().digit());
     }
 
-    @When("Surname alanini bos birakir")
+    @When("Surname alani bos birakir")
     public void surname_alanini_bos_birakir() {
         studentManagementPage.surName.sendKeys(hic);
     }
