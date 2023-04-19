@@ -6,19 +6,29 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import pages.ContactMessagePage;
 import pages.ContactPage;
 import pages.HomePage;
+import pages.MainMenuPanel;
 import utilities.ReusableMethods;
 
-public class US03_StepDefinition {
+public class ContactStepDefinition {
 
     HomePage homePage = new HomePage();
     ContactPage contactPage = new ContactPage();
     Faker faker = new Faker();
+    MainMenuPanel mainMenuPanel = new MainMenuPanel();
+    ContactMessagePage contactMessagePage = new ContactMessagePage();
 
     public String invalidEmail1 = "mary@clanen";
     public String invalidEmail2 = "mary.clane";
     public String invalidEmail3 = "mary@clane.";
+    public String expectedName = "Name";
+    public String expectedEmail = "Email";
+    public String expectedDate = "Date";
+    public String expectedSubject = "Subject";
+    public String expectedMessage = "Message";
+    public String nameFirst = contactMessagePage.nameFirstCreated.getText();
 
     @When("kullanici Contact butonuna tiklar")
     public void kullaniciContactButonunaTiklar() {
@@ -149,6 +159,96 @@ public class US03_StepDefinition {
     public void kullaniciYourEmailAlaninaSonrasiBosDegerGirer(String arg0) {
         contactPage.email.click();
         contactPage.email.sendKeys(invalidEmail3);
+    }
+
+    @And("Dean Menu butonuna tiklar")
+    public void deanMenuButonunaTiklar() {
+        homePage.menuButton.click();
+    }
+
+    @And("Dean Contact Get All yazisina tiklar")
+    public void deanContactGetAllYazisinaTiklar() {
+        mainMenuPanel.contactGetAllButton.click();
+    }
+
+    @Then("Dean sayfada mesaj yazarlarinin goruntulendigini dogrular")
+    public void deanSayfadaMesajYazarlarininGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedName, contactMessagePage.name.getText());
+    }
+
+    @Then("Dean sayfada mesaj yazarlarina ait emaillerin goruntulendigini dogrular")
+    public void deanSayfadaMesajYazarlarinaAitEmaillerinGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedEmail, contactMessagePage.email.getText());
+    }
+
+    @Then("Dean sayfada mesajlarin gonderilme tarihinin goruntulendigini dogrular")
+    public void deanSayfadaMesajlarinGonderilmeTarihininGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedDate, contactMessagePage.date.getText());
+    }
+
+    @Then("Dean sayfada mesajlarin subject bilgisinin goruntulendigini dogrular")
+    public void deanSayfadaMesajlarinSubjectBilgisininGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedSubject, contactMessagePage.subject.getText());
+    }
+
+    @Then("Dean sayfada mesajlarin goruntulendigini dogrular")
+    public void deanSayfadaMesajlarinGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedMessage, contactMessagePage.message.getText());
+    }
+
+    @And("Dean Delete butonuna tiklar")
+    public void deanDeleteButonunaTiklar() {
+        contactMessagePage.deleteButton.click();
+    }
+
+    @Then("Dean sayfada istedigi mesajin silindigini dogrular")
+    public void deanSayfadaIstedigiMesajinSilindiginiDogrular() {
+        Assert.assertEquals(nameFirst, contactMessagePage.nameFirstCreated.getText());
+    }
+
+    @And("Vice Dean Menu butonuna tiklar")
+    public void viceDeanMenuButonunaTiklar() {
+        homePage.menuButton.click();
+    }
+
+    @And("Vice Dean Contact Get All yazisina tiklar")
+    public void viceDeanContactGetAllYazisinaTiklar() {
+        mainMenuPanel.contactGetAllButton.click();
+    }
+
+    @Then("Vice Dean sayfada mesaj yazarlarinin goruntulendigini dogrular")
+    public void viceDeanSayfadaMesajYazarlarininGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedName, contactMessagePage.name.getText());
+    }
+
+    @Then("Vice Dean sayfada mesaj yazarlarina ait emaillerin goruntulendigini dogrular")
+    public void viceDeanSayfadaMesajYazarlarinaAitEmaillerinGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedEmail, contactMessagePage.email.getText());
+    }
+
+    @Then("Vice Dean sayfada mesajlarin gonderilme tarihinin goruntulendigini dogrular")
+    public void viceDeanSayfadaMesajlarinGonderilmeTarihininGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedDate, contactMessagePage.date.getText());
+    }
+
+    @Then("Vice Dean sayfada mesajlarin subject bilgisinin goruntulendigini dogrular")
+    public void viceDeanSayfadaMesajlarinSubjectBilgisininGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedSubject, contactMessagePage.subject.getText());
+    }
+
+    @Then("Vice Dean sayfada mesajlarin goruntulendigini dogrular")
+    public void viceDeanSayfadaMesajlarinGoruntulendiginiDogrular() {
+        Assert.assertEquals(expectedMessage, contactMessagePage.message.getText());
+    }
+
+    @And("Vice Dean Delete butonuna tiklar")
+    public void viceDeanDeleteButonunaTiklar() {
+        contactMessagePage.deleteButton.click();
+    }
+
+    @Then("Vice Dean sayfada istedigi mesajin silindigini dogrular")
+    public void viceDeanSayfadaIstedigiMesajinSilindiginiDogrular() {
+        Assert.assertEquals(nameFirst, contactMessagePage.nameFirstCreated.getText());
     }
 
 }

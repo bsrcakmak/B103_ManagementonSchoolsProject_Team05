@@ -9,7 +9,7 @@ import pages.HomePage;
 import pages.RegisterPage;
 import utilities.ReusableMethods;
 
-public class US01_StepDefinition {
+public class RegisterStepDefinition {
 
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
@@ -231,7 +231,6 @@ public class US01_StepDefinition {
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.ssnUyari.getText(), "Minimum 11 character (XXX-XX-XXXX)");
         ReusableMethods.waitFor(2);
-
     }
 
     @Then("Kullanici SSN alanina on haneli sayi girer")
@@ -240,7 +239,6 @@ public class US01_StepDefinition {
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.ssnUyari.getText(), "Minimum 11 character (XXX-XX-XXXX)");
         ReusableMethods.waitFor(2);
-
     }
 
     @Then("Kullanici SSN alanina oniki haneli sayi girer")
@@ -265,7 +263,6 @@ public class US01_StepDefinition {
         ReusableMethods.waitFor(2);
         Assert.assertTrue(registerPage.ssnUyari.isDisplayed());
         ReusableMethods.waitFor(2);
-
     }
 
     @Then("Kullanici SSN alanina ikinci ve dorduncu rakamdan sonra - karakteri ile dokuz rakamli deger girer")
@@ -309,7 +306,6 @@ public class US01_StepDefinition {
         ReusableMethods.waitFor(2);
         Assert.assertEquals(registerPage.usernameUyari.getText(), "Required");
         ReusableMethods.waitFor(2);
-
     }
 
     @Then("Kullanici User name alanina space\\(bosluk) degeri girer")

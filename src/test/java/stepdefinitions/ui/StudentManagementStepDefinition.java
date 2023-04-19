@@ -10,7 +10,7 @@ import pages.MainMenuPanel;
 import pages.StudentManagementPage;
 import utilities.ReusableMethods;
 
-public class US15_StepDefinition {
+public class StudentManagementStepDefinition {
 
     HomePage homePage = new HomePage();
     MainMenuPanel mainMenuPanel = new MainMenuPanel();
@@ -211,7 +211,7 @@ public class US15_StepDefinition {
     @And("Password kutusuna yedi karakter girilir")
     public void password_Kutusuna_Yedi_Karakter_Girilir() {
         Faker faker = new Faker();
-        String password = faker.internet().password(7,8);
+        String password = faker.internet().password(7, 8);
         studentManagementPage.passwordBox.sendKeys(password);
     }
 
