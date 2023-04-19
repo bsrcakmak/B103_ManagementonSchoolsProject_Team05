@@ -3,7 +3,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
 
   Background: TC001_login_Islemi
     Given Admin ana sayfada login yapar
-    And Menu butonuna tiklar
+    And Menu butonunu tiklar
     And Acilan pencereden Student Management secer
 
   @us25_tc01 @smokeTest
@@ -21,7 +21,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Student Kaydinin yapildigini dogrular
     And Sayfayi kapatir
 
@@ -40,7 +40,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Student Kaydinin yapilmadigini dogrular
     And Sayfa kapatilir
 
@@ -65,7 +65,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     And bir saniye bekler
     Then Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
@@ -85,7 +85,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
@@ -104,7 +104,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Hata mesajinin gorundugunu dogrular
     And Sayfa kapatilir
 
@@ -112,7 +112,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
   Scenario: TC06_surName_bos_alanini_bos_birakma
     Given Add Student basliginda Choose Advisor Teacher secer
     And Name alanina valid deger girer
-    And Surname alanini bos birakir
+    And Surname alani bos birakir
     Then Surname altinda "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
 
@@ -131,7 +131,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then "Please enter valid surname" mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
@@ -217,7 +217,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Phone Number Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
@@ -236,7 +236,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then student kaydinin yapilamadigini dogrular
     And Sayfayi kapatir
 
@@ -270,7 +270,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Snn Hata mesajinin gorundugunu dogrular
 
   @us25_tc20
@@ -288,7 +288,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Snn Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
@@ -307,7 +307,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then snn Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
@@ -357,7 +357,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina space girer
     And Mother Name Alanina valid deger girer
     And Password alanina en az sekiz karakterden olusan valid deger girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Father name Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
@@ -410,7 +410,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina yedi Karakter girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Password Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
@@ -429,6 +429,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Father Name Alanina valid deger girer
     And Mother Name Alanina valid deger girer
     And Password alanina space girer
-    And Submit butonuna tiklar
+    And Submit butonunu tiklar
     Then Password "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
