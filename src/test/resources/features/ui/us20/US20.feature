@@ -65,4 +65,4 @@ Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmeli
   Scenario: TC_08 Teacher, toplantıları silebilmelidir.
     And teacher Delete  butonuna tiklar.
     Then teacher toplanti bilgisinin basariyla silindi mesajinin gorundugunu dogrular
-    Then Sayfa kapatilir
+    Then Sayfa kapatilir.
