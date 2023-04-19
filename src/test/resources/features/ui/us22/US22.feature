@@ -8,24 +8,24 @@ Feature: Admin ekleme
     And Kullanici menu butonuna tiklar
     And Kullanici Admin Management butonuna tiklar
 
-    @us22tc01
-    Scenario: "Name" girilmelidir. Boş bırakılamaz.
-      And Kullanici Surname kutusuna gecerli bir deger girer
-      And Kullanici Name kutucugunu bos birakir
-      Then Kullanici hata mesajini dogrular
-      And Sayfa kapatilir
+  @us22tc01
+  Scenario: "Name" girilmelidir. Boş bırakılamaz.
+    And Kullanici Surname kutusuna gecerli bir deger girer
+    And Kullanici Name kutucugunu bos birakir
+    Then Kullanici hata mesajini dogrular
+    And Sayfa kapatilir
 
-     @us22tc02
-     Scenario: "Name" girilmelidir. Boş bırakılamaz.
-      And Kullanici name kutusuna bosluk tusu girer
-      Then Kullanici hata mesajini dogrular
-       And Sayfa kapatilir
+  @us22tc02
+  Scenario: "Name" girilmelidir. Boş bırakılamaz.
+    And Kullanici name kutusuna bosluk tusu girer
+    Then Kullanici hata mesajini dogrular
+    And Sayfa kapatilir
 
-     @us22tc03
-       Scenario: "Name" girilmelidir. Boş bırakılamaz.
-     And Kullanici name kutusuna herhangi bir sayi girer
-     Then Kullanici hata mesajini dogrular
-     And Sayfa kapatilir
+  @us22tc03
+  Scenario: "Name" girilmelidir. Boş bırakılamaz.
+    And Kullanici name kutusuna herhangi bir sayi girer
+    Then Kullanici hata mesajini dogrular
+    And Sayfa kapatilir
 
   @us22tc04
   Scenario: "Name" girilmelidir. Boş bırakılamaz.
@@ -230,7 +230,3 @@ Feature: Admin ekleme
     And Kullanici Male butonuna tiklar
     Then Kullanici gender kisminda Male butonunun tiklanabilir oldugunu dogrular
     And Sayfa kapatilir
-
-
-
-

@@ -2,7 +2,6 @@
 Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   Background:
-
     Given Site adresine gidilir
     And 1 saniye bekler
     When Vice Dean rolu ile login islemi gerceklestirilir
@@ -14,7 +13,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC11
   Scenario: TC11_Ogretmen_olusturulurken_Birth_Place_alaninin_bos_birakilmamasi
-
     And Sayfayi Submit butonu gorulecek sekilde asagi kaydirir.
     And 1 saniye bekler
     And Submit tiklanir
@@ -26,7 +24,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC12
   Scenario: TC12_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
@@ -57,7 +54,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC13
   Scenario: TC13_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
@@ -88,7 +84,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC14
   Scenario: TC14_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
@@ -119,7 +114,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC15
   Scenario: TC15_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
@@ -150,7 +144,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC16
   Scenario: TC16_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
@@ -179,10 +172,8 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     And 1 saniye bekler
     Then Sayfa kapatilir
 
-
   @US13_TC17
   Scenario: TC17_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
@@ -213,7 +204,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC18
   Scenario: TC18_Ogretmen_olusturulurken_Email_alanina_gecersiz_email_girilmesi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
