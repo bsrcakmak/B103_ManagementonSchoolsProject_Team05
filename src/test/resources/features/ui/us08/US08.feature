@@ -1,11 +1,11 @@
 @us08
 Feature:Vice_Dean_ders_olusturabilmelidir
+
   Background:
     Given  Site adresine gidilir
 
   @US08_TC01 @smokeTest
   Scenario: Vice_dean_ders_olusturma
-
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
     Then Kullanici acilan menuden Lesson Management e tiklar.
@@ -19,7 +19,6 @@ Feature:Vice_Dean_ders_olusturabilmelidir
 
   @US08_TC02
   Scenario: Vice_dean_ders_olusturmada_Lesson_Name_kismini_bos_birakma
-
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
     Then Kullanici acilan menuden Lesson Management e tiklar.
@@ -30,7 +29,6 @@ Feature:Vice_Dean_ders_olusturabilmelidir
 
   @US08_TC03
   Scenario: Vice_dean_ders_olusturmada_Compulsory_checkbox_kismini_bos_birakma
-
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
     Then Kullanici acilan menuden Lesson Management e tiklar.
@@ -42,7 +40,6 @@ Feature:Vice_Dean_ders_olusturabilmelidir
 
   @US08_TC04
   Scenario: Vice_dean_ders_olusturmada_Credit_Score_kismini_bos_birakma
-
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
     Then Kullanici acilan menuden Lesson Management e tiklar.
@@ -50,14 +47,3 @@ Feature:Vice_Dean_ders_olusturabilmelidir
     Then Lesson Management sayfasini acildigini dogrular.
     Then Credit Score alanina "" girer.
     And Sayfa kapatilir
-
-
-
-
-
-
-
-
-
-
-

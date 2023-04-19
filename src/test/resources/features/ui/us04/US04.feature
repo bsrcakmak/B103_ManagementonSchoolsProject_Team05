@@ -14,7 +14,6 @@ Feature: Admin Dean ekleyebilmeli
     Then Name altinda Required uyarisinin goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc02
   Scenario: Name alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
     And Name alanina space karakteri girer
@@ -31,14 +30,12 @@ Feature: Admin Dean ekleyebilmeli
     Then Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc03
   Scenario: Surname girilmelidir.Boş bırakılamaz.
     And Surname alanina tiklar
     And Name alanina tiklar
     Then Surname altinda Required uyarisinin goruntulendigini dogrular
     Then Sayfa kapatilir
-
 
   @us04_tc04
   Scenario: Surname alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
@@ -56,7 +53,6 @@ Feature: Admin Dean ekleyebilmeli
     Then Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc05
   Scenario: Birth Place girilmelidir.Boş bırakılamaz.
     And Birth Place alanina tiklar
@@ -64,9 +60,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Birth Place altinda Required uyarisinin goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc06
-  Scenario:Birth Place alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
+  Scenario: Birth Place alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina space karakteri girer
@@ -80,9 +75,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc07
-  Scenario:Cinsiyet seçilmelidir.Boş bırakılamaz.
+  Scenario: Cinsiyet seçilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -95,9 +89,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc08
-  Scenario:Doğum tarihi girilmelidir.Boş bırakılamaz.
+  Scenario: Doğum tarihi girilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -110,9 +103,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Dogum tarihi icin hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc09
-  Scenario:Telefon numarası girilmelidir.Boş bırakılamaz.
+  Scenario: Telefon numarası girilmelidir.Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -125,9 +117,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Telefon icin hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc10
-  Scenario:SSN girilmelidir. Boş bırakılamaz.
+  Scenario: SSN girilmelidir. Boş bırakılamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -141,7 +132,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
   @us04_tc11
-  Scenario:SSN 3. rakamdan sonra - içermeli
+  Scenario: SSN 3. rakamdan sonra - içermeli
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -155,9 +146,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Ssn icin Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc12
-  Scenario:SSN 5. rakamdan sonra - içermeli
+  Scenario: SSN 5. rakamdan sonra - içermeli
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -171,9 +161,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Ssn icin Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc13
-  Scenario:SSN 9 rakamdan az olamaz.
+  Scenario: SSN 9 rakamdan az olamaz.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -188,9 +177,8 @@ Feature: Admin Dean ekleyebilmeli
     Then Ssn altinda uyari mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc14
-  Scenario:SSN 9 rakamdan oluşmalıdır
+  Scenario: SSN 9 rakamdan oluşmalıdır
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -204,17 +192,15 @@ Feature: Admin Dean ekleyebilmeli
     Then Onay mesajinin goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc15
-  Scenario:User Name girilmelidir. Boş bırakılamaz.
+  Scenario: User Name girilmelidir. Boş bırakılamaz.
     And User Name alanina tiklar
     When Name alanina tiklar
     Then User Name altinda Required uyarisinin goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc16
-  Scenario:User Name alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
+  Scenario: User Name alanina sadece space karakteri girildiginde Submit butonu aktif olmamali
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -228,9 +214,8 @@ Feature: Admin Dean ekleyebilmeli
     Then User Name icin Hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
 
-
   @us04_tc17
-  Scenario:Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
+  Scenario: Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -246,7 +231,7 @@ Feature: Admin Dean ekleyebilmeli
     Then Sayfa kapatilir
 
   @us04_tc18
-  Scenario:Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
+  Scenario: Password girilmelidir.Password en az 8 karakterden oluşmalıdır.
     And Name alanina veri girer
     And Surname alanina veri girer
     And Birth Place alanina veri girer
@@ -259,67 +244,3 @@ Feature: Admin Dean ekleyebilmeli
     When 2 sn bekler
     Then Password altinda hata mesaji goruntulendigini dogrular
     Then Sayfa kapatilir
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

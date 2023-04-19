@@ -1,7 +1,7 @@
 @us15
 Feature: Vice Dean rolu ile ogrenci olusturabilme
 
-  @us15_tc1 @smoketest
+  @us15_tc1 @smokeTest
   Scenario: Vice Dean rolu ile ogrenci olusturabilme
     Given Site adresine gidilir
     When Vice Dean rolu ile login islemi gerceklestirilir

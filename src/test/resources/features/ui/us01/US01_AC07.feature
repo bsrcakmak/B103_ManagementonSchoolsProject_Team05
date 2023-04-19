@@ -1,9 +1,8 @@
 @US01_AC07 @US_01
 Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
-  @US01_TC22 @smoketest
+  @US01_TC22
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -16,9 +15,8 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici SSN alanini bos birakir
     And Sayfa kapatilir
 
-  @US01_TC23 @smoketest
+  @US01_TC23
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -31,9 +29,8 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici SSN alanina bir haneli sayi girer
     And Sayfa kapatilir
 
-  @US01_TC24 @smoketest
+  @US01_TC24
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -48,7 +45,6 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
   @US01_TC25
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -63,7 +59,6 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
   @US01_TC26
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -78,7 +73,6 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
   @US01_TC27
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -93,7 +87,6 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
   @US01_TC28
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -108,7 +101,6 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
   @US01_TC29
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -123,7 +115,6 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
 
   @US01_TC30
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -136,9 +127,8 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici SSN alanina ucuncu ve besinci rakamdan sonra - karakteri ile on rakamli deger girer
     And Sayfa kapatilir
 
-  @US01_TC31 @smoketest
+  @US01_TC31
   Scenario: US01_AC07_SSN_girilmelidir_SSN;_3._ve_5._rakamdan_sonra_"-"_icermeli_ve_9_rakamdan_olusmalidir
-
     Given Site adresine gidilir
     When Kullanici register butonuna tiklar
     Then Kullanici Register sayfasinda oldugunu gorur
@@ -150,15 +140,3 @@ Feature: US01_Aday_ogrenciler_sisteme_kayit_olabilmelidir.
     And Kullanici Date Of Birth alanina gun-ay-yil formatinda gecerli deger girer
     And Kullanici SSN alanina ucuncu ve besinci rakamdan sonra - karakteri ile dokuz rakamli deger girer
     And Sayfa kapatilir
-
-
-
-
-
-
-
-
-
-
-
-

@@ -6,8 +6,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Menu butonuna tiklar
     And Acilan pencereden Student Management secer
 
-
-  @us25_tc01 @smoketest
+  @us25_tc01 @smokeTest
   Scenario: TC01_Admin_kullanici_girisi_ile_Student_kaydi_yapma
     Given Add Student basliginda Choose Advisor Teacher secer
     And Name alanina valid deger girer
@@ -43,7 +42,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Password alanina en az sekiz karakterden olusan valid deger girer
     And Submit butonuna tiklar
     Then Student Kaydinin yapilmadigini dogrular
-    And sayfa kapatilir
+    And Sayfa kapatilir
 
   @us25_tc03
   Scenario: TC03_name_alanini_bos_biraakma
@@ -51,8 +50,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Name alanini bos birakir
     Then "Required" yazisinin ciktigini dogrular
 
-
-# bug
   @us25_tc04
   Scenario: TC04_name_alanina_sembol_girme
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -73,7 +70,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
-    # bug
   @us25_tc05
   Scenario: TC05__name_alanina_space_karakteri_girme
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -93,7 +89,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
-    # bug
   @us25_tc06
   Scenario: TC06_name_alanina_numerik_deger_girme
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -111,8 +106,7 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Password alanina en az sekiz karakterden olusan valid deger girer
     And Submit butonuna tiklar
     Then Hata mesajinin gorundugunu dogrular
-    And sayfa kapatilir
-
+    And Sayfa kapatilir
 
   @us25_tc07
   Scenario: TC06_surName_bos_alanini_bos_birakma
@@ -122,7 +116,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then Surname altinda "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
 
-# bug
   @us25_tc08
   Scenario: TC08_Surname_alanina_valid_deger_girme
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -142,7 +135,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then "Please enter valid surname" mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
-# bug
   @us25_tc09
   Scenario: TC09_surname_alanina_space_karakteri_girme
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -151,7 +143,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then Surname altinda"Please enter valid surname" mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
-
   @us25_tc10
   Scenario: TC10_Surname_alaninaa_numerik_deger_girme
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -159,7 +150,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Surname alanina numerik deger girer
     Then Surname altinda"Please enter valid surname" mesajinin gorundugunu dogrular
     And Sayfayi kapatir
-
 
   @us25_tc11
   Scenario: TC11_birthPlace_bos_birakma
@@ -180,7 +170,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then Email "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
 
-    # bug
   @us25_tc13
   Scenario: TC13_gecerli_email_formati_testi
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -201,7 +190,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Phone alanini bos birakir
     Then Phone "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
-
 
   @us25_tc15
   Scenario: TC15_phoneNumber_alanina_sinir_degerin_altinda_girme
@@ -232,7 +220,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Submit butonuna tiklar
     Then Phone Number Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
-
 
   @us25_tc17
   Scenario: Gender_bos_birakma
@@ -324,7 +311,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then snn Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
-
   @us25_tc22
   Scenario: TC22_userName_bos_birakildi
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -356,7 +342,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
 
-    # bug
   @us25_tc24
   Scenario: TC24_father_name_alanina_space_karakteri_girildi
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -393,7 +378,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then MotherName "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
 
-    # bug
   @us25_tc26
   Scenario: TC26_Mother_name_alanina_space_yazma
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -430,9 +414,6 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     Then Password Hata mesajinin gorundugunu dogrular
     And Sayfayi kapatir
 
-
-
-     # bug
   @us25_tc28
   Scenario: TC29_password_alanina_space_karakteri_girme
     Given Add Student basliginda Choose Advisor Teacher secer
@@ -451,4 +432,3 @@ Feature: Admin_Student_kaydi_yapmabilmeli
     And Submit butonuna tiklar
     Then Password "Required" yazisinin ciktigini dogrular
     And Sayfayi kapatir
-

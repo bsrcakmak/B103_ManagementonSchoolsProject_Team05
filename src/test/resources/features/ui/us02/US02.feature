@@ -8,15 +8,15 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
     And Kullanici menu butonuna tiklar
     And Kullanici Guest User butonuna tiklar
 
-    @us02tc01
-    Scenario: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
-      Then Kullanici Name Surname sutunundaki verilerin gorunurlugunu dogrular
-      And Sayfa kapatilir
+  @us02tc01
+  Scenario: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
+    Then Kullanici Name Surname sutunundaki verilerin gorunurlugunu dogrular
+    And Sayfa kapatilir
 
-    @us02tc02
-    Scenario: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
-      Then Kullanici Phone Number sutunundaki verilerin gorunurlugunu dogrular
-      And Sayfa kapatilir
+  @us02tc02
+  Scenario: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
+    Then Kullanici Phone Number sutunundaki verilerin gorunurlugunu dogrular
+    And Sayfa kapatilir
 
   @us02tc03
   Scenario: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
@@ -33,17 +33,3 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
     When Kullanici Guest User List'indeki herhangi bir veri grubunun yanindaki cop kutusu simgesine tiklar
     Then Kullanici veri grubunun silindigini dogrular
     And Sayfa kapatilir
-
-
-
-
-
-
-
-
-
-
-
-
-
-

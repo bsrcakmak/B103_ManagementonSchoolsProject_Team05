@@ -4,13 +4,12 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Given Site adresine gidilir
     When kullanici Contact butonuna tiklar
 
-  @us03_tc01 @smoketest
+  @us03_tc01
   Scenario: Kullanici mail gonderme bolumune Name girebilmeli
     And kullanici Your Name alanina valid bir deger girer
     Then kullanici Your Name alanina bir deger girilebildigini dogrular
     Then Sayfa kapatilir
 
-        # BUG --> email alani bos birakilmamali ama mesaj gonderildi
   @us03_tc07
   Scenario: Kullanici mail gonderme bolumune Name girebilmeli
     And kullanici Your Name alanini bos birakir
@@ -21,7 +20,6 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     Then kullanici Mesajin gonderilemedigini dogrular
     Then Sayfa kapatilir
 
-     #BUG -> name alani space ile baslamamali ama mesaj gonderildi
   @us03_tc08
   Scenario: Kullanici mail gonderme bolumune Name girebilmeli
     And kullanici Your Name alanina space karakteri girer
