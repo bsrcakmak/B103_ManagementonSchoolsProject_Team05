@@ -2,13 +2,20 @@ package stepdefinitions.ui;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
 import pages.MainMenuPanel;
 import pages.StudentManagementPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.io.IOException;
 
 public class StudentManagementStepDefinition {
 
@@ -17,6 +24,22 @@ public class StudentManagementStepDefinition {
     StudentManagementPage studentManagementPage = new StudentManagementPage();
     String expectedUsername;
     String actualUsername;
+    public static Faker faker = new Faker();
+    public static String numberUcHane = faker.phoneNumber().subscriberNumber(3);
+    public static String numberDortHane = faker.phoneNumber().subscriberNumber(4);
+    public static String numberBesHane = faker.phoneNumber().subscriberNumber(5);
+    public static int number1 = faker.number().numberBetween(1, 31);
+    public static int number2 = faker.number().numberBetween(1, 12);
+    public static int number3 = faker.number().numberBetween(1980, 2016);
+    public static String araFormat = "-";
+    public static String hic = "";
+    public static String nokta = ".";
+    public static String space = " ";
+    Select select;
+    public static String str = faker.regexify("./");
+    String phoneNumber = numberUcHane + araFormat + numberUcHane + araFormat + numberUcHane;
+    public static String numberIkiHane = faker.phoneNumber().subscriberNumber(2);
+    public static String yildiz = "*";
 
     @When("Baslikta bulunan Menu butonuna tiklanir")
     public void baslikta_bulunan_menu_butonuna_tiklanir() {
@@ -218,6 +241,365 @@ public class StudentManagementStepDefinition {
     @Then("Password'un yedi karakterden az olamayacagina dair uyari mesajinin goruntulendigi dogrulanir")
     public void passwordun_Yedi_Karakterden_Az_Olamayacagina_Dair_Uyari_Mesajinin_Goruntulendigi_Dogrulanir() {
         Assert.assertTrue(studentManagementPage.passwordRequiredWarning.isDisplayed());
+    }
+
+    @Given("Admin ana sayfada login yapar")
+    public void adminAnaSayfadaLoginYapar() {
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        ReusableMethods.login("adminUsername", "adminPassword");
+    }
+
+    @Given("Menu butonuna tiklar")
+    public void menu_butonuna_tiklar() {
+        studentManagementPage.menuu.click();
+    }
+
+    @Given("Acilan pencereden Student Management secer")
+    public void acilan_pencereden_student_management_secer() {
+        studentManagementPage.studentManagement.click();
+    }
+
+    @Given("Add Student basliginda Choose Advisor Teacher secer")
+    public void add_student_basliginda_choose_advisor_teacher_secer() {
+        select = new Select(studentManagementPage.chooseAdvisor);
+        select.selectByVisibleText(ConfigReader.getProperty("advisor"));
+    }
+
+    @Given("Name alanina valid deger girer")
+    public void name_alanina_valid_deger_girer() {
+        ReusableMethods.waitFor(1);
+        studentManagementPage.namee.sendKeys(faker.name().firstName());
+    }
+
+    @Given("Surname alanina valid deger girer")
+    public void surname_alanina_valid_deger_girer() {
+        ReusableMethods.waitFor(1);
+        studentManagementPage.surName.sendKeys(faker.name().lastName());
+    }
+
+    @Given("Birth Place Alanina valid deger girer")
+    public void birth_place_alanina_valid_deger_girer() {
+        studentManagementPage.birthPlace.sendKeys(faker.country().capital());
+    }
+
+    @Given("Email alanina valid email girer")
+    public void email_alanina_valid_email_girer() {
+        studentManagementPage.eMail.sendKeys(faker.internet().emailAddress());
+    }
+
+    @Given("Phone Alanina valid phone number girer")
+    public void phone_alanina_valid_phone_number_girer() {
+        String str = space + numberUcHane + araFormat + numberUcHane + araFormat + numberDortHane;
+        String phoneNumber = str.trim();
+        studentManagementPage.phoneNumber.sendKeys(phoneNumber);
+    }
+
+    @Given("Gender Secer")
+    public void gender_secer() {
+        studentManagementPage.genderMale.click();
+    }
+
+    @Given("Date Of Birth Alanina dogum tarihini girer")
+    public void date_of_birth_alanina_dogum_tarihini_girer() {
+        String str = hic + number1 + nokta + number2 + nokta + number3;
+        String dateOfBirth = str.trim();
+        studentManagementPage.dateOfBirth.sendKeys(dateOfBirth);
+    }
+
+    @Given("Ssn alanina valid deger girer")
+    public void ssn_alanina_valid_deger_girer() {
+        studentManagementPage.snn.sendKeys(faker.idNumber().ssnValid());
+    }
+
+    @Given("User Name Alanina valid deger girer")
+    public void user_name_alanina_valid_deger_girer() {
+        studentManagementPage.userName.sendKeys(faker.name().username());
+    }
+
+    @Given("Father Name Alanina valid deger girer")
+    public void father_name_alanina_valid_deger_girer() {
+        studentManagementPage.fatherName.sendKeys(faker.name().firstName());
+    }
+
+    @Given("Mother Name Alanina valid deger girer")
+    public void mother_name_alanina_valid_deger_girer() {
+        studentManagementPage.motherName.sendKeys(faker.name().firstName());
+    }
+
+    @And("Password alanina en az sekiz karakterden olusan valid deger girer")
+    public void passwordAlaninaEnAzSekizKarakterdenOlusanValidDegerGirer() {
+        studentManagementPage.passwordArea.sendKeys(ConfigReader.getProperty("adminPassword"));
+    }
+
+    @Given("Submit butonuna tiklar")
+    public void submit_butonuna_tiklar() {
+        studentManagementPage.submitButton.click();
+    }
+
+    @Then("Student Kaydinin yapildigini dogrular")
+    public void student_kaydinin_yapildigini_dogrular() {
+        Assert.assertTrue(studentManagementPage.studentSave.isDisplayed());
+    }
+
+    @Then("Sayfayi kapatir")
+    public void sayfayi_kapatir() {
+        Driver.closeDriver();
+    }
+
+    @Given("Add Student basliginda Choose Advisor Teacher bos birakir")
+    public void add_student_basliginda_choose_advisor_teacher_bos_birakir() {
+        studentManagementPage.chooseAdvisor.sendKeys(hic, Keys.TAB);
+    }
+
+    @Then("Student Kaydinin yapilmadigini dogrular")
+    public void student_kaydinin_yapilmadigini_dogrular() {
+        Assert.assertTrue(studentManagementPage.selectEdvisor.isDisplayed());
+    }
+
+    @Given("Name alanini bos birakir")
+    public void name_alanini_bos_birakir() {
+        studentManagementPage.namee.sendKeys(hic);
+    }
+
+    @Then("{string} yazisinin ciktigini dogrular")
+    public void yazisinin_ciktigini_dogrular(String string) {
+        studentManagementPage.requiredName.isDisplayed();
+    }
+
+    @Given("Name alanina sembol girer")
+    public void name_alanina_sembol_girer() {
+        studentManagementPage.namee.sendKeys(str);
+    }
+
+    @And("bir saniye bekler")
+    public void birSaniyeBekler() {
+        ReusableMethods.waitFor(1);
+    }
+
+    @Then("Hata mesajinin gorundugunu dogrular")
+    public void hata_mesajinin_gorundugunu_dogrular() {
+        String expectedValidName = "Please enter valid name";
+        Assert.assertTrue(studentManagementPage.validName.getText().contains(expectedValidName));
+    }
+
+    @Given("Name alanina space girer")
+    public void name_alanina_space_girer() {
+        studentManagementPage.namee.sendKeys(space);
+    }
+
+    @Given("Name alanina numerik deger girer")
+    public void name_alanina_numerik_deger_girer() {
+        studentManagementPage.namee.sendKeys(faker.number().digit());
+    }
+
+    @When("Surname alanini bos birakir")
+    public void surname_alanini_bos_birakir() {
+        studentManagementPage.surName.sendKeys(hic);
+    }
+
+    @Then("Surname altinda {string} yazisinin ciktigini dogrular")
+    public void surnameAltindaYazisininCiktiginiDogrular(String str) {
+        Assert.assertTrue(studentManagementPage.requiredSurName.getText().contains(str));
+    }
+
+    @Given("Surname alanina sembol girer")
+    public void surname_alanina_sembol_girer() {
+        studentManagementPage.surName.sendKeys(str);
+    }
+
+    @Then("{string} mesajinin gorundugunu dogrular")
+    public void mesajinin_gorundugunu_dogrular(String str) {
+        Assert.assertTrue(studentManagementPage.surNameSembol.getText().contains(str));
+
+    }
+
+    @Given("Surname alanina space girer")
+    public void surname_alanina_space_girer() {
+        studentManagementPage.surName.sendKeys(space);
+    }
+
+    @Then("Surname altinda{string} mesajinin gorundugunu dogrular")
+    public void surnameAltindaMesajininGorundugunuDogrular(String str) {
+        Assert.assertTrue(studentManagementPage.errorMessage.isDisplayed());
+    }
+
+    @When("Surname alanina numerik deger girer")
+    public void surname_alanina_numerik_deger_girer() {
+        studentManagementPage.surName.sendKeys(faker.number().digit());
+    }
+
+    @When("Birth Place alanini bos birakir")
+    public void birth_place_alanini_bos_birakir() {
+        studentManagementPage.birthPlace.sendKeys(hic);
+    }
+
+    @And("BirthPlace {string} yazisinin ciktigini dogrular")
+    public void birthplaceYazisininCiktiginiDogrular(String arg0) {
+        Assert.assertTrue(studentManagementPage.birthPlaceRequired.isDisplayed());
+    }
+
+    @When("Email alanini bos birakir")
+    public void email_alanini_bos_birakir() {
+        studentManagementPage.eMail.sendKeys(hic);
+    }
+
+    @Then("Email {string} yazisinin ciktigini dogrular")
+    public void email_yazisinin_ciktigini_dogrular(String str) {
+        Assert.assertTrue(studentManagementPage.eMailRequired.getText().contains(str));
+    }
+
+    @And("Email alanina {string} formatta email adresi girer")
+    public void emailAlaninaFormattaEmailAdresiGirer(String arg0) {
+        String email = "dede@hh";
+        studentManagementPage.eMail.sendKeys(email);
+    }
+
+    @Then("girilen degerde {string} ve {string} karakterlerinin oldugunu dogrular")
+    public void girilen_degerde_ve_karakterlerinin_oldugunu_dogrular(String str1, String str2) {
+        Assert.assertTrue(studentManagementPage.eMail.getText().contains(str1) && studentManagementPage.eMail.getText().contains(str2));
+
+    }
+
+    @When("Phone alanini bos birakir")
+    public void phone_alanini_bos_birakir() {
+        studentManagementPage.phoneNumber.sendKeys(hic);
+    }
+
+    @Then("Phone {string} yazisinin ciktigini dogrular")
+    public void phone_yazisinin_ciktigini_dogrular(String str) {
+        Assert.assertTrue(studentManagementPage.phoneRequired.getText().contains(str));
+    }
+
+    @When("Phone alanina onbir karakter girer")
+    public void phoneAlaninaOnbirKarakterGirer() {
+        studentManagementPage.phoneNumber.sendKeys(phoneNumber);
+    }
+
+    @Then("Minimum oniki character \\(XXX-XXX-XXXX) yazisinin ciktigini dogrular")
+    public void minimumOnikiCharacterXXXXXXXXXXYazisininCiktiginiDogrular() {
+        Assert.assertTrue(studentManagementPage.phoneNumberMinKarakter.isDisplayed());
+    }
+
+    @And("Phone alanina invalid karakter girer")
+    public void phoneAlaninaInvalidKarakterGirer() {
+        String phoneNumber = numberUcHane + araFormat + numberDortHane + araFormat + numberDortHane;
+        studentManagementPage.phoneNumber.sendKeys(phoneNumber);
+    }
+
+    @Then("Phone Number Hata mesajinin gorundugunu dogrular")
+    public void phoneNumberHataMesajininGorundugunuDogrular() {
+        Assert.assertTrue(studentManagementPage.errorMessage.isDisplayed());
+    }
+
+    @When("Gender bos birakir")
+    public void gender_bos_birakir() {
+        studentManagementPage.genderMale.sendKeys(hic);
+    }
+
+    @Then("student kaydinin yapilamadigini dogrular")
+    public void student_kaydinin_yapilamadigini_dogrular() throws IOException {
+        ReusableMethods.waitFor(1);
+        studentManagementPage.genderEmpty.isDisplayed();
+    }
+
+    @Given("Snn alanina tiklar")
+    public void snn_alanina_tiklar() {
+        studentManagementPage.snn.click();
+    }
+
+    @Then("Snn {string} yazisinin ciktigini dogrular")
+    public void snnYazisininCiktiginiDogrular(String str) {
+        Assert.assertTrue(studentManagementPage.snnReqired.getText().contains(str));
+    }
+
+    @Given("Uc ve besinci karaktere invalid deger girer")
+    public void ucVeBesinciKaraktereInvalidDegerGirer() {
+        String snn = numberUcHane + yildiz + numberIkiHane + yildiz + numberDortHane;
+        studentManagementPage.snn.sendKeys(snn);
+    }
+
+    @Then("Snn Hata mesajinin gorundugunu dogrular")
+    public void snn_hata_mesajinin_gorundugunu_dogrular() {
+        studentManagementPage.invalidsnn.isDisplayed();
+    }
+
+    @Given("SSN alanina \\(-) iceren oniki karakter girer")
+    public void ssn_alanina_iceren_oniki_karakter_girer() {
+        String snn = numberUcHane + yildiz + numberUcHane + yildiz + numberDortHane;
+        studentManagementPage.snn.sendKeys(snn);
+    }
+
+    @Given("SSN alanina \\(-) iceren {int} karakter girer")
+    public void ssnAlaninaIcerenKarakterGirer(int arg0) {
+        String snn = numberUcHane + araFormat + numberIkiHane + araFormat + numberUcHane;
+        studentManagementPage.snn.sendKeys(snn);
+    }
+
+    @Then("snn Hata mesajinin gorundugunu dogrular")
+    public void snnHataMesajininGorundugunuDogrular() {
+        studentManagementPage.ssnAlert.isDisplayed();
+    }
+
+    @When("User Name alanini bos birakir")
+    public void user_name_alanini_bos_birakir() {
+        studentManagementPage.userName.sendKeys(hic);
+    }
+
+    @Then("UserName {string} yazisinin ciktigini dogrular")
+    public void user_name_yazisinin_ciktigini_dogrular(String string) {
+        Assert.assertTrue(studentManagementPage.userNameReqired.isDisplayed());
+    }
+
+    @Given("Father Name alanini bos birakir")
+    public void fatherNameAlaniniBosBirakir() {
+        studentManagementPage.fatherName.sendKeys(space);
+    }
+
+    @Given("Father Name Alanina space girer")
+    public void fatherNameAlaninaSpaceGirer() {
+        studentManagementPage.fatherName.sendKeys(space);
+    }
+
+    @Then("Father name Hata mesajinin gorundugunu dogrular")
+    public void fatherNameHataMesajininGorundugunuDogrular() {
+        studentManagementPage.fatherNamePopUp.isDisplayed();
+    }
+
+    @Given("Mother Name alanini bos birakir")
+    public void motherNameAlaniniBosBirakir() {
+        studentManagementPage.motherName.sendKeys(hic);
+    }
+
+    @Given("Mother Name alanini space girer")
+    public void motherNameAlaniniSpaceGirer() {
+        studentManagementPage.motherName.sendKeys(space);
+    }
+
+    @Then("MotherName {string} yazisinin ciktigini dogrular")
+    public void mothernameYazisininCiktiginiDogrular(String arg0) {
+        studentManagementPage.motherNameRequired.isDisplayed();
+    }
+
+    @Given("Password alanina yedi Karakter girer")
+    public void passwordAlaninaYediKarakterGirer() {
+        String phoneNumber = faker.phoneNumber().subscriberNumber(7);
+        studentManagementPage.passwordArea.sendKeys(phoneNumber);
+    }
+
+    @Then("Password Hata mesajinin gorundugunu dogrular")
+    public void password_hata_mesajinin_gorundugunu_dogrular() {
+        Assert.assertTrue(studentManagementPage.passwordMinKarakter.isDisplayed());
+    }
+
+    @Given("Password alanina space girer")
+    public void password_alanina_space_girer() {
+        String space = "        ";
+        studentManagementPage.passwordArea.sendKeys(space);
+    }
+
+    @Then("Password {string} yazisinin ciktigini dogrular")
+    public void passwordYazisininCiktiginiDogrular(String arg0) {
+        Assert.assertTrue(studentManagementPage.errorMessage.isDisplayed());
     }
 
 }
