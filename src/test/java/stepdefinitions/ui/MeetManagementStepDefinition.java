@@ -167,7 +167,9 @@ public class MeetManagementStepDefinition {
 
     @When("teacher choose studentdan  ogrenci secer")
     public void teacher_choose_studentdan_ogrenci_secer() {
+        ReusableMethods.waitFor(5);
         meetManagementPage.chooseStudent.click();
+        ReusableMethods.waitFor(10);
         ReusableMethods.clickByJS(meetManagementPage.chooseStudent);
         ReusableMethods.waitFor(2);
         new Actions(Driver.getDriver()).moveByOffset(300, 500).click().build().perform();
@@ -181,7 +183,6 @@ public class MeetManagementStepDefinition {
     @When("teacher Start Time alanina gecerli bir deger girer")
     public void teacher_start_time_alanina_gecerli_bir_deger_girer() {
         meetManagementPage.startTime.sendKeys("13", "30");
-
     }
 
     @When("teacher Stop Time alaninagecerli bir deger girer")
@@ -222,12 +223,14 @@ public class MeetManagementStepDefinition {
         meetManagementPage.dateOfMeetEditBolumu.sendKeys("30.04.2023");
         ReusableMethods.waitFor(5);
     }
+
     @And("teacher  Start Time bolumde degisiklik yapar.")
     public void teacherStartTimeBolumdeDegisiklikYapar() {
         ReusableMethods.waitFor(5);
         meetManagementPage.startTimeEditBolumu.click();
-
+        meetManagementPage.startTime.sendKeys("15", "30");
     }
+
     @And("teacher Submit butonu tiklar.")
     public void teacherSubmitButonuTiklar() {
 

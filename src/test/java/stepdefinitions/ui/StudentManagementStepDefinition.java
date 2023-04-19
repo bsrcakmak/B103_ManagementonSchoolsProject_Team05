@@ -342,6 +342,7 @@ public class StudentManagementStepDefinition {
     @Then("Student Kaydinin yapildigini dogrular")
     public void student_kaydinin_yapildigini_dogrular() {
         ReusableMethods.waitFor(1);
+        ReusableMethods.waitForVisibility(studentManagementPage.studentSave, 5);
         Assert.assertTrue(studentManagementPage.studentSave.isDisplayed());
     }
 

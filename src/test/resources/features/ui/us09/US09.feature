@@ -3,7 +3,7 @@ Feature: Vice_Dean_ders_listesini_gorebilmeli_ve_guncellemeler_yapabilmelidir
   Background:
     Given  Site adresine gidilir
 
-  @US09_TC01 @smokeTest
+  @US09_TC01
   Scenario: Lesson_Name_bilgilerini_gorüntuleyebilme
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar
@@ -23,7 +23,7 @@ Feature: Vice_Dean_ders_listesini_gorebilmeli_ve_guncellemeler_yapabilmelidir
     Then Lesson List bolumunde Compulsory bilgisini gorur.
     And Sayfa kapatilir
 
-  @US09_TC03 @smokeTest
+  @US09_TC03
   Scenario: Credit_Score_bilgilerini goruntuleyebilme
     When Admin rolu ile login islemi gerceklestirilir
     Then Menu butonuna tiklar

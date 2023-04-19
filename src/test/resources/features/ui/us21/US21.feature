@@ -13,7 +13,7 @@ Feature: Students_chooselesson_grades_and_announcement
     Then Kullanici Chose Lesson listesinde Stop time bilgilerini gorur
     And Sayfa kapatilir
 
-  @US21_TC02 @smokeTest
+  @US21_TC02
   Scenario: Istedigi_ders_veya_dersleri_secebilmeli
     Then Kullanici secmek istedigi dersin Choose Lesson butonuna tiklar
     Then Kullanici Submit butonuna tiklar
@@ -34,7 +34,7 @@ Feature: Students_chooselesson_grades_and_announcement
     And Kullanici Error: Course schedule cannot be selected for the same hour and day uyarisini gorur
     And Sayfa kapatilir
 
-  @US21_TC04 @smokeTest
+  @US21_TC04
   Scenario: Sectigi_dersleri_Lesson_Program_Listte_gorebilmeli
     Then Kullanici secmek istedigi dersin Choose Lesson butonuna tiklar
     Then Kullanici Submit butonuna tiklar
@@ -43,14 +43,14 @@ Feature: Students_chooselesson_grades_and_announcement
     Then Kullanici Lesson Program List te ekledigi dersleri gorur
     And Sayfa kapatilir
 
-  @US21_TC05
+  @US21_TC05 @smokeTest
   Scenario: Ogrenci_sinav_notlarini_gorebilmeli
     Then Kullanici menu butonuna tiklar
     Then Kullanici sayfada acilan main menu kisminda Grades ve Announcements alanina tiklar
     And Kullanici acilan sayfada Student Info List kisminda Note bolumunu gorur
     And Sayfa kapatilir
 
-  @US21_TC06
+  @US21_TC06 @smokeTest
   Scenario:Ogrenci_danismanin_kendisi_icin_olusturdugu_toplantilari_gorebilmeli
     Then Kullanici menu butonuna tiklar
     Then Kullanici sayfada acilan main menu kisminda Grades ve Announcements alanina tiklar
