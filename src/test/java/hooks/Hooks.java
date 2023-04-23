@@ -7,7 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
-import static baseurl.BaseURL.setUpBeforeAPI;
+import static utilities.BaseURL.setUpBeforeAPI;
 
 public class Hooks {
 

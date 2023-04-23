@@ -20,9 +20,6 @@ public class ViceDeanManagementPage {
     @FindBy(xpath = "//div[@class=' css-1xc3v61-indicatorContainer']")
     public WebElement chooseLessons;
 
-    @FindBy(xpath = "//div[@id='react-select-2-placeholder']")
-    public WebElement getChooseLessons02;
-
     @FindBy(id = "name")
     public WebElement nameBox;
 
@@ -73,7 +70,6 @@ public class ViceDeanManagementPage {
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
     public WebElement RequiredTextforEmail;
-
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
     public WebElement RequiredTextforPhoneNumber;
