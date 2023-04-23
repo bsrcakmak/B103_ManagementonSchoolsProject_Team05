@@ -17,7 +17,7 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     And kullanici Subject alanina valid bir deger girer
     And kullanici Message alanina valid bir deger girer
     And kullanici Send Message butonuna tiklar
-    Then kullanici Mesajin gonderilemedigini dogrular
+    Then kullanici Required yazisini gorur
     Then Sayfa kapatilir
 
   @us03_tc08
@@ -27,5 +27,5 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     And kullanici Subject alanina valid bir deger girer
     And kullanici Message alanina valid bir deger girer
     And kullanici Send Message butonuna tiklar
-    Then kullanici Mesajin gonderilemedigini dogrular
+    Then kullanici Required yazisini gorur
     Then Sayfa kapatilir

@@ -32,4 +32,7 @@ public class ContactPage {
     @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
     public WebElement unsuccessfully;
 
+    @FindBy(xpath = "//div[text()='Required']")
+    public WebElement required;
+
 }
