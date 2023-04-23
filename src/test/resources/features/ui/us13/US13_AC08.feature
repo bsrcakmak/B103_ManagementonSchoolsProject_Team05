@@ -9,7 +9,7 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC23
   Scenario: TC23_Ogretmen_olusturulurken_Gender_alaninin_bos_birakilmamasi
-    And Ogretmenin girecegi ders "Java" olarak secilir
+    And Ogretmenin girecegi ders secilir
     And Name "name(faker)" olarak girilir
     And Surname "surname(faker)" olarak girilir
     And birt place "birthplace(faker)" olarak girilir

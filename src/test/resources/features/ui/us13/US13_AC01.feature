@@ -10,7 +10,7 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
   @US13_TC01 @smokeTest
   Scenario: TC01_Vice_Dean_olarak_ogretmen_olusturma
     And Ogretmenin girecegi ders secilir
-    And Name "name(faker)" olarak girilir
+    And Name "name" olarak girilir
     And Surname "surname(faker)" olarak girilir
     And birt place "birthplace(faker)" olarak girilir
     And Email "email(faker)" olarak girilir
@@ -52,14 +52,14 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     And Ssn "ssn(faker)" olarak girilir
     And User Name "username(faker)" olarak  girer
     And Password "password(faker)" olarak girer
-    And Ogretmenin girecegi ders "Java" olarak secilir
+    And Ogretmenin girecegi ders secilir
     And Submit tiklanir
     Then Islemin gerceklestigine dair popUp mesajini goruntuler
     Then Sayfa kapatilir
 
   @US13_TC04
   Scenario: TC04_Ogretmen_olustururken_ders_secimi
-    And Ogretmenin girecegi ders "Java" olarak secilir
+    And Ogretmenin girecegi ders secilir
     And Name "name(faker)" olarak girilir
     And Surname "surname(faker)" olarak girilir
     And birt place "birthplace(faker)" olarak girilir

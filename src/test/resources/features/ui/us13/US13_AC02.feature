@@ -17,7 +17,7 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC06
   Scenario: TC05_Ogretmen_olusturulurken_Name_alaninin_bos_birakilmamasi
-    And Ogretmenin girecegi ders "Java" olarak secilir
+    And Ogretmenin girecegi ders secilir
     And Name alanina " " karakteri girilir.
     And Surname "surname(faker)" olarak girilir
     And birt place "birthplace(faker)" olarak girilir
