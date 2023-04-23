@@ -17,5 +17,5 @@ Feature: Kullanicilar sayfadan mesaj gonderebilmeli
     And kullanici Subject alanini bos birakir
     And kullanici Message alanina valid bir deger girer
     And kullanici Send Message butonuna tiklar
-    Then kullanici Mesajin gonderilemedigini dogrular
+    Then kullanici Required yazisini gorur
     Then Sayfa kapatilir
