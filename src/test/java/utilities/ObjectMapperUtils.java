@@ -6,12 +6,9 @@ import java.io.IOException;
 
 public class ObjectMapperUtils {
 
-    //<T> T ==> Herhangi bir data tipi
-    //ObjectMapper().readValue(json, cls) methodu birinci parametrede aldığı String formatındaki Json datyı ikinci parametrede belirtilen Java objesine çevirir.
-    public static <T> T convertJsonToJava(String json, Class<T> cls) {//Generic Method
-
+    public static <T> T convertJsonToJava(String json, Class<T> c) {
         try {
-            return new ObjectMapper().readValue(json, cls);
+            return new ObjectMapper().readValue(json, c);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

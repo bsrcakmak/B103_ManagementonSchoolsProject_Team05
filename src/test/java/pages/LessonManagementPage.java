@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class LessonManagementPage {
 
@@ -43,5 +44,29 @@ public class LessonManagementPage {
 
     @FindBy(xpath = "//div[@class='col-lg-6']//div[@class='mx-auto p-3 col']//div//button[@type='button'][normalize-space()='Submit']")
     public WebElement submitButtonForLesson;
+
+    @FindBy(xpath = "//*[@id='lessonName']")
+    public WebElement lessonName;
+
+    @FindBy(xpath = "//*[@id='controlled-tab-example-tab-lessonsList']")
+    public WebElement lessonsButton;
+
+    @FindBy(xpath = "(//*[text()='Lesson Management'])[2]")
+    public WebElement lessonManagementAssert;
+
+    @FindBy(xpath = "//*[@id='compulsory']")
+    public WebElement lessonCheckbox;
+
+    @FindBy(id = "creditScore")
+    public WebElement creditScore;
+
+    @FindBy(xpath = "(//*[text()='Submit'])[2]")
+    public WebElement submitlessons;
+
+    public LessonProgramManagementPage clickLessonProgram() {
+        ReusableMethods.waitForClickability(lessonProgramButton, 5);
+        lessonProgramButton.click();
+        return new LessonProgramManagementPage();
+    }
 
 }

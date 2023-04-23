@@ -2,7 +2,6 @@
 Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   Background:
-
     Given Site adresine gidilir
     And 1 saniye bekler
     When Vice Dean rolu ile login islemi gerceklestirilir
@@ -14,7 +13,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC09
   Scenario: TC09_Ogretmen_olusturulurken_Email_alaninin_bos_birakilmamasi
-
     And Sayfayi Submit butonu gorulecek sekilde asagi kaydirir.
     And 1 saniye bekler
     And Submit tiklanir
@@ -26,7 +24,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
 
   @US13_TC10
   Scenario: TC10_Ogretmen_olusturulurken_Email_alaninin_bos_birakilmamasi
-
     And Ogretmenin girecegi ders "Java" olarak secilir
     And 1 saniye bekler
     And Name "name(faker)" olarak girilir
