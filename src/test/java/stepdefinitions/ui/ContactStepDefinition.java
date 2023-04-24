@@ -28,6 +28,7 @@ public class ContactStepDefinition {
     public String expectedDate = "Date";
     public String expectedSubject = "Subject";
     public String expectedMessage = "Message";
+    public String expectedRequired = "Required";
 
     @When("kullanici Contact butonuna tiklar")
     public void kullaniciContactButonunaTiklar() {
@@ -255,4 +256,8 @@ public class ContactStepDefinition {
         Assert.assertEquals(nameFirst, contactMessagePage.nameFirstCreated.getText());
     }
 
+    @Then("kullanici Required yazisini gorur")
+    public void kullaniciRequiredYazisiniGorur() {
+    Assert.assertEquals(expectedRequired,contactPage.required.getText());
+    }
 }

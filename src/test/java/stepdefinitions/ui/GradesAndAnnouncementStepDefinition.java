@@ -2,12 +2,9 @@ package stepdefinitions.ui;
 
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import pages.ChooseLessonPage;
 import pages.GradesAndAnnouncementsPage;
-import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
@@ -84,7 +81,6 @@ public class GradesAndAnnouncementStepDefinition {
         if (!chooseLessonPage.lessonSelectButton.get(counter).isSelected()) {
             chooseLessonPage.lessonSelectButton.get(counter).click();
         } else {
-            chooseLessonPage.lessonSelectButton.get(counter).click();
             ReusableMethods.waitFor(1);
             counter++;
             chooseLessonPage.lessonSelectButton.get(counter).click();

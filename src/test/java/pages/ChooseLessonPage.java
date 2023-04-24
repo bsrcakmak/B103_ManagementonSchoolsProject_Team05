@@ -52,9 +52,6 @@ public class ChooseLessonPage {
     @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary btn-lg']")
     public WebElement sumbitButton;
 
-    @FindBy(xpath = "//button[@aria-controls='offcanvasNavbar-expand-false']")
-    public WebElement menuButton;
-
     @FindBy(xpath = "//a[.='Grades and Announcements']")
     public WebElement gradesAndAnnouncements;
 

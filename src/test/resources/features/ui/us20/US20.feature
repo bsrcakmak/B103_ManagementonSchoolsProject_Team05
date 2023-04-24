@@ -53,7 +53,7 @@ Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmeli
     Then teacher requared yazisinin  gorundugunu dogrular.
     Then Sayfa kapatilir
 
-  @us20_tc07
+  @us20_tc07 @smokeTest
   Scenario: TC_07 Teacher, toplantıları güncelleyebilmeli
     And  teacher Edit  Butonuna tiklar.
     And teacher Start Time bolumunde degisiklik yapar.
@@ -61,7 +61,7 @@ Feature: Teacher, toplantıları görebilmeli, güncelleyebilmeli ve silebilmeli
     Then teacher requared yazisinin gorundugunu dogrular.
     Then Sayfa kapatilir
 
-  @us20_tc08
+  @us20_tc08 @smokeTest
   Scenario: TC_08 Teacher, toplantıları silebilmelidir.
     And teacher Delete  butonuna tiklar.
     Then teacher toplanti bilgisinin basariyla silindi mesajinin gorundugunu dogrular

@@ -28,7 +28,7 @@ Feature: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini g
     Then Kullanici User Name sutunundaki verilerin gorunurlugunu dogrular
     And Sayfa kapatilir
 
-  @us02tc05
+  @us02tc05 @smokeTest
   Scenario: Admin Guest User List, Name, Phone Number, SSN, User Name bilgilerini görebilmeli
     When Kullanici Guest User List'indeki herhangi bir veri grubunun yanindaki cop kutusu simgesine tiklar
     Then Kullanici veri grubunun silindigini dogrular

@@ -98,4 +98,45 @@ public class ViceDeanManagementPage {
     @FindBy(xpath = "//div[text()='Minimum 8 character']")
     public WebElement textofMinpassword;
 
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[6]")
+    public WebElement RequiredTextforDateofBirth;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[7]")
+    public WebElement RequiredTextforSsn;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[8]")
+    public WebElement RequiredTextforUsername;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[9]")
+    public WebElement RequiredTextforPassword;
+
+    @FindBy(xpath = "//*[text()='Minimum 8 character']")
+    public WebElement PasswordAlert;
+
+    @FindBy(xpath = "//table/tbody/tr[13]/td[1]")
+    public WebElement TeacherlistName;
+
+    @FindBy(xpath = "//table/tbody/tr[13]/td[2]")
+    public WebElement TeacherlistPhone;
+
+    @FindBy(xpath = "//table/tbody/tr[13]/td[3]")
+    public WebElement TeacherlistSsn;
+
+    @FindBy(xpath = "//table/tbody/tr[13]/td[4]")
+    public WebElement TeacherlistUsername;
+
+    @FindBy(xpath = "//table/tbody/tr[13]/td[5]")
+    public WebElement editButton;
+
+    @FindBy(id = "react-select-5-placeholder")
+    public WebElement chooseLesson;
+
+    @FindBy(id = "react-select-4-placeholder")
+    public WebElement selectLesson;
+
+    @FindBy(xpath = "//input[@value='Senemm']")
+    public WebElement seciliName;
+
+
+
 }
