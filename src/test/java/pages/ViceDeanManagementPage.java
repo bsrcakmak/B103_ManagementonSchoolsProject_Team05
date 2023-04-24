@@ -125,17 +125,18 @@ public class ViceDeanManagementPage {
     @FindBy(xpath = "//table/tbody/tr[13]/td[4]")
     public WebElement TeacherlistUsername;
 
-    @FindBy(xpath = "//table/tbody/tr[13]/td[5]")
+    @FindBy(xpath = "(//i[@class='fa-solid fa-pencil'])[13]")
     public WebElement editButton;
-
-    @FindBy(id = "react-select-5-placeholder")
-    public WebElement chooseLesson;
 
     @FindBy(id = "react-select-4-placeholder")
     public WebElement selectLesson;
 
-    @FindBy(xpath = "//input[@value='Senemm']")
-    public WebElement seciliName;
+
+    @FindBy(xpath = "(//input[@id='name'])[2]")
+    public WebElement editNameBox;
+
+    @FindBy(xpath = "(//div[text()='Select lesson'])[2]")
+    public WebElement editChooseLesson;
 
 
 
