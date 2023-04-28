@@ -530,8 +530,7 @@ public class TeacherManagementStepDefinition {
     @When("Guncellemek istedigi ogretmenin bulundugu satirdaki Edit butonuna tiklar")
     public void guncellemekIstedigiOgretmeninBulunduguSatirdakiEditButonunaTiklar() {
 
-        viceDeanManagementPage.editButton.click();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.clickByJS(viceDeanManagementPage.editButton);
     }
 
     @And("Ogretmene ait secili ders bilgisini gorur")
@@ -544,7 +543,7 @@ public class TeacherManagementStepDefinition {
     @And("Secili ders bilgisini baska bir data ile degistirir")
     public void seciliDersBilgisiniBaskaBirDataIleDegistirir() {
 
-        viceDeanManagementPage.chooseLesson.click();
+        viceDeanManagementPage.editChooseLesson.click();
         ReusableMethods.waitFor(10);
         Actions action = new Actions(Driver.getDriver());
         action.sendKeys("Java"+ Keys.ENTER).build().perform();
@@ -555,15 +554,35 @@ public class TeacherManagementStepDefinition {
     @Then("Teacher updated Successful popUp mesajini goruntuler")
     public void teacherUpdatedSuccessfulPopUpMesajiniGoruntuler() {
 
+        Assert.assertTrue(false);
+        // update islemi yapilmadigi icin popup mesajinin locate ini alamadim
     }
 
     @And("Ogretmene ait secili Name bilgisini gorur")
     public void ogretmeneAitSeciliNameBilgisiniGorur() {
-        Assert.assertTrue(viceDeanManagementPage.seciliName.isDisplayed());
+
+     String nameText= ReusableMethods.getValueByJS("name");
+     Assert.assertEquals("Senemm",nameText);
 
     }
 
     @And("Secili Name bilgisini baska bir data ile degistirir")
     public void seciliNameBilgisiniBaskaBirDataIleDegistirir() {
+
+        ReusableMethods.clickByJS(viceDeanManagementPage.editNameBox);
+        ReusableMethods.waitFor(1);
+        viceDeanManagementPage.editNameBox.clear();
+        ReusableMethods.waitFor(1);
+        viceDeanManagementPage.editNameBox.sendKeys("Ali");
+    }
+
+    @And("Ogretmenin girecegi ders edit sayfasinda secilir")
+    public void ogretmeninGirecegiDersEditSayfasindaSecilir() {
+
+        Actions action = new Actions(Driver.getDriver());
+        action.click(viceDeanManagementPage.editChooseLesson);
+        ReusableMethods.waitFor(10);
+        action.sendKeys(Keys.ENTER).build().perform();
+        ReusableMethods.waitFor(1);
     }
 }

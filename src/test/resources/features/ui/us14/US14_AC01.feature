@@ -36,7 +36,19 @@ Feature:Vice Dean öğretmenleri görebilmeli ve güncelleme yapabilmelidir
   @US14_TC06
   Scenario: TC06_Name bilgisinin guncellenmesi
     When Guncellemek istedigi ogretmenin bulundugu satirdaki Edit butonuna tiklar
-    And Ogretmenin girecegi ders secilir
+    And Ogretmenin girecegi ders edit sayfasinda secilir
+   # And Ogretmene ait secili Name bilgisini gorur
+    And Secili Name bilgisini baska bir data ile degistirir
+    And Gender female secilir
+    And Password "password" olarak girer
+    And Submit tiklanir
+    Then Teacher updated Successful popUp mesajini goruntuler
+
+
+  @US14_TC07
+  Scenario: TC07_Surname bilgisinin guncellenmesi
+    When Guncellemek istedigi ogretmenin bulundugu satirdaki Edit butonuna tiklar
+    And Ogretmenin girecegi ders edit sayfasinda secilir
     And Secili ders bilgisini baska bir data ile degistirir
     And Ogretmene ait secili Name bilgisini gorur
     And Secili Name bilgisini baska bir data ile degistirir
