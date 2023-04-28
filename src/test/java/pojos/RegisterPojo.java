@@ -1,25 +1,28 @@
 package pojos;
 
-public class Register {
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-    private RegisterObject object;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class RegisterPojo {
+
+    private RegisterObjectPojo object;
     private String message;
     private String httpStatus;
 
-    public Register() {
+    public RegisterPojo() {
     }
 
-    public Register(RegisterObject object, String message, String httpStatus) {
+    public RegisterPojo(RegisterObjectPojo object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-    public RegisterObject getObject() {
+    public RegisterObjectPojo getObject() {
         return object;
     }
 
-    public void setObject(RegisterObject object) {
+    public void setObject(RegisterObjectPojo object) {
         this.object = object;
     }
 
