@@ -2,20 +2,27 @@ package utilities;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
-import static utilities.Authentication.generateToken;
 
 public class BaseURL {
 
     public static RequestSpecification spec;
+    public static Response response;
 
-    public static void setUpBeforeAPI() {
+    public static void setupBeforeAPI() {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                addHeader("Authorization", "Bearer " + generateToken()).
-                setBaseUri("https://school-management-v1.herokuapp.com").
+                setBaseUri("http://164.92.252.42:8080").
                 build();
     }
+
+//    public static void setupBeforeAPI() {
+//        spec = new RequestSpecBuilder().
+//                addHeader("Cookie", "token=" + generateToken()).
+//                setContentType(ContentType.JSON).
+//                setBaseUri("https://restful-booker.herokuapp.com").
+//                build();
+//    }
 
 }

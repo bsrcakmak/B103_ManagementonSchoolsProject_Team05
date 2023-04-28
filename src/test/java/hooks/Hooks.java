@@ -7,13 +7,13 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
-import static utilities.BaseURL.setUpBeforeAPI;
+import static utilities.BaseURL.setupBeforeAPI;
 
 public class Hooks {
 
     @Before()
     public void setUp() {
-        setUpBeforeAPI();
+        setupBeforeAPI();
     }
 
     @After
