@@ -65,7 +65,8 @@ public class Post_ToplantiDuzenlemeStepDefinition_US19 extends BaseURL {
 
     @And("Data hazirlanir US19_TC02")
     public void data_hazirlanir_US19_TC02() {
-        expectedData = new ToplantiDuzenlemeGuncellemePojo("string", "HH:mm", "HH:mm", new ArrayList<>(Arrays.asList(0)));
+        // expectedData = new ToplantiDuzenlemeGuncellemePojo("string", "HH:mm", "HH:mm", new ArrayList<>(Arrays.asList(0)));
+        expectedData = new ToplantiDuzenlemeGuncellemePojo(null, "string", "HH:mm", "HH:mm", new ArrayList<>(Arrays.asList(0)));
     }
 
 }
