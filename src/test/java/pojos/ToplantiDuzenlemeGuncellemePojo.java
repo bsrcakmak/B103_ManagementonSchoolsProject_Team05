@@ -26,12 +26,12 @@ public class ToplantiDuzenlemeGuncellemePojo {
     }
 
     // Negative Scenario
-    public ToplantiDuzenlemeGuncellemePojo(String description, String startTime, String stopTime, ArrayList<Integer> studentIds) {
-        this.description = description;
-        this.startTime = startTime;
-        this.stopTime = stopTime;
-        this.studentIds = studentIds;
-    }
+//    public ToplantiDuzenlemeGuncellemePojo(String description, String startTime, String stopTime, ArrayList<Integer> studentIds) {
+//        this.description = description;
+//        this.startTime = startTime;
+//        this.stopTime = stopTime;
+//        this.studentIds = studentIds;
+//    }
 
     public String getDate() {
         return date;
