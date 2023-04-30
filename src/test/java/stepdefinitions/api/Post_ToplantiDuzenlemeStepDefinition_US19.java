@@ -56,9 +56,8 @@ public class Post_ToplantiDuzenlemeStepDefinition_US19 extends BaseURL {
             studentIds.add((Integer) (w.get("id")));
         }
         assertEquals(expectedData.getStudentIds(), studentIds);
-//        Integer id = response.jsonPath().getInt("object.id");
-//        System.out.println(id);
-//        ReusableMethods.deleteRequest("meet", id);
+        Integer id = response.jsonPath().getInt("object.id");
+        ReusableMethods.deleteRequest("meet", id);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
