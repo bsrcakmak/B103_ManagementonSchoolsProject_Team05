@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 import static io.restassured.RestAssured.given;
+import static utilities.Authentication.generateAdminToken;
 
 public class ReusableMethods {
 
@@ -199,24 +200,24 @@ public class ReusableMethods {
         return faker.internet().password();
     }
 
-//    public static void deleteRequest(String firstPathParam, Integer id) {
-//        RequestSpecification specification = new RequestSpecBuilder().
-//                addHeader("Authorization", ).
-//                setContentType(ContentType.JSON).
-//                setBaseUri(ConfigReader.getProperty("uri")).
-//                build();
-//        specification.pathParams("first", firstPathParam, "second", "delete", "third", id);
-//        given().spec(specification).when().delete("/{first}/{second}/{third}");
-//    }
+    public static void deleteRequest(String firstPathParam, Integer id) {
+        RequestSpecification specification = new RequestSpecBuilder().
+                addHeader("Authorization", generateAdminToken()).
+                setContentType(ContentType.JSON).
+                setBaseUri(ConfigReader.getProperty("uri")).
+                build();
+        specification.pathParams("first", firstPathParam, "second", "delete", "third", id);
+        given().spec(specification).when().delete("/{first}/{second}/{third}");
+    }
 
-//    public static void deleteRequestWithoutDeleteParam(String firstPathParam, Integer id) {
-//        RequestSpecification specification = new RequestSpecBuilder().
-//                addHeader("Authorization", ).
-//                setContentType(ContentType.JSON).
-//                setBaseUri(ConfigReader.getProperty("uri")).
-//                build();
-//        specification.pathParams("first", firstPathParam, "second", id);
-//        given().spec(specification).when().delete("/{first}/{second}");
-//    }
+    public static void deleteRequestWithoutDeleteParam(String firstPathParam, Integer id) {
+        RequestSpecification specification = new RequestSpecBuilder().
+                addHeader("Authorization", generateAdminToken()).
+                setContentType(ContentType.JSON).
+                setBaseUri(ConfigReader.getProperty("uri")).
+                build();
+        specification.pathParams("first", firstPathParam, "second", id);
+        given().spec(specification).when().delete("/{first}/{second}");
+    }
 
 }

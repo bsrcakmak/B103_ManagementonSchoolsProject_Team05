@@ -23,7 +23,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data hazirlanir US15")
     public void bodyOlarakGonderilecekDataHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -57,7 +57,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data name bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataNameBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -74,7 +74,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data surname bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataSurnameBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -91,7 +91,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data birthPlace bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataBirthPlaceBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 null,
                 ReusableMethods.createEmail(),
@@ -108,7 +108,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data email bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataEmailBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 null,
@@ -125,7 +125,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data phoneNumber bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataPhoneNumberBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -142,7 +142,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data gender bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataGenderBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -159,7 +159,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data birthDay bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataBirthDayBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 null,
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -176,7 +176,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data ssn bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataSsnBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -191,25 +191,81 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
                 ReusableMethods.createUserName());
     }
 
-//    @And("Body olarak ssn bilgisinde ucuncu rakamdan sonra tire icermeyecek sekilde data gonderilir US15")
-//    public void bodyOlarakSsnBilgisindeUcuncuRakamdanSonraTireIcermeyecekSekildeDataGonderilirUS15() {
-//    }
+    @And("Body olarak ssn bilgisinde ucuncu rakamdan sonra tire icermeyecek sekilde data gonderilir US15")
+    public void bodyOlarakSsnBilgisindeUcuncuRakamdanSonraTireIcermeyecekSekildeDataGonderilirUS15() {
+        String ssn = (ReusableMethods.createSSN().substring(0, 3)) + "8" + (ReusableMethods.createSSN().substring(4));
+        expectedData = new OgrenciOlusturmaPojo(221,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ssn,
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
 
-//    @And("Body olarak ssn bilgisinde besinci rakamdan sonra tire icermeyecek sekilde data gonderilir US15")
-//    public void bodyOlarakSsnBilgisindeBesinciRakamdanSonraTireIcermeyecekSekildeDataGonderilirUS15() {
-//    }
+    @And("Body olarak ssn bilgisinde besinci rakamdan sonra tire icermeyecek sekilde data gonderilir US15")
+    public void bodyOlarakSsnBilgisindeBesinciRakamdanSonraTireIcermeyecekSekildeDataGonderilirUS15() {
+        String ssn = (ReusableMethods.createSSN().substring(0, 6)) + "8" + (ReusableMethods.createSSN().substring(7));
+        expectedData = new OgrenciOlusturmaPojo(221,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ssn,
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
 
-//    @And("Body olarak ssn bilgisinde sekiz rakam icerecek sekilde data gonderilir US15")
-//    public void bodyOlarakSsnBilgisindeSekizRakamIcerecekSekildeDataGonderilirUS15() {
-//    }
+    @And("Body olarak ssn bilgisinde sekiz rakam icerecek sekilde data gonderilir US15")
+    public void bodyOlarakSsnBilgisindeSekizRakamIcerecekSekildeDataGonderilirUS15() {
+        String ssn = (ReusableMethods.createSSN().substring(0, 8)) + (ReusableMethods.createSSN().substring(9));
+        expectedData = new OgrenciOlusturmaPojo(221,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ssn,
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
 
-//    @And("Body olarak ssn bilgisinde on rakam icerecek sekilde data gonderilir US15")
-//    public void bodyOlarakSsnBilgisindeOnRakamIcerecekSekildeDataGonderilirUS15() {
-//    }
+    @And("Body olarak ssn bilgisinde on rakam icerecek sekilde data gonderilir US15")
+    public void bodyOlarakSsnBilgisindeOnRakamIcerecekSekildeDataGonderilirUS15() {
+        String ssn = (ReusableMethods.createSSN().substring(0, 9)) + "8" + (ReusableMethods.createSSN().substring(9));
+        expectedData = new OgrenciOlusturmaPojo(221,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ssn,
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
 
     @And("Body olarak gonderilecek data username bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataUsernameBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -226,7 +282,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data fatherName bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataFatherNameBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -243,7 +299,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data motherName bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataMotherNameBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -260,7 +316,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data password bilgisine yer verilmeden hazirlanir US15")
     public void bodyOlarakGonderilecekDataPasswordBilgisineYerVerilmedenHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
@@ -277,7 +333,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @And("Body olarak password bilgisinde yedi karakter icerecek sekilde data gonderilir US15")
     public void bodyOlarakPasswordBilgisindeYediKarakterIcerecekSekildeDataGonderilirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(0,
+        expectedData = new OgrenciOlusturmaPojo(221,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
