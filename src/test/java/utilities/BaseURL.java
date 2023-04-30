@@ -13,7 +13,7 @@ public class BaseURL {
     public static void setupBeforeAPI() {
         spec = new RequestSpecBuilder().
                 setContentType(ContentType.JSON).
-                setBaseUri("http://164.92.252.42:8080").
+                setBaseUri(ConfigReader.getProperty("uri")).
                 build();
     }
 
