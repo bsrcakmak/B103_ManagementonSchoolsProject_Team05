@@ -1,6 +1,5 @@
 package stepdefinitions.api;
 
-
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -14,8 +13,6 @@ import utilities.ReusableMethods;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-import static utilities.BaseURL.spec;
-
 
 public class AdminAddStudentStepDef extends BaseURL {
     /*
@@ -58,8 +55,8 @@ public class AdminAddStudentStepDef extends BaseURL {
     Response response;
     JsonPath actualData;
 
-    @Given("Admin rolu ile student olusturmak icin endpoint hazırlanır US25")
-    public void admin_rolu_ile_student_olusturmak_icin_endpoint_hazırlanır_US25() {
+    @Given("Admin rolu ile student olusturmak icin endpoint hazirlanir US25")
+    public void admin_rolu_ile_student_olusturmak_icin_endpoint_hazirlanir_US25() {
         spec.pathParams("first", "students", "second", "save");
     }
 
@@ -85,21 +82,12 @@ public class AdminAddStudentStepDef extends BaseURL {
     public void post_request_gonderilir_US25() {
         response = given().spec(spec).
                 when().body(expectedData).post("/{first}/{second}");
-
         response.prettyPrint();
-
         actualData = response.jsonPath();
-
-
     }
 
-    @Then("Status code`unun {int} oldugu dogrulanir US25")
-    public void status_code_unun_oldugu_dogrulanir_US25(Integer int1) {
-        assertEquals(200, response.statusCode());
-    }
-
-    @Then("Request data’sı ile response data’sının aynı olduğu doğrulanır US25")
-    public void request_data_sı_ile_response_data_sının_aynı_olduğu_doğrulanır_US25() {
+    @Then("Request data’si ile response data’sinin ayni oldugu dogrulanir US25")
+    public void request_data_si_ile_response_data_sinin_ayni_oldugu_dogrulanir_US25() {
         assertEquals(expectedData.getUsername(), actualData.getString("object.username"));
         assertEquals(expectedData.getEmail(), actualData.getString("object.email"));
         assertEquals(expectedData.getName(), actualData.getString("object.name"));
@@ -110,17 +98,16 @@ public class AdminAddStudentStepDef extends BaseURL {
         assertEquals(expectedData.getGender(), actualData.getString("object.gender"));
         assertEquals(expectedData.getMotherName(), actualData.getString("object.motherName"));
         assertEquals(expectedData.getFatherName(), actualData.getString("object.fatherName"));
-
     }
     //tc02
 
-    @When("Admin rolu ile token olusturulur US{int}")
-    public void adminRoluIleTokenOlusturulurUS(int arg0) {
+    @When("Admin rolu ile token olusturulur US25")
+    public void adminRoluIleTokenOlusturulurUS() {
         spec.pathParams("first", "students", "second", "save");
     }
 
-    @And("Sadece name bilgisi girilmeden data hazirlanir US{int}")
-    public void sadeceNameBilgisiGirilmedenDataHazirlanirUS(int arg0) {
+    @And("Sadece name bilgisi girilmeden data hazirlanir US25")
+    public void sadeceNameBilgisiGirilmedenDataHazirlanirUS() {
         expectedData = new AddStudentPojo(3,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
@@ -134,16 +121,11 @@ public class AdminAddStudentStepDef extends BaseURL {
                 ReusableMethods.createSSN(),
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
-
     }
-    @Then("Status code`un {int} oldugu dogrulanir US{int}")
-    public void statusCodeUnOlduguDogrulanirUS(int arg0, int arg1) {
-        assertEquals(400, response.statusCode());
 
-    }
     //tc03
-    @And("Sadece surname bilgisi girilmeden data hazirlanir US{int}")
-    public void sadeceSurnameBilgisiGirilmedenDataHazirlanirUS(int arg0) {
+    @And("Sadece surname bilgisi girilmeden data hazirlanir US25")
+    public void sadeceSurnameBilgisiGirilmedenDataHazirlanirUS() {
         expectedData = new AddStudentPojo(3,
                 ReusableMethods.createDateOfBirth(),
                 ReusableMethods.createBirthPlace(),
@@ -159,9 +141,10 @@ public class AdminAddStudentStepDef extends BaseURL {
                 ReusableMethods.createUserName());
 
     }
-//tc04
-    @And("Sadece birthplace bilgisi girilmeden data hazirlanir US{int}")
-    public void sadeceBirthplaceBilgisiGirilmedenDataHazirlanirUS(int arg0) {
+
+    //tc04
+    @And("Sadece birthplace bilgisi girilmeden data hazirlanir US25")
+    public void sadeceBirthplaceBilgisiGirilmedenDataHazirlanirUS() {
         expectedData = new AddStudentPojo(3,
                 ReusableMethods.createDateOfBirth(),
                 "",
@@ -176,4 +159,5 @@ public class AdminAddStudentStepDef extends BaseURL {
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
     }
+
 }
