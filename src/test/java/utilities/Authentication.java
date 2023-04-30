@@ -23,7 +23,7 @@ public class Authentication {
         Map<String, String> token = new HashMap<>();
         token.put("password", "wc0sivmd1yc");
         token.put("username", "charlott.bruen");
-        Response response = given().contentType(ContentType.JSON).body(token).post("http://164.92.252.42:8080/auth/login");
+        Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
@@ -31,7 +31,7 @@ public class Authentication {
         Map<String, String> token = new HashMap<>();
         token.put("password", "hxp90et59iy");
         token.put("username", "hosea.braun");
-        Response response = given().contentType(ContentType.JSON).body(token).post("http://164.92.252.42:8080/auth/login");
+        Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
@@ -39,7 +39,7 @@ public class Authentication {
         Map<String, String> token = new HashMap<>();
         token.put("password", "ejj95hpsu5rqth");
         token.put("username", "judson.parisian");
-        Response response = given().contentType(ContentType.JSON).body(token).post("http://164.92.252.42:8080/auth/login");
+        Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
@@ -47,7 +47,7 @@ public class Authentication {
         Map<String, String> token = new HashMap<>();
         token.put("password", "ye7aflbz1a");
         token.put("username", "johnna.denesik");
-        Response response = given().contentType(ContentType.JSON).body(token).post("http://164.92.252.42:8080/auth/login");
+        Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
@@ -55,7 +55,7 @@ public class Authentication {
         Map<String, String> token = new HashMap<>();
         token.put("password", "3u1bd7s4ggil");
         token.put("username", "elin.murazik");
-        Response response = given().contentType(ContentType.JSON).body(token).post("http://164.92.252.42:8080/auth/login");
+        Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
