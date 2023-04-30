@@ -24,16 +24,15 @@ Feature: Students, choose lesson, grades and announcement
   Scenario: İstediği ders veya dersleri seçebilmeli
     Given chooseLesson secimi için endpoint hazırlanır US21_TC02
     When Student rolu ile token olusturulur
-    Then lessonProgramId alani bos birakilarak Data hazırlanır US01_TC02
-    Then Request gonderilip response alinir US21_TC02
-    And Status Code'unun dortyuz oldugu dogrulanir US21
-    And Dersin secildigi dogrulanir US21_TC02
+    Then lessonProgramId alani bos birakilarak Data hazırlanır US01_TC03
+    And Status Code'unun dortyuzdort oldugu dogrulanir US21
+    And Dersin secilemedigi dogrulanir US21_TC03
 
   @API_US21_TC04
   Scenario: İstediği ders veya dersleri seçebilmeli
     Given chooseLesson secimi için endpoint hazırlanır US21_TC02
     When Student rolu ile token olusturulur
-    Then Data hazırlanır US01_TC02
+    Then ayni ders secimi icin Data hazırlanır US01_TC05
     Then Request gonderilip response alinir US21_TC02
     And Status Code'unun dortyuz oldugu dogrulanir US21
     And Ders secilemedigi dogrulanir US21_TC04

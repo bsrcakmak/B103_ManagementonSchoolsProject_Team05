@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.AddStudentPojo;
+import utilities.BaseURL;
 import utilities.ReusableMethods;
 
 import static io.restassured.RestAssured.given;
@@ -16,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 import static utilities.BaseURL.spec;
 
 
-public class AdminAddStudentStepDef {
+public class AdminAddStudentStepDef extends BaseURL {
     /*
         {
     "advisorTeacherId": 0,

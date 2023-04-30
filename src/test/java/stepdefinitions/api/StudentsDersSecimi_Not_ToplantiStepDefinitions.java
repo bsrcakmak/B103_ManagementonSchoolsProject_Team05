@@ -5,6 +5,10 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.*;
 import utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -15,13 +19,14 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
 
     Response response ;
     JsonPath actualData ;
+    LessonProgramIdPojo lessonProgramId;
     RegisterObjectPojo objectData;
     RegisterPojo expectedData ;
     StudentDersNotlariPojo expectedData2;
     StudentMeetPojo expectedData3;
 
-  //  int counter=4;
- //   LessonProgramID lessonProgramId;
+    int counter = 41 ;
+
 
     @Given("chooseLesson için endpoint hazırlanır US21_TC01")
     public void choose_lesson_için_endpoint_hazırlanır_us21_tc01() {
@@ -63,16 +68,22 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
                 "elin.murazik");
 
         expectedData = new RegisterPojo(objectData,"Lesson added to Student","CREATED");
-
     }
     @Then("Request gonderilip response alinir US21_TC02")
     public void request_gonderilip_response_alinir_us21_tc02() {
 
-     //   lessonProgramId =new LessonProgramID(counter);
-     //   response = given().spec(spec).when().body("["+lessonProgramId+"]").post("/{first}/{second}");
+        ArrayList<Integer>id = new ArrayList<>();
+        id.add(122);
+        lessonProgramId = new LessonProgramIdPojo(id);
+
+        response = given().spec(spec).when().body(lessonProgramId).post("/{first}/{second}");
         response.prettyPrint();
         actualData = response.jsonPath();
-     //   counter++;
+
+        if (response.statusCode()==200){
+            counter++;
+        }
+
 
     }
     @Then("Dersin secildigi dogrulanir US21_TC02")
@@ -89,14 +100,38 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
         assertEquals(actualData.getString("httpStatus"),expectedData.getHttpStatus());
     }
 
-    @Then("lessonProgramId alani bos birakilarak Data hazırlanır US01_TC02")
-    public void lesson_program_id_alani_bos_birakilarak_data_hazırlanır_us01_tc02() {
+    @Then("lessonProgramId alani bos birakilarak Data hazırlanır US01_TC03")
+    public void lesson_program_id_alani_bos_birakilarak_data_hazırlanır_us01_tc03() {
+        ArrayList<Integer>aa = new ArrayList<>();
+        lessonProgramId = new LessonProgramIdPojo(aa);
+        response = given().spec(spec).when().body(lessonProgramId).post("/{first}/{second}");
+        response.prettyPrint();
+        actualData = response.jsonPath();
 
+
+    }
+    @Then("Dersin secilemedigi dogrulanir US21_TC03")
+    public void dersin_secilemedigi_dogrulanir_us21_tc03() {
+        assertEquals(actualData.getString("message"),"Error: Lesson Programs not found");
+
+
+    }
+
+    @Then("ayni ders secimi icin Data hazırlanır US01_TC05")
+    public void ayni_ders_secimi_icin_data_hazırlanır_us01_tc05() {
+        ArrayList<Integer>id = new ArrayList<>();
+        id.add(1);
+        lessonProgramId = new LessonProgramIdPojo(id);
+
+        response = given().spec(spec).when().body(lessonProgramId).post("/{first}/{second}");
+        response.prettyPrint();
+        actualData = response.jsonPath();
 
     }
     @Then("Ders secilemedigi dogrulanir US21_TC04")
     public void ders_secilemedigi_dogrulanir_us21_tc04() {
-
+        assertEquals(actualData.getString("message"),"Error: Course schedule cannot be selected for the same hour and day");
+        assertEquals(actualData.getString("message"),"Error: Course schedule cannot be selected for the same hour and day");
 
     }
     @Given("ogrenci sinav notlari goruntuleme için endpoint hazırlanır US21_TC05")
@@ -171,6 +206,11 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     public void status_code_unun_dortyuz_oldugu_dogrulanir_us21() {
         assertEquals(400,response.statusCode());
 
+    }
+
+    @Then("Status Code'unun dortyuzdort oldugu dogrulanir US21")
+    public void status_code_unun_dortyuzdort_oldugu_dogrulanir_us21() {
+        assertEquals(404,response.statusCode());
     }
 
 
