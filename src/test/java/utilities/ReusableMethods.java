@@ -1,6 +1,9 @@
 package utilities;
 
 import com.github.javafaker.Faker;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +15,8 @@ import pages.LoginPage;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
+
+import static io.restassured.RestAssured.given;
 
 public class ReusableMethods {
 
@@ -193,5 +198,25 @@ public class ReusableMethods {
         Faker faker = new Faker();
         return faker.internet().password();
     }
+
+//    public static void deleteRequest(String firstPathParam, Integer id) {
+//        RequestSpecification specification = new RequestSpecBuilder().
+//                addHeader("Authorization", ).
+//                setContentType(ContentType.JSON).
+//                setBaseUri(ConfigReader.getProperty("uri")).
+//                build();
+//        specification.pathParams("first", firstPathParam, "second", "delete", "third", id);
+//        given().spec(specification).when().delete("/{first}/{second}/{third}");
+//    }
+
+//    public static void deleteRequestWithoutDeleteParam(String firstPathParam, Integer id) {
+//        RequestSpecification specification = new RequestSpecBuilder().
+//                addHeader("Authorization", ).
+//                setContentType(ContentType.JSON).
+//                setBaseUri(ConfigReader.getProperty("uri")).
+//                build();
+//        specification.pathParams("first", firstPathParam, "second", id);
+//        given().spec(specification).when().delete("/{first}/{second}");
+//    }
 
 }
