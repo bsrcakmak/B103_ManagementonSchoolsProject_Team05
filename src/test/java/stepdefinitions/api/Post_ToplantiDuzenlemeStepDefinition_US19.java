@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import pojos.ToplantiDuzenlemeGuncellemePojo;
 import utilities.BaseURL;
+import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,6 +56,8 @@ public class Post_ToplantiDuzenlemeStepDefinition_US19 extends BaseURL {
             studentIds.add((Integer) (w.get("id")));
         }
         assertEquals(expectedData.getStudentIds(), studentIds);
+        Integer id = response.jsonPath().getInt("object.id");
+        ReusableMethods.deleteRequest("meet", id);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
