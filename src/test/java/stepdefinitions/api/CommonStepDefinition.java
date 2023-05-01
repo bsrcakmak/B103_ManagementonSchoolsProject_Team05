@@ -52,7 +52,6 @@ public class CommonStepDefinition extends BaseURL {
     public void status_kodunun_dortyuz_oldugu_dogrulanir() {
         assertEquals(400, response.statusCode());
     }
-
     @Then("Status Code'unun 401 oldugu dogrulanir")
     public void status_kodunun_dortyuzbir_oldugu_dogrulanir() {
         assertEquals(401, response.statusCode());
