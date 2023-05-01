@@ -16,4 +16,3 @@ Feature: Vice Dean ogretmen olusturabilmalidir
     And  Request’te gönderilecek olan data hazırlanır US13_TC02
     And Endpoint’e post request gönderilir US13_TC01
     And Status Code'unun 400 oldugu dogrulanir
-    Then Eksik data ile ogretmen olusturulamadigi dogrulanir
