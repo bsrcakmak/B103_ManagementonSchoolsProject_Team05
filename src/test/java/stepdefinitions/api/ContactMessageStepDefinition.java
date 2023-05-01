@@ -6,54 +6,86 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import pojos.CreateMessagePojo;
 import utilities.BaseURL;
+import utilities.ReusableMethods;
+
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class ContactMessageStepDefinition extends BaseURL {
 
-    public static Faker faker;
+    Faker faker = new Faker();
     CreateMessagePojo expectedData;
-    Response response;
     JsonPath actualData;
-    @Given("Mesaj gonderebilmek icin endpoint hazirlanir US{int}")
-    public void mesajGonderebilmekIcinEndpointHazirlanirUS(int arg0) {
+    @Given("Mesaj gonderebilmek icin endpoint hazirlanir US03")
+    public void mesajGonderebilmekIcinEndpointHazirlanirUS03() {
+        spec.pathParams("first","contactMessages","second","save");
     }
 
-    @When("Data hazirlanir US{int}")
-    public void dataHazirlanirUS(int arg0) {
+    @When("Data hazirlanir US03")
+    public void dataHazirlanirUS03() {
+        expectedData = new CreateMessagePojo(ReusableMethods.createEmail(),
+        faker.shakespeare().hamletQuote(),
+                ReusableMethods.createName(),
+        faker.shakespeare().romeoAndJulietQuote());
     }
 
-    @And("Post request gonderilir US{int}")
-    public void postRequestGonderilirUS(int arg0) {
+    @And("Post request gonderilir US03")
+    public void postRequestGonderilirUS03() {
+        response = given().spec(spec).when().
+                body(expectedData).post("/{first}/{second}");
+        response.prettyPrint();
+        actualData = response.jsonPath();
     }
 
-    @Then("Hazirlanan data ile mesaj gonderildigi dogrulanir US{int}")
-    public void hazirlananDataIleMesajGonderildigiDogrulanirUS(int arg0) {
+    @Then("Hazirlanan data ile mesaj gonderildigi dogrulanir US03")
+    public void hazirlananDataIleMesajGonderildigiDogrulanirUS03() {
+        assertEquals(expectedData.getEmail(),actualData.getString("object.email"));
+        assertEquals(expectedData.getMessage(),actualData.getString("object.message"));
+        assertEquals(expectedData.getName(),actualData.getString("object.name"));
+        assertEquals(expectedData.getSubject(),actualData.getString("object.subject"));
     }
 
-    @When("Name alani bos birakilarak data hazirlanir US{int}")
-    public void nameAlaniBosBirakilarakDataHazirlanirUS(int arg0) {
+    @When("Name alani bos birakilarak data hazirlanir US03")
+    public void nameAlaniBosBirakilarakDataHazirlanirUS03() {
+        expectedData = new CreateMessagePojo(ReusableMethods.createEmail(),
+                faker.shakespeare().hamletQuote(),
+               null,
+                faker.shakespeare().romeoAndJulietQuote());
     }
 
-    @Then("Hazirlanan data ile mesaj gonderilemedigi dogrulanir US{int}")
-    public void hazirlananDataIleMesajGonderilemedigiDogrulanirUS(int arg0) {
+    @Then("Hazirlanan data ile mesaj gonderilemedigi dogrulanir US03")
+    public void hazirlananDataIleMesajGonderilemedigiDogrulanirUS03() {
+        assertEquals(expectedData.getEmail(),actualData.getString("object.email"));
+        assertEquals(expectedData.getMessage(),actualData.getString("object.message"));
+        assertEquals(expectedData.getName(),actualData.getString("object.name"));
+        assertEquals(expectedData.getSubject(),actualData.getString("object.subject"));
     }
 
-    @When("Email alani bos birakilarak data hazirlanir US{int}")
-    public void emailAlaniBosBirakilarakDataHazirlanirUS(int arg0) {
+    @When("Email alani bos birakilarak data hazirlanir US03")
+    public void emailAlaniBosBirakilarakDataHazirlanirUS03() {
+        expectedData = new CreateMessagePojo(null,
+                faker.shakespeare().hamletQuote(),
+                ReusableMethods.createName(),
+                faker.shakespeare().romeoAndJulietQuote());
     }
 
-    @When("Email alanina invalid deger girilerek data hazirlanir US{int}")
-    public void emailAlaninaInvalidDegerGirilerekDataHazirlanirUS(int arg0) {
+    @When("Email alanina invalid deger girilerek data hazirlanir US03")
+    public void emailAlaninaInvalidDegerGirilerekDataHazirlanirUS03() {
+        assertEquals(expectedData.getEmail(),actualData.getString("object.email"));
+        assertEquals(expectedData.getMessage(),actualData.getString("object.message"));
+        assertEquals(expectedData.getName(),actualData.getString("object.name"));
+        assertEquals(expectedData.getSubject(),actualData.getString("object.subject"));
     }
 
 
-    @Given("Mesajlari gorebilmek icin endpoint hazirlanir US{int}")
-    public void mesajlariGorebilmekIcinEndpointHazirlanirUS(int arg0) {
+    @Given("Mesajlari gorebilmek icin endpoint hazirlanir US")
+    public void mesajlariGorebilmekIcinEndpointHazirlanirUS() {
     }
 
-    @And("Get request gonderilir US{int}")
-    public void getRequestGonderilirUS(int arg0) {
+    @And("Get request gonderilir US")
+    public void getRequestGonderilirUS() {
     }
 }
