@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
+import org.junit.Assert;
 import pojos.OgrenciOlusturmaPojo;
 import utilities.BaseURL;
 import utilities.ReusableMethods;
@@ -354,12 +355,25 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
         actualData = response.jsonPath();
     }
 
-//    @Then("Ogrencinin data'daki bilgilerle olusturuldugu dogrulanir US15")
-//    public void ogrencinin_datadaki_bilgilerle_olusturuldugu_dogrulanir_US15() {
-//    }
+    @Then("Ogrencinin data'daki bilgilerle olusturuldugu dogrulanir US15")
+    public void ogrencinin_datadaki_bilgilerle_olusturuldugu_dogrulanir_US15() {
+        // Assert.assertEquals(expectedData.getAdvisorTeacherId());
+        Assert.assertEquals(expectedData.getBirthDay(), actualData.getString("object.birthDay"));
+        Assert.assertEquals(expectedData.getEmail(), actualData.getString("object.email"));
+        Assert.assertEquals(expectedData.getFatherName(), actualData.getString("object.fatherName"));
+        Assert.assertEquals(expectedData.getGender(), actualData.getString("object.gender"));
+        Assert.assertEquals(expectedData.getMotherName(), actualData.getString("object.motherName"));
+        Assert.assertEquals(expectedData.getName(), actualData.getString("object.name"));
+        // Assert.assertEquals(expectedData.getPassword());
+        Assert.assertEquals(expectedData.getPhoneNumber(), actualData.getString("object.phoneNumber"));
+        // Assert.assertEquals(expectedData.getSsn());
+        Assert.assertEquals(expectedData.getSurname(), actualData.getString("object.surname"));
+        Assert.assertEquals(expectedData.getUsername(), actualData.getString("object.username"));
+    }
 
-//    @Then("Ogrenciye otomatik olarak student number verildigi dogrulanir US15")
-//    public void ogrenciye_otomatik_olarak_student_number_verildigi_dogrulanir_US15() {
-//    }
+    @Then("Ogrenciye otomatik olarak student number verildigi dogrulanir US15")
+    public void ogrenciye_otomatik_olarak_student_number_verildigi_dogrulanir_US15() {
+        Assert.assertTrue(actualData.getString("object.studentNumber").length() > 0);
+    }
 
 }
