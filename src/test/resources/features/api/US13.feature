@@ -14,6 +14,6 @@ Feature: Vice Dean ogretmen olusturabilmalidir
     Given Vice Dean ogretmen olusturmak icin end pointe gider US13_TC01
     When Vice Dean rolu ile token olusturulur
     And  Request’te gönderilecek olan data hazırlanır US13_TC02
-    And Endpoint’e post request gönderilir US13_TC02
+    And Endpoint’e post request gönderilir US13_TC01
     And Status Code'unun 400 oldugu dogrulanir
-    Then Request data’sı ile response data’sının aynı olduğu doğrulanır US13_TC02
+    Then Eksik data ile ogretmen olusturulamadigi dogrulanir
