@@ -7,7 +7,7 @@ import pojos.*;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -73,7 +73,7 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     public void request_gonderilip_response_alinir_us21_tc02() {
 
         ArrayList<Integer>id = new ArrayList<>();
-        id.add(122);
+        id.add(counter);
         lessonProgramId = new LessonProgramIdPojo(id);
 
         response = given().spec(spec).when().body(lessonProgramId).post("/{first}/{second}");
