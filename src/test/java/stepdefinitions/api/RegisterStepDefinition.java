@@ -10,12 +10,12 @@ import utilities.ReusableMethods;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 import static stepdefinitions.ui.RegisterStepDefinition.ssnFormat;
-import static utilities.BaseURL.spec;
+import static utilities.BaseURL.*;
 
 public class RegisterStepDefinition {
     RegisterPojo expectedData;
     RegisterObjectPojo objectData;
-    Response response ;
+ //   Response response ;
     JsonPath actualData ;
    // int userId ;
 
