@@ -17,7 +17,6 @@ import static utilities.BaseURL.*;
 public class VicedeanOlusturmaUs06 {
     RegisterObjectPojo objectData;
 
-
     RegisterPojo expectedData;
 
     JsonPath actualData ;

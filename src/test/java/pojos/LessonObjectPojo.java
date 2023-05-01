@@ -20,6 +20,13 @@ public class LessonObjectPojo {
 
     }
 
+    public LessonObjectPojo(int lessonId, String lessonName, int creditScore, boolean compulsory) {
+        this.lessonId = lessonId;
+        this.lessonName = lessonName;
+        this.creditScore = creditScore;
+        this.compulsory = compulsory;
+    }
+
     public int getLessonId() {
         return lessonId;
     }

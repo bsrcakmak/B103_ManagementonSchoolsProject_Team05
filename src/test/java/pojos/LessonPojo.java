@@ -8,6 +8,12 @@ public class LessonPojo {
     public LessonPojo() {
     }
 
+    public LessonPojo(Object object, String message, String httpStatus) {
+        this.object = object;
+        this.message = message;
+        this.httpStatus = httpStatus;
+    }
+
     public Object getObject() {
         return object;
     }
