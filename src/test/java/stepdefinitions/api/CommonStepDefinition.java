@@ -8,7 +8,6 @@ import static org.junit.Assert.assertEquals;
 import static utilities.Authentication.*;
 
 public class CommonStepDefinition extends BaseURL {
-
     @When("Admin rolu ile token olusturulur")
     public void admin_rolu_ile_token_olusturulur() {
         spec.header("Authorization", generateAdminToken());
