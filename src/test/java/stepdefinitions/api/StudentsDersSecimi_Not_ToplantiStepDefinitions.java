@@ -13,11 +13,11 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static stepdefinitions.ui.RegisterStepDefinition.ssnFormat;
-import static utilities.BaseURL.spec;
+import static utilities.BaseURL.*;
 
 public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
 
-    Response response ;
+
     JsonPath actualData ;
     LessonProgramIdPojo lessonProgramId;
     RegisterObjectPojo objectData;
