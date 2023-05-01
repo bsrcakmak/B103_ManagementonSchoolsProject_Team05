@@ -3,7 +3,7 @@
 
     # Pozitive scenario
     @US03_TC01 @api_smoke_test
-    Scenario: Kullanici olarak mesaj gonderebilme
+    Scenario: Kullanici olarak mesaj gonderebilme_TC01
       Given Mesaj gonderebilmek icin endpoint hazirlanir US03
       When Data hazirlanir US03
       And Post request gonderilir US03
@@ -12,7 +12,7 @@
 
     # Negative scenario
     @US03_TC02
-    Scenario:
+    Scenario: Kullanici olarak mesaj gonderebilme_TC02
       Given Mesaj gonderebilmek icin endpoint hazirlanir US03
       When Name alani bos birakilarak data hazirlanir US03
       And Post request gonderilir US03
@@ -21,7 +21,7 @@
 
     # Negative scenario
     @US03_TC03
-    Scenario:
+    Scenario: Kullanici olarak mesaj gonderebilme_TC03
       Given Mesaj gonderebilmek icin endpoint hazirlanir US03
       When Email alani bos birakilarak data hazirlanir US03
       And Post request gonderilir US03
@@ -30,7 +30,7 @@
 
     # Negative scenario
     @US03_TC04
-    Scenario:
+    Scenario: Kullanici olarak mesaj gonderebilme_TC04
       Given Mesaj gonderebilmek icin endpoint hazirlanir US03
       When Email alanina invalid deger girilerek data hazirlanir US03
       And Post request gonderilir US03
