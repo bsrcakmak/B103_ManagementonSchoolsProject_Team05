@@ -15,6 +15,8 @@ import static stepdefinitions.ui.RegisterStepDefinition.ssnFormat;
 import static utilities.BaseURL.*;
 
 public class VicedeanOlusturmaUs06 {
+
+    Response response;
     RegisterObjectPojo objectData;
 
     RegisterPojo expectedData;
