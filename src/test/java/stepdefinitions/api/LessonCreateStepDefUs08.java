@@ -28,15 +28,16 @@ public class LessonCreateStepDefUs08 {
 
     /*
 
-    {
+   {
     "object": {
-        "lessonId": 433,
-        "lessonName": "kumar",
+        "lessonId": 549,
+        "lessonName": "love",
         "creditScore": 55,
         "compulsory": true
     },
     "message": "Lesson Created",
     "httpStatus": "OK"
+}
 }*/
 
 
@@ -48,7 +49,7 @@ public class LessonCreateStepDefUs08 {
     @Then("Body olarak gonderilecek data hazirlanir US08_TC01")
     public void body_olarak_gonderilecek_data_hazirlanir_us08_tc01() {
 
-        expectedData=new LessonObjectPojo(443,"kumar",55,true);
+        expectedData=new LessonObjectPojo("love",55,true);
 
     }
     @Then("Post request gonderilir US08_TC01")
@@ -67,17 +68,17 @@ public class LessonCreateStepDefUs08 {
     }
     @Then("Body olarak gönderilecek data  Lesson Name bilgisine yer verilmeden hazırlanır US08_TC02")
     public void body_olarak_gönderilecek_data_lesson_name_bilgisine_yer_verilmeden_hazırlanır_us08_tc02() {
-        expectedData=new LessonObjectPojo(443,"",55,true);
-
+        expectedData=new LessonObjectPojo("",55,true);
+//  yorum
     }
     @Then("Data Compulsory checkbox bilgisine yer verilmeden hazirlanir US08_{int}")
     public void data_compulsory_checkbox_bilgisine_yer_verilmeden_hazirlanir_us08(Integer int1) {
-        expectedData=new LessonObjectPojo(443,"kumar",55,false);
+       expectedData=new LessonObjectPojo("love",55,false);
     }
 
 
     @Then("Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US{int}_TC{int}")
     public void bodyOlarakGönderilecekDataCreditScoreBilgisineYerVerilmedenHazirlanirUS_TC(int arg0, int arg1) {
-        expectedData=new LessonObjectPojo(443,"kumar",55,false);
+        expectedData=new LessonObjectPojo("love",55,false);
     }
 }
