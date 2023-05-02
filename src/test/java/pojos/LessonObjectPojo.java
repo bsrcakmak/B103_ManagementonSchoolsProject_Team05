@@ -11,7 +11,7 @@ public class LessonObjectPojo {
         "message": "Lesson Created",
             "httpStatus": "OK"
     }*/
-    private int lessonId;
+
     private String lessonName;
     private int creditScore;
     private boolean compulsory;
@@ -20,20 +20,15 @@ public class LessonObjectPojo {
 
     }
 
-    public LessonObjectPojo(int lessonId, String lessonName, int creditScore, boolean compulsory) {
-        this.lessonId = lessonId;
+    public LessonObjectPojo( String lessonName, int creditScore, boolean compulsory) {
+
         this.lessonName = lessonName;
         this.creditScore = creditScore;
         this.compulsory = compulsory;
     }
 
-    public int getLessonId() {
-        return lessonId;
-    }
 
-    public void setLessonId(int lessonId) {
-        this.lessonId = lessonId;
-    }
+
 
     public String getLessonName() {
         return lessonName;
@@ -62,7 +57,7 @@ public class LessonObjectPojo {
     @Override
     public String toString() {
         return "LessonObjectPojo{" +
-                "lessonId=" + lessonId +
+
                 ", lessonName='" + lessonName + '\'' +
                 ", creditScore=" + creditScore +
                 ", compulsory=" + compulsory +
