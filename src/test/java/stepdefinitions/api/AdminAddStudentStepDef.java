@@ -242,6 +242,6 @@ public class AdminAddStudentStepDef extends BaseURL {
     }
     @Then("Olusturulan oğrenciye otomatik olarak student number atandigi doğrulanır US25")
     public void olusturulanOğrenciyeOtomatikOlarakStudentNumberAtandigiDoğrulanırUS() {
-        Assert.assertTrue(Boolean.parseBoolean(actualData.getString("object.studentNumber")));
+        Assert.assertTrue(actualData.getString("object.studentNumber").length()>0);
     }
 }
