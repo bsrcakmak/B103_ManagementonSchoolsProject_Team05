@@ -31,7 +31,7 @@ public class LessonCreateStepDefUs08 {
    {
     "object": {
         "lessonId": 549,
-        "lessonName": "kumar",
+        "lessonName": "love",
         "creditScore": 55,
         "compulsory": true
     },
