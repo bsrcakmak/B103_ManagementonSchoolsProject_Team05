@@ -12,7 +12,6 @@ import utilities.ReusableMethods;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 public class ContactMessageStepDefinition extends BaseURL {
 
@@ -81,11 +80,14 @@ public class ContactMessageStepDefinition extends BaseURL {
     }
 
 
-    @Given("Mesajlari gorebilmek icin endpoint hazirlanir US")
-    public void mesajlariGorebilmekIcinEndpointHazirlanirUS() {
+    @Given("Mesajlari gorebilmek icin endpoint hazirlanir")
+    public void mesajlariGorebilmekIcinEndpointHazirlanir() {
+        spec.pathParams("first","contactMessage","second","getAll");
+       // queryParams("page",1,"size",10,"sort","date","type","desc");
     }
 
-    @And("Get request gonderilir US")
-    public void getRequestGonderilirUS() {
+    @And("Get request gonderilir")
+    public void getRequestGonderilir() {
+        response = given().spec(spec).when().get("/{first}/{second}");
     }
 }
