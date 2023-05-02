@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import pojos.AddStudentPojo;
 import utilities.BaseURL;
 import utilities.ReusableMethods;
@@ -77,7 +78,6 @@ public class AdminAddStudentStepDef extends BaseURL {
                 ReusableMethods.createUserName());
 
     }
-
     @When("Post request gonderilir US25")
     public void post_request_gonderilir_US25() {
         response = given().spec(spec).
@@ -85,7 +85,6 @@ public class AdminAddStudentStepDef extends BaseURL {
         response.prettyPrint();
         actualData = response.jsonPath();
     }
-
     @Then("Request data’si ile response data’sinin ayni oldugu dogrulanir US25")
     public void request_data_si_ile_response_data_sinin_ayni_oldugu_dogrulanir_US25() {
         assertEquals(expectedData.getUsername(), actualData.getString("object.username"));
@@ -100,7 +99,6 @@ public class AdminAddStudentStepDef extends BaseURL {
         assertEquals(expectedData.getFatherName(), actualData.getString("object.fatherName"));
     }
     //tc02
-
     @When("Admin rolu ile token olusturulur US25")
     public void adminRoluIleTokenOlusturulurUS() {
         spec.pathParams("first", "students", "second", "save");
@@ -122,7 +120,6 @@ public class AdminAddStudentStepDef extends BaseURL {
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
     }
-
     //tc03
     @And("Sadece surname bilgisi girilmeden data hazirlanir US25")
     public void sadeceSurnameBilgisiGirilmedenDataHazirlanirUS() {
@@ -141,7 +138,6 @@ public class AdminAddStudentStepDef extends BaseURL {
                 ReusableMethods.createUserName());
 
     }
-
     //tc04
     @And("Sadece birthplace bilgisi girilmeden data hazirlanir US25")
     public void sadeceBirthplaceBilgisiGirilmedenDataHazirlanirUS() {
@@ -159,5 +155,93 @@ public class AdminAddStudentStepDef extends BaseURL {
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
     }
+    //tc05
+    @And("Sadece telefon numarasi bilgisi girilmeden data hazirlanir US25")
+    public void sadeceTelefonNumarasiBilgisiGirilmedenDataHazirlanirUS() {
+        expectedData = new AddStudentPojo(3,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                "",
+                ReusableMethods.createSSN(),
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
+    //tc06
+    @And("Sadece email bilgisi girilmeden data hazirlanir US25")
+    public void sadeceEmailBilgisiGirilmedenDataHazirlanirUS() {
+        expectedData = new AddStudentPojo(3,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                "",
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ReusableMethods.createSSN(),
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
 
+    }
+    //tc07
+    @And("Sadece snn bilgisi girilmeden data hazirlanir US25")
+    public void sadeceSnnBilgisiGirilmedenDataHazirlanirUS() {
+        expectedData = new AddStudentPojo(3,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                "",
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
+    @And("Sadece username bilgisi girilmeden data hazirlanir US25")
+    public void sadeceUsernameBilgisiGirilmedenDataHazirlanirUS() {
+        expectedData = new AddStudentPojo(3,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ReusableMethods.createSSN(),
+                ReusableMethods.createSurname(),
+                "");
+    }
+    @And("Sadece password bilgisi girilmeden data hazirlanir US25")
+    public void sadecePasswordBilgisiGirilmedenDataHazirlanirUS() {
+        expectedData = new AddStudentPojo(3,
+                ReusableMethods.createDateOfBirth(),
+                ReusableMethods.createBirthPlace(),
+                ReusableMethods.createEmail(),
+                ReusableMethods.createFatherName(),
+                "MALE",
+                ReusableMethods.createMotherName(),
+                ReusableMethods.createName(),
+                "",
+                ReusableMethods.createPhone(),
+                ReusableMethods.createSSN(),
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+
+    }
+    @Then("Olusturulan oğrenciye otomatik olarak student number atandigi doğrulanır US25")
+    public void olusturulanOğrenciyeOtomatikOlarakStudentNumberAtandigiDoğrulanırUS() {
+        Assert.assertTrue(Boolean.parseBoolean(actualData.getString("object.studentNumber")));
+    }
 }

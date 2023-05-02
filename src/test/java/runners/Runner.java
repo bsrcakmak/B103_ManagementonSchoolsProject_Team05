@@ -18,7 +18,11 @@ import org.junit.runner.RunWith;
         features = "./src/test/resources/features/",
         glue = {"stepdefinitions", "hooks"},
         dryRun = false,
+<<<<<<< HEAD
         tags = "@US10_API"
+=======
+        tags = "@US25_TC11"
+>>>>>>> master
 
 )
 

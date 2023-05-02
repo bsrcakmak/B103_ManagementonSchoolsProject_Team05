@@ -6,18 +6,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import pojos.AddTeacherPojo;
-import pojos.OgrenciOlusturmaPojo;
 import utilities.BaseURL;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class AddTeacherStepDefinition extends BaseURL {
-
+public class PostAddTeacherStepDefinition extends BaseURL {
     AddTeacherPojo expectedData;
     JsonPath actualData;
 
@@ -31,7 +31,7 @@ public class AddTeacherStepDefinition extends BaseURL {
         expectedData=new AddTeacherPojo(
                 "2001-12-12",
                 ReusableMethods.createBirthPlace(),
-                "snm@gmail.com",
+                "snmzc@gmail.com",
                 "FEMALE",
                 true,
                 new ArrayList<>(Arrays.asList(1)),
@@ -81,11 +81,6 @@ public class AddTeacherStepDefinition extends BaseURL {
                 ReusableMethods.createSSN(),
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
-    }
-
-    @Then("Eksik data ile ogretmen olusturulamadigi dogrulanir")
-    public void eksikDataIleOgretmenOlusturulamadigiDogrulanir() {
-
     }
 
 }
