@@ -3,7 +3,7 @@ Feature: Vice Dean rolu ile mesajlari gorebilme
 
   @api_smoke_test
   Scenario: Vice Dean rolu ile mesajlari gorebilme
-    Given Mesajlari gorebilmek icin endpoint hazirlanir US16
+    Given Mesajlari gorebilmek icin endpoint hazirlanir
     When Vice Dean rolu ile token olusturulur
-    And Get request gonderilir US16
+    And Get request gonderilir
     And Status Code'unun 200 oldugu dogrulanir
