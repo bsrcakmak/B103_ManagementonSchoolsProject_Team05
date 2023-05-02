@@ -69,7 +69,7 @@ public class LessonCreateStepDefUs08 {
     @Then("Body olarak gönderilecek data  Lesson Name bilgisine yer verilmeden hazırlanır US08_TC02")
     public void body_olarak_gönderilecek_data_lesson_name_bilgisine_yer_verilmeden_hazırlanır_us08_tc02() {
         expectedData=new LessonObjectPojo("",55,true);
-
+//  yorum
     }
     @Then("Data Compulsory checkbox bilgisine yer verilmeden hazirlanir US08_{int}")
     public void data_compulsory_checkbox_bilgisine_yer_verilmeden_hazirlanir_us08(Integer int1) {
