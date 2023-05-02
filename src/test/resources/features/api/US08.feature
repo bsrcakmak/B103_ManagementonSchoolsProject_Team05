@@ -4,6 +4,7 @@ Feature: Lesson olusturma
   Background:
     Given Lesson oluşturmak için endpoint hazırlanır
 
+  @US08_TC01_API
   Scenario:Lesson Olusturma
     Then Vice Dean rolu ile token olusturulur
     Then Body olarak gonderilecek data hazirlanir US08_TC01

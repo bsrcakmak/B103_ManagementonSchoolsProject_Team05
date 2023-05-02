@@ -12,38 +12,17 @@ public class LessonObjectPojo {
             "httpStatus": "OK"
     }*/
 
-    private String lessonName;
-    private int creditScore;
     private boolean compulsory;
+    private int creditScore;
+    private String lessonName;
 
     public LessonObjectPojo() {
-
     }
 
-    public LessonObjectPojo( String lessonName, int creditScore, boolean compulsory) {
-
-        this.lessonName = lessonName;
-        this.creditScore = creditScore;
+    public LessonObjectPojo(boolean compulsory, int creditScore, String lessonName) {
         this.compulsory = compulsory;
-    }
-
-
-
-
-    public String getLessonName() {
-        return lessonName;
-    }
-
-    public void setLessonName(String lessonName) {
-        this.lessonName = lessonName;
-    }
-
-    public int getCreditScore() {
-        return creditScore;
-    }
-
-    public void setCreditScore(int creditScore) {
         this.creditScore = creditScore;
+        this.lessonName = lessonName;
     }
 
     public boolean isCompulsory() {
@@ -54,14 +33,30 @@ public class LessonObjectPojo {
         this.compulsory = compulsory;
     }
 
+    public int getCreditScore() {
+        return creditScore;
+    }
+
+    public void setCreditScore(int creditScore) {
+        this.creditScore = creditScore;
+    }
+
+    public String getLessonName() {
+        return lessonName;
+    }
+
+    public void setLessonName(String lessonName) {
+        this.lessonName = lessonName;
+    }
+
     @Override
     public String toString() {
         return "LessonObjectPojo{" +
-
-                ", lessonName='" + lessonName + '\'' +
+                "compulsory=" + compulsory +
                 ", creditScore=" + creditScore +
-                ", compulsory=" + compulsory +
+                ", lessonName='" + lessonName + '\'' +
                 '}';
     }
+
 }
 
