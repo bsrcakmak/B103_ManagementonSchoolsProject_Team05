@@ -6,6 +6,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojos.RegisterObjectPojo;
 import pojos.RegisterPojo;
+import utilities.BaseURL;
 import utilities.ReusableMethods;
 
 import static io.restassured.RestAssured.given;
@@ -14,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 import static stepdefinitions.ui.RegisterStepDefinition.ssnFormat;
 import static utilities.BaseURL.*;
 
-public class VicedeanOlusturmaUs06 {
+public class VicedeanOlusturmaUs06 extends BaseURL {
 
 
 

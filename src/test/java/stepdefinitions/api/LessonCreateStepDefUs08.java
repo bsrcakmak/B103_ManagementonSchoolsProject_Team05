@@ -8,6 +8,7 @@ import pojos.LessonObjectPojo;
 import pojos.LessonPojo;
 import pojos.RegisterObjectPojo;
 import pojos.RegisterPojo;
+import utilities.BaseURL;
 import utilities.ReusableMethods;
 
 import static io.restassured.RestAssured.given;
@@ -15,10 +16,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.BaseURL.spec;
 
-public class LessonCreateStepDefUs08 {
+public class LessonCreateStepDefUs08 extends BaseURL {
 
-
-    Response response;
 
     LessonObjectPojo expectedData ;
 
@@ -49,7 +48,7 @@ public class LessonCreateStepDefUs08 {
     @Then("Body olarak gonderilecek data hazirlanir US08_TC01")
     public void body_olarak_gonderilecek_data_hazirlanir_us08_tc01() {
 
-        expectedData=new LessonObjectPojo("love",55,true);
+        expectedData = new LessonObjectPojo(true, 8, ReusableMethods.createName());
 
     }
     @Then("Post request gonderilir US08_TC01")
@@ -64,21 +63,22 @@ public class LessonCreateStepDefUs08 {
     public void lesson_ın_olusturuldugu_dogrulanir_us08_tc01() {
         assertEquals(200, response.statusCode());
         assertTrue(actualData.getString("message").contains("Lesson Created"));
-        assertTrue(actualData.getString("httpStatus").contains("OK"));
+        Integer id = actualData.getInt("object.lessonId");
+        ReusableMethods.deleteRequest("lessons", id);
     }
     @Then("Body olarak gönderilecek data  Lesson Name bilgisine yer verilmeden hazırlanır US08_TC02")
     public void body_olarak_gönderilecek_data_lesson_name_bilgisine_yer_verilmeden_hazırlanır_us08_tc02() {
-        expectedData=new LessonObjectPojo("",55,true);
+        expectedData=new LessonObjectPojo(true, 55, "");
 //  yorum
     }
     @Then("Data Compulsory checkbox bilgisine yer verilmeden hazirlanir US08_{int}")
     public void data_compulsory_checkbox_bilgisine_yer_verilmeden_hazirlanir_us08(Integer int1) {
-       expectedData=new LessonObjectPojo("love",55,false);
+       expectedData=new LessonObjectPojo(false, 55, "love");
     }
 
 
     @Then("Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US{int}_TC{int}")
     public void bodyOlarakGönderilecekDataCreditScoreBilgisineYerVerilmedenHazirlanirUS_TC(int arg0, int arg1) {
-        expectedData=new LessonObjectPojo("love",55,false);
+        expectedData=new LessonObjectPojo(false, 55, "love");
     }
 }
