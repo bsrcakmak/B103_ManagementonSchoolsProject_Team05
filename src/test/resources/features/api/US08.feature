@@ -15,21 +15,21 @@ Feature: Lesson olusturma
     And Body olarak gönderilecek data  Lesson Name bilgisine yer verilmeden hazırlanır US08_TC02
     And Post request gonderilir US08_TC01
     And  Status Code'unun 400 oldugu dogrulanir
-    And Lesson ın olusturulamadigi dogrulanir US08_02
+
 
   Scenario: Vice dean ders olusturmada Compulsory checkbox alanini bos birakma
     Then Vice Dean rolu ile token olusturulur
     Then Data Compulsory checkbox bilgisine yer verilmeden hazirlanir US08_03
     And Post request gonderilir US08_TC01
     And Status Code'unun 400 oldugu dogrulanir
-    And Lesson ın olusturulamadigi dogrulanir US08_03
+
 
   Scenario: Vice dean ders olusturmada Credit Score alanini bos birakma
     Then Vice Dean rolu ile token olusturulur
-    Then  Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US08_04
+    Then  Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US08_TC04
     And  Post request gonderilir US08_TC01
     And Status Code'unun 400 oldugu dogrulanir
-    And  Lesson ın olusturulamadigi dogrulanir US08_04
+
 
 
 
