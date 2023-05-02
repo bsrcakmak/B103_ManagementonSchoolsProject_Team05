@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 import static utilities.BaseURL.response;
 import static utilities.BaseURL.spec;
 
-public class LessonManagementStepDefinition {
+public class LessonManagementStepDefinition extends BaseURL {
     LessonProgramPojo expectedData;
     JsonPath actualData;
 
@@ -42,8 +42,8 @@ public class LessonManagementStepDefinition {
     @Then("Ders Programinin data'daki bilgilerle olusturuldugu dogrulanir")
     public void ders_programinin_data_daki_bilgilerle_olusturuldugu_dogrulanir() {
         assertEquals(expectedData.getDay(), actualData.getString("object.day"));
-        assertEquals(expectedData.getStartTime()+":00",actualData.getString("object.startTime"));
-        assertEquals(expectedData.getStopTime()+":00",actualData.getString("object.stopTime"));
+        assertEquals(expectedData.getStartTime() + ":00", actualData.getString("object.startTime"));
+        assertEquals(expectedData.getStopTime() + ":00", actualData.getString("object.stopTime"));
         ArrayList<Integer> lessonIdList = new ArrayList<>();
         List<Map> lessonList = response.jsonPath().getList("object.lessonName", Map.class);
         for (Map w : lessonList) {
@@ -64,6 +64,7 @@ public class LessonManagementStepDefinition {
         expectedData = new LessonProgramPojo("MONDAY", null, new ArrayList<>(Arrays.asList(1)), "12:00", "13:00");
 
     }
+
     @Then("Body olarak gonderilecek data ders günü secimi yapilmadan hazirlanir. US10_TC04")
     public void body_olarak_gonderilecek_data_ders_günü_secimi_yapilmadan_hazirlanir_us10_tc04() {
         expectedData = new LessonProgramPojo("", "1", new ArrayList<>(Arrays.asList(1)), "12:00", "13:00");
@@ -74,9 +75,38 @@ public class LessonManagementStepDefinition {
         expectedData = new LessonProgramPojo("MONDAY", "1", new ArrayList<>(Arrays.asList(1)), "12:00", "11:00");
     }
 
+    @Given("Ders Programını gorebilmek icin endpoint hazirlanir. US11")
+    public void ders_programını_gorebilmek_icin_endpoint_hazirlanir_us11() {
+        spec.pathParams("first", "lessonPrograms", "second", "getAll");
+    }
 
+    @Then("Get request gonderilir. US11")
+    public void get_request_gonderilir_us11() {
+        response = given().spec(spec).when().get("/{first}/{second}");
 
+    }
 
+    private String delid() {
+        spec.pathParams("first", "lessonPrograms", "second", "getAll");
+        response = given().spec(spec).when().get("/{first}/{second}");
+
+        List<Object> liste = response.jsonPath().getList("lessonProgramId");
+
+        Integer id = (Integer) liste.get(liste.size() - 1);
+
+        return id + "";
+    }
+
+    @Given("Ders Program Listten silme işlemi icin endpoint hazirlanir. US11")
+    public void ders_program_listten_silme_işlemi_icin_endpoint_hazirlanir_us11() {
+        String id = delid();
+        spec.pathParams("first", "lessonPrograms", "second", "delete", "third", id);
+    }
+
+    @Then("Del request gönderilir. US11")
+    public void del_request_gönderilir_us11() {
+        response = given().spec(spec).when().delete("/{first}/{second}/{third}");
+    }
 
 
 
