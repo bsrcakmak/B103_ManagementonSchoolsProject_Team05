@@ -1,3 +1,4 @@
+@us06
 Feature: Den Vicedean olusturma
 
   Background:

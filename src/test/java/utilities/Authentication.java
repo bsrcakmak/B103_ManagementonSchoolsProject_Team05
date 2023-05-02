@@ -21,40 +21,40 @@ public class Authentication {
 
     public static String generateAdminToken() {
         Map<String, String> token = new HashMap<>();
-        token.put("password", "wc0sivmd1yc");
-        token.put("username", "charlott.bruen");
+        token.put("password", ConfigReader.getProperty("adminPassword"));
+        token.put("username", ConfigReader.getProperty("adminUsername"));
         Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
     public static String generateDeanToken() {
         Map<String, String> token = new HashMap<>();
-        token.put("password", "hxp90et59iy");
-        token.put("username", "hosea.braun");
+        token.put("password", ConfigReader.getProperty("deanPassword"));
+        token.put("username", ConfigReader.getProperty("deanUsername"));
         Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
     public static String generateViceDeanToken() {
         Map<String, String> token = new HashMap<>();
-        token.put("password", "ejj95hpsu5rqth");
-        token.put("username", "judson.parisian");
+        token.put("password", ConfigReader.getProperty("viceDeanPassword"));
+        token.put("username", ConfigReader.getProperty("viceDeanUsername"));
         Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
     public static String generateTeacherToken() {
         Map<String, String> token = new HashMap<>();
-        token.put("password", "ye7aflbz1a");
-        token.put("username", "johnna.denesik");
+        token.put("password", ConfigReader.getProperty("teacherPassword"));
+        token.put("username", ConfigReader.getProperty("teacherUsername"));
         Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
 
     public static String generateStudentToken() {
         Map<String, String> token = new HashMap<>();
-        token.put("password", "3u1bd7s4ggil");
-        token.put("username", "elin.murazik");
+        token.put("password", ConfigReader.getProperty("studentPassword"));
+        token.put("username", ConfigReader.getProperty("studentUsername"));
         Response response = given().contentType(ContentType.JSON).body(token).post(ConfigReader.getProperty("authentication"));
         return response.jsonPath().getString("token");
     }
