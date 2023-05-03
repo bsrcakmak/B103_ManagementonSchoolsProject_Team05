@@ -67,7 +67,7 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     public void request_gonderilip_response_alinir_us21_tc02() {
 
         ArrayList<Integer>id = new ArrayList<>();
-        id.add(208);
+        id.add(182);
         System.out.println("id = " + id);
 
         lessonProgramId = new LessonProgramIdPojo(id);
