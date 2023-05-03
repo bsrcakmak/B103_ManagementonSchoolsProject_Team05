@@ -88,5 +88,5 @@ Feature: Student_save
     And  Admin rolu ile token olusturulur
     And Data hazirlanir US25
     And Post request gonderilir US25
-#    Then Status Code'unun 200 oldugu dogrulanir
+   Then Status Code'unun 200 oldugu dogrulanir
     Then Olusturulan oğrenciye otomatik olarak student number atandigi doğrulanır US25

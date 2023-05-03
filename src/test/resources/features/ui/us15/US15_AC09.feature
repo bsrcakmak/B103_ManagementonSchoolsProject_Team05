@@ -9,7 +9,7 @@ Feature: SSN girilmesinin zorunlu olmasi, formati ve karakter sayisi
 
   @us15_ac09_tc_10
   Scenario: SSN girilmesinin zorunlu olmasi
-#    And Ssn kutusu bos birakilir
+    # And Ssn kutusu bos birakilir
     When Submit butonuna tiklanir
     Then Ssn kutusunun altinda uyari mesajinin goruntulendigi dogrulanir
     Then Sayfa kapatilir
@@ -24,7 +24,7 @@ Feature: SSN girilmesinin zorunlu olmasi, formati ve karakter sayisi
     And Phone kutusuna gecerli bir deger girilir
     And Gender bolumunde gecerli bir secim yapilir
     And Date Of Birth kutusuna gecerli bir deger girilir
-#   And "Ssn" kutusunda 7.basamakta "-", diğer basamaklarda rakam olmak üzere 11 değer girilir
+    # And "Ssn" kutusunda 7.basamakta "-", diğer basamaklarda rakam olmak üzere 11 değer girilir
     And User Name kutusuna gecerli bir deger girilir
     And Father Name kutusuna gecerli bir deger girilir
     And Mother Name kutusuna gecerli bir deger girilir
@@ -43,7 +43,7 @@ Feature: SSN girilmesinin zorunlu olmasi, formati ve karakter sayisi
     And Phone kutusuna gecerli bir deger girilir
     And Gender bolumunde gecerli bir secim yapilir
     And Date Of Birth kutusuna gecerli bir deger girilir
-#   And "Ssn" kutusunda 4.basamakta "-", diğer basamaklarda rakam olmak üzere 11 değer girilir
+    # And "Ssn" kutusunda 4.basamakta "-", diğer basamaklarda rakam olmak üzere 11 değer girilir
     And User Name kutusuna gecerli bir deger girilir
     And Father Name kutusuna gecerli bir deger girilir
     And Mother Name kutusuna gecerli bir deger girilir
@@ -62,7 +62,7 @@ Feature: SSN girilmesinin zorunlu olmasi, formati ve karakter sayisi
     And Phone kutusuna gecerli bir deger girilir
     And Gender bolumunde gecerli bir secim yapilir
     And Date Of Birth kutusuna gecerli bir deger girilir
-#   And "Ssn" kutusunda 4. ve 7. basamakta "-", diğer basamaklarda rakam olmak üzere 10 değer girilir
+    # And "Ssn" kutusunda 4. ve 7. basamakta "-", diğer basamaklarda rakam olmak üzere 10 değer girilir
     And User Name kutusuna gecerli bir deger girilir
     And Father Name kutusuna gecerli bir deger girilir
     And Mother Name kutusuna gecerli bir deger girilir
@@ -81,7 +81,7 @@ Feature: SSN girilmesinin zorunlu olmasi, formati ve karakter sayisi
     And Phone kutusuna gecerli bir deger girilir
     And Gender bolumunde gecerli bir secim yapilir
     And Date Of Birth kutusuna gecerli bir deger girilir
-#   And "Ssn" kutusunda 4. ve 7. basamakta "-", diğer basamaklarda rakam olmak üzere 12 değer girilir
+    # And "Ssn" kutusunda 4. ve 7. basamakta "-", diğer basamaklarda rakam olmak üzere 12 değer girilir
     And User Name kutusuna gecerli bir deger girilir
     And Father Name kutusuna gecerli bir deger girilir
     And Mother Name kutusuna gecerli bir deger girilir
