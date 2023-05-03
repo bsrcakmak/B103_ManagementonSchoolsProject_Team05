@@ -37,7 +37,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     Then SSn_bolumunun_altinda_"Required"_yazisinin_oldugunu_dogrular
     Then Sayfa kapatilir
 
-
   @US13_TC26
   Scenario: TC26_Ogretmen olusturulurken Ssn alanina gecersiz data girilmesi
     And Ogretmenin girecegi ders secilir
@@ -112,7 +111,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     Then Kullanici Password bolumunun altinda Minimum sekiz character yazisinin gorundugunu test eder
     Then Sayfa kapatilir
 
-
   @US13_TC32
   Scenario: TC32_Ogretmen olusturulurken Password alaninin bos birakilmamasi
     And Ogretmenin girecegi ders secilir
@@ -129,10 +127,3 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     And Submit tiklanir
     Then Islemin gerceklestigine dair popUp mesajini goruntuler
     Then Sayfa kapatilir
-
-
-
-
-
-
-

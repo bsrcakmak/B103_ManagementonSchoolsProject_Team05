@@ -13,7 +13,7 @@ Feature: Vice Dean rolu ile ogrenci olusturabilme
     And Birth Place kutusuna gecerli bir deger girilir
     And Email kutusuna gecerli bir deger girilir
     And Phone kutusuna gecerli bir deger girilir
-#    And Gender bolumunde herhangi bir secim yapilmaz
+    # And Gender bolumunde herhangi bir secim yapilmaz
     And Date Of Birth kutusuna gecerli bir deger girilir
     And Ssn kutusuna gecerli bir deger girilir
     And User Name kutusuna gecerli bir deger girilir

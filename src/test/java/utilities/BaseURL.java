@@ -17,12 +17,4 @@ public class BaseURL {
                 build();
     }
 
-//    public static void setupBeforeAPI() {
-//        spec = new RequestSpecBuilder().
-//                addHeader("Cookie", "token=" + generateToken()).
-//                setContentType(ContentType.JSON).
-//                setBaseUri("https://restful-booker.herokuapp.com").
-//                build();
-//    }
-
 }

@@ -44,7 +44,6 @@ Feature:Vice Dean öğretmenleri görebilmeli ve güncelleme yapabilmelidir
     And Submit tiklanir
     Then Teacher updated Successful popUp mesajini goruntuler
 
-
   @US14_TC07
   Scenario: TC07_Surname bilgisinin guncellenmesi
     When Guncellemek istedigi ogretmenin bulundugu satirdaki Edit butonuna tiklar

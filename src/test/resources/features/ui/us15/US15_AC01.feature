@@ -7,7 +7,7 @@ Feature: Ogrencinin danisman ogretmeninin secilmesi
     When Vice Dean rolu ile login islemi gerceklestirilir
     When Baslikta bulunan Menu butonuna tiklanir
     When Panelde bulunan Student Management butonuna tiklanir
-#    And Choose Teacher listesinden herhangi bir secim yapilmaz
+    # And Choose Teacher listesinden herhangi bir secim yapilmaz
     And Name kutusuna gecerli bir deger girilir
     And Surname kutusuna gecerli bir deger girilir
     And Birth Place kutusuna gecerli bir deger girilir

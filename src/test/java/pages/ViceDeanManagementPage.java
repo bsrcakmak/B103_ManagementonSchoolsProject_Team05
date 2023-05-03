@@ -131,13 +131,10 @@ public class ViceDeanManagementPage {
     @FindBy(id = "react-select-4-placeholder")
     public WebElement selectLesson;
 
-
     @FindBy(xpath = "(//input[@id='name'])[2]")
     public WebElement editNameBox;
 
     @FindBy(xpath = "(//div[text()='Select lesson'])[2]")
     public WebElement editChooseLesson;
-
-
 
 }
