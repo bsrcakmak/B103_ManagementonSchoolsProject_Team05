@@ -2,8 +2,8 @@ package pojos;
 
 import java.util.ArrayList;
 
-public class AddTeacherPojo {
-    public AddTeacherPojo() {
+public class AddandUpdateTeacherPojo {
+    public AddandUpdateTeacherPojo() {
     }
 
     private String birthDay;
@@ -19,7 +19,7 @@ public class AddTeacherPojo {
     private String surname;
     private String username;
 
-    public AddTeacherPojo(String birthDay, String birthPlace, String email, String gender, Boolean isAdvisorTeacher, ArrayList<Integer> lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+    public AddandUpdateTeacherPojo(String birthDay, String birthPlace, String email, String gender, Boolean isAdvisorTeacher, ArrayList<Integer> lessonsIdList, String name, String password, String phoneNumber, String ssn, String surname, String username) {
         this.birthDay = birthDay;
         this.birthPlace = birthPlace;
         this.email = email;
