@@ -2,7 +2,6 @@ package stepdefinitions.ui;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -259,6 +258,7 @@ public class ContactStepDefinition {
 
     @Then("kullanici Required yazisini gorur")
     public void kullaniciRequiredYazisiniGorur() {
-    Assert.assertEquals(expectedRequired,contactPage.required.getText());
+        Assert.assertEquals(expectedRequired, contactPage.required.getText());
     }
+
 }

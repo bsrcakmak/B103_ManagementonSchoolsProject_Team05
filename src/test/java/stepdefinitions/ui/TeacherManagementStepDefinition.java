@@ -394,22 +394,18 @@ public class TeacherManagementStepDefinition {
 
     @Then("Date_of_Birth_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
     public void date_of_birth_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
-
         String expectedData = arg0;
         String actualData = viceDeanManagementPage.RequiredTextforDateofBirth.getText();
         ReusableMethods.waitFor(1);
         Assert.assertTrue(actualData.contains(expectedData));
-
     }
 
     @Then("SSn_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
     public void ssn_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
-
         String expectedData = arg0;
         String actualData = viceDeanManagementPage.RequiredTextforSsn.getText();
         ReusableMethods.waitFor(1);
         Assert.assertTrue(actualData.contains(expectedData));
-
     }
 
 
@@ -417,17 +413,14 @@ public class TeacherManagementStepDefinition {
     public void ssnEUcuncuVeBesinciRakamdanSonraTireGirmedenOnbirRakamGirer() {
         faker = new Faker();
         String Phonenumber11hane = faker.number().digits(11);
-
         viceDeanManagementPage.ssnBox.click();
         ReusableMethods.waitFor(1);
         viceDeanManagementPage.ssnBox.sendKeys(Phonenumber11hane + Keys.ENTER);
         ReusableMethods.waitFor(1);
-
     }
 
     @And("Ssn'e formata uygun rakam disinda karakterler girer")
     public void ssnEFormataUygunRakamDisindaKarakterlerGirer() {
-
         ReusableMethods.clickByJS(viceDeanManagementPage.ssnBox);
         ReusableMethods.waitFor(1);
         viceDeanManagementPage.ssnBox.sendKeys("abc-ab-abcd" + Keys.ENTER);
@@ -444,7 +437,6 @@ public class TeacherManagementStepDefinition {
 
     @Then("User_Name_bolumunun_altinda_{string}_yazisinin_oldugunu_dogrular")
     public void user_name_bolumunun_altinda__yazisinin_oldugunu_dogrular(String arg0) {
-
         String expectedData = arg0;
         String actualData = viceDeanManagementPage.RequiredTextforUsername.getText();
         ReusableMethods.waitFor(1);
@@ -453,7 +445,6 @@ public class TeacherManagementStepDefinition {
 
     @And("User Name space girer")
     public void userNameSpaceGirer() {
-
         viceDeanManagementPage.usernameBox.click();
         ReusableMethods.waitFor(1);
         viceDeanManagementPage.usernameBox.sendKeys("  " + Keys.ENTER);
@@ -463,7 +454,6 @@ public class TeacherManagementStepDefinition {
 
     @And("Password  bolumune tiklar ve bos birakir")
     public void passwordBolumuneTiklarVeBosBirakir() {
-
         ReusableMethods.clickByJS(viceDeanManagementPage.passwordBox);
         ReusableMethods.waitFor(1);
     }
@@ -478,97 +468,79 @@ public class TeacherManagementStepDefinition {
 
     @And("Password alanina yedi karakter girer")
     public void passwordAlaninaYediKarakterGirer() {
-
-        faker=new Faker();
-        String yedikarakterlipassword=faker.number().digits(7);
+        faker = new Faker();
+        String yedikarakterlipassword = faker.number().digits(7);
         ReusableMethods.clickByJS(viceDeanManagementPage.passwordBox);
         viceDeanManagementPage.passwordBox.sendKeys(yedikarakterlipassword);
     }
 
     @Then("Kullanici Password bolumunun altinda Minimum sekiz character yazisinin gorundugunu test eder")
     public void kullaniciPasswordBolumununAltindaMinimumSekizCharacterYazisininGorundugunuTestEder() {
-
         ReusableMethods.waitFor(1);
         Assert.assertTrue(viceDeanManagementPage.PasswordAlert.isDisplayed());
-
     }
 
     @And("Password alanina dokuz karakter girer")
     public void passwordAlaninaDokuzKarakterGirer() {
-
-        faker=new Faker();
-        String dokuzkarakterlipassword=faker.number().digits(9);
+        faker = new Faker();
+        String dokuzkarakterlipassword = faker.number().digits(9);
         ReusableMethods.clickByJS(viceDeanManagementPage.passwordBox);
         viceDeanManagementPage.passwordBox.sendKeys(dokuzkarakterlipassword);
     }
 
     @Then("Teacher List sayfasinda olusturulan ogretmene ait Name Surname bilgisinin gorundugunu dogrular")
     public void teacherListSayfasindaOlusturulanOgretmeneAitNameSurnameBilgisininGorundugunuDogrular() {
-
         Assert.assertTrue(viceDeanManagementPage.TeacherlistName.isDisplayed());
-
     }
 
     @Then("Teacher List sayfasinda olusturulan ogretmene ait Phone Number bilgisinin gorundugunu dogrular")
     public void teacherListSayfasindaOlusturulanOgretmeneAitPhoneNumberBilgisininGorundugunuDogrular() {
-
         Assert.assertTrue(viceDeanManagementPage.TeacherlistPhone.isDisplayed());
     }
 
     @Then("Teacher List sayfasinda olusturulan ogretmene ait Ssn bilgisinin gorundugunu dogrular")
     public void teacherListSayfasindaOlusturulanOgretmeneAitSsnBilgisininGorundugunuDogrular() {
-
         Assert.assertTrue(viceDeanManagementPage.TeacherlistSsn.isDisplayed());
     }
 
     @Then("Teacher List sayfasinda olusturulan ogretmene ait User Name bilgisinin gorundugunu dogrular")
     public void teacherListSayfasindaOlusturulanOgretmeneAitUserNameBilgisininGorundugunuDogrular() {
-
         Assert.assertTrue(viceDeanManagementPage.TeacherlistUsername.isDisplayed());
     }
 
     @When("Guncellemek istedigi ogretmenin bulundugu satirdaki Edit butonuna tiklar")
     public void guncellemekIstedigiOgretmeninBulunduguSatirdakiEditButonunaTiklar() {
-
         ReusableMethods.clickByJS(viceDeanManagementPage.editButton);
     }
 
     @And("Ogretmene ait secili ders bilgisini gorur")
     public void ogretmeneAitSeciliDersBilgisiniGorur() {
-
-        String seciliDers=viceDeanManagementPage.selectLesson.getText();
+        String seciliDers = viceDeanManagementPage.selectLesson.getText();
         Assert.assertTrue(seciliDers.contains("Java"));
     }
 
     @And("Secili ders bilgisini baska bir data ile degistirir")
     public void seciliDersBilgisiniBaskaBirDataIleDegistirir() {
-
         viceDeanManagementPage.editChooseLesson.click();
         ReusableMethods.waitFor(10);
         Actions action = new Actions(Driver.getDriver());
-        action.sendKeys("Java"+ Keys.ENTER).build().perform();
+        action.sendKeys("Java" + Keys.ENTER).build().perform();
         ReusableMethods.waitFor(1);
-
     }
 
     @Then("Teacher updated Successful popUp mesajini goruntuler")
     public void teacherUpdatedSuccessfulPopUpMesajiniGoruntuler() {
-
         Assert.assertTrue(false);
-        // update islemi yapilmadigi icin popup mesajinin locate ini alamadim
     }
 
     @And("Ogretmene ait secili Name bilgisini gorur")
     public void ogretmeneAitSeciliNameBilgisiniGorur() {
-
-     String nameText= ReusableMethods.getValueByJS("name");
-     Assert.assertEquals("Senemm",nameText);
-
+        String nameText = ReusableMethods.getValueByJS("name");
+        Assert.assertEquals("Senemm", nameText);
     }
 
     @And("Secili Name bilgisini baska bir data ile degistirir")
     public void seciliNameBilgisiniBaskaBirDataIleDegistirir() {
-
         ReusableMethods.clickByJS(viceDeanManagementPage.editNameBox);
         ReusableMethods.waitFor(1);
         viceDeanManagementPage.editNameBox.clear();
@@ -578,11 +550,11 @@ public class TeacherManagementStepDefinition {
 
     @And("Ogretmenin girecegi ders edit sayfasinda secilir")
     public void ogretmeninGirecegiDersEditSayfasindaSecilir() {
-
         Actions action = new Actions(Driver.getDriver());
         action.click(viceDeanManagementPage.editChooseLesson);
         ReusableMethods.waitFor(10);
         action.sendKeys(Keys.ENTER).build().perform();
         ReusableMethods.waitFor(1);
     }
+
 }

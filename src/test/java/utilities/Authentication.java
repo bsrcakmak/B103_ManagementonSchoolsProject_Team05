@@ -10,15 +10,6 @@ import static io.restassured.RestAssured.given;
 
 public class Authentication {
 
-//    public static String generateToken() {
-//        String url = "https://restful-booker.herokuapp.com/auth";
-//        Map<String, String> token = new HashMap<>();
-//        token.put("username", "admin");
-//        token.put("password", "password123");
-//        Response response = given().contentType(ContentType.JSON).when().body(token).post(url);
-//        return response.jsonPath().getString("token");
-//    }
-
     public static String generateAdminToken() {
         Map<String, String> token = new HashMap<>();
         token.put("password", ConfigReader.getProperty("adminPassword"));
