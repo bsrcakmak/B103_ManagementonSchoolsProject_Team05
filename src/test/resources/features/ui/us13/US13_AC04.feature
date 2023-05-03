@@ -49,7 +49,6 @@ Feature: US-13 Vice Dean ogretmen olusturabilmelidir
     Then Hata mesajini goruntuler.
     Then Sayfa kapatilir
 
-
   @US13_TC22
   Scenario: TC22_Öğretmenin danışmanlığı varsa "Is Advisor Teacher" seçeneğini seçilebilme
     And Ogretmenin girecegi ders secilir

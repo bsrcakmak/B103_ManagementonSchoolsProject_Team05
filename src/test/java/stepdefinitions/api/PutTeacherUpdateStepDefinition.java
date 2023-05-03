@@ -3,11 +3,9 @@ package stepdefinitions.api;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
-import pojos.TeacherUpdatePojo;
+import pojos.AddandUpdateTeacherPojo;
 import utilities.BaseURL;
-import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PutTeacherUpdateStepDefinition extends BaseURL {
 
-    TeacherUpdatePojo expectedData;
+    AddandUpdateTeacherPojo expectedData;
 
     JsonPath actualData;
 
@@ -25,7 +23,7 @@ public class PutTeacherUpdateStepDefinition extends BaseURL {
     @And("Request’te gönderilecek olan data hazırlanır US14_TC02")
     public void requestTeGönderilecekOlanDataHazırlanırUS14_TC02() {
 
-        expectedData=new TeacherUpdatePojo(
+        expectedData=new AddandUpdateTeacherPojo(
                 "2001-12-12","Izmir",
                 "s.izr@gmail.com",
                 "FEMALE",

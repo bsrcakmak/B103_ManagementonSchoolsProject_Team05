@@ -1,4 +1,3 @@
-
 Feature: Dean_Vice_Dean_hesabi_olusturabilmelidir
 
   Background:
