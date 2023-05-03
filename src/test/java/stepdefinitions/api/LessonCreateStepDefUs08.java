@@ -23,8 +23,6 @@ public class LessonCreateStepDefUs08 extends BaseURL {
 
     JsonPath actualData ;
 
-
-
     /*
 
    {

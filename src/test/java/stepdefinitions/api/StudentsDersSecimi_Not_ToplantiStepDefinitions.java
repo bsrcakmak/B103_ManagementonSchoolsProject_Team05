@@ -73,17 +73,14 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     public void request_gonderilip_response_alinir_us21_tc02() {
 
         ArrayList<Integer>id = new ArrayList<>();
-        id.add(counter);
+        id.add(106);
+        System.out.println("id = " + id);
+        //id.add(counter);
         lessonProgramId = new LessonProgramIdPojo(id);
 
         response = given().spec(spec).when().body(lessonProgramId).post("/{first}/{second}");
         response.prettyPrint();
         actualData = response.jsonPath();
-
-        if (response.statusCode()==200){
-            counter++;
-        }
-
 
     }
     @Then("Dersin secildigi dogrulanir US21_TC02")
@@ -130,7 +127,6 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     }
     @Then("Ders secilemedigi dogrulanir US21_TC04")
     public void ders_secilemedigi_dogrulanir_us21_tc04() {
-        assertEquals(actualData.getString("message"),"Error: Course schedule cannot be selected for the same hour and day");
         assertEquals(actualData.getString("message"),"Error: Course schedule cannot be selected for the same hour and day");
 
     }
