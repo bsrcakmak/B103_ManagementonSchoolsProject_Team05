@@ -16,7 +16,7 @@ public class Hooks {
         setupBeforeAPI();
     }
 
-    @After
+    @After("UI")
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
