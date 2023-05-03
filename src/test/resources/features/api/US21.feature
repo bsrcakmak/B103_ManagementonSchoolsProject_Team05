@@ -5,7 +5,6 @@ Feature: Students, choose lesson, grades and announcement
   Scenario: Öğrenci Choose Lesson listesinde; Teacher, Day, Start Time ve Stop Time bilgilerini görebilmeli
     Given chooseLesson için endpoint hazırlanır US21_TC01
     When Student rolu ile token olusturulur
-    #Then Expected Data hazırlanır US01_TC01
     Then Request gonderilip response alinir US21_TC01
     And Status Code'unun ikiyuz oldugu dogrulanir US21
     And Teacher,Day,Start Time ve Stop Time goruldugu dogrulanir US21_TC01
