@@ -22,14 +22,12 @@ public class GetPutDelete_ToplantiGoruntulemeGuncellemeSilmeStepDefinition_US20 
     JsonPath actualData;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     // Get Request
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Given("Toplanti goruntulemek icin endpoint hazirlanir US20_TC01")
     public void toplanti_goruntulemek_icin_endpoint_hazirlanir_US20_TC01() {
-        spec.pathParams("first", "meet", "second", "getMeetById", "third", 0);
+        spec.pathParams("first", "meet", "second", "getMeetById", "third", 2);
         // spec.pathParams("first", "meet", "second", "getMeetById");
         // spec.queryParam("third", 0);
     }
@@ -37,29 +35,30 @@ public class GetPutDelete_ToplantiGoruntulemeGuncellemeSilmeStepDefinition_US20 
     @And("Get request gonderilir US20_TC01")
     public void get_request_gonderilir_US20_TC01() {
         response = given().spec(spec).when().get("/{first}/{second}/{third}");
+        response.prettyPrint();
+        actualData = response.jsonPath();
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     // Put Request
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Given("Toplanti guncellemek icin endpoint hazirlanir US20_TC02")
     public void toplanti_guncellemek_icin_endpoint_hazirlanir_US20_TC02() {
-        spec.pathParams("first", "meet", "second", "update", "third", 0);
+        spec.pathParams("first", "meet", "second", "update", "third", 2);
         // spec.pathParams("first", "meet", "second", "update");
         // spec.queryParam("third", 0);
     }
 
     @And("Data hazirlanir US20_TC02")
     public void data_hazirlanir_US20_TC02() {
-        expectedData = new ToplantiDuzenlemeGuncellemePojo("yyyy-MM-dd", "string", "HH:mm", "HH:mm", new ArrayList<>(Arrays.asList(0)));
+        expectedData = new ToplantiDuzenlemeGuncellemePojo("2024-01-11", "Veli Toplantisi", "12:00", "13:00", new ArrayList<>(Arrays.asList(5)));
     }
 
     @When("Put request gonderilir US20_TC02")
     public void put_request_gonderilir_US20_TC02() {
         response = given().spec(spec).when().body(expectedData).put("/{first}/{second}/{third}");
+        response.prettyPrint();
         actualData = response.jsonPath();
     }
 
@@ -85,7 +84,7 @@ public class GetPutDelete_ToplantiGoruntulemeGuncellemeSilmeStepDefinition_US20 
 
     @Given("Toplanti silmek icin endpoint hazirlanir US20_TC03")
     public void toplanti_silmek_icin_endpoint_hazirlanir_US20_TC03() {
-        spec.pathParams("first", "meet", "second", "delete", "third", 0);
+        spec.pathParams("first", "meet", "second", "delete", "third", 2);
         // spec.pathParams("first", "meet", "second", "delete");
         // spec.queryParam("third", 0);
     }
