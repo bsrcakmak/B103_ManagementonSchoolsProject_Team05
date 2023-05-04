@@ -29,6 +29,7 @@ public class ContactMessageStepDefinition extends BaseURL {
         faker.shakespeare().hamletQuote(),
                 ReusableMethods.createName(),
         faker.shakespeare().romeoAndJulietQuote());
+        System.out.println("expectedData = " + expectedData);
     }
 
     @And("Post request gonderilir US03")
@@ -82,12 +83,13 @@ public class ContactMessageStepDefinition extends BaseURL {
 
     @Given("Mesajlari gorebilmek icin endpoint hazirlanir")
     public void mesajlariGorebilmekIcinEndpointHazirlanir() {
-        spec.pathParams("first","contactMessage","second","getAll");
+        spec.pathParams("first","contactMessages","second","getAll");
        // queryParams("page",1,"size",10,"sort","date","type","desc");
     }
 
     @And("Get request gonderilir")
     public void getRequestGonderilir() {
         response = given().spec(spec).when().get("/{first}/{second}");
+
     }
 }
