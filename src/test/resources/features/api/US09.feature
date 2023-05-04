@@ -1,4 +1,4 @@
-
+@US09API
 Feature: (Lessons - Lesson List)
 @US_09_TC01_API
   Scenario:Olusturulan; Lesson Name, Compulsory ve Credit Score gorebilmelidir

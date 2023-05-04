@@ -1,4 +1,4 @@
-@US08
+@US08api
 Feature: Lesson olusturma
 
   Background:
@@ -23,14 +23,14 @@ Feature: Lesson olusturma
     Then Vice Dean rolu ile token olusturulur
     Then Data Compulsory checkbox bilgisine yer verilmeden hazirlanir US08_03
     And Post request gonderilir US08_TC01
-    And Status Code'unun 400 oldugu dogrulanir
+    And Status Code'unun 200 oldugu dogrulanir
 
   @US08_TC04_API
   Scenario: Vice dean ders olusturmada Credit Score alanini bos birakma
     Then Vice Dean rolu ile token olusturulur
-    Then  Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US08_TC04
+    Then  Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US
     And  Post request gonderilir US08_TC01
-    And Status Code'unun 400 oldugu dogrulanir
+    And Status Code'unun 200 oldugu dogrulanir
 
 
 

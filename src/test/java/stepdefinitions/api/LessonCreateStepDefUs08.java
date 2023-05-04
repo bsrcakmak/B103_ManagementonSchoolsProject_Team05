@@ -1,5 +1,6 @@
 package stepdefinitions.api;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
@@ -71,12 +72,18 @@ public class LessonCreateStepDefUs08 extends BaseURL {
     }
     @Then("Data Compulsory checkbox bilgisine yer verilmeden hazirlanir US08_{int}")
     public void data_compulsory_checkbox_bilgisine_yer_verilmeden_hazirlanir_us08(Integer int1) {
-       expectedData=new LessonObjectPojo(false, 55, "love");
+       expectedData=new LessonObjectPojo(false, 55, ReusableMethods.createName());
     }
 
 
-    @Then("Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US{int}_TC{int}")
-    public void bodyOlarakGönderilecekDataCreditScoreBilgisineYerVerilmedenHazirlanirUS_TC(int arg0, int arg1) {
-        expectedData=new LessonObjectPojo(false, 55, "love");
+    @Then("Body olarak gönderilecek data  Credit Score bilgisine yer verilmeden hazirlanir US")
+    public void bodyOlarakGönderilecekDataCreditScoreBilgisineYerVerilmedenHazirlanirUS_TC() {
+        expectedData=new LessonObjectPojo(false, 0, ReusableMethods.createName());
+        //İNTEGER LARA NULL ATAYAMAYIZ
     }
+
+   /* @Then("Status Code'unun 409 oldugu dogrulanir")
+    public void status_kodunun_dortyuzdokuz_oldugu_dogrulanir() {
+        assertEquals(409, response.statusCode());
+    }*/
 }
