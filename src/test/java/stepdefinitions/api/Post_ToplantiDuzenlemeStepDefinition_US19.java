@@ -19,13 +19,23 @@ import static org.junit.Assert.assertEquals;
 
 public class Post_ToplantiDuzenlemeStepDefinition_US19 extends BaseURL {
 
+   /*
+{
+  "date": "2024-01-11",
+  "description": "Veli Toplantisi",
+  "startTime": "12:00",
+  "stopTime": "13:00",
+  "studentIds": [
+    2
+  ]
+}
+ */
+
     ToplantiDuzenlemeGuncellemePojo expectedData;
     JsonPath actualData;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     // Post Request Positive Scenario
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Given("Toplanti duzenlemek icin endpoint hazirlanir US19_TC01")
@@ -35,7 +45,7 @@ public class Post_ToplantiDuzenlemeStepDefinition_US19 extends BaseURL {
 
     @And("Data hazirlanir US19_TC01")
     public void data_hazirlanir_US19_TC01() {
-        expectedData = new ToplantiDuzenlemeGuncellemePojo("yyyy-MM-dd", "string", "HH:mm", "HH:mm", new ArrayList<>(Arrays.asList(0)));
+        expectedData = new ToplantiDuzenlemeGuncellemePojo("2024-01-11", "Veli Toplantisi", "12:00", "13:00", new ArrayList<>(Arrays.asList(5)));
     }
 
     @When("Post request gonderilir US19_TC01")
@@ -61,15 +71,13 @@ public class Post_ToplantiDuzenlemeStepDefinition_US19 extends BaseURL {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     // Post Request Negative Scenario
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @And("Data hazirlanir US19_TC02")
     public void data_hazirlanir_US19_TC02() {
         // expectedData = new ToplantiDuzenlemeGuncellemePojo("string", "HH:mm", "HH:mm", new ArrayList<>(Arrays.asList(0)));
-        expectedData = new ToplantiDuzenlemeGuncellemePojo(null, "string", "HH:mm", "HH:mm", new ArrayList<>(Arrays.asList(0)));
+        expectedData = new ToplantiDuzenlemeGuncellemePojo(null, "Veli Toplantisi", "12:00", "13:00", new ArrayList<>(Arrays.asList(5)));
     }
 
 }
