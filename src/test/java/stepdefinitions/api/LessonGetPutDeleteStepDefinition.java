@@ -11,7 +11,15 @@ import static io.restassured.RestAssured.when;
 import static utilities.BaseURL.spec;
 
 public class LessonGetPutDeleteStepDefinition extends BaseURL {
+
+    /*{
+        "lessonId": 754,
+        "lessonName": "halk",
+        "creditScore": 50,
+        "compulsory": true
+    }*/
     LessonObjectPojo expectedData;
+
 
     JsonPath actualData;
     @Given("Lesson goruntuleyebilmek icin endpoint hazirlanir US09_TC01")
@@ -25,7 +33,7 @@ public class LessonGetPutDeleteStepDefinition extends BaseURL {
     }
     @Given("Lesson List bilgilerini silebilmek icin endpoint hazirlanir US09_TC02")
     public void lesson_list_bilgilerini_silebilmek_icin_endpoint_hazirlanir_us09_tc02() {
-    spec.pathParams("first","lessons","second","delete","third",688);
+    spec.pathParams("first","lessons","second","delete","third",788);
 
     }
     @Then("Endpoint'e delete request gonderilir US09_TC02")

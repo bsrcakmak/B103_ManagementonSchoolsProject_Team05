@@ -19,7 +19,7 @@ public class LessonObjectPojo {
     public LessonObjectPojo() {
     }
 
-    public LessonObjectPojo(boolean compulsory, int creditScore, String lessonName) {
+    public LessonObjectPojo(boolean compulsory, Integer creditScore, String lessonName) {
         this.compulsory = compulsory;
         this.creditScore = creditScore;
         this.lessonName = lessonName;
@@ -33,11 +33,11 @@ public class LessonObjectPojo {
         this.compulsory = compulsory;
     }
 
-    public int getCreditScore() {
+    public Integer getCreditScore() {
         return creditScore;
     }
 
-    public void setCreditScore(int creditScore) {
+    public void setCreditScore(Integer creditScore) {
         this.creditScore = creditScore;
     }
 
