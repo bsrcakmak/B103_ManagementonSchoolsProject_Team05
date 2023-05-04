@@ -25,10 +25,11 @@ public class ContactMessageStepDefinition extends BaseURL {
 
     @When("Data hazirlanir US03")
     public void dataHazirlanirUS03() {
-        expectedData = new CreateMessagePojo(ReusableMethods.createEmail(),
+        expectedData = new CreateMessagePojo(ReusableMethods.createName()+"@gmail.com",
         faker.shakespeare().hamletQuote(),
                 ReusableMethods.createName(),
         faker.shakespeare().romeoAndJulietQuote());
+        System.out.println("expectedData = " + expectedData);
     }
 
     @And("Post request gonderilir US03")
@@ -49,7 +50,7 @@ public class ContactMessageStepDefinition extends BaseURL {
 
     @When("Name alani bos birakilarak data hazirlanir US03")
     public void nameAlaniBosBirakilarakDataHazirlanirUS03() {
-        expectedData = new CreateMessagePojo(ReusableMethods.createEmail(),
+        expectedData = new CreateMessagePojo(ReusableMethods.createName()+"@gmail.com",
                 faker.shakespeare().hamletQuote(),
                null,
                 faker.shakespeare().romeoAndJulietQuote());
@@ -73,21 +74,22 @@ public class ContactMessageStepDefinition extends BaseURL {
 
     @When("Email alanina invalid deger girilerek data hazirlanir US03")
     public void emailAlaninaInvalidDegerGirilerekDataHazirlanirUS03() {
-        assertEquals(expectedData.getEmail(),actualData.getString("object.email"));
-        assertEquals(expectedData.getMessage(),actualData.getString("object.message"));
-        assertEquals(expectedData.getName(),actualData.getString("object.name"));
-        assertEquals(expectedData.getSubject(),actualData.getString("object.subject"));
+        expectedData = new CreateMessagePojo(ReusableMethods.createName()+"@gmail.",
+                faker.shakespeare().hamletQuote(),
+                ReusableMethods.createName(),
+                faker.shakespeare().romeoAndJulietQuote());
     }
 
 
     @Given("Mesajlari gorebilmek icin endpoint hazirlanir")
     public void mesajlariGorebilmekIcinEndpointHazirlanir() {
-        spec.pathParams("first","contactMessage","second","getAll");
+        spec.pathParams("first","contactMessages","second","getAll");
        // queryParams("page",1,"size",10,"sort","date","type","desc");
     }
 
     @And("Get request gonderilir")
     public void getRequestGonderilir() {
         response = given().spec(spec).when().get("/{first}/{second}");
+
     }
 }
