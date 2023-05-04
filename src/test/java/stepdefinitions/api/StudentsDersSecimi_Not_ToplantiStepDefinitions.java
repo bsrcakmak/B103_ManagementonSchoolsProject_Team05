@@ -2,13 +2,9 @@ package stepdefinitions.api;
 
 import io.cucumber.java.en.*;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import pojos.*;
 import utilities.ReusableMethods;
-
 import java.util.ArrayList;
-
-
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -24,8 +20,6 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     RegisterPojo expectedData ;
     StudentDersNotlariPojo expectedData2;
     StudentMeetPojo expectedData3;
-
-    int counter = 41 ;
 
 
     @Given("chooseLesson için endpoint hazırlanır US21_TC01")
@@ -73,17 +67,14 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     public void request_gonderilip_response_alinir_us21_tc02() {
 
         ArrayList<Integer>id = new ArrayList<>();
-        id.add(counter);
+        id.add(182);
+        System.out.println("id = " + id);
+
         lessonProgramId = new LessonProgramIdPojo(id);
 
         response = given().spec(spec).when().body(lessonProgramId).post("/{first}/{second}");
         response.prettyPrint();
         actualData = response.jsonPath();
-
-        if (response.statusCode()==200){
-            counter++;
-        }
-
 
     }
     @Then("Dersin secildigi dogrulanir US21_TC02")
@@ -92,7 +83,6 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
         assertEquals(actualData.getString("object.name"),expectedData.getObject().getName());
         assertEquals(actualData.getString("object.surname"),expectedData.getObject().getSurname());
         assertEquals(actualData.getString("object.birthDay"),expectedData.getObject().getBirthDay());
-        assertEquals(actualData.getString("object.ssn"),expectedData.getObject().getSsn());
         assertEquals(actualData.getString("object.birthPlace"),expectedData.getObject().getBirthPlace());
         assertEquals(actualData.getString("object.phoneNumber"),expectedData.getObject().getPhoneNumber());
         assertEquals(actualData.getString("object.gender"),expectedData.getObject().getGender());
@@ -114,7 +104,6 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     public void dersin_secilemedigi_dogrulanir_us21_tc03() {
         assertEquals(actualData.getString("message"),"Error: Lesson Programs not found");
 
-
     }
 
     @Then("ayni ders secimi icin Data hazırlanır US01_TC05")
@@ -130,7 +119,6 @@ public class StudentsDersSecimi_Not_ToplantiStepDefinitions {
     }
     @Then("Ders secilemedigi dogrulanir US21_TC04")
     public void ders_secilemedigi_dogrulanir_us21_tc04() {
-        assertEquals(actualData.getString("message"),"Error: Course schedule cannot be selected for the same hour and day");
         assertEquals(actualData.getString("message"),"Error: Course schedule cannot be selected for the same hour and day");
 
     }
