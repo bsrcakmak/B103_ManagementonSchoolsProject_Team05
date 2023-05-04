@@ -60,7 +60,8 @@ public class VicedeanOlusturmaUs06 extends BaseURL {
     }
     @Then("Post request gönderilir US06_TC01")
     public void post_request_gönderilir_us06_tc01() {
-    response=given(spec).when().body(expectedData).post("/{first}/{second}");
+        response = given().spec(spec).when().body(expectedData).post("/{first}/{second}");
+
     response.prettyPrint();
     actualData=response.jsonPath();
 
@@ -138,4 +139,61 @@ public class VicedeanOlusturmaUs06 extends BaseURL {
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
     }
+
+    @Then("Body olarak gönderilecek data Birth of date bilgisine yer verilmeden hazırlanır")
+    public void body_olarak_gönderilecek_data_birth_of_date_bilgisine_yer_verilmeden_hazırlanır() {
+        expectedData = new RegisterObjectPojo("",
+                ReusableMethods.createBirthPlace(),
+                "MALE",
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ssnFormat,
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
+
+    @Then("Body olarak gönderilecek data Ssn bilgisine yer verilmeden hazırlanır")
+    public void body_olarak_gönderilecek_data_ssn_bilgisine_yer_verilmeden_hazırlanır() {
+        expectedData = new RegisterObjectPojo("1995-06-01",
+                ReusableMethods.createBirthPlace(),
+                "MALE",
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                "",
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
+
+    @Then("Body olarak gönderilecek data User Name bilgisine yer verilmeden hazırlanır")
+    public void body_olarak_gönderilecek_data_user_name_bilgisine_yer_verilmeden_hazırlanır() {
+        expectedData = new RegisterObjectPojo("1995-06-01",
+                ReusableMethods.createBirthPlace(),
+                "MALE",
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ssnFormat,
+                ReusableMethods.createSurname(),
+               "");
+    }
+
+    @Then("Body olarak gönderilecek data Password bilgisine yer verilmeden hazırlanır")
+    public void body_olarak_gönderilecek_data_password_bilgisine_yer_verilmeden_hazırlanır() {
+        expectedData = new RegisterObjectPojo("1995-06-01",
+                ReusableMethods.createBirthPlace(),
+                "MALE",
+                ReusableMethods.createName(),
+                "",
+                ReusableMethods.createPhone(),
+                ssnFormat,
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+    }
+
+
+
+
+
 }
