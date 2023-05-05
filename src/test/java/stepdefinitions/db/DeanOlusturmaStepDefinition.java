@@ -10,16 +10,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import static org.junit.Assert.assertEquals;
+
 public class DeanOlusturmaStepDefinition {
     Connection connection;
     Statement statement;
     ResultSet resultSet;
 
 
-    @Given("Database ile baglanti kurulur")
-    public void database_ile_baglanti_kurulur() {
-        connection = JDBCUtils.connectToDataBase("164.92.252.42:5432", "school_management", "select_user", "43w5ijfso");
-    }
     @Given("Dean {string} bilgisi ile cagrilir")
     public void dean_bilgisi_ile_cagrilir(String username) throws SQLException {
         statement = JDBCUtils.createStatement();
@@ -27,9 +25,17 @@ public class DeanOlusturmaStepDefinition {
         resultSet.next();
     }
 
-    @Then("Dean'in bilgileri dogrulanir: userId={string}, username={string}, name={string}, surname={string}, birthDay={string}, ssn={string}, birthPlace={string}, phoneNumber={string}, gender={string}")
-    public void deanBilgileriDogrulanir(String id, String username, String name, String surname, String birthday, String birthPlace, String phone, String ssn, String gender) {
 
+    @Then("Dean'in bilgileri dogrulanir: id={string}, username={string}, name={string}, surname={string}, birthDay={string}, ssn={string}, birthPlace={string}, phoneNumber={string}, gender={string}")
+    public void deanInBilgileriDogrulanirIdUsernameNameSurnameBirthDaySsnBirthPlacePhoneNumberGender(String id, String username, String name, String surname, String birthDay, String birthPlace, String ssn, String phoneNumber, String gender) throws SQLException {
+        assertEquals(id, resultSet.getString("id"));
+        assertEquals(username,resultSet.getString("username"));
+        assertEquals(name,resultSet.getString("name"));
+        assertEquals(surname,resultSet.getString("surname"));
+        assertEquals(birthDay,resultSet.getString("birthDay"));
+        assertEquals(ssn,resultSet.getString("ssn"));
+        assertEquals(birthPlace,resultSet.getString("birthPlace"));
+        assertEquals(phoneNumber,resultSet.getString("phoneNumber"));
+        assertEquals(gender,resultSet.getString("gender"));
     }
-
 }
