@@ -2,7 +2,7 @@
 Feature: Teacher rolu ile ogrencilere not verebilme
 
   # Post Request Positive Scenario
-  @US17_TC01
+  @US17_TC01 @api_smoke_test
   Scenario: Ogrencilere Not Verme
     Given Teacher ogrenciye not verebilmek icin endpoint hazirlar US17_TC01
     When Teacher rolu ile token olusturulur

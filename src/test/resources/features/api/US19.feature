@@ -2,7 +2,7 @@
 Feature: Teacher rolu ile toplanti duzenleme
 
   # Post Request Positive Scenario
-  @US19_TC01
+  @US19_TC01 @api_smoke_test
   Scenario: Toplanti duzenleme
     Given Toplanti duzenlemek icin endpoint hazirlanir US19_TC01
     # Token CommonStepDefinition'dan aliniyor

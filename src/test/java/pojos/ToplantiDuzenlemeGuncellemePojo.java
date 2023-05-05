@@ -16,7 +16,6 @@ public class ToplantiDuzenlemeGuncellemePojo {
     private String stopTime;
     private ArrayList<Integer> studentIds;
 
-    // Positive Scenario
     public ToplantiDuzenlemeGuncellemePojo(String date, String description, String startTime, String stopTime, ArrayList<Integer> studentIds) {
         this.date = date;
         this.description = description;
@@ -24,14 +23,6 @@ public class ToplantiDuzenlemeGuncellemePojo {
         this.stopTime = stopTime;
         this.studentIds = studentIds;
     }
-
-    // Negative Scenario
-//    public ToplantiDuzenlemeGuncellemePojo(String description, String startTime, String stopTime, ArrayList<Integer> studentIds) {
-//        this.description = description;
-//        this.startTime = startTime;
-//        this.stopTime = stopTime;
-//        this.studentIds = studentIds;
-//    }
 
     public String getDate() {
         return date;

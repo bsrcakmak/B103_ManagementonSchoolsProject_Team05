@@ -4,7 +4,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StudentMeetPojo {
-    
+
     private int id;
     private String description;
     private String date;
@@ -105,4 +105,5 @@ public class StudentMeetPojo {
                 ", teacherSsn='" + teacherSsn + '\'' +
                 '}';
     }
+
 }

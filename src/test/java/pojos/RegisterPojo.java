@@ -50,4 +50,5 @@ public class RegisterPojo {
                 ", httpStatus='" + httpStatus + '\'' +
                 '}';
     }
+
 }

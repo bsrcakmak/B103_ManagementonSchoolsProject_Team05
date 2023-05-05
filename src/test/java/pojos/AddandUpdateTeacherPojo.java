@@ -3,6 +3,7 @@ package pojos;
 import java.util.ArrayList;
 
 public class AddandUpdateTeacherPojo {
+
     public AddandUpdateTeacherPojo() {
     }
 
@@ -147,4 +148,5 @@ public class AddandUpdateTeacherPojo {
                 ", username='" + username + '\'' +
                 '}';
     }
+
 }
