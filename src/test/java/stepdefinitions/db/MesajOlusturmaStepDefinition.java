@@ -3,6 +3,7 @@ package stepdefinitions.db;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.JDBCUtils;
 
 import java.sql.*;
 
@@ -16,16 +17,17 @@ public class MesajOlusturmaStepDefinition {
     String email = "johndoe@gmail.com";
 
 
-    @Given("Database baglantisi kurulur US03")
-    public void databaseBaglantisiKurulurUS03() throws SQLException {
-        connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
-        statement = connection.createStatement();
+    @Given("Database baglantisi kurulur US")
+    public void databaseBaglantisiKurulurUS() throws SQLException {
+        connection = JDBCUtils.connectToDataBase("164.92.252.42", "school_management", "select_user", "43w5ijfso");
+       // connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
+       // statement = connection.createStatement();
     }
 
     @When("email bilgisi ile mesaj alinir")
-    public void bilgisiIleMesajAlinir() throws SQLException {
+    public void emailBilgisiIleMesajAlinir() throws SQLException {
 
-        //statement = JDBCUtils.createStatement();
+        statement = JDBCUtils.createStatement();
         String query = "SELECT * FROM contact_message WHERE email = '"+email+"';";
         resultSet = statement.executeQuery(query);
         resultSet.next();
