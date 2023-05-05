@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class AddTeacherStepDefinition {
 
@@ -35,6 +36,7 @@ public class AddTeacherStepDefinition {
         assertEquals("Ozcetnn", resultSet.getString("surname"));
         assertEquals("SenemOzcetinn", resultSet.getString("username"));
         assertEquals("sizmir@gmail.com", resultSet.getString("email"));
+        assertTrue(resultSet.getBoolean("is_advisor"));
 
     }
 
