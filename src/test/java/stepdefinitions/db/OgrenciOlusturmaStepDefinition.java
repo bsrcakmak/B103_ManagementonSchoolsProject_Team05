@@ -18,26 +18,23 @@ public class OgrenciOlusturmaStepDefinition {
     @When("Vice Dean rolu ile olusturulmus ogrenci student tablosunda username ile bulunur US15")
     public void deanRoluIleOlusturulmusOgrenciStudentTablosundaIleBulunurUS() throws SQLException {
         statement = JDBCUtils.createStatement();
-        String query = "SELECT * FROM student WHERE username = username;";
+        String query = "SELECT * FROM student WHERE username = ellis.marvin;";
         resultSet = JDBCUtils.executeQuery(query);
         resultSet.next();
     }
 
     @Then("Ogrencinin bilgileri dogrulanir US15")
     public void ogrencininBilgileriDogrulanirUS() throws SQLException {
-        // assertEquals(0, resultSet.getInt("advisor_teacher_id"));
-        assertEquals("", resultSet.getString("birth_day"));
-        assertEquals("", resultSet.getString("birth_place"));
-        assertEquals("", resultSet.getString("email"));
-        assertEquals("", resultSet.getString("father_name"));
-        assertEquals("", resultSet.getString("gender"));
-        assertEquals("", resultSet.getString("mother_name"));
-        assertEquals("", resultSet.getString("name"));
-        // assertEquals("", resultSet.getString("password"));
-        assertEquals("", resultSet.getString("phone_number"));
-        assertEquals("", resultSet.getString("ssn"));
-        assertEquals("", resultSet.getString("surname"));
-        assertEquals("", resultSet.getString("username"));
+        assertEquals("2004-11-06", resultSet.getString("birth_day"));
+        assertEquals("Feilbury", resultSet.getString("birth_place"));
+        assertEquals("stnt@stnt.com", resultSet.getString("email"));
+        assertEquals("Marty", resultSet.getString("father_name"));
+        assertEquals("MALE", resultSet.getString("gender"));
+        assertEquals("Lauren", resultSet.getString("mother_name"));
+        assertEquals("Edwin", resultSet.getString("name"));
+        assertEquals("782-608-5533", resultSet.getString("phone_number"));
+        assertEquals("234-12-5679", resultSet.getString("ssn"));
+        assertEquals("Kemmer", resultSet.getString("surname"));
     }
 
 }
