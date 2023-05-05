@@ -1,10 +1,11 @@
 @US01_API
 Feature: Register
+
   Background:
     Given Register için endpoint hazırlanır
-   # When  Token üretilir US01
+    # When  Token üretilir US01
 
-  @API_US01_TC01
+  @API_US01_TC01 @api_smoke_test
   Scenario: Register
     And Data hazırlanır US01
     Then Request gonderilip response alinir US01
@@ -75,8 +76,3 @@ Feature: Register
     And Yalnızca password alanına yedi karakter girerek boş bırakılarak data hazırlanır US01
     Then Request gonderilip response alinir US01
     Then Hazırlanan data ile kayıt oluşturulamadığı doğrulanır US01
-
-
-
-
-
