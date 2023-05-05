@@ -37,6 +37,7 @@ public class AddTeacherStepDefinition {
         assertEquals("SenemOzcetinn", resultSet.getString("username"));
         assertEquals("sizmir@gmail.com", resultSet.getString("email"));
         assertTrue(resultSet.getBoolean("is_advisor"));
+        assertEquals(4,resultSet.getInt("user_role_id"));
 
     }
 
