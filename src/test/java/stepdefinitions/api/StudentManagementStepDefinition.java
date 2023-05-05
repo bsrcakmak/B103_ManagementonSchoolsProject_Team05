@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class OgrenciOlusturmaStepDefinition extends BaseURL {
+public class StudentManagementStepDefinition extends BaseURL {
 
     OgrenciOlusturmaPojo expectedData;
     JsonPath actualData;
@@ -26,7 +26,7 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
     @And("Body olarak gonderilecek data hazirlanir US15")
     public void bodyOlarakGonderilecekDataHazirlanirUS15() {
         expectedData = new OgrenciOlusturmaPojo(221,
-                ReusableMethods.createDateOfBirth(),
+                "1980-01-01",
                 ReusableMethods.createBirthPlace(),
                 ReusableMethods.createEmail(),
                 ReusableMethods.createFatherName(),
@@ -358,16 +358,13 @@ public class OgrenciOlusturmaStepDefinition extends BaseURL {
 
     @Then("Ogrencinin data'daki bilgilerle olusturuldugu dogrulanir US15")
     public void ogrencinin_datadaki_bilgilerle_olusturuldugu_dogrulanir_US15() {
-        // assertEquals(expectedData.getAdvisorTeacherId());
         assertEquals(expectedData.getBirthDay(), actualData.getString("object.birthDay"));
         assertEquals(expectedData.getEmail(), actualData.getString("object.email"));
         assertEquals(expectedData.getFatherName(), actualData.getString("object.fatherName"));
         assertEquals(expectedData.getGender(), actualData.getString("object.gender"));
         assertEquals(expectedData.getMotherName(), actualData.getString("object.motherName"));
         assertEquals(expectedData.getName(), actualData.getString("object.name"));
-        // assertEquals(expectedData.getPassword());
         assertEquals(expectedData.getPhoneNumber(), actualData.getString("object.phoneNumber"));
-        // assertEquals(expectedData.getSsn());
         assertEquals(expectedData.getSurname(), actualData.getString("object.surname"));
         assertEquals(expectedData.getUsername(), actualData.getString("object.username"));
     }

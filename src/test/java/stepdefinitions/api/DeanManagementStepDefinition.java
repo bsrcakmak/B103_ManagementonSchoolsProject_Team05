@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
-import org.junit.Assert;
 import pojos.AddDeanPojo;
 import utilities.BaseURL;
 import utilities.ReusableMethods;
@@ -13,16 +12,16 @@ import utilities.ReusableMethods;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class DeanOlusturmaStepDefinition extends BaseURL {
+public class DeanManagementStepDefinition extends BaseURL {
+
     AddDeanPojo expectedData;
     JsonPath actualData;
 
     @Given("Dean kaydi icin end point hazirlanir")
     public void dean_kaydi_icin_end_point_hazirlanir() {
-        spec.pathParams("pp1","dean","pp2","save");
+        spec.pathParams("pp1", "dean", "pp2", "save");
 
     }
-
 
     @And("Request datasi hazirlanir")
     public void requestDatasiHazirlanir() {
@@ -43,7 +42,6 @@ public class DeanOlusturmaStepDefinition extends BaseURL {
         response = given().spec(spec).
                 when().body(expectedData).
                 post("/{pp1}/{pp2}");
-        //response.prettyPrint();
         actualData = response.jsonPath();
     }
 
@@ -56,9 +54,7 @@ public class DeanOlusturmaStepDefinition extends BaseURL {
         assertEquals(expectedData.getSsn(), actualData.getString("object.ssn"));
         assertEquals(expectedData.getSurname(), actualData.getString("object.surname"));
         assertEquals(expectedData.getUsername(), actualData.getString("object.username"));
-
     }
-
 
     @And("Get request gonderilir us{int}")
     public void getRequestGonderilirUs(int arg0) {
@@ -81,12 +77,12 @@ public class DeanOlusturmaStepDefinition extends BaseURL {
 
     @Given("Dean icin end point hazirlanir")
     public void deanIcinEndPointHazirlanir() {
-        spec.pathParams("pp1","dean","pp2","getAll");
+        spec.pathParams("pp1", "dean", "pp2", "getAll");
     }
 
     @Given("Dean icin end point hazirlanir-put")
     public void deanIcinEndPointHazirlanirPut() {
-        spec.pathParams("pp1","dean","pp2","update","pp3","402");
+        spec.pathParams("pp1", "dean", "pp2", "update", "pp3", "402");
     }
 
     @When("Guncelleme icin request data hazirlanir")
@@ -111,14 +107,14 @@ public class DeanOlusturmaStepDefinition extends BaseURL {
         response.prettyPrint();
     }
 
-
     @Given("Dean icin end point hazirlanir-del")
     public void deanIcinEndPointHazirlanirDel() {
-        spec.pathParams("pp1","dean","pp2","delete","pp3","407");
+        spec.pathParams("pp1", "dean", "pp2", "delete", "pp3", "407");
     }
 
     @When("Delete request gonderilir")
     public void deleteRequestGonderilir() {
         response = given().spec(spec).when().delete("/{pp1}/{pp2}/{pp3}");
     }
+
 }

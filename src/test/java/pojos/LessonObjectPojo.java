@@ -1,16 +1,6 @@
 package pojos;
 
 public class LessonObjectPojo {
-    /*{
-        "object": {
-        "lessonId": 433,
-                "lessonName": "kumar",
-                "creditScore": 55,
-                "compulsory": true
-    },
-        "message": "Lesson Created",
-            "httpStatus": "OK"
-    }*/
 
     private boolean compulsory;
     private int creditScore;
@@ -59,4 +49,3 @@ public class LessonObjectPojo {
     }
 
 }
-

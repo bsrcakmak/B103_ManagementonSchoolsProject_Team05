@@ -1,11 +1,9 @@
 package stepdefinitions.db;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utilities.JDBCUtils;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,14 +12,8 @@ import static org.junit.Assert.assertEquals;
 
 public class OgrenciOlusturmaStepDefinition {
 
-    Connection connection;
     Statement statement;
     ResultSet resultSet;
-
-    @Given("Database baglantisi kurulur")
-    public void database_baglantisi_kurulur() {
-        connection = JDBCUtils.connectToDataBase("164.92.252.42:5432", "school_management", "select_user", "43w5ijfso");
-    }
 
     @When("Vice Dean rolu ile olusturulmus ogrenci student tablosunda username ile bulunur US15")
     public void deanRoluIleOlusturulmusOgrenciStudentTablosundaIleBulunurUS() throws SQLException {
@@ -46,11 +38,6 @@ public class OgrenciOlusturmaStepDefinition {
         assertEquals("", resultSet.getString("ssn"));
         assertEquals("", resultSet.getString("surname"));
         assertEquals("", resultSet.getString("username"));
-    }
-
-    @Then("Database baglantisi kesilir")
-    public void databaseBaglantisiKesilir() {
-        JDBCUtils.closeConnectionAndStatement();
     }
 
 }
