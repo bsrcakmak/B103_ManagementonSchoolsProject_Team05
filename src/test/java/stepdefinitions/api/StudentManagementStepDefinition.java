@@ -25,10 +25,10 @@ public class StudentManagementStepDefinition extends BaseURL {
 
     @And("Body olarak gonderilecek data hazirlanir US15")
     public void bodyOlarakGonderilecekDataHazirlanirUS15() {
-        expectedData = new OgrenciOlusturmaPojo(221,
+        expectedData = new OgrenciOlusturmaPojo(250,
                 "1980-01-01",
                 ReusableMethods.createBirthPlace(),
-                ReusableMethods.createEmail(),
+                ReusableMethods.createName()+"@gmail.com",
                 ReusableMethods.createFatherName(),
                 "MALE",
                 ReusableMethods.createMotherName(),

@@ -28,9 +28,9 @@ public class AdStudentManagementStepDefinition extends BaseURL {
     @When("Data hazirlanir US25")
     public void data_hazirlanir() {
         expectedData = new AddStudentPojo(3,
-                ReusableMethods.createDateOfBirth(),
+                "2000-01-01",
                 ReusableMethods.createBirthPlace(),
-                ReusableMethods.createEmail(),
+                ReusableMethods.createName()+"@gmail.com",
                 ReusableMethods.createFatherName(),
                 "MALE",
                 ReusableMethods.createMotherName(),

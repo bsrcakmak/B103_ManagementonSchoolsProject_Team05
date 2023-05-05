@@ -30,7 +30,7 @@ public class ViceDeanManagementStepDefinition extends BaseURL {
                 ReusableMethods.createName(),
                 ReusableMethods.createPassword(),
                 ReusableMethods.createPhone(),
-                ssnFormat,
+                ReusableMethods.createSSN(),
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
     }

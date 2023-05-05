@@ -25,7 +25,7 @@ public class StudentInfoManagementStepDefinition extends BaseURL {
 
     @When("Data hazirlar US17_TC01")
     public void data_hazirlar_us17_tc01() {
-        expectedData = new StudentInfoPojo(1, 2, 45, "Her gun tekrar yapmali", 17, 67, 2);
+        expectedData = new StudentInfoPojo(1, 2, 45, "Her gun tekrar yapmali", 17, 67, 150);
     }
 
     @When("Post request gonderilir US17_TC01")
