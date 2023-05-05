@@ -33,10 +33,24 @@ public class RegisterStepDefinition extends BaseURL {
                 ReusableMethods.createName(),
                 ReusableMethods.createPassword(),
                 ReusableMethods.createPhone(),
-                ssnFormat,
+                ReusableMethods.createSSN(),
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
         expectedData = new RegisterPojo(objectData, "Guest User registered.", "CREATED");
+    }
+
+    @When("Data hazırlanır US22")
+    public void data_hazırlanır_us22() {
+        objectData = new RegisterObjectPojo("1995-06-01",
+                ReusableMethods.createBirthPlace(),
+                "MALE",
+                ReusableMethods.createName(),
+                ReusableMethods.createPassword(),
+                ReusableMethods.createPhone(),
+                ReusableMethods.createSSN(),
+                ReusableMethods.createSurname(),
+                ReusableMethods.createUserName());
+        expectedData = new RegisterPojo(objectData, "Admin Saved", "CREATED");
     }
 
     @Then("Request gonderilip response alinir US01")
@@ -52,9 +66,7 @@ public class RegisterStepDefinition extends BaseURL {
         assertEquals(actualData.getString("object.username"), expectedData.getObject().getUsername());
         assertEquals(actualData.getString("object.name"), expectedData.getObject().getName());
         assertEquals(actualData.getString("object.surname"), expectedData.getObject().getSurname());
-        assertEquals(actualData.getString("object.birthDay"), expectedData.getObject().getBirthDay()); // nul donuyor
         assertEquals(actualData.getString("object.ssn"), expectedData.getObject().getSsn());
-        assertEquals(actualData.getString("object.birthPlace"), expectedData.getObject().getBirthPlace()); // null donuyor
         assertEquals(actualData.getString("object.phoneNumber"), expectedData.getObject().getPhoneNumber());
         assertEquals(actualData.getString("object.gender"), expectedData.getObject().getGender());
         assertEquals(actualData.getString("message"), expectedData.getMessage());

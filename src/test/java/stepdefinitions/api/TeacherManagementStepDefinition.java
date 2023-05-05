@@ -30,10 +30,10 @@ public class TeacherManagementStepDefinition extends BaseURL {
         expectedData = new AddandUpdateTeacherPojo(
                 "2001-12-12",
                 ReusableMethods.createBirthPlace(),
-                "snmzc@gmail.com",
+                ReusableMethods.createName()+"@gmail.com",
                 "FEMALE",
                 true,
-                new ArrayList<>(Arrays.asList(1)),
+                new ArrayList<>(Arrays.asList(2)),
                 ReusableMethods.createName(),
                 ReusableMethods.createPassword(),
                 ReusableMethods.createPhone(),

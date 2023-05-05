@@ -1,12 +1,17 @@
 package stepdefinitions.api;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import pojos.*;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -23,6 +28,8 @@ public class MeetAndGradesStepDefinition {
     RegisterPojo expectedData;
     StudentDersNotlariPojo expectedData2;
     StudentMeetPojo expectedData3;
+
+    ToplantiDuzenlemeGuncellemePojo expectedData4;
 
     @Given("chooseLesson için endpoint hazırlanır US21_TC01")
     public void choose_lesson_için_endpoint_hazırlanır_us21_tc01() {
@@ -192,5 +199,105 @@ public class MeetAndGradesStepDefinition {
     public void status_code_unun_dortyuzdort_oldugu_dogrulanir_us21() {
         assertEquals(404, response.statusCode());
     }
+
+    @Given("Toplanti duzenlemek icin endpoint hazirlanir US19_TC01")
+    public void toplanti_duzenlemek_icin_endpoint_hazirlanir_US19_TC01() {
+        spec.pathParams("first", "meet", "second", "save");
+    }
+
+    @And("Data hazirlanir US19_TC01")
+    public void data_hazirlanir_US19_TC01() {
+        expectedData4 = new ToplantiDuzenlemeGuncellemePojo("2024-01-11", "Veli Toplantisi", "12:00", "13:00", new ArrayList<>(Arrays.asList(35)));
+    }
+
+    @When("Post request gonderilir US19_TC01")
+    public void post_request_gonderilir_US19_TC01() {
+        response = given().spec(spec).when().body(expectedData4).post("/{first}/{second}");
+        response.prettyPrint();
+        actualData = response.jsonPath();
+    }
+
+    @Then("Hazirlanan data ile toplanti olusturuldugu dogrulanir US19_TC01")
+    public void hazirlanan_data_ile_toplanti_olusturuldugu_dogrulanir_US19_TC01() {
+        assertEquals(expectedData4.getDate(), actualData.getString("object.date"));
+        assertEquals(expectedData4.getDescription(), actualData.getString("object.description"));
+        assertEquals(expectedData4.getStartTime() + ":00", actualData.getString("object.startTime"));
+        assertEquals(expectedData4.getStopTime() + ":00", actualData.getString("object.stopTime"));
+        ArrayList<Integer> studentIds = new ArrayList<>();
+        List<Map> studentList = response.jsonPath().getList("object.students", Map.class);
+        for (Map w : studentList) {
+            studentIds.add((Integer) (w.get("id")));
+        }
+        assertEquals(expectedData4.getStudentIds(), studentIds);
+        Integer id = response.jsonPath().getInt("object.id");
+        ReusableMethods.deleteRequest("meet", id);
+    }
+
+    @And("Data hazirlanir US19_TC02")
+    public void data_hazirlanir_US19_TC02() {
+        expectedData4 = new ToplantiDuzenlemeGuncellemePojo(null, "Veli Toplantisi", "12:00", "13:00", new ArrayList<>(Arrays.asList(5)));
+    }
+
+    @Given("Toplanti goruntulemek icin endpoint hazirlanir US20_TC01")
+    public void toplanti_goruntulemek_icin_endpoint_hazirlanir_US20_TC01() {
+        spec.pathParams("first", "meet", "second", "getMeetById", "third", 2);
+        // spec.pathParams("first", "meet", "second", "getMeetById");
+        // spec.queryParam("third", 0);
+    }
+
+    @And("Get request gonderilir US20_TC01")
+    public void get_request_gonderilir_US20_TC01() {
+        response = given().spec(spec).when().get("/{first}/{second}/{third}");
+        actualData = response.jsonPath();
+    }
+
+    @Given("Toplanti guncellemek icin endpoint hazirlanir US20_TC02")
+    public void toplanti_guncellemek_icin_endpoint_hazirlanir_US20_TC02() {
+        spec.pathParams("first", "meet", "second", "update", "third", 2);
+        // spec.pathParams("first", "meet", "second", "update");
+        // spec.queryParam("third", 0);
+    }
+
+    @And("Data hazirlanir US20_TC02")
+    public void data_hazirlanir_US20_TC02() {
+        expectedData4 = new ToplantiDuzenlemeGuncellemePojo("2024-01-11", "Veli Toplantisi", "12:00", "13:00", new ArrayList<>(Arrays.asList(5)));
+    }
+
+    @When("Put request gonderilir US20_TC02")
+    public void put_request_gonderilir_US20_TC02() {
+        response = given().spec(spec).when().body(expectedData4).put("/{first}/{second}/{third}");
+        response.prettyPrint();
+        actualData = response.jsonPath();
+    }
+
+    @Then("Hazirlanan data ile toplantinin guncellendigi dogrulanir US20_TC02")
+    public void hazirlanan_data_ile_toplantinin_guncellendigi_dogrulanir_US20_TC02() {
+        assertEquals(expectedData4.getDate(), actualData.getString("object.date"));
+        assertEquals(expectedData4.getDescription(), actualData.getString("object.description"));
+        assertEquals(expectedData4.getStartTime() + ":00", actualData.getString("object.startTime"));
+        assertEquals(expectedData4.getStopTime() + ":00", actualData.getString("object.stopTime"));
+        ArrayList<Integer> studentIds = new ArrayList<>();
+        List<Map> studentList = response.jsonPath().getList("object.students", Map.class);
+        for (Map w : studentList) {
+            studentIds.add((Integer) (w.get("id")));
+        }
+        assertEquals(expectedData4.getStudentIds(), studentIds);
+    }
+
+    @Given("Toplanti silmek icin endpoint hazirlanir US20_TC03")
+    public void toplanti_silmek_icin_endpoint_hazirlanir_US20_TC03() {
+        spec.pathParams("first", "meet", "second", "delete", "third", 2);
+        // spec.pathParams("first", "meet", "second", "delete");
+        // spec.queryParam("third", 0);
+    }
+
+    @And("Delete request gonderilir US20_TC03")
+    public void delete_request_gonderilir_US20_TC03() {
+        response = given().spec(spec).when().delete("/{first}/{second}/{third}");
+    }
+
+
+
+
 
 }

@@ -1,6 +1,6 @@
 Feature:Admin Vice Dean olusturma
 
-  @api_smoke_test
+  @US23_TC01 @api_smoke_test
   Scenario: Vicedean olusturma
     Given Vice Dean oluşturmak için endpoint hazırlanır
     Then Admin rolu ile token olusturulur

@@ -7,7 +7,7 @@ Feature: Admin ekleme
 
   @API_US22_TC01 @api_smoke_test
   Scenario: Admin ekleme
-    And Data hazırlanır US01
+    And Data hazırlanır US22
     And Request gonderilip response alinir US01
     Then Status code'un iki yuz oldugu dogrulanir US22
     And assertion_yapilir US01
