@@ -2,14 +2,6 @@ package pojos;
 
 public class CreateMessagePojo {
 
-    /*
-    { "email": "bsrck@gmail.com",
-    "message": "ders saati",
-    "name": "busra",
-    "subject": "ders" }
-     */
-
-
     public CreateMessagePojo() {
     }
 
@@ -66,4 +58,5 @@ public class CreateMessagePojo {
                 ", subject='" + subject + '\'' +
                 '}';
     }
+
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class LessonProgramPojo {
 
-
     public LessonProgramPojo() {
     }
 
@@ -61,4 +60,5 @@ public class LessonProgramPojo {
     public void setStopTime(String stopTime) {
         this.stopTime = stopTime;
     }
+
 }

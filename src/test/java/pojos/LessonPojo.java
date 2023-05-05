@@ -1,6 +1,7 @@
 package pojos;
 
 public class LessonPojo {
+
     private Object object;
     private String message;
     private String httpStatus;
@@ -46,4 +47,5 @@ public class LessonPojo {
                 ", httpStatus='" + httpStatus + '\'' +
                 '}';
     }
+
 }

@@ -1,38 +1,32 @@
 package stepdefinitions.api;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import pojos.RegisterObjectPojo;
 import pojos.RegisterPojo;
+import utilities.BaseURL;
 import utilities.ReusableMethods;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static stepdefinitions.ui.RegisterStepDefinition.ssnFormat;
-import static utilities.BaseURL.*;
 
-public class RegisterStepDefinition {
+public class RegisterStepDefinition extends BaseURL {
+
     RegisterPojo expectedData;
     RegisterObjectPojo objectData;
- //   Response response ;
-    JsonPath actualData ;
-   // int userId ;
+    JsonPath actualData;
 
     @Given("Register için endpoint hazırlanır")
     public void register_için_endpoint_hazırlanır() {
-        spec.pathParams("first","guestUser","second","register");
+        spec.pathParams("first", "guestUser", "second", "register");
     }
-
-//    @When("Token üretilir US01")
-//    public void token_üretilir_us01() {
-//        // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-//    }
 
     @When("Data hazırlanır US01")
     public void data_hazırlanır_us01() {
-
         objectData = new RegisterObjectPojo("1995-06-01",
                 ReusableMethods.createBirthPlace(),
                 "MALE",
@@ -42,33 +36,30 @@ public class RegisterStepDefinition {
                 ssnFormat,
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
-
-        expectedData = new RegisterPojo(objectData,"Guest User registered.","CREATED");
+        expectedData = new RegisterPojo(objectData, "Guest User registered.", "CREATED");
     }
+
     @Then("Request gonderilip response alinir US01")
     public void request_gonderilip_response_alinir_us01() {
         response = given().spec(spec).when().body(objectData).post("/{first}/{second}");
         response.prettyPrint();
         actualData = response.jsonPath();
-
     }
+
     @Then("assertion_yapilir US01")
     public void assertion_yapilir_us01() {
-        assertEquals(200,response.statusCode());
-
-        assertEquals(actualData.getString("object.username"),expectedData.getObject().getUsername());
-        assertEquals(actualData.getString("object.name"),expectedData.getObject().getName());
-        assertEquals(actualData.getString("object.surname"),expectedData.getObject().getSurname());
-     assertEquals(actualData.getString("object.birthDay"),expectedData.getObject().getBirthDay()); // nul donuyor
-        assertEquals(actualData.getString("object.ssn"),expectedData.getObject().getSsn());
-     assertEquals(actualData.getString("object.birthPlace"),expectedData.getObject().getBirthPlace()); // null donuyor
-        assertEquals(actualData.getString("object.phoneNumber"),expectedData.getObject().getPhoneNumber());
-        assertEquals(actualData.getString("object.gender"),expectedData.getObject().getGender());
-        assertEquals(actualData.getString("message"),expectedData.getMessage());
-        assertEquals(actualData.getString("httpStatus"),expectedData.getHttpStatus());
-       // userId = actualData.getInt("object.userId");
+        assertEquals(200, response.statusCode());
+        assertEquals(actualData.getString("object.username"), expectedData.getObject().getUsername());
+        assertEquals(actualData.getString("object.name"), expectedData.getObject().getName());
+        assertEquals(actualData.getString("object.surname"), expectedData.getObject().getSurname());
+        assertEquals(actualData.getString("object.birthDay"), expectedData.getObject().getBirthDay()); // nul donuyor
+        assertEquals(actualData.getString("object.ssn"), expectedData.getObject().getSsn());
+        assertEquals(actualData.getString("object.birthPlace"), expectedData.getObject().getBirthPlace()); // null donuyor
+        assertEquals(actualData.getString("object.phoneNumber"), expectedData.getObject().getPhoneNumber());
+        assertEquals(actualData.getString("object.gender"), expectedData.getObject().getGender());
+        assertEquals(actualData.getString("message"), expectedData.getMessage());
+        assertEquals(actualData.getString("httpStatus"), expectedData.getHttpStatus());
     }
-
 
     @When("Yalnızca name alanı boş bırakılarak data hazırlanır US01")
     public void yalnızca_name_alanı_boş_bırakılarak_data_hazırlanır_us01() {
@@ -81,15 +72,15 @@ public class RegisterStepDefinition {
                 ssnFormat,
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
-
     }
+
     @Then("Hazırlanan data ile kayıt oluşturulamadığı doğrulanır US01")
     public void hazırlanan_data_ile_kayıt_oluşturulamadığı_doğrulanır_us01() {
-        assertEquals(400,response.statusCode());
-        assertTrue(actualData.getString("message").contains("Validation failed for object='guestUserRequest")||
+        assertEquals(400, response.statusCode());
+        assertTrue(actualData.getString("message").contains("Validation failed for object='guestUserRequest") ||
                 actualData.getString("message").contains("JSON parse error"));
-
     }
+
     @When("Yalnızca surname alanı boş bırakılarak data hazırlanır US01")
     public void yalnızca_surname_alanı_boş_bırakılarak_data_hazırlanır_us01() {
         objectData = new RegisterObjectPojo("1995-06-01",
@@ -114,8 +105,6 @@ public class RegisterStepDefinition {
                 ssnFormat,
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
-
-
     }
 
     @When("Yalnızca phoneNumber alanı boş bırakılarak data hazırlanır US01")
@@ -221,6 +210,5 @@ public class RegisterStepDefinition {
                 ReusableMethods.createSurname(),
                 ReusableMethods.createUserName());
     }
-
 
 }
