@@ -2,7 +2,7 @@
 Feature: Teacher rolu ile toplantilarin goruntulenmesi ile guncellenmesi ve silinmesi
 
   # Get Request
-  @US20_TC01
+  @US20_TC01 @api_smoke_test
   Scenario: Toplanti goruntuleme
     Given Toplanti goruntulemek icin endpoint hazirlanir US20_TC01
     # Token CommonStepDefinition'dan aliniyor
