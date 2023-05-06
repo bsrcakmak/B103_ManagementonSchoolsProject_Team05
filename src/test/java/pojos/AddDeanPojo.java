@@ -1,7 +1,9 @@
 package pojos;
 
 public class AddDeanPojo {
-    public AddDeanPojo () {}
+
+    public AddDeanPojo() {
+    }
 
     private String birthDay;
     private String birthPlace;
@@ -119,4 +121,5 @@ public class AddDeanPojo {
     public void setUsername(String username) {
         this.username = username;
     }
+
 }
