@@ -1,194 +1,161 @@
 package pojos;
 
 public class AddStudentPojo {
-      /*
-      {
-  "advisorTeacherId": 0,
-  "birthDay": "yyyy-MM-dd",
-  "birthPlace": "string",
-  "email": "string",
-  "fatherName": "string",
-  "gender": "MALE",
-  "motherName": "string",
-  "name": "string",
-  "password": "string",
-  "phoneNumber": "string",
-  "ssn": "string",
-  "surname": "string",
-  "username": "string"
-}
-       */
-        private int advisorTeacherId;
-        private String birthDay;
-        private String birthPlace;
-        private String email;
-        private String fatherName;
-        private String gender;
-        private String motherName;
-        private String name;
-        private String password;
-        private String phoneNumber;
-        private String ssn;
-        private String surname;
-        private String username;
 
-        public AddStudentPojo() {
-        }
+    private int advisorTeacherId;
+    private String birthDay;
+    private String birthPlace;
+    private String email;
+    private String fatherName;
+    private String gender;
+    private String motherName;
+    private String name;
+    private String password;
+    private String phoneNumber;
+    private String ssn;
+    private String surname;
+    private String username;
 
-
-        //snn olmadan request gondermek icin bir constructor
-//    public StudentPojo(int advisorTeacherId, String birthDay, String birthPlace, String email, String fatherName, String gender, String motherName, String name, String password, String phoneNumber, String surname, String username) {
-//        this.advisorTeacherId = advisorTeacherId;
-//        this.birthDay = birthDay;
-//        this.birthPlace = birthPlace;
-//        this.email = email;
-//        this.fatherName = fatherName;
-//        this.gender = gender;
-//        this.motherName = motherName;
-//        this.name = name;
-//        this.password = password;
-//        this.phoneNumber = phoneNumber;
-//        this.surname = surname;
-//        this.username = username;
-//    }
+    public AddStudentPojo() {
+    }
 
     public AddStudentPojo(int advisorTeacherId, String birthDay, String birthPlace, String email, String fatherName, String gender, String motherName, String name, String password, String phoneNumber, String ssn, String surname, String username) {
-                this.advisorTeacherId = advisorTeacherId;
-                this.birthDay = birthDay;
-                this.birthPlace = birthPlace;
-                this.email = email;
-                this.fatherName = fatherName;
-                this.gender = gender;
-                this.motherName = motherName;
-                this.name = name;
-                this.password = password;
-                this.phoneNumber = phoneNumber;
-                this.ssn = ssn;
-                this.surname = surname;
-                this.username = username;
-        }
+        this.advisorTeacherId = advisorTeacherId;
+        this.birthDay = birthDay;
+        this.birthPlace = birthPlace;
+        this.email = email;
+        this.fatherName = fatherName;
+        this.gender = gender;
+        this.motherName = motherName;
+        this.name = name;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.ssn = ssn;
+        this.surname = surname;
+        this.username = username;
+    }
 
-        public int getAdvisorTeacherId() {
-                return advisorTeacherId;
-        }
+    public int getAdvisorTeacherId() {
+        return advisorTeacherId;
+    }
 
-        public void setAdvisorTeacherId(int advisorTeacherId) {
-                this.advisorTeacherId = advisorTeacherId;
-        }
+    public void setAdvisorTeacherId(int advisorTeacherId) {
+        this.advisorTeacherId = advisorTeacherId;
+    }
 
-        public String getBirthDay() {
-                return birthDay;
-        }
+    public String getBirthDay() {
+        return birthDay;
+    }
 
-        public void setBirthDay(String birthDay) {
-                this.birthDay = birthDay;
-        }
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
+    }
 
-        public String getBirthPlace() {
-                return birthPlace;
-        }
+    public String getBirthPlace() {
+        return birthPlace;
+    }
 
-        public void setBirthPlace(String birthPlace) {
-                this.birthPlace = birthPlace;
-        }
+    public void setBirthPlace(String birthPlace) {
+        this.birthPlace = birthPlace;
+    }
 
-        public String getEmail() {
-                return email;
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        public void setEmail(String email) {
-                this.email = email;
-        }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-        public String getFatherName() {
-                return fatherName;
-        }
+    public String getFatherName() {
+        return fatherName;
+    }
 
-        public void setFatherName(String fatherName) {
-                this.fatherName = fatherName;
-        }
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
 
-        public String getGender() {
-                return gender;
-        }
+    public String getGender() {
+        return gender;
+    }
 
-        public void setGender(String gender) {
-                this.gender = gender;
-        }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-        public String getMotherName() {
-                return motherName;
-        }
+    public String getMotherName() {
+        return motherName;
+    }
 
-        public void setMotherName(String motherName) {
-                this.motherName = motherName;
-        }
+    public void setMotherName(String motherName) {
+        this.motherName = motherName;
+    }
 
-        public String getName() {
-                return name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setName(String name) {
-                this.name = name;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public String getPassword() {
-                return password;
-        }
+    public String getPassword() {
+        return password;
+    }
 
-        public void setPassword(String password) {
-                this.password = password;
-        }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-        public String getPhoneNumber() {
-                return phoneNumber;
-        }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-        public void setPhoneNumber(String phoneNumber) {
-                this.phoneNumber = phoneNumber;
-        }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-        public String getSsn() {
-                return ssn;
-        }
+    public String getSsn() {
+        return ssn;
+    }
 
-        public void setSsn(String ssn) {
-                this.ssn = ssn;
-        }
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
 
-        public String getSurname() {
-                return surname;
-        }
+    public String getSurname() {
+        return surname;
+    }
 
-        public void setSurname(String surname) {
-                this.surname = surname;
-        }
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
-        public String getUsername() {
-                return username;
-        }
+    public String getUsername() {
+        return username;
+    }
 
-        public void setUsername(String username) {
-                this.username = username;
-        }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-        @Override
-        public String toString() {
-                return "StudentPojo{" +
-                        "advisorTeacherId=" + advisorTeacherId +
-                        ", birthDay='" + birthDay + '\'' +
-                        ", birthPlace='" + birthPlace + '\'' +
-                        ", email='" + email + '\'' +
-                        ", fatherName='" + fatherName + '\'' +
-                        ", gender='" + gender + '\'' +
-                        ", motherName='" + motherName + '\'' +
-                        ", name='" + name + '\'' +
-                        ", password='" + password + '\'' +
-                        ", phoneNumber='" + phoneNumber + '\'' +
-                        ", ssn='" + ssn + '\'' +
-                        ", surname='" + surname + '\'' +
-                        ", username='" + username + '\'' +
-                        '}';
-        }
+    @Override
+    public String toString() {
+        return "StudentPojo{" +
+                "advisorTeacherId=" + advisorTeacherId +
+                ", birthDay='" + birthDay + '\'' +
+                ", birthPlace='" + birthPlace + '\'' +
+                ", email='" + email + '\'' +
+                ", fatherName='" + fatherName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", motherName='" + motherName + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", ssn='" + ssn + '\'' +
+                ", surname='" + surname + '\'' +
+                ", username='" + username + '\'' +
+                '}';
+    }
+
 }
-

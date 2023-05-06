@@ -2,7 +2,7 @@
 Feature: Teacher rolu ile Student Info Note 'un  goruntulenmesi, guncellenmesi ve silinmesi
 
   # Get Request
-  @US18_TC01
+  @US18_TC01 @api_smoke_test
   Scenario: Student Info List goruntuleme
     Given Student Info List goruntulemek icin endpoint hazirlanir US18_TC01
     When Teacher rolu ile token olusturulur

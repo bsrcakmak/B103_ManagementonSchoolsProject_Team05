@@ -6,7 +6,6 @@ public class LessonProgramIdPojo {
 
     private ArrayList<Integer> lessonProgramId;
 
-
     public LessonProgramIdPojo() {
     }
 
@@ -28,4 +27,5 @@ public class LessonProgramIdPojo {
                 "lessonProgramId=" + lessonProgramId +
                 '}';
     }
+
 }

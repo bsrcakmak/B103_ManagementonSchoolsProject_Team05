@@ -6,4 +6,4 @@ Feature: Vice Dean rolu ile ogrenci olusturulabildiginin dogrulanmasi
     Given Database baglantisi kurulur
     When Vice Dean rolu ile olusturulmus ogrenci student tablosunda username ile bulunur US15
     Then Ogrencinin bilgileri dogrulanir US15
-    # Then Database baglantisi kesilir
+    Then Database baglantisi kesilir

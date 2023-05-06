@@ -13,22 +13,23 @@ import utilities.ReusableMethods;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class ContactMessageStepDefinition extends BaseURL {
+public class ContactStepDefinition extends BaseURL {
 
     Faker faker = new Faker();
     CreateMessagePojo expectedData;
     JsonPath actualData;
+
     @Given("Mesaj gonderebilmek icin endpoint hazirlanir US03")
     public void mesajGonderebilmekIcinEndpointHazirlanirUS03() {
-        spec.pathParams("first","contactMessages","second","save");
+        spec.pathParams("first", "contactMessages", "second", "save");
     }
 
     @When("Data hazirlanir US03")
     public void dataHazirlanirUS03() {
-        expectedData = new CreateMessagePojo(ReusableMethods.createName()+"@gmail.com",
-        faker.shakespeare().hamletQuote(),
+        expectedData = new CreateMessagePojo(ReusableMethods.createName() + "@gmail.com",
+                faker.shakespeare().hamletQuote(),
                 ReusableMethods.createName(),
-        faker.shakespeare().romeoAndJulietQuote());
+                faker.shakespeare().romeoAndJulietQuote());
         System.out.println("expectedData = " + expectedData);
     }
 
@@ -42,26 +43,26 @@ public class ContactMessageStepDefinition extends BaseURL {
 
     @Then("Hazirlanan data ile mesaj gonderildigi dogrulanir US03")
     public void hazirlananDataIleMesajGonderildigiDogrulanirUS03() {
-        assertEquals(expectedData.getEmail(),actualData.getString("object.email"));
-        assertEquals(expectedData.getMessage(),actualData.getString("object.message"));
-        assertEquals(expectedData.getName(),actualData.getString("object.name"));
-        assertEquals(expectedData.getSubject(),actualData.getString("object.subject"));
+        assertEquals(expectedData.getEmail(), actualData.getString("object.email"));
+        assertEquals(expectedData.getMessage(), actualData.getString("object.message"));
+        assertEquals(expectedData.getName(), actualData.getString("object.name"));
+        assertEquals(expectedData.getSubject(), actualData.getString("object.subject"));
     }
 
     @When("Name alani bos birakilarak data hazirlanir US03")
     public void nameAlaniBosBirakilarakDataHazirlanirUS03() {
-        expectedData = new CreateMessagePojo(ReusableMethods.createName()+"@gmail.com",
+        expectedData = new CreateMessagePojo(ReusableMethods.createName() + "@gmail.com",
                 faker.shakespeare().hamletQuote(),
-               null,
+                null,
                 faker.shakespeare().romeoAndJulietQuote());
     }
 
     @Then("Hazirlanan data ile mesaj gonderilemedigi dogrulanir US03")
     public void hazirlananDataIleMesajGonderilemedigiDogrulanirUS03() {
-        assertEquals(expectedData.getEmail(),actualData.getString("object.email"));
-        assertEquals(expectedData.getMessage(),actualData.getString("object.message"));
-        assertEquals(expectedData.getName(),actualData.getString("object.name"));
-        assertEquals(expectedData.getSubject(),actualData.getString("object.subject"));
+        assertEquals(expectedData.getEmail(), actualData.getString("object.email"));
+        assertEquals(expectedData.getMessage(), actualData.getString("object.message"));
+        assertEquals(expectedData.getName(), actualData.getString("object.name"));
+        assertEquals(expectedData.getSubject(), actualData.getString("object.subject"));
     }
 
     @When("Email alani bos birakilarak data hazirlanir US03")
@@ -74,17 +75,15 @@ public class ContactMessageStepDefinition extends BaseURL {
 
     @When("Email alanina invalid deger girilerek data hazirlanir US03")
     public void emailAlaninaInvalidDegerGirilerekDataHazirlanirUS03() {
-        expectedData = new CreateMessagePojo(ReusableMethods.createName()+"@gmail.",
+        expectedData = new CreateMessagePojo(ReusableMethods.createName() + "@gmail.",
                 faker.shakespeare().hamletQuote(),
                 ReusableMethods.createName(),
                 faker.shakespeare().romeoAndJulietQuote());
     }
 
-
     @Given("Mesajlari gorebilmek icin endpoint hazirlanir")
     public void mesajlariGorebilmekIcinEndpointHazirlanir() {
-        spec.pathParams("first","contactMessages","second","getAll");
-       // queryParams("page",1,"size",10,"sort","date","type","desc");
+        spec.pathParams("first", "contactMessages", "second", "getAll");
     }
 
     @And("Get request gonderilir")
@@ -92,4 +91,5 @@ public class ContactMessageStepDefinition extends BaseURL {
         response = given().spec(spec).when().get("/{first}/{second}");
 
     }
+
 }

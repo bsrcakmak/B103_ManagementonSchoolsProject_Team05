@@ -1,13 +1,14 @@
 @us04_db
   Feature:Admin dean ekleyebilmeli
     Scenario: Olusturulan Dean'i dogrula
-      Given Database ile baglanti kurulur
+      Given Database baglantisi kurulur
       And Dean "<username>" bilgisi ile cagrilir
-      Then Dean'in bilgileri dogrulanir: userId="<userId>", username="<username>", name="<name>", surname="<surname>", birthDay="<birthDay>", ssn="<ssn>", birthPlace="<birthPlace>", phoneNumber="<phoneNumber>", gender="<gender>"
+      Then Dean'in bilgileri dogrulanir: id="<id>", username="<username>", name="<name>", surname="<surname>", birthDay="<birthDay>", ssn="<ssn>", birthPlace="<birthPlace>", phoneNumber="<phoneNumber>", gender="<gender>"
+      Then Database baglantisi kesilir
 
       Examples:
-        | userId | username  | name | surname | birthDay   | ssn | birthPlace | phoneNumber  | gender |
-
+        | id | username  | name | surname | birthDay   |     ssn     | birthPlace | phoneNumber  | gender |
+        #|402 |   emmaB   | emma |  brown  | 1999-06-12 | 543-57-9753 |   london   | 123-343-6549 | FEMALE |
 
 
 
