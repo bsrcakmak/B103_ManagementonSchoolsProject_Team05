@@ -5,4 +5,3 @@ Feature:Admin dean ekleyebilmeli
     And Dean username bilgisi ile cagrilir
     Then Dean'in bilgileri dogrulanir
       #Then Database baglantisi kesilir
-
