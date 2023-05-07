@@ -15,25 +15,26 @@ public class DeanOlusturmaStepDefinition {
     ResultSet resultSet;
 
 
-    @Given("Dean {string} bilgisi ile cagrilir")
-    public void dean_bilgisi_ile_cagrilir(String username) throws SQLException {
+    @Given("Dean username bilgisi ile cagrilir")
+    public void dean_bilgisi_ile_cagrilir( ) throws SQLException {
         connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
         statement = JDBCUtils.createStatement();
-        resultSet = statement.executeQuery("SELECT * FROM dean WHERE username = "+ username +";");
+        resultSet = statement.executeQuery("SELECT * FROM dean WHERE id = 537");
         resultSet.next();
+        System.out.println(resultSet);
     }
 
+    @Then("Dean'in bilgileri dogrulanir")
+    public void deaninBilgileriDogrulanir( ) throws SQLException {
+        assertEquals("2000-10-10", resultSet.getString("birth_day"));
+        assertEquals("ADANA", resultSet.getString("birth_place"));
+        assertEquals("MALE", resultSet.getString("gender"));
+        assertEquals("Lera", resultSet.getString("name"));
+        assertEquals("234-756-2536", resultSet.getString("phone_number"));
+        assertEquals("234-76-2536", resultSet.getString("ssn"));
+        assertEquals("Batz", resultSet.getString("surname"));
+        assertEquals("Presley75", resultSet.getString("username"));
 
-    @Then("Dean'in bilgileri dogrulanir: id={string}, username={string}, name={string}, surname={string}, birthDay={string}, ssn={string}, birthPlace={string}, phoneNumber={string}, gender={string}")
-    public void deanInBilgileriDogrulanirIdUsernameNameSurnameBirthDaySsnBirthPlacePhoneNumberGender(String id, String username, String name, String surname, String birthDay, String birthPlace, String ssn, String phoneNumber, String gender) throws SQLException {
-        assertEquals(id, resultSet.getString("id"));
-        assertEquals(username,resultSet.getString("username"));
-        assertEquals(name,resultSet.getString("name"));
-        assertEquals(surname,resultSet.getString("surname"));
-        assertEquals(birthDay,resultSet.getString("birthDay"));
-        assertEquals(ssn,resultSet.getString("ssn"));
-        assertEquals(birthPlace,resultSet.getString("birthPlace"));
-        assertEquals(phoneNumber,resultSet.getString("phoneNumber"));
-        assertEquals(gender,resultSet.getString("gender"));
+
     }
 }
