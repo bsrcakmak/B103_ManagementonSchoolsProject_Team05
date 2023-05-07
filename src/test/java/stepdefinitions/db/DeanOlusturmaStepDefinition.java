@@ -5,10 +5,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import utilities.JDBCUtils;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -20,6 +17,7 @@ public class DeanOlusturmaStepDefinition {
 
     @Given("Dean {string} bilgisi ile cagrilir")
     public void dean_bilgisi_ile_cagrilir(String username) throws SQLException {
+        connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");
         statement = JDBCUtils.createStatement();
         resultSet = statement.executeQuery("SELECT * FROM dean WHERE username = "+ username +";");
         resultSet.next();
