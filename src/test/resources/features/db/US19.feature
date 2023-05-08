@@ -6,3 +6,4 @@ Feature: Teacher rolu ile meet olusturulabildiginin dogrulanmasi
     Given Database baglantisi kurulurUS_19
     When Teacher rolu ile olusturulmus meet tablosunda Id ile bulunur US19
     Then Meet bilgileri dogrulanir US19
+    Then Database baglantisi kesilir

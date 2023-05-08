@@ -6,6 +6,7 @@ Feature: Teacher rolu ile student info note olusturulabildiginin dogrulanmasi
     Given Database baglantisi kurulurUS17
     When Teacher rolu ile olusturulmus student info note tablosunda Id ile bulunur US17
     Then Student info note bilgileri dogrulanirUS17
+    Then Database baglantisi kesilir
 
 
     Examples:

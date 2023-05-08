@@ -5,6 +5,7 @@ Feature: Teacher rolu ile student info note olusturulabildigini gorebilmesi
   Scenario Outline: Teacher rolu ile olusturulmus olan student info note bilgilerinin gorulebilmesi
     Given Database baglantisi kurulur US18
     When Teacher rolu ile olusturulmus student info note tablosundan Id ile sorgu yapar US18
+    Then Database baglantisi kesilir
 
     Examples:
       | id  | Absentee  |Exam_Average  | Final_Exam   |  Midterm_Exam |         Info_Note        |  Student_Id   | Educatin_Term_Id  |
