@@ -6,6 +6,7 @@ Feature: Teacher rolu ile student info note olusturulabildigini gorebilmesi
     Given Database baglantisi kurulur US_20
     When Teacher rolu ile olusturulmus meet tablosundan Id ile sorgu yapar US_20
     Then Meet bilgileri dogrulanir US_20
+    Then Database baglantisi kesilir
 
 
     Examples:

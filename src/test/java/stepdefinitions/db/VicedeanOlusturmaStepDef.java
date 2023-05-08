@@ -35,4 +35,11 @@ public class VicedeanOlusturmaStepDef {
         assertEquals("3", resultSet.getString("user_role_id"));
 
     }
+
+    @Then("Admin rolu ile belirlenmis Vicedean Vicedean tablosunda id ile bulunur")
+    public void admin_rolu_ile_belirlenmis_vicedean_vicedean_tablosunda_id_ile_bulunur() throws SQLException {
+        statement= JDBCUtils.createStatement();
+        resultSet=JDBCUtils.executeQuery("select * from vice_dean where id=844;");
+        resultSet.next();
+    }
 }
