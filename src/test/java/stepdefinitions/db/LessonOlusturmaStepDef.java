@@ -34,8 +34,8 @@ public class LessonOlusturmaStepDef {
     }
     @Then("Compulsary ve credit score bilgileri dogrulanir")
     public void compulsary_ve_credit_score_bilgileri_dogrulanir() throws SQLException {
-    assertEquals("false",resultSet.getString("is_compulsory"));
-    assertEquals("8",resultSet.getString("credit_score"));
+    assertEquals(false,resultSet.getBoolean("is_compulsory"));
+    assertEquals(8,resultSet.getInt("credit_score"));
 
     }
 
