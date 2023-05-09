@@ -6,4 +6,4 @@ Feature: Vice Dean rolu ile ders programının dogrulanmasi
     Given Database baglantisi kurulur
     When Vice Dean rolu ile olusturulmus ders programı tablosunda id ile bulunur US12
     Then Ders program bilgileri dogrulanir US12
-    Then Database baglantisi kesili
+    Then Database baglantisi kesilir
