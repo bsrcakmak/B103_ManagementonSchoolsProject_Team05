@@ -1,4 +1,4 @@
-@US06DB
+@US08DB
   Feature: Vicedean roluyle olusturulmus Lessonin dogrulanmasi
 
     Scenario: Vicedean roluyle olusturulmus Lessonin dogrulanmasi
