@@ -1,6 +1,7 @@
 @US09DB
   Feature: Vicedean roluyle olusturulmus Compulsary ve credit score dogrulanmasi
 
+    @db_smoke_test
     Scenario: Vicedean roluyle olusturulmus Compulsary ve credit score dogrulanmasi
       Given Database baglantisi kurulur
       Then ViceDean rolu ile belirlenmis Compulsary ve credit score, lesson tablosunda bulunur

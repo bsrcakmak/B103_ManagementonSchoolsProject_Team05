@@ -1,7 +1,7 @@
 @US01_DB
 Feature: Aday öğrenciler sisteme kayıt olabilmelidir.
 
-  @US01_TC01_DB
+  @US01_TC01_DB @db_smoke_test
   Scenario: kayit olan aday ogrencinin bilgilerinin dogrulanmasi
     Given Database baglantisi kurulur
     When aday ogrenci student tablosunda username ile bulunur US21

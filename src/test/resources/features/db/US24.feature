@@ -1,7 +1,7 @@
 @US24_DB
 Feature: Admin rolu ile ogretmen olusturulabildiginin dogrulanmasi
 
-  @US24_TC01_DB
+  @US24_TC01_DB @db_smoke_test
   Scenario: Admin rolu ile olusturulmus olan ogretmenin bilgilerinin dogrulanmasi
     Given Database baglantisi kurulur
     When Admin rolu ile olusturulmus ogretmen teacher tablosunda id ile bulunur US24

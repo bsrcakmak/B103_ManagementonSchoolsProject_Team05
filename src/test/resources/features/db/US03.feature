@@ -1,6 +1,7 @@
 @US03_DB
   Feature: Kullanici mesaj gonderebilmeli
 
+    @db_smoke_test @db_smoke_test
     Scenario Outline: Kullanicinin mesaj gonderebildiginin dogrulanmasi US03_DB
       Given Database baglantisi kurulur US
       When email bilgisi ile mesaj alinir

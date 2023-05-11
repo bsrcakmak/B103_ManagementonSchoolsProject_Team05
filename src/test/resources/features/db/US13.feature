@@ -1,7 +1,7 @@
 @US13_DB
 Feature: Vice Dean rolu ile ogretmen olusturulabildiginin dogrulanmasi
 
-  @US13_TC01_DB
+  @US13_TC01_DB @db_smoke_test
   Scenario: Vice Dean rolu ile olusturulmus olan ogretmenin bilgilerinin dogrulanmasi
     Given Database baglantisi kurulur
     When Vice Dean rolu ile olusturulmus ogretmen teacher tablosunda id ile bulunur US13
