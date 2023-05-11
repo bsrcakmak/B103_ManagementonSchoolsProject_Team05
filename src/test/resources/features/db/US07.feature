@@ -1,6 +1,7 @@
 @US07_DB
 Feature: Dean mesajlari gorebilmeli
 
+
   Scenario Outline: Dean name, email, subject ve message bilgilerini görebilmeli
     Given Database baglantisi kurulur US
     When email bilgisi ile mesaj alinir

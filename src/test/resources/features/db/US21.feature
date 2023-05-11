@@ -2,7 +2,7 @@
 Feature: Students, choose lesson, grades and announcement
 
 
-  @US21_TC01_DB
+  @US21_TC01_DB @db_smoke_test
   Scenario: Öğrencinin secmis oldugu derslerin dogrulanmasi
     Given Database baglantisi kurulur
     When dersler student_lesson tablosunda student_id ile bulunur US21
@@ -10,7 +10,7 @@ Feature: Students, choose lesson, grades and announcement
     Then Database baglantisi kesilir
 
 
-  @US21_TC02_DB
+  @US21_TC02_DB @db_smoke_test
   Scenario: Öğrenci sınav notlarını görebilmeli
     Given Database baglantisi kurulur
     When ogrenci sinav notlari student_info tablosunda student_id ile bulunur US21

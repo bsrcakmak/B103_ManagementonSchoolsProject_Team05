@@ -1,7 +1,7 @@
 @US17_DB
 Feature: Teacher rolu ile student info note olusturulabildiginin dogrulanmasi
 
-  @US17_TC01_DB
+  @US17_TC01_DB @db_smoke_test
   Scenario Outline: Teacher rolu ile olusturulmus olan student info note bilgilerinin dogrulanmasi
     Given Database baglantisi kurulurUS17
     When Teacher rolu ile olusturulmus student info note tablosunda Id ile bulunur US17

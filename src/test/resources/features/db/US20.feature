@@ -1,7 +1,7 @@
 @US20_DB
 Feature: Teacher rolu ile student info note olusturulabildigini gorebilmesi
 
-  @US20_TC01_DB
+  @US20_TC01_DB @db_smoke_test
   Scenario Outline: Teacher rolu ile olusturulmus olan meet bilgilerinin gorulebilmesi
     Given Database baglantisi kurulur US_20
     When Teacher rolu ile olusturulmus meet tablosundan Id ile sorgu yapar US_20

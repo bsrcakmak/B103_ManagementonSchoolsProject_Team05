@@ -1,7 +1,7 @@
 @US12_DB
 Feature: Vice Dean rolu ile ders programının dogrulanmasi
 
-  @US12_TC01_DB
+  @US12_TC01_DB @db_smoke_test
   Scenario: Vice Dean rolu ile olusturulmus olan ders programı bilgilerinin dogrulanmasi
     Given Database baglantisi kurulur
     When Vice Dean rolu ile olusturulmus ders programı tablosunda id ile bulunur US12
